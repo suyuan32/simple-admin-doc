@@ -4,7 +4,7 @@ export const zhSidebar = sidebar({
   "/zh/": [
     {
       text: "文档",
-      icon: "note",
+      icon: "fa-solid fa-book",
       prefix: "guide/",
       children: [
         {

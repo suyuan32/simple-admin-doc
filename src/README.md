@@ -1,110 +1,58 @@
 ---
 home: true
 icon: home
-title: Simple Admin
+title: Index
 heroImage: /logo.svg
-heroText: Project name
-tagline: You can place the description of the project here.
+heroText: Simple Admin
+tagline: Simple Admin is a powerful microservice framework for basic management. It is based on go-zero and supports several advanced features. It can help you to develop a microservice back-end management system in a short time
 actions:
-  - text: How to Use 💡
-    link: /demo/
+  - text: Quick Start 💡
+    link: /guide/quick-start/codegen/api_example
     type: primary
 
-  - text: Docs
+  - text: Document
     link: /guide/
 
 features:
-  - title: Markdown Enhance
-    icon: markdown
-    details: Add align, sup/sub script, footnote, tasklist, tex, flowchart, diagram, mark and presentation support in markdown
-    link: https://vuepress-theme-hope.github.io/v2/guide/markdown/
+  - title: Fully Support Various Managements
+    icon: fa-solid fa-wrench
+    details: Provide user management, role management, authority management, menu management, three-party login management and other management functions
+    link: http://101.132.124.135/
 
-  - title: Slide page
-    icon: slides
-    details: Adding slide pages to display things you like
-    link: https://vuepress-theme-hope.github.io/v2/guide/layout/slides.html
+  - title: Powerful Generation Tools
+    icon: fa-regular fa-screwdriver-wrench
+    details: Simple Admin Tool provides powerful code generation function to quickly generate three-terminal CRUD codes
+    link: /guide/basic-config/simple-admin-tools
 
-  - title: Layout enhancement
-    icon: layout
-    details: Adding breadcrumb, footer, improved navbar, improved page nav and etc.
-    link: https://vuepress-theme-hope.github.io/v2/guide/layout/
+  - title: Built-in Validator
+    icon: fa-solid fa-eye
+    details: Built-in validator for fast data verification
+    link: /guide/feature/validator
 
-  - title: Pageviews and comments
-    icon: comment
-    details: Start pageview statistics and comment support with Waline
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/comment.html
+  - title: Unified Error Handling
+    icon: fa-solid fa-circle-exclamation
+    details: Provide a variety of error message processing, and support international translation of error messages
+    link: /guide/feature/error_handling
 
-  - title: Article information
-    icon: info
-    details: Add author, writing date, reading time, word count and other information to your article
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/page-info.html
+  - title: Internationalization Support
+    icon: fa-regular fa-earth-americas
+    details: The generation tool supports generating i18n code and quickly provides internationalization support
+    link: 
 
-  - title: Blog support
-    icon: blog
-    details: Listing your articles with their dates, tags and categories with some awesome layouts
-    link: https://vuepress-theme-hope.github.io/v2/guide/blog/
+  - title: K8s Support
+    icon: fa-solid fa-cloud
+    details: The project provides K8s rapid deployment scripts to realize rapid project migration to the cloud
+    link: /guide/basic-config/k8s/k8s-deploy
 
-  - title: Custom theme color
-    icon: palette
-    details: Supports custom theme colors and allows users to switch between preset theme colors
-    link: https://vuepress-theme-hope.github.io/v2/guide/interface/theme-color.html
+  - title: Service Registry Discovery
+    icon: fa-solid fa-magnifying-glass
+    details: Service registration discovery based on K8s Endpoints
+    link: /guide/basic-config/k8s/k8s-deploy
 
-  - title: Dark Mode
-    icon: contrast
-    details: Switch between light and dark modes freely
-    link: https://vuepress-theme-hope.github.io/v2/guide/interface/darkmode.html
+  - title: Third-party Login Management
+    icon: fa-regular fa-building-lock
+    details: Support Third-party Login Management
+    link: /guide/feature/oauth
 
-  - title: Full A11y support
-    icon: support
-    details: Full support of accessibility in your site
-    link: https://vuepress-theme-hope.github.io/v2/guide/interface/accessibility.html
 
-  - title: Article Encryption
-    icon: lock
-    details: Encrypt you articles based on page links, so that only the one you want could see them
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/encrypt.html
-
-  - title: Copy button
-    icon: copy
-    details: Copy codes with one click in code blocks
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/copy-code.html
-
-  - title: Image preview
-    icon: pic
-    details: Support viewing, zooming, sharing your page images like a gallery
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/photo-swipe.html
-
-  - title: SEO enhancement
-    icon: config
-    details: Optimize pages for search engines
-    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/seo.html
-
-  - title: Sitemap
-    icon: sitemap
-    details: Generate a Sitemap for your site
-    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/sitemap.html
-
-  - title: Feed support
-    icon: rss
-    details: Generate feed to allow users to subscribe it
-    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/feed.html
-
-  - title: PWA support
-    icon: mobile
-    details: Make your site more like an APP
-    link: https://vuepress-theme-hope.github.io/v2/guide/advanced/pwa.html
-
-  - title: More new features
-    icon: more
-    details: Including icon support, fullscreen button, etc.
-    link: https://vuepress-theme-hope.github.io/v2/guide/feature/
-
-copyright: false
-footer: Theme by <a href="https://vuepress-theme-hope.github.io/v2/" target="_blank">VuePress Theme Hope</a> | MIT Licensed, Copyright © 2019-present Mr.Hope
----
-
-This is an example of a project homepage. You can place your main content here.
-
-To use this layout, you need to set `home: true` in the page front matter.
-
-For related descriptions of configuration items, please see [Project HomePage Layout Config](https://vuepress-theme-hope.github.io/v2/guide/layout/home/).
+footer: MIT License  Copyright © 2022-present Ryan SU

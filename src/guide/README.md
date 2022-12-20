@@ -1,82 +1,84 @@
 ---
-title: 项目简介
+title: Introduction
 icon: book
 author: Ryan SU
 ---
-
-
 <div align="center">
 <img src="https://i.postimg.cc/nh8mVKkf/logo.png" width="300px" height="300px"/>
 <h1>Simple Admin</h1>
 </div>
 
+**English** | [中文](./README.md) 
 ---
-[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.4.1-brightgreen.svg)](https://go-zero.dev/)
+[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.4.3-brightgreen.svg)](https://go-zero.dev/)
 [![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.8.0-yellow.svg)](https://vvbin.cn/doc-next/)
 [![Ent](https://img.shields.io/badge/Ent-v0.11.0-blue.svg)](https://entgo.io/)
 [![Casbin](https://img.shields.io/badge/Casbin-v2.52.1-orange.svg)](https://github.com/casbin/casbin)
-[![Release](https://img.shields.io/badge/Release-v0.1.4-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
+[![Release](https://img.shields.io/badge/Release-v0.1.9-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![SimpleAdmin](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
-![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-801043319-blue)
+## Introduction
 
-## 简介
+Simple Admin is a powerful microservice framework for basic management. 
+It is based on go-zero and supports several advanced features. 
+It can help you to develop a microservice back-end management core in a short time.
 
-Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基于go-zero开发，提供丰富的功能如服务发现，权限管理等。
-该框架可以帮助您快速开发具有RPC服务的后台管理系统。
+#### [Gorm version here](https://github.com/suyuan32/simple-admin-core/tree/gorm)
 
-#### [Gorm 版本点此](https://github.com/suyuan32/simple-admin-core/tree/gorm)
-#### [Ent 中文文档](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started)
+## Feature
 
-## 特性
+- **State of The Art Development**：Use latest back-end technology development such as ent, go-zero, casbin
+- **Fully support go-swagger**: Write comment in api file and generate swagger doc easily
+- **Error handling**: Handle error messages via one module
+- **International**：support different languages show in the front-end via put locale path in the message 
+- **Service Discover**: use k8s endpoints to do service discovery and load-balance
+- **Authority** Manage authority via Casbin, based on RBAC
+- **Other** builtin concurrency control, adaptive circuit breaker, adaptive load shedding, auto-trigger, auto recover
 
-- **最新技术栈**：使用 ent, casbin, kafka 等前沿技术开发
-- **完全支持go-swagger**: 直接在api文件内编写注释即可直接生成swagger文档
-- **统一的错误处理**: 整个系统拥有国际化的统一错误处理
-- **国际化**：内置完善的国际化方案
-- **服务注册发现**: 完善的服务注册发现机制，原生支持K8s
-- **权限**: 内置完善的动态路由权限生成方案, 集成RBAC权限控制
-- **其他**: 流量控制， ES服务
+## Current Progress
 
-## 当前进度
-
-- [x] 登录注册
-- [x] 菜单管理
-- [x] 角色管理
-- [x] 角色权限
-- [x] 用户管理
-- [x] 操作日志
-- [x] 服务注册发现
-- [x] 字典功能
-- [x] 三方登录管理
-- [x] 全面支持 K8s
-- [x] 服务监控
-- [x] 日志收集
-- [x] JWT黑名单
-- [x] 定时任务
-- [x] 消息队列
+- [x] Login and Register
+- [x] Menu Management
+- [x] Role Management
+- [x] Role Authority
+- [x] User Management
+- [x] Operation log
+- [x] Service discovery
+- [x] Dictionary management
+- [x] Oauth management
+- [x] Fully support K8s
+- [x] Service Monitor
+- [x] Log collecting
+- [x] JWT blacklist
+- [x] Job Schedule
+- [x] Message queue
 - [x] Ent
-- [x] 后端 CRUD 代码生成
+- [x] Backend CRUD generation
+- [x] Frontend CRUD code generation
+- [x] docker-compose script
+- [x] RPC logic group
 
-## 预览
+### The use of consul for service registration discovery in the early stage of the project is mainly to adapt to low-configuration servers. In the near future, the deployment process of K8s will be mainly optimized, and the project will mainly use K8s for deployment in the future.
 
-### 在线预览
-[在线预览](http://101.132.124.135/#/dashboard)
-账号 admin
-密码 simple-admin
-#### 只读，不可修改和注册
+## Preview
+
+### Online preview
+[Online Preview](http://101.132.124.135/#/dashboard)
+Account:   admin 
+Password:  simple-admin
+#### Read Only, cannot register and modify
 
 ![pic](https://i.postimg.cc/qqPNR02x/register-zh-cn.png)
 ![pic](https://i.postimg.cc/PxczkCr6/dashboard-zh-cn.png)
 
-[更多预览](https://suyuan32.github.io/simple-admin-core/#/simple-admin/zh-cn/docs/screenshot)
+[More](https://suyuan32.github.io/simple-admin-core/#/simple-admin/zh-cn/docs/screenshot)
 
+## Documentation
 
-## 文档
+[Document](https://suyuan32.github.io/simple-admin-core/)
 
-[文档](https://suyuan32.github.io/simple-admin-core/)
+or running locally
 
-或者直接本地运行
 ```shell
 cd docs
 docsify serve .
@@ -86,33 +88,34 @@ docsify serve .
   [Document](https://go-zero.dev/)
 - ant-design-vue [Document](https://antdv.com/components/overview)
 
-## 准备
-
-- [Golang](http://go.dev/) and [git](https://git-scm.com/) - Go 语言
+## Preparation
+- [Golang](http://go.dev/) and [git](https://git-scm.com/) - Project development environment
 - [Ent](https://entgo.io/docs/getting-started) - Ent
-- [Mysql](https://www.mysql.com/) - Mysql数据库
-- [GORM](https://gorm.io/) - GORM 数据库ORM组件
-- [Casbin](https://casbin.org/) - 权限管理
-- [Go-swagger](https://goswagger.io/) - Go-swagger 文档生成调试
+- [Mysql](https://www.mysql.com/) - Familiar with mysql database
+- [GORM](https://gorm.io/) - Familiar with GORM apis
+- [Casbin](https://casbin.org/) - Familiar with Casbin apis
+- [Go-swagger](https://goswagger.io/) - Go-swagger document generation
 
-## 安装使用
+## Install and use
 
-- 获取项目代码
+- Get the project code
 
 ```bash
 git clone https://github.com/suyuan32/simple-admin-core.git
 ```
 
-- 安装依赖
+- Installation dependencies
 
 ```bash
 cd simple-admin-core/
 
 go mod tidy
+
 ```
-- 编辑配置文件 api/etc/core.yaml  rpc/etc/core.yaml
--
-- 运行
+
+- Edit api/etc/core.yaml  rpc/etc/core.yaml
+
+- Run
 
 ```bash
 # run core api
@@ -124,63 +127,68 @@ cd rpc
 go run core.go -f etc/core.yaml
 ```
 
-- 打包
-
+- Build
 
 ```bash
 go build -o core core.go
 ```
 
+## Change Log
 
-## 更新日志
+[CHANGELOG](./CHANGELOG.zh_CN.md)
 
-[CHANGELOG](./CHANGELOG.md)
+## Relative Project
 
-## 项目地址
+- [Simple Admin](https://github.com/suyuan32/simple-admin-core)
+- [Simple Admin Backend UI](https://github.com/suyuan32/simple-admin-backend-ui)
 
-- [Simple-Admin-ui](https://github.com/suyuan32/Simple-Admin-ui)
-- [Simple-Admin](https://github.com/suyuan32/Simple-Admin)
+## Optional Components
 
-## 如何贡献
+- [Simple Admin File Manager](https://github.com/suyuan32/simple-admin-file)
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/suyuan32/Simple-Admin/issues/new/choose) 或者提交一个 Pull Request。
+
+## How to contribute
+
+You are very welcome to join！[Raise an issue](https://github.com/suyuan32/simple-admin-core/issues/new) Or submit a Pull Request。
 
 **Pull Request:**
 
-1. Fork 代码!
-2. 创建自己的分支: `git checkout -b feat/xxxx`
-3. 提交你的修改: `git commit -am 'feat(function): add xxxxx'`
-4. 推送您的分支: `git push origin feat/xxxx`
-5. 提交`pull request`
+1. Fork code!
+2. Create your own branch: `git checkout -b feat/xxxx`
+3. Submit your changes: `git commit -am 'feat(function): add xxxxx'`
+4. Push your branch: `git push origin feat/xxxx`
+5. submit`pull request`
 
-## Git 贡献提交规范
+## Git Contribution submission specification
 
-- 参考 [vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) 规范 ([Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular))
+- reference [vue](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md) specification ([Angular](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular))
 
-  - `feat` 增加新功能
-  - `fix` 修复问题/BUG
-  - `style` 代码风格相关无影响运行结果的
-  - `perf` 优化/性能提升
-  - `refactor` 重构
-  - `revert` 撤销修改
-  - `test` 测试相关
-  - `docs` 文档/注释
-  - `chore` 依赖更新/脚手架配置修改等
-  - `workflow` 工作流改进
-  - `ci` 持续集成
-  - `types` 类型定义文件更改
-  - `wip` 开发中
+    - `feat` Add new features
+    - `fix` Fix the problem/BUG
+    - `style` The code style is related and does not affect the running result
+    - `perf` Optimization/performance improvement
+    - `refactor` Refactor
+    - `revert` Undo edit
+    - `test` Test related
+    - `docs` Documentation/notes
+    - `chore` Dependency update/scaffolding configuration modification etc.
+    - `workflow` Workflow improvements
+    - `ci` Continuous integration
+    - `types` Type definition file changes
+    - `wip` In development
 
-## 交流群
-> QQ 801043319
+# Community
 
->[Discord](https://discord.gg/NDED5p2hJk)
+> [Discard](https://discord.gg/NDED5p2hJk)
+
+> [Discussion](https://github.com/suyuan32/simple-admin-core/discussions)
 
 ## Stars
 
 [![Star History Chart](https://api.star-history.com/svg?repos=suyuan32/simple-admin-core&type=Date)](https://github.com/suyuan32/simple-admin-core)
 
-## 维护者
+
+## Maintainer
 
 [@Ryan Su](https://github.com/suyuan32)
 

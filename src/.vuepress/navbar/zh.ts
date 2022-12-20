@@ -4,12 +4,7 @@ export const zhNavbar = navbar([
   "/zh/",
   {
     text: "文档",
-    icon: "note",
+    icon: "fa-solid fa-book",
     link: "/guide/"
-  },
-  {
-    text: "V2 文档",
-    icon: "note",
-    link: "https://vuepress-theme-hope.github.io/v2/zh/",
   },
 ]);

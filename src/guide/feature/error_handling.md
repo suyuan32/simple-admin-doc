@@ -211,7 +211,7 @@ const (
 
 > Note： the code which is not 0 will show message in front-end， front-end control it via api ErrorMessageMode.
 
-> If you add the tag --transErr=true to generate Api files, it will add translation in handler.
+> If you add the tag --trans_err=true to generate Api files, it will add translation in handler.
 
 ```shell
 goctls api go --api ./api/desc/core.api --dir ./api --transErr=true

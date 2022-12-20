@@ -10,7 +10,8 @@ title: '本地开发环境配置'
 - nodejs 18.8.0
 - mysql 5.7 +
 - redis 6.0 +
-- go-swagger
+- [go-swagger](https://goswagger.io/install.html)
+- [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
 
 ## 后端部署
 

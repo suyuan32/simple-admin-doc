@@ -10,6 +10,8 @@ title: 'Local Development Setting'
 - nodejs 18.8.0
 - mysql 5.7 +
 - redis 6.0 +
+- - [go-swagger](https://goswagger.io/install.html)
+- [Simple Admin Tool](/guide/basic-config/simple-admin-tools.md)
 
 > Backend Setting
 

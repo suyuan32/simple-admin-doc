@@ -4,7 +4,7 @@ export const enSidebar = sidebar({
   "/": [
     {
       text: "Document",
-      icon: "note",
+      icon: "fa-solid fa-book",
       prefix: "guide/",
       children: [
         {

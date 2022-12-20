@@ -5,6 +5,6 @@ export const zhNavbar = navbar([
   {
     text: "文档",
     icon: "fa-solid fa-book",
-    link: "/guide/"
+    link: "/zh/guide/"
   },
 ]);

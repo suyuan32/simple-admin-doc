@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://vuepress-theme-hope-docs-demo.netlify.app/simple-admin-doc/sitemap.xml
+Sitemap: https://simpleadmin.ryansu.pro/simple-admin-doc/sitemap.xml

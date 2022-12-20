@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://simpleadmin.ryansu.pro",
+  hostname: "https://doc.ryansu.pro",
 
   author: {
     name: "Ryan SU",
@@ -16,7 +16,7 @@ export default hopeTheme({
 
   repo: "suyuan32/simple-admin-core",
 
-  docsDir: "demo/theme-docs/src",
+  docsDir: "",
 
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 

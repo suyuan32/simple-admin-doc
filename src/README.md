@@ -7,7 +7,7 @@ heroText: Simple Admin
 tagline: Simple Admin is a powerful microservice framework for basic management. It is based on go-zero and supports several advanced features. It can help you to develop a microservice back-end management system in a short time
 actions:
   - text: Quick Start 💡
-    link: /guide/quick-start/codegen/api_example
+    link: /guide/basic-config/env_setting
     type: primary
 
   - text: Document

@@ -7,7 +7,7 @@ heroText: Simple Admin
 tagline: Simple Admin是一个基于Go Zero开发的的分布式微服务后端管理系统脚手架，提供后台管理系统的所有基本功能，支持k8s快速部署，助力快速开发高并发微服务集群，适合学习和商用
 actions:
   - text: 快速开始 💡
-    link: /zh/guide/quick-start/codegen/api_example
+    link: /zh/guide/basic-config/env_setting
     type: primary
 
   - text: 文档

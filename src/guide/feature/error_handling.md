@@ -4,7 +4,14 @@ title: 'Error Handling'
 ---
 # Error Handling
 
-> RPC Error
+### Error Type
+
+Simple Admin has three error types
+- ApiError : Api error, used to return error return information with http status code
+- CodeError : The business code type is wrong, the error status code is uniformly 200, and the detailed status code is in the return body
+- Status Error: RPC error
+
+### RPC Error
 
 ```go
 status.Error(codes.Internal, result.Error.Error())
@@ -13,7 +20,7 @@ status.Error(codes.Internal, result.Error.Error())
 Just return status.Error
 
 
-> Easy way
+Easy way
 
 ```text
 statuserr.NewInternalError(msg)
@@ -28,11 +35,50 @@ statuserr.NewUnauthenticatedError
 ```
 
 
-> API Error
+### Code Error
 
 Use CodeError to return error in API layer.
+
 ```go
 errorx.CodeError(enum.InvalidArgument, "Please log in")
+
+```
+
+Easy Way
+
+```go
+
+func NewCodeCanceledError(msg string) error {
+	return &CodeError{Code: 1, Msg: msg}
+}
+
+func NewCodeInvalidArgumentError(msg string) error {
+	return &CodeError{Code: 3, Msg: msg}
+}
+
+func NewCodeNotFoundError(msg string) error {
+	return &CodeError{Code: 5, Msg: msg}
+}
+
+func NewCodeAlreadyExistsError(msg string) error {
+	return &CodeError{Code: 6, Msg: msg}
+}
+
+func NewCodeAbortedError(msg string) error {
+	return &CodeError{Code: 10, Msg: msg}
+}
+
+func NewCodeInternalError(msg string) error {
+	return &CodeError{Code: 13, Msg: msg}
+}
+
+func NewCodeUnavailableError(msg string) error {
+	return &CodeError{Code: 14, Msg: msg}
+}
+
+func NewDefaultError(msg string) error {
+	return NewCodeError(defaultCode, msg)
+}
 ```
 
 > Error code
@@ -210,6 +256,48 @@ const (
 ```
 
 > Note： the code which is not 0 will show message in front-end， front-end control it via api ErrorMessageMode.
+
+### ApiError
+
+```go
+errorx.NewApiError(httpCode, msg)
+```
+
+Easy Way
+
+```go
+
+func NewApiErrorWithoutMsg(code int) error {
+	return &ApiError{Code: code, Msg: ""}
+}
+
+func NewApiInternalError(msg string) error {
+	return &ApiError{Code: http.StatusInternalServerError, Msg: msg}
+}
+
+func NewApiBadRequestError(msg string) error {
+	return &ApiError{Code: http.StatusBadRequest, Msg: msg}
+}
+
+func NewApiUnauthorizedError(msg string) error {
+	return &ApiError{Code: http.StatusUnauthorized, Msg: msg}
+}
+
+func NewApiForbiddenError(msg string) error {
+	return &ApiError{Code: http.StatusForbidden, Msg: msg}
+}
+
+func NewApiNotFoundError(msg string) error {
+	return &ApiError{Code: http.StatusNotFound, Msg: msg}
+}
+
+func NewApiBadGatewayError(msg string) error {
+	return &ApiError{Code: http.StatusBadGateway, Msg: msg}
+}
+
+```
+
+
 
 > If you add the tag --trans_err=true to generate Api files, it will add translation in handler.
 

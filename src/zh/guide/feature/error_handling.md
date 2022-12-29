@@ -5,7 +5,15 @@ title: '错误处理'
 
 # 错误处理
 
-> RPC 错误
+### 错误类型
+
+simple admin 有三种错误类型
+- ApiError : Api 错误，用于返回带http状态码的错误返回信息
+- CodeError : 业务代码类型错误, 错误状态码统一为 200, 详细状态码在返回体中
+- Status Error: RPC 错误
+
+
+### RPC 错误
 
 ```go
 status.Error(codes.Internal, result.Error.Error())
@@ -28,12 +36,51 @@ statuserr.NewUnauthenticatedError
 ```
 
 
-> API 错误
+### 业务码错误
 
-使用 CodeError 返回 API 层的错误，
+使用 CodeError 返回 API 层的业务码错误，
+
 ```go
 errorx.CodeError(enum.InvalidArgument, "Please log in")
 ```
+
+简便方法
+
+```go
+
+func NewCodeCanceledError(msg string) error {
+	return &CodeError{Code: 1, Msg: msg}
+}
+
+func NewCodeInvalidArgumentError(msg string) error {
+	return &CodeError{Code: 3, Msg: msg}
+}
+
+func NewCodeNotFoundError(msg string) error {
+	return &CodeError{Code: 5, Msg: msg}
+}
+
+func NewCodeAlreadyExistsError(msg string) error {
+	return &CodeError{Code: 6, Msg: msg}
+}
+
+func NewCodeAbortedError(msg string) error {
+	return &CodeError{Code: 10, Msg: msg}
+}
+
+func NewCodeInternalError(msg string) error {
+	return &CodeError{Code: 13, Msg: msg}
+}
+
+func NewCodeUnavailableError(msg string) error {
+	return &CodeError{Code: 14, Msg: msg}
+}
+
+func NewDefaultError(msg string) error {
+	return NewCodeError(defaultCode, msg)
+}
+```
+
 
 > 错误码
 
@@ -206,6 +253,47 @@ const (
 	// but also expect authentication middleware to generate it.
 	Unauthenticated int = 16
 )
+
+```
+
+### Api 错误
+
+
+```go
+errorx.NewApiError(httpCode, msg)
+```
+
+简便方法
+
+```go
+
+func NewApiErrorWithoutMsg(code int) error {
+	return &ApiError{Code: code, Msg: ""}
+}
+
+func NewApiInternalError(msg string) error {
+	return &ApiError{Code: http.StatusInternalServerError, Msg: msg}
+}
+
+func NewApiBadRequestError(msg string) error {
+	return &ApiError{Code: http.StatusBadRequest, Msg: msg}
+}
+
+func NewApiUnauthorizedError(msg string) error {
+	return &ApiError{Code: http.StatusUnauthorized, Msg: msg}
+}
+
+func NewApiForbiddenError(msg string) error {
+	return &ApiError{Code: http.StatusForbidden, Msg: msg}
+}
+
+func NewApiNotFoundError(msg string) error {
+	return &ApiError{Code: http.StatusNotFound, Msg: msg}
+}
+
+func NewApiBadGatewayError(msg string) error {
+	return &ApiError{Code: http.StatusBadGateway, Msg: msg}
+}
 
 ```
 

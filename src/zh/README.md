@@ -37,7 +37,7 @@ features:
   - title: 国际化支持
     icon: fa-regular fa-earth-americas
     details: 生成工具支持生成i18n代码，快速提供国际化支持
-    link: 
+    link: /zh/guide/feature/i18n
 
   - title: K8s 支持
     icon: fa-solid fa-cloud

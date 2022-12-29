@@ -37,7 +37,7 @@ features:
   - title: Internationalization Support
     icon: fa-regular fa-earth-americas
     details: The generation tool supports generating i18n code and quickly provides internationalization support
-    link: 
+    link: /guide/feature/i18n
 
   - title: K8s Support
     icon: fa-solid fa-cloud

@@ -20,4 +20,20 @@ export default defineUserConfig({
   theme,
 
   shouldPrefetch: false,
+
+  head: [
+      [
+          "script",
+        {
+          charset: "UTF-8",
+          id: "LA_COLLECT",
+          src: "//sdk.51.la/js-sdk-pro.min.js"
+        }
+      ],
+    [
+      "script",
+      {},
+      `LA.init({id:"Jw6Oc7YXX4TYmO1Y",ck:"Jw6Oc7YXX4TYmO1Y"})`
+    ]
+  ]
 });

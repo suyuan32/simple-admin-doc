@@ -8,13 +8,13 @@ title: 'Ent'
 
 ## Quick Start
 
-> Install ent
+### Install ent
 
 ```shell
 go get -d entgo.io/ent/cmd/ent
 ```
 
-> Initialize code
+### Initialize code
 
 Run in pkg directory
 
@@ -25,7 +25,7 @@ go run -mod=mod entgo.io/ent/cmd/ent init User
 # Generate code，use template ， simple admin core add Page template to make it easier to do pagination
 go run -mod=mod entgo.io/ent/cmd/ent generate --template glob="./ent/template/*.tmpl" ./ent/schema
 ```
-> Defined schema
+### Defined schema
 
 In pkg/ent ，you mainly modify files in schema directory. It is used to define all the models，most of other files in other directories are 
 generated. Mixin is used to define common fields, such as
@@ -80,7 +80,17 @@ func (Role) Annotations() []schema.Annotation {
 
 ```
 
-> Initialize 
+## Mixin Introduce
+
+Currently, the project provides three Mixins located in `simple-admin-core/pkg/ent/schema/mixins`
+
+- base: provide self-incrementing integer id, created_at, updated_at
+- uuid: Provide uuid type id as primary key, created_at, updated_at
+- status: Provide status field status
+
+> Soft delete can visit [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete)
+
+### Initialize 
 
 See rpc/internal/svc/service_context.go
 ```go
@@ -124,6 +134,8 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 ```
 
+### Ent Driver
+
 Notice： There are two drivers for ent，cache and no cache.
 
 > Cache （Will cause changes show slowly, suitable for system whose data have less changes）
@@ -146,7 +158,7 @@ db := ent.NewClient(
 )
 ```
 
-> Usage in logic
+### Usage in logic
 
 Update role status.  rpc/internal/logic/update_role_status_logic.go
 
@@ -210,7 +222,7 @@ func (l *UpdateRoleStatusLogic) UpdateRoleStatus(in *core.StatusCodeReq) (*core.
 
 ```
 
-> Query data
+### Query data
 
 See [Predicates](http://ent.ryansu.pro/#/zh-cn/predicates)
 
@@ -289,7 +301,7 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, er
 
 ```
 
-> query raw sql
+### query raw sql
 
 If you want to execute raw sql ，you need to modify makefile ， add flag --feature sql/execquery
 
@@ -303,7 +315,7 @@ and then you can use client.QueryContext to execute raw sql
 students, err := client.QueryContext(context.Background(), "select * from student")
 ```
 
->  Project add pagination template by default, you can copy this template to other project
+###  Project add pagination template by default, you can copy this template to other project
 
 In ent/template/pagination.tmpl，add flag --template glob="./pkg/ent/template/*.tmpl" when generating code and 
 then you can use pagination like below:
@@ -325,7 +337,7 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
 
 By default, we order by ID, you do not need to set it.
 
-> Common functions used in query
+### Common functions used in query
 
 ```go
 // .ExecX() execute query，don't return anything

@@ -11,6 +11,7 @@ title: 'Ent'
 ## 实战
 > 安装
 
+
 ```shell
 go get -d entgo.io/ent/cmd/ent
 ```
@@ -81,7 +82,17 @@ func (Role) Annotations() []schema.Annotation {
 
 ```
 
-> 初始化并添加全局引用
+## Mixin 介绍
+
+目前项目提供了三种 Mixin 位于 `simple-admin-core/pkg/ent/schema/mixins`
+
+- base: 提供自增整数id, created_at, updated_at
+- uuid: 提供uuid类型的id作为主键, created_at, updated_at
+- status: 提供状态字段 status
+
+### 软删除可查看 [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete)
+
+### 初始化并添加全局引用
 
 参考 rpc/internal/svc/service_context.go
 ```go
@@ -125,6 +136,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 ```
 
+### Ent 驱动
 注意： ent driver 有两种驱动，带缓存和不带缓存
 
 > 带缓存 （会导致更新数据需要等待缓存时间过去才能看到更新，适合更新少的系统）
@@ -211,7 +223,7 @@ func (l *UpdateRoleStatusLogic) UpdateRoleStatus(in *core.StatusCodeReq) (*core.
 
 ```
 
-> 查询数据
+### 查询数据
 
 查看文档 [断言](http://ent.ryansu.pro/#/zh-cn/predicates)
 
@@ -290,7 +302,7 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, er
 
 ```
 
-> 执行raw sql
+### 执行raw sql
 
 若要支持纯 sql ，需要修改 makefile 生成代码， 添加 --feature sql/execquery
 
@@ -304,7 +316,7 @@ go run -mod=mod entgo.io/ent/cmd/ent generate --template glob="./pkg/ent/templat
 students, err := client.QueryContext(context.Background(), "select * from student")
 ```
 
-> 项目默认添加了 page 模板
+### 项目默认添加了 page 模板
 
 位于 ent/template/pagination.tmpl，生成代码时通过 --template glob="./pkg/ent/template/*.tmpl" 导入, 提供简便的分页功能,
 如果你的其他项目也想要这个分页功能需要将 template 文件夹复制到新项目的ent文件夹中。
@@ -350,4 +362,4 @@ SetAge(10).
 SaveX(context.Background())
 ```
 
-> Ent schema 生成工具 [ent import](https://github.com/ariga/entimport)
+### Ent schema 生成工具 [ent import](https://github.com/ariga/entimport)

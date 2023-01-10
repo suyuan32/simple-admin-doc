@@ -8,9 +8,9 @@ title: 'Local Development Setting'
 > Environment Requirement
 - golang 1.19
 - nodejs 18.8.0
-- mysql 5.7 +
+- mysql 8.0 + MariaDB 10.7 +
 - redis 6.0 +
-- - [go-swagger](https://goswagger.io/install.html)
+- [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/guide/basic-config/simple-admin-tools.md)
 
 > Backend Setting
@@ -255,6 +255,7 @@ https://address:port/init
 # default is
 https://localhost:3100/init
 ```
+
 
 > You can see
 

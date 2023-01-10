@@ -82,7 +82,7 @@ func (Role) Annotations() []schema.Annotation {
 
 ```
 
-## Mixin 介绍
+### Mixin 介绍
 
 目前项目提供了三种 Mixin 位于 `simple-admin-core/pkg/ent/schema/mixins`
 

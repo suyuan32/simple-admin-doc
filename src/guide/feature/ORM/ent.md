@@ -8,7 +8,7 @@ title: 'Ent'
 
 ## Quick Start
 
-### Install ent
+### Install Ent
 
 ```shell
 go get -d entgo.io/ent/cmd/ent
@@ -80,7 +80,7 @@ func (Role) Annotations() []schema.Annotation {
 
 ```
 
-## Mixin Introduce
+### Mixin Introduction
 
 Currently, the project provides three Mixins located in `simple-admin-core/pkg/ent/schema/mixins`
 
@@ -301,7 +301,7 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, er
 
 ```
 
-### query raw sql
+### Query raw sql
 
 If you want to execute raw sql ，you need to modify makefile ， add flag --feature sql/execquery
 

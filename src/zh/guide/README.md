@@ -4,18 +4,18 @@ icon: book
 author: Ryan SU
 ---
 
-
 <div align="center">
 <img src="https://i.postimg.cc/nh8mVKkf/logo.png" width="300px" height="300px"/>
 <h1>Simple Admin</h1>
 </div>
 
+**中文** | [English](./README.En.md)
 ---
-[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.4.1-brightgreen.svg)](https://go-zero.dev/)
+[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.4.3-brightgreen.svg)](https://go-zero.dev/)
 [![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.8.0-yellow.svg)](https://vvbin.cn/doc-next/)
 [![Ent](https://img.shields.io/badge/Ent-v0.11.0-blue.svg)](https://entgo.io/)
 [![Casbin](https://img.shields.io/badge/Casbin-v2.52.1-orange.svg)](https://github.com/casbin/casbin)
-[![Release](https://img.shields.io/badge/Release-v0.1.4-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
+[![Release](https://img.shields.io/badge/Release-v0.2.1-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![SimpleAdmin](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
 ![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-801043319-blue)
@@ -25,7 +25,6 @@ author: Ryan SU
 Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基于go-zero开发，提供丰富的功能如服务发现，权限管理等。
 该框架可以帮助您快速开发具有RPC服务的后台管理系统。
 
-#### [Gorm 版本点此](https://github.com/suyuan32/simple-admin-core/tree/gorm)
 #### [Ent 中文文档](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started)
 
 ## 特性
@@ -57,6 +56,9 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 - [x] 消息队列
 - [x] Ent
 - [x] 后端 CRUD 代码生成
+- [x] 前端 CRUD 代码生成
+- [x] 一键运行 demo 脚本
+- [x] RPC logic 分组
 
 ## 预览
 
@@ -74,13 +76,8 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 
 ## 文档
 
-[文档](https://suyuan32.github.io/simple-admin-core/)
+[Simple Admin 文档](https://doc.ryansu.pro)
 
-或者直接本地运行
-```shell
-cd docs
-docsify serve .
-```
 
 - go-zero
   [Document](https://go-zero.dev/)
@@ -95,55 +92,27 @@ docsify serve .
 - [Casbin](https://casbin.org/) - 权限管理
 - [Go-swagger](https://goswagger.io/) - Go-swagger 文档生成调试
 
-## 安装使用
+## 快速开始
 
-- 获取项目代码
-
-```bash
-git clone https://github.com/suyuan32/simple-admin-core.git
-```
-
-- 安装依赖
-
-```bash
-cd simple-admin-core/
-
-go mod tidy
-```
-- 编辑配置文件 api/etc/core.yaml  rpc/etc/core.yaml
--
-- 运行
-
-```bash
-# run core api
-cd api 
-go run core.go -f etc/core.yaml
-
-# run core rpc
-cd rpc
-go run core.go -f etc/core.yaml
-```
-
-- 打包
-
-
-```bash
-go build -o core core.go
-```
+[快速开始文档](https://doc.ryansu.pro/zh/guide/basic-config/env_setting.html)
 
 
 ## 更新日志
 
 [CHANGELOG](./CHANGELOG.md)
 
-## 项目地址
+## 相关项目
 
-- [Simple-Admin-ui](https://github.com/suyuan32/Simple-Admin-ui)
-- [Simple-Admin](https://github.com/suyuan32/Simple-Admin)
+- [Simple Admin](https://github.com/suyuan32/simple-admin-core)
+- [Simple Admin 后端界面](https://github.com/suyuan32/simple-admin-backend-ui)
+
+## 可选组件
+
+- [Simple Admin 文件管理](https://github.com/suyuan32/simple-admin-file)
 
 ## 如何贡献
 
-非常欢迎你的加入！[提一个 Issue](https://github.com/suyuan32/Simple-Admin/issues/new/choose) 或者提交一个 Pull Request。
+非常欢迎你的加入！[提一个 Issue](https://github.com/suyuan32/simple-admin-core/issues/new) 或者提交一个 Pull Request。
 
 **Pull Request:**
 
@@ -175,6 +144,12 @@ go build -o core core.go
 > QQ 801043319
 
 >[Discord](https://discord.gg/NDED5p2hJk)
+
+> [论坛](https://github.com/suyuan32/simple-admin-core/discussions)
+
+> 微信群
+
+![](https://doc.ryansu.pro/assets/contact.png =250x320)
 
 ## Stars
 

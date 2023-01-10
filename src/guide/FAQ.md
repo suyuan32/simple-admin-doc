@@ -1,28 +1,59 @@
 ---
 order: 6
-title: '常见问题'
+title: 'FAQ'
 ---
 
 # FAQ
+## What is the default account?
 
-> Q: 默认账号是什么？
+A: Account: admin Password: simple-admin
 
-A: 账号: admin   密码: simple-admin
+## Registered account can not log in?
 
-> Q: 注册的账号不能登录?
+A: The default role after successful registration is a member, without the right to log in. You need to modify the role permissions or set the user's role to administrator.
 
-A: 默认注册成功后的角色是会员，没有登录的权限。你需要修改角色权限或者将用户的角色设置为管理员.
+## How many ways does go-zero have for service registration and discovery?
 
-> Q: go-zero 有几种服务注册发现方式？
+A: 3 kinds [go-zero](https://mp.weixin.qq.com/s/-WaWJaM_ePEQOf7ExNJe7w)
 
-A： 3 种 [go-zero](https://mp.weixin.qq.com/s/-WaWJaM_ePEQOf7ExNJe7w)
+## How to deal with cross domain issues?
 
-> Q: 如何处理跨域问题？
-
-A: 修改 api/core.go 
+A: Modify api/core.go
 
 ```go
 server := rest.MustNewServer(c.RestConf, rest.WithCors("*"))
 ```
 
-修改 `*` 为自己的域名或IP,默认为`*`，允许所有。
+Modify `*` to your own domain name or IP, the default is `*`, allowing all.
+
+## How to sync a fork repository
+
+> Configure the remote library for fork, check the remote status first
+
+```shell
+git remote -v
+```
+
+> Determine an upstream warehouse that will be synchronized to the fork remote, the address after upstream is the git address you are about to synchronize
+
+```shell
+git remote add upstream https://github.com/suyuan32/simple-admin-core.git
+```
+
+> start sync fork
+
+```shell
+git fetch upstream
+```
+
+> switch to local master branch
+
+```shell
+git checkout master
+```
+
+> Merge the upstream/master branch into the local master, so that the synchronization is completed and the locally modified content will not be lost.
+
+```shell
+git merge upstream/master
+```

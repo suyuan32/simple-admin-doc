@@ -7,7 +7,7 @@ title: 'K8s Deployment'
 
 ## Environment Requirement
 - minikube v1.23.0 +
-- mysql 5.7+
+- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + recommended)
 - redis 6.0 +
 - docker
 

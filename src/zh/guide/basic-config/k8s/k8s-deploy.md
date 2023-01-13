@@ -8,7 +8,7 @@ title: 'K8s 部署'
 
 ## 环境需求
 - minikube v1.23.0 +
-- mysql 5.7+
+- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + 推荐)
 - redis 6.0 +
 - docker
 

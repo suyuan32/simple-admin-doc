@@ -49,7 +49,9 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 
 ```
 
-添加 view :  src/view/example/index.vue
+### 添加view
+
+> 添加 view :  src/view/example/index.vue
 
 ```vue
 <template>
@@ -104,11 +106,11 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 ![I18n](/assets/i18n_ext.png)
 ![I18n](/assets/copy_translation_path.png)
 
-> 新增菜单
+### 新增菜单
 
 ![Menu](/assets/add_example_menu.png)
 
-> 添加菜单权限
+### 添加菜单权限
 
 ![Menu](/assets/add_example_authority.png)
 
@@ -117,15 +119,15 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 ![Example](/assets/example_api_desc_title_en.png)
 ![Example](/assets/example_api_desc_title_zh.png)
 
-> 新增API
+### 新增API
 
 ![Example](/assets/add_example_api_zh.png)
 
-> 添加API权限
+### 添加API权限
 
 ![Example](/assets/add_example_authority_zh.png)
 
-> 测试页面
+### 测试页面
 
 ![Example](/assets/example_page.png)
 

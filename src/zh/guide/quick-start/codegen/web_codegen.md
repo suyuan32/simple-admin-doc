@@ -16,7 +16,7 @@ title: 'Web 端'
 goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folderName=example --prefix=example-api --subFolder=
 ```
 
-### 参数介绍
+### `frontend vben`参数介绍
 
 | 参数         | 介绍         | 使用方法                                                               |
 |------------|------------|--------------------------------------------------------------------|
@@ -33,10 +33,12 @@ goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-ap
 - `src/locales/lang/en/example.ts src/locales/lang/en/example.ts`  国际化代码
 - `src/views/example/*` 视图代码
 
-> 生成代码后还需要做的事
+### 生成代码后还需要做的事
 
 - 修改 env.development 和 deploy/default.conf 添加新的服务地址
 - 修改国际化代码，优化中文翻译
 - 修改views 中的 *.data.ts 完善中文翻译，行列以及提交表格中的字段名需要自行翻译添加到国际化代码中使用 `locales/lang/example.ts`
+- 添加api到数据库以及数据库初始化代码
+- 添加菜单到数据库以及初始化代码
 
 > 示例地址 https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen

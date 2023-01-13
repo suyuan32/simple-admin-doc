@@ -7,17 +7,17 @@ title: 'RPC 微服务'
 # 3分钟开发 RPC 服务
 
 > 首先确认你安装了以下软件:
-- simple-admin-tool (goctls) v0.1.3
+- simple-admin-tool (goctls) v0.1.6+
 
 
 ## 创建 RPC 基本项目
 > 创建 example 服务 
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.2 --port=8080 --gitlab=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.6 --port=8080 --gitlab=true
 ```
 
-### 参数介绍
+### `rpc new`参数介绍
 
 | 参数              | 介绍                     | 使用方法                                                                                               |
 |-----------------|------------------------|----------------------------------------------------------------------------------------------------|
@@ -72,7 +72,7 @@ Prometheus:
 
 ```
 
-> 编辑 schema
+### 编辑 schema
 
 进入目录 ent/schema, 修改 example.go, 改名为 student.go 添加 mixin 和字段 address 和 uuid
 
@@ -112,13 +112,13 @@ func (Student) Edges() []ent.Edge {
 
 ```
 
-> 生成 Ent 代码
+### 生成 Ent 代码
 
 ```shell
 make gen-ent
 ```
 
-> 生成 Student 逻辑代码
+### 生成 Student 逻辑代码
 
 ```shell
 goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student
@@ -126,7 +126,7 @@ goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service
 make gen-rpc
 ```
 
-### 参数介绍
+### `rpc ent`参数介绍
 
 | 参数             | 介绍           | 使用方法                                         |
 |----------------|--------------|----------------------------------------------|
@@ -244,7 +244,7 @@ Starting server at 127.0.0.1:8080...
 
 > simple admin example api 中如何远程调用该 RPC 
 
-> 添加 config
+### 添加 config
 
 ```go
 package config

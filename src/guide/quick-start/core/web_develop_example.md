@@ -5,7 +5,7 @@ title: 'Frontend Development'
 
 ## Example web page 
 
-### Firstly, add API
+### Add API
 
 simple-admin-backend-ui/src/api/sys
 
@@ -46,6 +46,8 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 };
 
 ```
+
+### Add view
 
 > Add view :  src/view/example/index.vue
 
@@ -107,23 +109,23 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 ![I18n](/assets/i18n_ext.png)
 ![I18n](/assets/copy_translation_path.png)
 
-> Add menu
+### Add menu
 
 ![Menu](/assets/add_example_menu.png)
 
-> Add menu authorization
+### Add menu authorization
 
 ![Menu](/assets/add_example_authority.png)
 
-> Add API
+### Add API
 
 ![Example](/assets/add_example_api_zh.png)
 
-> Add API authorization
+### Add API authorization
 
 ![Example](/assets/add_example_authority_zh.png)
 
-> Test page
+### Test page
 
 ![Example](/assets/example_page.png)
 

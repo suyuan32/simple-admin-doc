@@ -8,6 +8,8 @@ title: '快捷命令'
 
 我们提供了许多快捷命令在 makefile 中， 只需在根目录执行即可
 
+#### **注意：需要系统支持make命令，建议linux**
+
 ```shell
 # 编译 docker image, 需要设置环境变量 DOCKER_USERNAME VERSION 
 make docker  
@@ -36,6 +38,7 @@ make doc
 # 生成 CRUD 代码 ( 你需要设置model name 和 group name)
 make gen-rpc-ent-logic model={modelName} group={groupName}
 ```
+## 环境变量
 
 | 环境变量            | 介绍                         |
 |-----------------|----------------------------|

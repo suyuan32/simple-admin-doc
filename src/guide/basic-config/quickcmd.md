@@ -4,6 +4,7 @@ title: 'Quick Commands'
 ---
 
 # Quick Commands
+#### **Note: The system needs to support the make command, linux is recommended**
 
 We offer several commands in makefile ， you can just run in bash:
 
@@ -36,6 +37,7 @@ make doc
 make gen-rpc-ent-logic model={modelName} group={groupName}
 ```
 
+## Environment variables
 
 | Environment Variables | Introduction                                       |
 |-----------------------|----------------------------------------------------|

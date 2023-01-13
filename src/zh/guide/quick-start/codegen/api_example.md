@@ -7,7 +7,7 @@ title: 'API 微服务'
 # 3 分钟开发 API 服务
 
 首先确认你安装了以下软件:
-- simple-admin-tool (goctls) v0.1.0 +
+- simple-admin-tool (goctls) v0.1.6 +
 
 
 ## 创建 API 项目
@@ -15,10 +15,10 @@ title: 'API 微服务'
 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.6 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
-### 参数介绍
+### `api new`参数介绍
 
 | 参数              | 介绍                     | 使用方法                                                                                               |
 |-----------------|------------------------|----------------------------------------------------------------------------------------------------|
@@ -117,6 +117,8 @@ Starting server at 127.0.0.1:8081...
 ```shell
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
+
+### `api proto` 参数介绍
 | 参数             | 介绍                | 使用方法                                                           |
 |----------------|-------------------|----------------------------------------------------------------|
 | proto          | proto文件地址         | 输入proto文件的绝对路径                                                 |

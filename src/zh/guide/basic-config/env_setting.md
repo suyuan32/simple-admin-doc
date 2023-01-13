@@ -6,12 +6,14 @@ title: '本地开发环境配置'
 # 本地开发环境配置
 
 ## 环境需求
-- golang 1.19
-- nodejs 18.8.0
-- mysql 8.0 +   MariaDB 10.7 +
+- golang 1.19 +
+- nodejs 18.8.0 +
+- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + 推荐)
 - redis 6.0 +
 - [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
+
+> 推荐在linux下开发，因为需要用到make命令
 
 ## 后端部署
 
@@ -257,4 +259,4 @@ https://localhost:3100/init
 ![pic](/assets/init_zh_cn.png)
 
 > 文件服务初始化是可选的，没有运行文件api可以不初始化
-## **初始化完成后需要重启 api 和 rpc。**
+#### **初始化完成后需要重启 api 和 rpc。**

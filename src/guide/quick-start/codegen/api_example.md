@@ -5,17 +5,17 @@ title: 'API Service'
 # 3 minutes developing API service
 
 Make sure that you have been installed follow software:
-- simple-admin-tool (goctls) v0.1.0 +
+- simple-admin-tool (goctls) v0.1.6 +
 
 
 ## Create API project
 > Create example project
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --toolVersion=v0.1.3 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --toolVersion=v0.1.6 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 
 ```
 
-### Parameters
+### `api new `parameters
 
 | Parameter	      | Introduction                        | Usage                                                                                               |
 |-----------------|-------------------------------------|-----------------------------------------------------------------------------------------------------|
@@ -114,6 +114,9 @@ That means running successfully.
 ```shell
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
+
+### `api proto `parameters
+
 | Parameters   | Introduction               | Usage                                                                                   |
 |--------------|----------------------------|-----------------------------------------------------------------------------------------|
 | proto        | Proto file path            | Input the absolute path of proto file                                                   |

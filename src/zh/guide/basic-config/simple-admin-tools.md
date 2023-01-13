@@ -39,14 +39,16 @@ cp ./goctls $GOPATH/bin/goctls
 
 > 如何使用？
 
-> 自动下载依赖
+## 自动下载依赖
 
 ```shell
 goctls env check -i -f --verbose
 ```
 这个命令会自动安装 protoc 等依赖.
 
-> API 命令 , 命令和goctl一样，但是需要改成 goctls.
+### API 命令 
+
+> 命令和goctl一样，但是需要改成 goctls.
 
 ```shell
 $ goctl api -h
@@ -84,7 +86,7 @@ goctls api go -api core.api -dir .
 ```
 根据 core.api 里的定义生成 go 文件， -dir 设置输出位置.
 
-> Rpc 命令
+### Rpc 命令
 
 ```shell
 $ goctl rpc protoc -h
@@ -167,14 +169,15 @@ require (
 	gorm.io/gorm v1.23.8
 )
 
-replace github.com/zeromicro/go-zero v1.4.1 => github.com/suyuan32/simple-admin-tools v0.0.6
+replace github.com/zeromicro/go-zero v1.4.3 => github.com/suyuan32/simple-admin-tools v0.1.5
 ```
 > 简单的方法是使用 goctls migrate命令.
 
 ```shell
-goctls migrate --zero-version v1.4.1 --tool-version v0.0.6
+goctls migrate --zero-version v1.4.3 --tool-version v0.1.5
 ```
 
 > 这个命令可以快速添加 replace 语句， 但是不要运行多次， 会导致添加重复和 replace, 后续需要升级依赖的话直接修改 simple-admin-tools 的版本即可，然后 
  **go mod tidy**.
 
+> 新版本API和RPC均支持新建时直接设置tool版本进行replace

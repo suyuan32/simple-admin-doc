@@ -11,10 +11,10 @@ title: 'core 后端开发'
 
 [例子](https://github.com/suyuan32/simple-admin-core/tree/example)
 
-> 安装goctls
+## 安装goctls
 [Simple-admin-tool](../../basic-config/simple-admin-tools.md)
 
-> RPC服务例子
+## RPC服务例子
 
 > 首先修改 rpc/core.proto
 
@@ -331,8 +331,8 @@ service core {
 }
 ```
 
-> 添加 example rpc接口 \
-在rpc目录下运行
+## 添加 example rpc接口
+> 在rpc目录下运行
 
 ```shell
 goctls rpc protoc core.proto --proto_path=/home/ryan/GolandProjects/simple-admin-core/rpc/ --go_out=./types --go-grpc_out=./types --zrpc_out=./

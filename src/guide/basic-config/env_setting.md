@@ -6,22 +6,24 @@ title: 'Local Development Setting'
 # Local Development Setting
 
 > Environment Requirement
-- golang 1.19
-- nodejs 18.8.0
-- mysql 8.0 + MariaDB 10.7 +
+- golang 1.19 +
+- nodejs 18.8.0 +
+- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + recommended)
 - redis 6.0 +
 - [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/guide/basic-config/simple-admin-tools.md)
+  
+> It is recommended to develop under linux, because the make command is required
 
-> Backend Setting
+## Backend Setting
 
-## simple admin core
+### simple admin core
 simple admin core is the core service for simple admin. It offers user management, authorization,
 menu management and API management and so on. It must be running.
 
-> Default Account
+#### Default Account
 
-username:     admin  \
+username:     admin  
 password:     simple-admin
 
 > Clone the core code 
@@ -30,7 +32,7 @@ password:     simple-admin
 git clone https://github.com/suyuan32/simple-admin-core.git
 ```
 
-> Local development setting
+### Local development setting
 #### API Service
 ##### Notice: You should add core_dev.yaml for development to avoid conflicting with core.yaml in production.
 > Add api/etc/core_dev.yaml
@@ -152,13 +154,13 @@ RedisConf:
   # Pass: xxx  # You can also set the password 
 ```
 
-> Sync dependencies
+### Sync dependencies
 
 ```shell 
 go mod tidy
 ```
 
-> Run rpc service
+### Run rpc service
 
 ```bash
 cd rpc
@@ -166,7 +168,7 @@ cd rpc
 go run core.go -f etc/core_dev.yaml
 ```
 
-> Run api service
+### Run api service
 
 ```bash
 cd api
@@ -174,33 +176,33 @@ cd api
 go run core.go -f etc/core_dev.yaml
 ```
 
-> Front end setting
->
-> Clone the code
+## Frontend setting
+
+### Clone the code
 
 ```shell
 git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 ```
 
-> Sync dependencies
+### Sync dependencies
 
 ```shell
 yarn install
 ```
 
-> Run in development mode
+### Run in development mode
 
 ```shell
 yarn serve
 ```
 
-> Build
+### Build
 
 ```shell
 yarn build
 ```
 
-> Preview
+### Preview
 
 ```shell
 # build and preview
@@ -262,4 +264,4 @@ https://localhost:3100/init
 ![pic](/assets/init_zh_cn.png)
 
 > File manager service is optional [File Manager](/simple-admin/en/docs/file_manager.md)
-## **After initialization, you should restart api and rpc service.**
+#### **After initialization, you should restart api and rpc service.**

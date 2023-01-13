@@ -36,16 +36,17 @@ It is easy right?
 
 > How to use it?
 
-> Auto fix all dependencies command
+## Auto fix all dependencies command
 
 ```shell
 goctls env check -i -f --verbose
 ```
 Run this command can auto install protoc and so on.
 
-> API command
+## API command
 
-The command is the same as goctl but you should use goctls instead.
+> The command is the same as goctl but you should use goctls instead.
+
 ```shell
 $ goctl api -h
 NAME:
@@ -82,7 +83,7 @@ goctls api go -api core.api -dir .
 ```
 This means generating go files by core.api's declaration in current directory. -dir set the output path.
 
-> Rpc command
+## Rpc command
 
 ```shell
 $ goctl rpc protoc -h
@@ -175,3 +176,4 @@ goctls migrate --zero-version v1.4.1 --tool-version v0.0.6
 > in the go.mod file. You can just edit go.mod file can modify the simple-admin-tools version manually and run
 > **go mod tidy**.
 
+> Both API and RPC of the new version support directly setting the tool version for replacement when creating a new one

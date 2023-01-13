@@ -5,17 +5,17 @@ title: 'RPC Service'
 # 3 minutes developing RPC service
 
 > Make sure that you have been installed follow software:
-- simple-admin-tool (goctls) v0.1.3 +
+- simple-admin-tool (goctls) v0.1.6 +
 
 
 ## Create RPC project
 > Create example project
 >
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.2 --port=8080  --gitlab=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.6 --port=8080  --gitlab=true
 ```
 
-### Parameters
+### `rpc new` parameters
 
 | Parameter       | Introduction                        | Usage                                                                                               |
 |-----------------|-------------------------------------|-----------------------------------------------------------------------------------------------------|
@@ -70,7 +70,7 @@ Prometheus:
 
 ```
 
-> Edit schema
+### Edit schema
 
 Enter ent/schema, change example.go into student.go,  adding mixins and the fields address, uuid
 
@@ -110,19 +110,21 @@ func (Student) Edges() []ent.Edge {
 
 ```
 
-> Generate Ent code
+### Generate Ent code
 
 ```shell
 make gen-ent
 ```
 
-> Generate Student CRUD logic codes
+### Generate Student CRUD logic codes
 
 ```shell
 goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student
 
 make gen-rpc
 ```
+
+### `rpc ent` parameters
 
 | Parameters   | Introduction     | Usage                                                                                   |
 |--------------|------------------|-----------------------------------------------------------------------------------------|
@@ -240,7 +242,7 @@ That means the codes run successfully, you need to finish the database initializ
 
 > How to call the RPC in simple admin example api
 
-> Add config
+### Add config
 ```go
 package config
 
@@ -327,4 +329,4 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 > And then you can call in via l.svcCtx.ExampleRpc in logic code
 
-> simple admin example api 地址 https://github.com/suyuan32/simple-admin-example-api
+> simple admin example api  https://github.com/suyuan32/simple-admin-example-api

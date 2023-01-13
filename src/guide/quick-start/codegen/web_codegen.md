@@ -5,16 +5,16 @@ title: 'Web Pages'
 # Vben web code generation
 
 > Make sure that you have been installed follow software:
-- simple-admin-tool (goctls) v0.1.1-beta +
+- simple-admin-tool (goctls) v0.1.6 +
 
 
 ## Create example codes
 
 ```shell
-goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folderName=example --prefix=example-api --subFolder=
+goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folderName=example --prefix=example-api --subFolder=student
 ```
 
-### Parameters
+### `frontend vben `parameters
 
 | Parameters | Introduction   | Usage                                                                                                                          |
 |------------|----------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -31,10 +31,12 @@ goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-ap
 - `src/locales/lang/en/example.ts src/locales/lang/en/example.ts`  i18n codes 
 - `src/views/example/*` views codes
 
-> You need to do after generation
+### You need to do after generation
 
 - Modify env.development and deploy/default.conf to add new proxy
 - Modify locales files to optimize zh-CN translation
 - Modify  `*.data.ts` file in view. Optimize the chinese translation in  `locales/lang/example.ts`
-
+- Add api to database and database initialization code
+- Add menu to database and initialization code
+  
 > Example Project: https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen

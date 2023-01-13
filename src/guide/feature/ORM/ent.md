@@ -88,6 +88,11 @@ Currently, the project provides three Mixins located in `simple-admin-core/pkg/e
 - uuid: Provide uuid type id as primary key, created_at, updated_at
 - status: Provide status field status
 
+#### uuidx provides two methods for converting uuid
+
+- uuidx.ParseUUIDSlice is used to convert the string array of uuid into the uuid array type of ent
+- uuidx.ParseUUIDString is used to convert uuid string to uuid type
+
 > Soft delete can visit [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete)
 
 ### Initialize 

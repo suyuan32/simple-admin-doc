@@ -90,6 +90,11 @@ func (Role) Annotations() []schema.Annotation {
 - uuid: 提供uuid类型的id作为主键, created_at, updated_at
 - status: 提供状态字段 status
 
+#### uuidx 提供两个方法用于转换 uuid
+
+- uuidx.ParseUUIDSlice 用于将uuid的string数组转化为ent的uuid数组类型
+- uuidx.ParseUUIDString  用于将 uuid 的 string 转化为 uuid 类型
+
 ### 软删除可查看 [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete)
 
 ### 初始化并添加全局引用

@@ -4,7 +4,7 @@ title: 'Swagger API Document'
 ---
 ## Use swagger
 
-> Environment setting
+### Environment setting
 
 [go-swagger](https://zhuanlan.zhihu.com/p/556171256?)
 
@@ -15,7 +15,7 @@ title: 'Swagger API Document'
 ```shell
 swagger generate spec --output=./core.yml --scan-models
 
-swagger serve --no-open -F=swagger --port 36666 core.yaml
+swagger serve --no-open -F=swagger --port 36666 core.yml
 ```
 
 use make
@@ -28,7 +28,7 @@ make serve-swagger
 
 ![pic](/assets/swagger.png)
 
-> Get Token
+### Get Token
 > Firstly, log in the system and press F12 to get authorization from any request
 
 ![pic](/assets/get_token.png)
@@ -37,7 +37,7 @@ make serve-swagger
 
 ![pic](/assets/swagger_authority.png)
 
-> Comment Example
+### Comment Example
 
 We use normally use Req suffix to represent  Request， Resp to represent Response.
 

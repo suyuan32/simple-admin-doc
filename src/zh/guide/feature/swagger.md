@@ -5,7 +5,7 @@ title: 'Swagger API文档'
 
 ## 使用swagger
 
-> 环境配置
+### 环境配置
 
 [go-swagger](https://zhuanlan.zhihu.com/p/556171256?)
 
@@ -16,13 +16,13 @@ title: 'Swagger API文档'
 ```shell
 swagger generate spec --output=./core.yml --scan-models
 
-swagger serve --no-open -F=swagger --port 36666 core.yaml
+swagger serve --no-open -F=swagger --port 36666 core.yml
 ```
 
 ![pic](/assets/swagger.png)
 
-> 获取 Token 
-> 
+### 获取 Token 
+
 > 先登录系统，在任意请求中复制 authorization
 
 ![pic](/assets/get_token.png)
@@ -32,7 +32,7 @@ swagger serve --no-open -F=swagger --port 36666 core.yaml
 ![pic](/assets/swagger_authority.png)
 
 
-> 注解规范
+### 注解规范
 
 通常对于请求参数我们使用 Req 即 Request 的缩写， 返回值 Resp 即 Response 的缩写
 

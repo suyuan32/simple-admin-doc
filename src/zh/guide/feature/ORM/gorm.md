@@ -5,11 +5,15 @@ title: 'GORM'
 
 # GORM 使用方法
 
-#### [Gorm 版本点此](https://github.com/suyuan32/simple-admin-core/tree/gorm)
-
 #### [官方文档](https://gorm.io/)
 
-> config 文件声明
+## 导入包
+
+```go
+import "github.com/suyuan32/simple-utils/gormsql"
+```
+
+## config 文件声明
 
 ```go
 type Config struct {
@@ -19,7 +23,23 @@ type Config struct {
 }
 ```
 
-> 初始化
+## `etc/*.yaml` 文件配置
+
+```yaml
+DatabaseConf:
+  Type: mysql
+  Path: "127.0.0.1"
+  Port: 3306
+  Config: charset=utf8mb4&parseTime=True&loc=Local
+  DBName: simple_admin
+  Username: 
+  Password: 
+  MaxIdleConn: 10
+  MaxOpenConn: 100
+  LogMode: error
+```
+
+## 初始化
 
 ```go
     db, err := c.DatabaseConf.NewGORM()
@@ -31,7 +51,7 @@ type Config struct {
 
 [Init](https://github.com/suyuan32/simple-admin-core/blob/master/rpc/internal/svc/service_context.go)
 
-> 定义 Model
+## 定义 Model
 
 ```go
 package model
@@ -50,7 +70,7 @@ type Api struct {
 
 [Model](https://github.com/suyuan32/simple-admin-core/tree/master/rpc/internal/model)
 
-> 获取数据
+## 获取数据
 
 ```go
 package logic

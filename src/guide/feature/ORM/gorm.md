@@ -8,7 +8,13 @@ title: 'GORM'
 
 #### [Official Doc](https://gorm.io/)
 
-> Config file definition
+## Import
+
+```go
+import "github.com/suyuan32/simple-utils/gormsql"
+```
+
+## Config file definition
 
 ```go
 type Config struct {
@@ -19,7 +25,24 @@ type Config struct {
 ```
 
 
-> Initialize GORM
+## `etc/*.yaml` config file
+
+```yaml
+DatabaseConf:
+  Type: mysql
+  Path: "127.0.0.1"
+  Port: 3306
+  Config: charset=utf8mb4&parseTime=True&loc=Local
+  DBName: simple_admin
+  Username: 
+  Password: 
+  MaxIdleConn: 10
+  MaxOpenConn: 100
+  LogMode: error
+  LogZap: false
+```
+
+## Initialize GORM
 
 ```go
     db, err := c.DB.NewGORM()
@@ -31,7 +54,7 @@ type Config struct {
 
 [Init](https://github.com/suyuan32/simple-admin-core/blob/master/rpc/internal/svc/service_context.go)
 
-> Define Model
+## Define Model
 
 ```go
 package model
@@ -50,7 +73,7 @@ type Api struct {
 
 [Model](https://github.com/suyuan32/simple-admin-core/tree/master/rpc/internal/model)
 
-> Get Data
+## Get Data
 
 ```go
 package logic

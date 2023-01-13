@@ -7,10 +7,10 @@ title: 'JWT Black List'
 
 > System will insert token into tokens table automatically， admin can block token or force logging out
 
-> Block token
+## Block token
 
 ![pic](/assets/block_token_en.png)
-> Force logging out
+## Force logging out
 
 ![pic](/assets/force_log_out_en.png)
 

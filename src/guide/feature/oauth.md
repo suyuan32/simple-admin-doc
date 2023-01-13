@@ -10,7 +10,7 @@ title: 'Oauth'
 [google](https://developers.google.com/identity/protocols/oauth2)
 [github](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps)
 
-> Add provider
+## Add provider
 
 ![picture](/assets/oauth_add_provider_en.png)
 

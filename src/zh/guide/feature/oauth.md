@@ -11,7 +11,7 @@ title: 'Oauth 第三方登陆'
 [google](https://developers.google.com/identity/protocols/oauth2)
 [github](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps)
 
-> 添加第三方
+## 添加第三方
 
 ![picture](/assets/oauth_add_provider.png)
 

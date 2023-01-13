@@ -7,15 +7,19 @@ title: '权限验证'
 
 我们使用Casbin进行权限验证.
 
-> 初始化
+## 初始化
 
 ```go
-cbn := utils.NewCasbin(db)
+cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
+if err != nil {
+	logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
+	return nil
+}
 ```
 
 [cbn](https://github.com/suyuan32/simple-admin-core/blob/master/api/internal/svc/servicecontext.go)
 
-> 创建中间件
+## 创建中间件
 
 ```go
 package middleware
@@ -92,7 +96,7 @@ func (m *AuthorityMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 
 [Middleware](https://github.com/suyuan32/simple-admin-core/blob/master/api/internal/middleware/authoritymiddleware.go)
 
-> 在 api 文件中使用
+## 在 api 文件中使用
 
 ```text
 @server(
@@ -103,3 +107,5 @@ func (m *AuthorityMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 ```
 
 [如何使用中间件](https://go-zero.dev/cn/docs/advance/middleware)
+
+#### 目前API生成已支持自动生成鉴权中间件

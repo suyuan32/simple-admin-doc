@@ -5,7 +5,7 @@ title: 'Authorization'
 # Authorization
 We use Casbin to do authorization validating.
 
-> Initialize
+## Initialization
 
 ```go
 cbn := utils.NewCasbin(db)
@@ -13,7 +13,7 @@ cbn := utils.NewCasbin(db)
 
 [cbn](https://github.com/suyuan32/simple-admin-core/blob/master/api/internal/svc/servicecontext.go)
 
-> Use in middleware
+## Use in middleware
 
 ```go
 package middleware
@@ -101,3 +101,5 @@ func (m *AuthorityMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 ```
 
 [How to use middleware](https://go-zero.dev/docs/advance/middleware)
+
+#### At present, API generation already supports automatic generation of authentication middleware

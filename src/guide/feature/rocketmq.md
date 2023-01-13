@@ -4,9 +4,9 @@ title: 'Message Queue'
 ---
 # Message Queue
 
-> We use Rocketmq to do the message queue
+## RocketMQ
 
-> Producer
+## Producer
 
 Add producer task into  job/internal/mqs/producer ， such as
 
@@ -88,7 +88,7 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 ```
 
-> Consumer 
+### Consumer 
 
 Add Consumer task into  job/internal/mqs/consumer ， such as
 
@@ -159,7 +159,7 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 > Notice： You need to implement Start and Stop interface
 
-> Add listener
+### Add listener
 
 Modify job/internal/listen/rmq.go
 
@@ -187,7 +187,7 @@ func Rmq(c config.Config, ctx context.Context, svcCtx *svc.ServiceContext) []ser
 
 ```
 
-> Start service
+### Start service
 
 Run in job directory
 
@@ -195,7 +195,7 @@ Run in job directory
 go run core.go -f etc/core.yaml
 ```
 
-> Add producer into rpc or api
+### Add producer into rpc or api
 
 You need to set up global variables in service_context.go. Remember to add config.
 

@@ -16,8 +16,8 @@ title: 'Log Collecting'
 - [Filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation-configuration.html)
 - [Kibana](https://www.elastic.co/guide/en/kibana/current/docker.html)
 
-> Install step in test env \
-> Docker
+## Install step in test env
+### Docker
 
 ```shell
 # es
@@ -27,7 +27,7 @@ docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -e ES_JAVA_OPTS="
 docker run --name kib-01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.4.3
 ```
 
-> Filebeat
+### Filebeat
 
 Modify filebeat-deploy.yaml， which is in simple-admin-core/deploy/k8s/log-collection/filebeat/
 > You can add other log path for other api service， default only having core logs.
@@ -38,7 +38,7 @@ Modify filebeat-deploy.yaml， which is in simple-admin-core/deploy/k8s/log-coll
         - /home/data/logs/core/*/*.log
 ```
 
-> Configure environment variables
+### Configure environment variables
 
 ```yaml
           env:
@@ -58,13 +58,13 @@ Modify filebeat-deploy.yaml， which is in simple-admin-core/deploy/k8s/log-coll
               value: # cloud Token， optional
 ```
 
-> Install filebeat via script
+### Install filebeat via script
 
 ```shell
 # Enter simple-admin-core/deploy/k8s/log-collection/filebeat
 kubectl apply -f filebeat-deploy.yaml
 ```
 
-> Preview in kibana
+### Preview in kibana
 
 ![Pic](/assets/kibana.png)

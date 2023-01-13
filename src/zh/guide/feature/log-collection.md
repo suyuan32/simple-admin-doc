@@ -11,14 +11,14 @@ title: '日志收集'
 - Filebeat
 - Kibana
 
-> 安装方法
+## 安装方法
 
 - [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html)
 - [Filebeat](https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation-configuration.html)
 - [Kibana](https://www.elastic.co/guide/en/kibana/current/docker.html)
 
-> 测试环境快速安装方法 \
-> Docker
+## 测试环境快速安装方法 
+### Docker
 
 ```shell
 # es
@@ -28,7 +28,7 @@ docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -e ES_JAVA_OPTS="
 docker run --name kib-01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.4.3
 ```
 
-> Filebeat
+### Filebeat
 
 修改 filebeat-deploy.yaml， 位置 simple-admin-core/deploy/k8s/log-collection/filebeat/
 > 可以添加 log 来源位置，默认有 core
@@ -39,7 +39,7 @@ docker run --name kib-01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
         - /home/data/logs/core/*/*.log
 ```
 
-> 配置环境变量
+### 配置环境变量
 
 ```yaml
           env:
@@ -59,13 +59,13 @@ docker run --name kib-01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kib
               value: # 云 Token， 可选
 ```
 
-> 然后使用脚本部署 filebeat
+### 然后使用脚本部署 filebeat
 
 ```shell
 # 进入 simple-admin-core/deploy/k8s/log-collection/filebeat
 kubectl apply -f filebeat-deploy.yaml
 ```
 
-> 效果展示
+### 效果展示
 
 ![Pic](/assets/kibana.png)

@@ -5,7 +5,7 @@ title: '定时任务'
 
 # 定时任务
 
-> 添加定时任务
+## 添加定时任务
 
 进入 job/internal/crons/core 添加任务，参考
 
@@ -68,9 +68,47 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 ### [Gocron](https://github.com/go-co-op/gocron)
 
+> Example
+
+```go
+s := gocron.NewScheduler(time.UTC)
+
+s.Every(5).Seconds().Do(func(){ ... })
+
+// strings parse to duration
+s.Every("5m").Do(func(){ ... })
+
+s.Every(5).Days().Do(func(){ ... })
+
+s.Every(1).Month(1, 2, 3).Do(func(){ ... })
+
+// set time
+s.Every(1).Day().At("10:30").Do(func(){ ... })
+
+// set multiple times
+s.Every(1).Day().At("10:30;08:00").Do(func(){ ... })
+
+s.Every(1).Day().At("10:30").At("08:00").Do(func(){ ... })
+
+// Schedule each last day of the month
+s.Every(1).MonthLastDay().Do(func(){ ... })
+
+// Or each last day of every other month
+s.Every(2).MonthLastDay().Do(func(){ ... })
+
+// cron expressions supported
+s.Cron("*/1 * * * *").Do(task) // every minute
+
+// you can start running the scheduler in two different ways:
+// starts the scheduler asynchronously
+s.StartAsync()
+// starts the scheduler and blocks current execution path
+s.StartBlocking()
+```
+
 >注意： 需要实现 Start 和 Stop 方法
 
-> 添加任务监听
+## 添加任务监听
 
 编辑 job/internal/listen/cron.go
 
@@ -97,7 +135,7 @@ func Cron(c config.Config, ctx context.Context, svcCtx *svc.ServiceContext) []se
 
 ```
 
-> 启动服务
+## 启动服务
 
 在 job 文件夹执行
 

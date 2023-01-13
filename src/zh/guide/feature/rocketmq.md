@@ -5,9 +5,9 @@ title: '消息队列'
 
 # 消息队列
 
-> 我们使用 rocketmq 实现消息队列
+## RocketMQ
 
-> Producer
+### Producer
 
 将 producer 的任务添加到 job/internal/mqs/producer 中， 参考
 
@@ -89,7 +89,7 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 ```
 
-> Consumer 
+### Consumer 
 
 将 Consumer 的任务添加到 job/internal/mqs/consumer 中， 参考
 
@@ -160,7 +160,7 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 >注意： 需要实现 Start 和 Stop 方法
 
-> 添加监听
+### 添加监听
 
 修改 job/internal/listen/rmq.go
 
@@ -188,7 +188,7 @@ func Rmq(c config.Config, ctx context.Context, svcCtx *svc.ServiceContext) []ser
 
 ```
 
-> 启动服务
+### 启动服务
 
 在 job 文件夹执行
 
@@ -196,7 +196,7 @@ func Rmq(c config.Config, ctx context.Context, svcCtx *svc.ServiceContext) []ser
 go run core.go -f etc/core.yaml
 ```
 
-> 集成 producer 进 rpc 或 api
+### 集成 producer 进 rpc 或 api
 
 需要在 service_context.go 初始化全局变量， 还需要在 config 添加配置
 

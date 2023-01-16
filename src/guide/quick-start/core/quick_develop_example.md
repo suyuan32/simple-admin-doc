@@ -345,36 +345,36 @@ proto_path better use absolute path
 package logic
 
 import (
-	"context"
+ "context"
 
-	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
-	"github.com/suyuan32/simple-admin-core/rpc/types/core"
+ "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+ "github.com/suyuan32/simple-admin-core/rpc/types/core"
 
-	"github.com/zeromicro/go-zero/core/logx"
+ "github.com/zeromicro/go-zero/core/logx"
 )
 
 type HelloLogic struct {
-	ctx    context.Context
-	svcCtx *svc.ServiceContext
-	logx.Logger
+ ctx    context.Context
+ svcCtx *svc.ServiceContext
+ logx.Logger
 }
 
 func NewHelloLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HelloLogic {
-	return &HelloLogic{
-		ctx:    ctx,
-		svcCtx: svcCtx,
-		Logger: logx.WithContext(ctx),
-	}
+ return &HelloLogic{
+  ctx:    ctx,
+  svcCtx: svcCtx,
+  Logger: logx.WithContext(ctx),
+ }
 }
 
 // example
 func (l *HelloLogic) Hello(in *core.HelloReq) (*core.BaseResp, error) {
-	return &core.BaseResp{Msg: in.Name}, nil
+ return &core.BaseResp{Msg: in.Name}, nil
 }
 
 ```
 
-> And the add example.api into api/desc/ 
+> And the add example.api into api/desc/
 
 ```api
 syntax = "v1"
@@ -434,11 +434,11 @@ service core {
 syntax = "v1"
 
 info(
-	title: "core service"
-	desc: "this is the api discribe file for core services"
-	author: "ryansu"
-	email: "yuansu.china.work@gmail.com"
-	version: "v1.0"
+ title: "core service"
+ desc: "this is the api discribe file for core services"
+ author: "ryansu"
+ email: "yuansu.china.work@gmail.com"
+ version: "v1.0"
 )
 
 import "role.api"
@@ -451,22 +451,22 @@ import "example.api"         # here
 import "base.api"
 
 @server(
-	group: core
+ group: core
 )
 
 service core {
-	// swagger:route get /core/health core healthCheck
-	// Check the system status | 检查系统状态
-	@handler healthCheck
-	get /core/health
-	
-	// swagger:route get /core/init/database core initDatabase
-	// Initialize database | 初始化数据库
-	// Responses:
-	//   200: SimpleMsg
-	//   500: SimpleMsg
-	@handler initDatabase
-	get /core/init/database returns (SimpleMsg)
+ // swagger:route get /core/health core healthCheck
+ // Check the system status | 检查系统状态
+ @handler healthCheck
+ get /core/health
+ 
+ // swagger:route get /core/init/database core initDatabase
+ // Initialize database | 初始化数据库
+ // Responses:
+ //   200: SimpleMsg
+ //   500: SimpleMsg
+ @handler initDatabase
+ get /core/init/database returns (SimpleMsg)
 }
 ```
 
@@ -482,35 +482,35 @@ goctls api go -api core.api -dir ..
 package example
 
 import (
-	"context"
-	"github.com/suyuan32/simple-admin-core/rpc/types/core"
+ "context"
+ "github.com/suyuan32/simple-admin-core/rpc/types/core"
 
-	"github.com/suyuan32/simple-admin-core/api/internal/svc"
-	"github.com/suyuan32/simple-admin-core/api/internal/types"
+ "github.com/suyuan32/simple-admin-core/api/internal/svc"
+ "github.com/suyuan32/simple-admin-core/api/internal/types"
 
-	"github.com/zeromicro/go-zero/core/logx"
+ "github.com/zeromicro/go-zero/core/logx"
 )
 
 type HelloLogic struct {
-	logx.Logger
-	ctx    context.Context
-	svcCtx *svc.ServiceContext
+ logx.Logger
+ ctx    context.Context
+ svcCtx *svc.ServiceContext
 }
 
 func NewHelloLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HelloLogic {
-	return &HelloLogic{
-		Logger: logx.WithContext(ctx),
-		ctx:    ctx,
-		svcCtx: svcCtx,
-	}
+ return &HelloLogic{
+  Logger: logx.WithContext(ctx),
+  ctx:    ctx,
+  svcCtx: svcCtx,
+ }
 }
 
 func (l *HelloLogic) Hello(req *types.HelloReq) (resp *types.HelloResp, err error) {
-	result, err := l.svcCtx.CoreRpc.Hello(l.ctx, &core.HelloReq{Name: req.Name})
-	if err != nil {
-		return nil, err
-	}
-	return &types.HelloResp{Msg: result.Msg}, nil
+ result, err := l.svcCtx.CoreRpc.Hello(l.ctx, &core.HelloReq{Name: req.Name})
+ if err != nil {
+  return nil, err
+ }
+ return &types.HelloResp{Msg: result.Msg}, nil
 }
 
 ```
@@ -519,7 +519,6 @@ func (l *HelloLogic) Hello(req *types.HelloReq) (resp *types.HelloResp, err erro
 
 ![example](/assets/example_zh_title.png)
 ![example](/assets/example_en_title.png)
-
 
 > Run rpc and api service
 
@@ -531,4 +530,3 @@ go run core.go -f etc/core.yaml
 
 > Front end development
 [Simple Admin UI](simple-admin/en/docs/web_develop_example.md)
-

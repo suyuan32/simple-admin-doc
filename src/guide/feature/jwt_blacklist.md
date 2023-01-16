@@ -10,6 +10,7 @@ title: 'JWT Black List'
 ## Block token
 
 ![pic](/assets/block_token_en.png)
+
 ## Force logging out
 
 ![pic](/assets/force_log_out_en.png)

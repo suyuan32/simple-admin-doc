@@ -5,19 +5,21 @@ title: 'API Service'
 # 3 minutes developing API service
 
 Make sure that you have been installed follow software:
+
 - simple-admin-tool (goctls) v0.1.6 +
 
-
 ## Create API project
+>
 > Create example project
+
 ```shell
 goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --toolVersion=v0.1.6 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 
 ```
 
-### `api new `parameters
+### `api new`parameters
 
-| Parameter	      | Introduction                        | Usage                                                                                               |
+| Parameter       | Introduction                        | Usage                                                                                               |
 |-----------------|-------------------------------------|-----------------------------------------------------------------------------------------------------|
 | i18n            | Whether to use i18n                 | true means use                                                                                      |
 | casbin          | Whether to use casbin               | true means use                                                                                      |
@@ -33,7 +35,6 @@ More parameters please check `goctls api new --help`
 > You can see the project structure:
 
 ![Example](/assets/example-struct.png)
-
 
 > And then edit etc/example.yaml
 
@@ -115,7 +116,7 @@ That means running successfully.
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
 
-### `api proto `parameters
+### `api proto`parameters
 
 | Parameters   | Introduction               | Usage                                                                                   |
 |--------------|----------------------------|-----------------------------------------------------------------------------------------|
@@ -131,6 +132,6 @@ The codes generated is like below:
 
 ![pic](/assets/api_gen_struct.png)
 
-> See more detail in simple admin example api URL https://github.com/suyuan32/simple-admin-example-api
+> See more detail in simple admin example api URL <https://github.com/suyuan32/simple-admin-example-api>
 
 You need to add ExampleRpc manually into service_context, config, etc.

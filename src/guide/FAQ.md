@@ -4,6 +4,7 @@ title: 'FAQ'
 ---
 
 # FAQ
+
 ## What is the default account?
 
 A: Account: admin Password: simple-admin

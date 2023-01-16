@@ -40,37 +40,37 @@ title: '验证器'
 
 ```go
 func NewValidator() *Validator {
-	v := Validator{}
-	en := enLang.New()
-	zh := zhLang.New()
-	v.Uni = ut.New(zh, en, zh)
-	v.Validator = validator.New()
-	enTrans, _ := v.Uni.GetTranslator("en")
-	zhTrans, _ := v.Uni.GetTranslator("zh")
-	v.Trans = make(map[string]ut.Translator)
-	v.Trans["en"] = enTrans
-	v.Trans["zh"] = zhTrans
-	// add support languages
-	initSupportLanguages()
+ v := Validator{}
+ en := enLang.New()
+ zh := zhLang.New()
+ v.Uni = ut.New(zh, en, zh)
+ v.Validator = validator.New()
+ enTrans, _ := v.Uni.GetTranslator("en")
+ zhTrans, _ := v.Uni.GetTranslator("zh")
+ v.Trans = make(map[string]ut.Translator)
+ v.Trans["en"] = enTrans
+ v.Trans["zh"] = zhTrans
+ // add support languages
+ initSupportLanguages()
 
-	err := enTranslations.RegisterDefaultTranslations(v.Validator, enTrans)
-	if err != nil {
-		logx.Errorw("register English translation failed", logx.Field("detail", err.Error()))
-		return nil
-	}
-	err = zhTranslations.RegisterDefaultTranslations(v.Validator, zhTrans)
-	if err != nil {
-		logx.Errorw("register Chinese translation failed", logx.Field("detail", err.Error()))
+ err := enTranslations.RegisterDefaultTranslations(v.Validator, enTrans)
+ if err != nil {
+  logx.Errorw("register English translation failed", logx.Field("detail", err.Error()))
+  return nil
+ }
+ err = zhTranslations.RegisterDefaultTranslations(v.Validator, zhTrans)
+ if err != nil {
+  logx.Errorw("register Chinese translation failed", logx.Field("detail", err.Error()))
 
-		return nil
-	}
+  return nil
+ }
 
-	return &v
+ return &v
 }
 
 ```
 
-> 注意： 添加validate标签后默认不能为空，若需要允许为空需要添加 omitempty 
+> 注意： 添加validate标签后默认不能为空，若需要允许为空需要添加 omitempty
 
 ```go
 // Get token list request params | token列表请求参数
@@ -101,7 +101,7 @@ func NewValidator() *Validator {
 
 ## 支持的校验类型
 
-### Fields:
+### Fields
 
 | Tag | Description |
 | - | - |
@@ -120,7 +120,7 @@ func NewValidator() *Validator {
 | necsfield | Field Does Not Equal Another Field (relative) |
 | nefield | Field Does Not Equal Another Field |
 
-### Network:
+### Network
 
 | Tag | Description |
 | - | - |
@@ -151,7 +151,7 @@ func NewValidator() *Validator {
 | url_encoded | URL Encoded |
 | urn_rfc2141 | Urn RFC 2141 String |
 
-### Strings:
+### Strings
 
 | Tag | Description |
 | - | - |
@@ -178,7 +178,8 @@ func NewValidator() *Validator {
 | startswith | Starts With |
 | uppercase | Uppercase |
 
-### Format:
+### Format
+
 | Tag | Description |
 | - | - |
 | base64 | Base64 String |
@@ -237,7 +238,8 @@ func NewValidator() *Validator {
 | semver | Semantic Versioning 2.0.0 |
 | ulid | Universally Unique Lexicographically Sortable Identifier ULID |
 
-### Comparisons:
+### Comparisons
+
 | Tag | Description |
 | - | - |
 | eq | Equals |
@@ -247,7 +249,8 @@ func NewValidator() *Validator {
 | lte | Less Than or Equal |
 | ne | Not Equal |
 
-### Other:
+### Other
+
 | Tag | Description |
 | - | - |
 | dir | Directory |
@@ -272,7 +275,8 @@ func NewValidator() *Validator {
 | excluded_without_all | Excluded Without All |
 | unique | Unique |
 
-#### Aliases:
+#### Aliases
+
 | Tag | Description |
 | - | - |
 | iscolor | hexcolor\|rgb\|rgba\|hsl\|hsla |

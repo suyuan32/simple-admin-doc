@@ -7,8 +7,8 @@ title: 'API 微服务'
 # 3 分钟开发 API 服务
 
 首先确认你安装了以下软件:
-- simple-admin-tool (goctls) v0.1.6 +
 
+- simple-admin-tool (goctls) v0.1.6 +
 
 ## 创建 API 项目
 
@@ -36,7 +36,6 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool
 > 你可以看到以下结构
 
 ![Example](/assets/example-struct.png)
-
 
 > 然后编辑 etc/example.yaml
 
@@ -119,6 +118,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 ```
 
 ### `api proto` 参数介绍
+
 | 参数             | 介绍                | 使用方法                                                           |
 |----------------|-------------------|----------------------------------------------------------------|
 | proto          | proto文件地址         | 输入proto文件的绝对路径                                                 |
@@ -130,13 +130,12 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | search_key_num | 搜索字段数量（默认为3）      | 列表搜索字段数量，只能自动生成string的字段                                       |
 | grpc_package   | RPC *_grpc.go 包路径 | 在example中是github.com/suyuan32/simple-admin-example-rpc/example |
 
-详细参数请在命令行查看 `goctls api proto --help` 
+详细参数请在命令行查看 `goctls api proto --help`
 
 > 生成效果
 
 ![pic](/assets/api_gen_struct.png)
 
-
-> 详情查看 simple admin example api 地址 https://github.com/suyuan32/simple-admin-example-api
+> 详情查看 simple admin example api 地址 <https://github.com/suyuan32/simple-admin-example-api>
 
 注意还需要手动添加下 service_context, config, etc, ExampleRpc

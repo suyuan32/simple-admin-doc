@@ -12,8 +12,8 @@ title: 'Minikube配置'
 
 [Minikube安装](https://minikube.sigs.k8s.io/docs/start/)
 
-
 ### 启动 minikube
+>
 > 建议限制内存使用，本地运行，我设置的是 3g
 
 ```shell
@@ -21,6 +21,7 @@ minikube start --memory 3g
 ```
 
 ### minikube 启用插件
+>
 > 启用 ingress 和 metrics (metrics是gozero默认使用的,用于自动扩展)
 
 ```shell
@@ -34,6 +35,7 @@ alias kubectl="minikube kubectl --"
 ```
 
 ### 部署服务
+>
 > clone 代码，进入 deploy/k8s 文件夹
 
 ```shell
@@ -56,6 +58,7 @@ kubectl apply -f backend-ui.yaml
 > 可以直接运行 simple-admin-core/deploy/k8s/setup.sh 完成以上操作
 
 ### Ingress 配置
+
 参考官方文档 [Official Document](https://minikube.sigs.k8s.io/docs/tutorials/nginx_tcp_udp_ingress/)
 
 ### 首先创建 ingress
@@ -63,6 +66,7 @@ kubectl apply -f backend-ui.yaml
 ```shell
 kubectl apply -f ingress.yaml
 ```
+
 > Ingress 文件
 
 ```yaml
@@ -107,6 +111,7 @@ kubectl patch configmap tcp-services -n ingress-nginx --patch '{"data":{"8080":"
 ```
 
 ### 注册服务到 ingress controller中
+
 ```shell
 kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-patch.yaml)" -n ingress-nginx
 
@@ -119,6 +124,7 @@ kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-patch.y
 ```shell
 kubectl get ingress
 ```
+
 > 返回
 
 ```shell
@@ -127,6 +133,7 @@ simple-admin-ingress   nginx   simple-admin.com,simple-admin.com   192.168.49.2 
 ```
 
 ### 修改本地 hosts
+>
 > ip 和 ingress 中一致
 
 ```shell
@@ -139,6 +146,5 @@ simple-admin-ingress   nginx   simple-admin.com,simple-admin.com   192.168.49.2 
 ```shell
 http://simple-admin.com:8080/
 ```
+
 即可看到效果
-
-

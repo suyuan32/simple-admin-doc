@@ -6,6 +6,7 @@ title: 'File Manager'
 ## File manager service
 
 > Get code
+
 ```shell
 git clone https://github.com/suyuan32/simple-admin-file.git
 ```
@@ -63,12 +64,14 @@ CoreRpc:
 > Make sure AccessSecret is the same as simple-admin-core's api set
 > The configuration is similar as core
 > Run code the same as core
-> Init database in http://localhost:3100/init
+> Init database in <http://localhost:3100/init>
 
 ### K8s Deployment
+>
 > It is similar with core api.
 
 You should do these step:
+
 - deploy the images via fileapi.yaml
 - modify simple-admin-backend-ui/deploy/default.conf, uncomment the file manager rule
 - update ingress configmap

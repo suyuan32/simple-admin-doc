@@ -5,8 +5,8 @@ title: 'Web Pages'
 # Vben web code generation
 
 > Make sure that you have been installed follow software:
-- simple-admin-tool (goctls) v0.1.6 +
 
+- simple-admin-tool (goctls) v0.1.6 +
 
 ## Create example codes
 
@@ -14,7 +14,7 @@ title: 'Web Pages'
 goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folderName=example --prefix=example-api --subFolder=student
 ```
 
-### `frontend vben `parameters
+### `frontend vben`parameters
 
 | Parameters | Introduction   | Usage                                                                                                                          |
 |------------|----------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -24,11 +24,10 @@ goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-ap
 | prefix     | Request prefix | Used for request redirect，such as sys-api in core, example project is example-api, you need to edit env.development, add proxy |
 | subFolder  | Sub directory  | Used for generating sub-dir in views，such as user,token in sys directory                                                       |
 
-
-> You can get code 
+> You can get code
 
 - `src/api/example/student.ts src/api/example/model/student.ts`    API defined codes
-- `src/locales/lang/en/example.ts src/locales/lang/en/example.ts`  i18n codes 
+- `src/locales/lang/en/example.ts src/locales/lang/en/example.ts`  i18n codes
 - `src/views/example/*` views codes
 
 ### You need to do after generation
@@ -39,4 +38,4 @@ goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-ap
 - Add api to database and database initialization code
 - Add menu to database and initialization code
   
-> Example Project: https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen
+> Example Project: <https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen>

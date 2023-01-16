@@ -6,12 +6,13 @@ title: 'core 后端开发'
 
 ## 快速开发demo
 
-> 除非想为 core 服务贡献代码，否则不建议将自己的代码写进 core 。请模仿 [example-api](https://github.com/suyuan32/simple-admin-example-api) 和 [simple-admin-file](https://github.com/suyuan32/simple-admin-file) 创建自己的服务 
+> 除非想为 core 服务贡献代码，否则不建议将自己的代码写进 core 。请模仿 [example-api](https://github.com/suyuan32/simple-admin-example-api) 和 [simple-admin-file](https://github.com/suyuan32/simple-admin-file) 创建自己的服务
 > 查看 [API微服务](../api_example.md) 快速创建 API
 
 [例子](https://github.com/suyuan32/simple-admin-core/tree/example)
 
 ## 安装goctls
+
 [Simple-admin-tool](../../basic-config/simple-admin-tools.md)
 
 ## RPC服务例子
@@ -332,6 +333,7 @@ service core {
 ```
 
 ## 添加 example rpc接口
+>
 > 在rpc目录下运行
 
 ```shell
@@ -346,31 +348,31 @@ goctls rpc protoc core.proto --proto_path=/home/ryan/GolandProjects/simple-admin
 package logic
 
 import (
-	"context"
+ "context"
 
-	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
-	"github.com/suyuan32/simple-admin-core/rpc/types/core"
+ "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+ "github.com/suyuan32/simple-admin-core/rpc/types/core"
 
-	"github.com/zeromicro/go-zero/core/logx"
+ "github.com/zeromicro/go-zero/core/logx"
 )
 
 type HelloLogic struct {
-	ctx    context.Context
-	svcCtx *svc.ServiceContext
-	logx.Logger
+ ctx    context.Context
+ svcCtx *svc.ServiceContext
+ logx.Logger
 }
 
 func NewHelloLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HelloLogic {
-	return &HelloLogic{
-		ctx:    ctx,
-		svcCtx: svcCtx,
-		Logger: logx.WithContext(ctx),
-	}
+ return &HelloLogic{
+  ctx:    ctx,
+  svcCtx: svcCtx,
+  Logger: logx.WithContext(ctx),
+ }
 }
 
 // example
 func (l *HelloLogic) Hello(in *core.HelloReq) (*core.BaseResp, error) {
-	return &core.BaseResp{Msg: in.Name}, nil
+ return &core.BaseResp{Msg: in.Name}, nil
 }
 
 ```
@@ -435,11 +437,11 @@ service core {
 syntax = "v1"
 
 info(
-	title: "core service"
-	desc: "this is the api discribe file for core services"
-	author: "ryansu"
-	email: "yuansu.china.work@gmail.com"
-	version: "v1.0"
+ title: "core service"
+ desc: "this is the api discribe file for core services"
+ author: "ryansu"
+ email: "yuansu.china.work@gmail.com"
+ version: "v1.0"
 )
 
 import "role.api"
@@ -452,22 +454,22 @@ import "example.api"         # here
 import "base.api"
 
 @server(
-	group: core
+ group: core
 )
 
 service core {
-	// swagger:route get /core/health core healthCheck
-	// Check the system status | 检查系统状态
-	@handler healthCheck
-	get /core/health
-	
-	// swagger:route get /core/init/database core initDatabase
-	// Initialize database | 初始化数据库
-	// Responses:
-	//   200: SimpleMsg
-	//   500: SimpleMsg
-	@handler initDatabase
-	get /core/init/database returns (SimpleMsg)
+ // swagger:route get /core/health core healthCheck
+ // Check the system status | 检查系统状态
+ @handler healthCheck
+ get /core/health
+ 
+ // swagger:route get /core/init/database core initDatabase
+ // Initialize database | 初始化数据库
+ // Responses:
+ //   200: SimpleMsg
+ //   500: SimpleMsg
+ @handler initDatabase
+ get /core/init/database returns (SimpleMsg)
 }
 ```
 
@@ -483,35 +485,35 @@ goctls api go -api core.api -dir ..
 package example
 
 import (
-	"context"
-	"github.com/suyuan32/simple-admin-core/rpc/types/core"
+ "context"
+ "github.com/suyuan32/simple-admin-core/rpc/types/core"
 
-	"github.com/suyuan32/simple-admin-core/api/internal/svc"
-	"github.com/suyuan32/simple-admin-core/api/internal/types"
+ "github.com/suyuan32/simple-admin-core/api/internal/svc"
+ "github.com/suyuan32/simple-admin-core/api/internal/types"
 
-	"github.com/zeromicro/go-zero/core/logx"
+ "github.com/zeromicro/go-zero/core/logx"
 )
 
 type HelloLogic struct {
-	logx.Logger
-	ctx    context.Context
-	svcCtx *svc.ServiceContext
+ logx.Logger
+ ctx    context.Context
+ svcCtx *svc.ServiceContext
 }
 
 func NewHelloLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HelloLogic {
-	return &HelloLogic{
-		Logger: logx.WithContext(ctx),
-		ctx:    ctx,
-		svcCtx: svcCtx,
-	}
+ return &HelloLogic{
+  Logger: logx.WithContext(ctx),
+  ctx:    ctx,
+  svcCtx: svcCtx,
+ }
 }
 
 func (l *HelloLogic) Hello(req *types.HelloReq) (resp *types.HelloResp, err error) {
-	result, err := l.svcCtx.CoreRpc.Hello(l.ctx, &core.HelloReq{Name: req.Name})
-	if err != nil {
-		return nil, err
-	}
-	return &types.HelloResp{Msg: result.Msg}, nil
+ result, err := l.svcCtx.CoreRpc.Hello(l.ctx, &core.HelloReq{Name: req.Name})
+ if err != nil {
+  return nil, err
+ }
+ return &types.HelloResp{Msg: result.Msg}, nil
 }
 
 ```
@@ -520,7 +522,6 @@ func (l *HelloLogic) Hello(req *types.HelloReq) (resp *types.HelloResp, err erro
 
 ![example](/assets/example_zh_title.png)
 ![example](/assets/example_en_title.png)
-
 
 > 启动 rpc 和 api
 
@@ -532,4 +533,3 @@ go run core.go -f etc/core.yaml
 
 > 网页端开发
 [Simple Admin UI](web_develop_example.md)
-

@@ -7,11 +7,12 @@ title: 'RPC 微服务'
 # 3分钟开发 RPC 服务
 
 > 首先确认你安装了以下软件:
+
 - simple-admin-tool (goctls) v0.1.6+
 
-
 ## 创建 RPC 基本项目
-> 创建 example 服务 
+>
+> 创建 example 服务
 
 ```shell
 goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.6 --port=8080 --gitlab=true
@@ -30,7 +31,7 @@ goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin
 
 详细参数请在命令行查看 `goctls rpc new --help`
 
-> 你可以看到如下项目结构 
+> 你可以看到如下项目结构
 
 ![Example](/assets/example_rpc_struct.png)
 
@@ -80,33 +81,33 @@ Prometheus:
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
+ "entgo.io/ent"
+ "entgo.io/ent/schema/field"
+ "github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
 )
 
 // Student holds the schema definition for the Student entity.
 type Student struct {
-	ent.Schema
+ ent.Schema
 }
 
 // Fields of the Student.
 func (Student) Fields() []ent.Field {
-	return []ent.Field{
-		field.String("name"),
-		field.Int("age"),
-	}
+ return []ent.Field{
+  field.String("name"),
+  field.Int("age"),
+ }
 }
 
 func (Student) Mixin() []ent.Mixin {
-	return []ent.Mixin{
-		mixins.BaseMixin{},
-	}
+ return []ent.Mixin{
+  mixins.BaseMixin{},
+ }
 }
 
 // Edges of the Student.
 func (Student) Edges() []ent.Edge {
-	return nil
+ return nil
 }
 
 
@@ -238,11 +239,12 @@ go run example.go -f etc/example.yaml
 ```shell
 Starting server at 127.0.0.1:8080...
 ```
+
 说明运行成功. 注意后续还需要修改数据库初始化函数，参考 [simple admin file](https://github.com/suyuan32/simple-admin-file/blob/master/api/internal/logic/file/init_database_logic.go)
 
-> 项目地址 https://github.com/suyuan32/simple-admin-example-rpc
+> 项目地址 <https://github.com/suyuan32/simple-admin-example-rpc>
 
-> simple admin example api 中如何远程调用该 RPC 
+> simple admin example api 中如何远程调用该 RPC
 
 ### 添加 config
 
@@ -250,19 +252,19 @@ Starting server at 127.0.0.1:8080...
 package config
 
 import (
-	"github.com/suyuan32/simple-admin-core/pkg/config"
-	"github.com/zeromicro/go-zero/core/stores/redis"
-	"github.com/zeromicro/go-zero/rest"
-	"github.com/zeromicro/go-zero/zrpc"
+ "github.com/suyuan32/simple-admin-core/pkg/config"
+ "github.com/zeromicro/go-zero/core/stores/redis"
+ "github.com/zeromicro/go-zero/rest"
+ "github.com/zeromicro/go-zero/zrpc"
 )
 
 type Config struct {
-	rest.RestConf
-	Auth         rest.AuthConf
-	DatabaseConf config.DatabaseConf
-	RedisConf    redis.RedisConf
-	CasbinConf   config.CasbinConf
-	ExampleRpc   zrpc.RpcClientConf
+ rest.RestConf
+ Auth         rest.AuthConf
+ DatabaseConf config.DatabaseConf
+ RedisConf    redis.RedisConf
+ CasbinConf   config.CasbinConf
+ ExampleRpc   zrpc.RpcClientConf
 }
 
 ```
@@ -270,12 +272,13 @@ type Config struct {
 > 小型网站直接使用
 >
 > ExampleRpc:
->  Endpoints:
->   - 127.0.0.1:8080
+> Endpoints:
+>
+> - 127.0.0.1:8080
 >
 > 的方式直连，不需要服务发现， Endpoints 可以有多个
 
-> 添加 example rpc 
+> 添加 example rpc
 
 ### 修改 service context
 
@@ -283,55 +286,55 @@ type Config struct {
 package svc
 
 import (
-	"github.com/suyuan32/simple-admin-example-rpc/exampleclient"
-	"github.com/zeromicro/go-zero/zrpc"
+ "github.com/suyuan32/simple-admin-example-rpc/exampleclient"
+ "github.com/zeromicro/go-zero/zrpc"
 
-	"github.com/suyuan32/simple-admin-example-api/internal/config"
-	i18n2 "github.com/suyuan32/simple-admin-example-api/internal/i18n"
-	"github.com/suyuan32/simple-admin-example-api/internal/middleware"
+ "github.com/suyuan32/simple-admin-example-api/internal/config"
+ i18n2 "github.com/suyuan32/simple-admin-example-api/internal/i18n"
+ "github.com/suyuan32/simple-admin-example-api/internal/middleware"
 
-	"github.com/suyuan32/simple-admin-core/pkg/i18n"
+ "github.com/suyuan32/simple-admin-core/pkg/i18n"
 
-	"github.com/casbin/casbin/v2"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/rest"
+ "github.com/casbin/casbin/v2"
+ "github.com/zeromicro/go-zero/core/logx"
+ "github.com/zeromicro/go-zero/rest"
 )
 
 type ServiceContext struct {
-	Config     config.Config
-	ExampleRpc exampleclient.Example
-	Casbin     *casbin.Enforcer
-	Authority  rest.Middleware
-	Trans      *i18n.Translator
+ Config     config.Config
+ ExampleRpc exampleclient.Example
+ Casbin     *casbin.Enforcer
+ Authority  rest.Middleware
+ Trans      *i18n.Translator
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
 
-	rds := c.RedisConf.NewRedis()
-	if !rds.Ping() {
-		logx.Error("initialize redis failed")
-		return nil
-	}
+ rds := c.RedisConf.NewRedis()
+ if !rds.Ping() {
+  logx.Error("initialize redis failed")
+  return nil
+ }
 
-	cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
-	if err != nil {
-		logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
-		return nil
-	}
+ cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
+ if err != nil {
+  logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
+  return nil
+ }
 
-	trans := &i18n.Translator{}
-	trans.NewBundle(i18n2.LocaleFS)
-	trans.NewTranslator()
+ trans := &i18n.Translator{}
+ trans.NewBundle(i18n2.LocaleFS)
+ trans.NewTranslator()
 
-	return &ServiceContext{
-		Config:     c,
-		Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
-		Trans:      trans,
-		ExampleRpc: exampleclient.NewExample(zrpc.MustNewClient(c.ExampleRpc)),
-	}
+ return &ServiceContext{
+  Config:     c,
+  Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
+  Trans:      trans,
+  ExampleRpc: exampleclient.NewExample(zrpc.MustNewClient(c.ExampleRpc)),
+ }
 }
 ```
 
 > 然后在 logic 直接调用 l.svcCtx.ExampleRpc 即可
 
-> simple admin example api 地址 https://github.com/suyuan32/simple-admin-example-api
+> simple admin example api 地址 <https://github.com/suyuan32/simple-admin-example-api>

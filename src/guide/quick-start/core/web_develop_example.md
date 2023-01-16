@@ -3,14 +3,15 @@ order: 2
 title: 'Frontend Development'
 ---
 
-## Example web page 
+## Example web page
 
 ### Add API
 
 simple-admin-backend-ui/src/api/sys
 
-> Add model into simple-admin-backend-ui/src/api/sys/model 
+> Add model into simple-admin-backend-ui/src/api/sys/model
 src/api/sys/model/exampleModel.ts
+
 ```typescript
 /**
  *  author: Ryan Su
@@ -21,7 +22,9 @@ export interface HelloReq {
 }
 
 ```
+
 > Add example.ts into simple-admin-backend-ui/src/api/sys
+
 ```typescript
 import { defHttp } from '/@/utils/http/axios';
 import { ErrorMessageMode } from '/#/axios';
@@ -91,13 +94,15 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 </script>
 ```
 
-> Notice **await Hello({ name: name.value }, 'message')** 
-##### message mode 
+> Notice **await Hello({ name: name.value }, 'message')**
+>
+##### message mode
+
 ![example](/assets/example_validator_message_mode.png)
+
 ##### modal mode
+
 ![example](/assets/example_validator_modal_mode.png)
-
-
 
 > In order to support multiple language we need to add translations into src/locals/zh-CN/routes/system.ts  and  src/locals/en/routes/system.ts
 
@@ -128,4 +133,3 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 ### Test page
 
 ![Example](/assets/example_page.png)
-

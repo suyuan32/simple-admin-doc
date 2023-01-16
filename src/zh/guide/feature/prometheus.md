@@ -18,7 +18,8 @@ title: '服务监控'
 sh setup.sh
 ```
 
-### 访问 http://localhost:9090 
-### 查看 status - targets 
+### 访问 <http://localhost:9090>
+
+### 查看 status - targets
 
 ![pic](/assets/prometheus.png)

@@ -17,12 +17,10 @@ docker-compose up -d
 
 2. Initialize database
 
-> http://localhost/init
+> <http://localhost/init>
 
 3. Restart core-api, core-rpc container
 
-> In this folder, you can check the  api and rpc configuration 
+> In this folder, you can check the  api and rpc configuration
 
 #### To deploy your own service to docker, you only need to modify it to your own image
-
-

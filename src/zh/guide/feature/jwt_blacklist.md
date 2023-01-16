@@ -10,7 +10,8 @@ title: 'JWT 黑名单'
 ## 停用 token
 
 ![pic](/assets/block_token_zh.png)
-## 强制登出 
+
+## 强制登出
 
 ![pic](/assets/force_log_out_zh.png)
 

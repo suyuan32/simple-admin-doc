@@ -21,7 +21,7 @@ swagger serve --no-open -F=swagger --port 36666 core.yml
 
 ![pic](/assets/swagger.png)
 
-### 获取 Token 
+### 获取 Token
 
 > 先登录系统，在任意请求中复制 authorization
 
@@ -31,13 +31,11 @@ swagger serve --no-open -F=swagger --port 36666 core.yml
 
 ![pic](/assets/swagger_authority.png)
 
-
 ### 注解规范
 
 通常对于请求参数我们使用 Req 即 Request 的缩写， 返回值 Resp 即 Response 的缩写
 
-
-#### 如果你声明的类型后缀有 "Req" 和 "Info", 你可以忽略 swagger:model 的声明. 系统自动添加 swagger:model 注解。
+#### 如果你声明的类型后缀有 "Req" 和 "Info", 你可以忽略 swagger:model 的声明. 系统自动添加 swagger:model 注解
 
 ```go
 type (
@@ -69,21 +67,23 @@ type (
 // The response data of API information | API信息
 // swagger:model ApiInfo
 type ApiInfo struct {
-	BaseInfo
-	// API path | API路径
-	Path string `json:"path"`
-	// Api translation | API 多语言翻译
-	Title string `json:"title"`
-	// API Description | API 描述
-	Description string `json:"description"`
-	// API group | API分组
-	Group string `json:"group"`
-	// API request method e.g. POST | API请求类型 如POST
-	Method string `json:"method"`
+ BaseInfo
+ // API path | API路径
+ Path string `json:"path"`
+ // Api translation | API 多语言翻译
+ Title string `json:"title"`
+ // API Description | API 描述
+ Description string `json:"description"`
+ // API group | API分组
+ Group string `json:"group"`
+ // API request method e.g. POST | API请求类型 如POST
+ Method string `json:"method"`
 }
 
 ```
+
 你也可以覆盖掉它, 添加自己的swagger类型，如下：
+
 ```go
 type (
     // The response data of API information | API信息
@@ -109,30 +109,33 @@ type (
 }
 
 ```
+
 生成
+
 ```go
 // The response data of API information | API信息
 // swagger:response ApiInfo
 type ApiInfo struct {
-	BaseInfo
-	// API path | API路径
-	Path string `json:"path"`
-	// Api translation | API 多语言翻译
-	Title string `json:"title"`
-	// API Description | API 描述
-	Description string `json:"description"`
-	// API group | API分组
-	Group string `json:"group"`
-	// API request method e.g. POST | API请求类型 如POST
-	Method string `json:"method"`
+ BaseInfo
+ // API path | API路径
+ Path string `json:"path"`
+ // Api translation | API 多语言翻译
+ Title string `json:"title"`
+ // API Description | API 描述
+ Description string `json:"description"`
+ // API group | API分组
+ Group string `json:"group"`
+ // API request method e.g. POST | API请求类型 如POST
+ Method string `json:"method"`
 }
 ```
 
-#### 如果类型后缀为"Resp"，你可以忽略swagger注解，系统自动添加 response 注解. 和 "Info" "Req" 类似.
+#### 如果类型后缀为"Resp"，你可以忽略swagger注解，系统自动添加 response 注解. 和 "Info" "Req" 类似
 
 > 对于 route 来说，只需添加简单的一行介绍即可
 
 api/desc/apis.api
+
 ```go
 // Create or update API information | 创建或更新API
 @handler createOrUpdateApi
@@ -145,12 +148,12 @@ post /api (CreateOrUpdateApiReq) returns (SimpleMsg)
 package api
 
 import (
-	"net/http"
+ "net/http"
 
-	"github.com/suyuan32/simple-admin-core/api/internal/logic/api"
-	"github.com/suyuan32/simple-admin-core/api/internal/svc"
-	"github.com/suyuan32/simple-admin-core/api/internal/types"
-	"github.com/zeromicro/go-zero/rest/httpx"
+ "github.com/suyuan32/simple-admin-core/api/internal/logic/api"
+ "github.com/suyuan32/simple-admin-core/api/internal/svc"
+ "github.com/suyuan32/simple-admin-core/api/internal/types"
+ "github.com/zeromicro/go-zero/rest/httpx"
 )
 
 // swagger:route post /api api CreateOrUpdateApi
@@ -171,22 +174,22 @@ import (
 //  500: SimpleMsg
 
 func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.CreateOrUpdateApiReq
-		if err := httpx.Parse(r, &req); err != nil {
-			httpx.Error(w, err)
-			return
-		}
+ return func(w http.ResponseWriter, r *http.Request) {
+  var req types.CreateOrUpdateApiReq
+  if err := httpx.Parse(r, &req); err != nil {
+   httpx.Error(w, err)
+   return
+  }
 
-		l := api.NewCreateOrUpdateApiLogic(r.Context(), svcCtx)
-		resp, err := l.CreateOrUpdateApi(&req)
-		if err != nil {
-			err = svcCtx.Trans.TransError(r.Header.Get("Accept-Language"), err)
-			httpx.Error(w, err)
-		} else {
-			httpx.OkJson(w, resp)
-		}
-	}
+  l := api.NewCreateOrUpdateApiLogic(r.Context(), svcCtx)
+  resp, err := l.CreateOrUpdateApi(&req)
+  if err != nil {
+   err = svcCtx.Trans.TransError(r.Header.Get("Accept-Language"), err)
+   httpx.Error(w, err)
+  } else {
+   httpx.OkJson(w, resp)
+  }
+ }
 }
 
 ```

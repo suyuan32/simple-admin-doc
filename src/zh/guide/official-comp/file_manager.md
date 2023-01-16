@@ -7,6 +7,7 @@ title: '文件上传'
 ## 文件上传服务
 
 > 下载代码
+
 ```shell
 git clone https://github.com/suyuan32/simple-admin-file.git
 ```
@@ -14,6 +15,7 @@ git clone https://github.com/suyuan32/simple-admin-file.git
 > 修改配置文件 etc/file.yaml
 
 #### value
+
 ```yaml
 Name: file_manager_0
 Host: 0.0.0.0
@@ -60,17 +62,20 @@ UploadConf:
 CoreRpc:
   Target: k8s://default/core-rpc-svc:9101 # core rpc address, use endpoint in local | core 服务RPC地址，本地测试使用直连
 ```
+
 > 你可以使用nginx 将 PublicStorePath 转发为静态地址方便前端调用
 
-> 确保 AccessSecret 和 simple-admin-core的api配置文件内一致 
-> 配置方式参考core 
+> 确保 AccessSecret 和 simple-admin-core的api配置文件内一致
+> 配置方式参考core
 > 运行方式同理
-> 初始化数据库 http://localhost:3100/init
+> 初始化数据库 <http://localhost:3100/init>
 
 ### K8s 部署
+>
 > 和 core api 相似
 
 你应该做如下工作:
+
 - 通过 fileapi.yaml 部署服务
 - 修改 simple-admin-backend-ui/deploy/default.conf ，解开 file-manager注释
 - 更新 ingress configmap

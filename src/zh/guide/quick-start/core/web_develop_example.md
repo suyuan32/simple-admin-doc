@@ -22,6 +22,7 @@ export interface HelloReq {
 }
 
 ```
+
 > 添加 example.ts 到 simple-admin-backend-ui/src/api/sys
 
 ```typescript
@@ -95,13 +96,16 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 ```
 
 注意 **await Hello({ name: name.value }, 'message')** \
+
 ># message 模式显示效果如下
+
 ![example](/assets/example_validator_message_mode.png)
+
 ># modal 模式显示效果如下
+
 ![example](/assets/example_validator_modal_mode.png)
 
-
-> 推荐使用 i18n 插件，可以直接复制路径 
+> 推荐使用 i18n 插件，可以直接复制路径
 
 ![I18n](/assets/i18n_ext.png)
 ![I18n](/assets/copy_translation_path.png)
@@ -130,4 +134,3 @@ export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
 ### 测试页面
 
 ![Example](/assets/example_page.png)
-

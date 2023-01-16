@@ -4,7 +4,7 @@ title: 'Service Monitoring'
 ---
 # Service Monitoring
 
-## We use Prometheus to do the service monitoring.
+## We use Prometheus to do the service monitoring
 
 ### Install Prometheus
 
@@ -17,7 +17,8 @@ title: 'Service Monitoring'
 sh setup.sh
 ```
 
-### Browse http://localhost:9090 
-### View status - targets 
+### Browse <http://localhost:9090>
+
+### View status - targets
 
 ![pic](/assets/prometheus.png)

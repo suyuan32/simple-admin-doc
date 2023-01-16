@@ -18,7 +18,7 @@ docker-compose up -d
 
 2. 初始化数据库
 
-> http://localhost/init
+> <http://localhost/init>
 
 3. 重启 core-api, core-rpc 容器
 

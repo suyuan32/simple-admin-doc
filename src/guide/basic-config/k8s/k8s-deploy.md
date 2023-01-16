@@ -3,19 +3,23 @@ order: 1
 title: 'K8s Deployment'
 ---
 
-# Deploy service into  K8s 
+# Deploy service into  K8s
 
 ## Environment Requirement
+
 - minikube v1.23.0 +
 - mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + recommended)
 - redis 6.0 +
 - docker
 
 ## Minikube Setting
+
 [Minikube](simple-admin/en/docs/minikube.md)
 
 ### K8s Setting
+
 #### API service
+>
 > api/etc/core.yaml
 
 ```yaml
@@ -71,6 +75,7 @@ Prometheus:
 ```
 
 > rpc/etc/core.yaml
+
 ```yaml
 Name: core.rpc
 ListenOn: 0.0.0.0:9101  # ip can be 0.0.0.0 or 127.0.0.1, it should be 0.0.0.0 if you want to access from another host
@@ -173,10 +178,12 @@ clean-job:
     - echo "Delete all none images successfully."
 ```
 
-## Deploy pipeline 
+## Deploy pipeline
+
 - build docker image
-- upload to docker repository 
+- upload to docker repository
 - run in k8s ->  kubectl apply -f deploy/k8s/coreapi.yaml
+
 > You can use gitlab-ci to automatically build and push docker image
 
 ### coreapi k8s deployment file tutorial
@@ -366,7 +373,7 @@ server {
 }
 ```
 
-> Notice: proxy_pass format:   http://{service-name}.{namespace}.svc.cluster.local:{port}/
+> Notice: proxy_pass format:   <http://{service-name}.{namespace}.svc.cluster.local:{port}/>
 
 #### Quick Deployment
 

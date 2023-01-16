@@ -7,8 +7,8 @@ title: 'Web 端'
 # Vben Web 端代码生成
 
 > 首先确认你安装了以下软件:
-- simple-admin-tool (goctls) v0.1.1-beta +
 
+- simple-admin-tool (goctls) v0.1.1-beta +
 
 ## 创建 example 代码
 
@@ -26,7 +26,6 @@ goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-ap
 | prefix     | 请求前缀       | 请求前缀用于请求转发，如sys-api, 示例项目为example-api, 需要修改env.development,添加proxy |
 | subFolder  | 子目录        | 用于在views下创建子目录，如sys有user,token等子目录                                 |
 
-
 > 执行命令后会生成下面的代码
 
 - `src/api/example/student.ts src/api/example/model/student.ts`    API声明和请求代码
@@ -41,4 +40,4 @@ goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-ap
 - 添加api到数据库以及数据库初始化代码
 - 添加菜单到数据库以及初始化代码
 
-> 示例地址 https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen
+> 示例地址 <https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen>

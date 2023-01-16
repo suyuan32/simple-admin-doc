@@ -6,6 +6,7 @@ title: '本地开发环境配置'
 # 本地开发环境配置
 
 ## 环境需求
+
 - golang 1.19 +
 - nodejs 18.8.0 +
 - mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + 推荐)
@@ -18,19 +19,24 @@ title: '本地开发环境配置'
 ## 后端部署
 
 ### simple admin core
+
 simple admin core 是核心代码，主要负责用户注册鉴权和充当网关的角色以及后台的各类配置。
 
 #### 默认账号
+
 username:     admin  
 password:     simple-admin
 
-### 下载代码 
+### 下载代码
+
 ```bash
 git clone https://github.com/suyuan32/simple-admin-core.git
 ```
 
 ### 本地调试配置
+
 #### API 服务
+
 ##### 注意本地测试最好创建 core_dev.yaml 与部署文件core.yaml区分开
 
 > 添加 api/etc/core_dev.yaml
@@ -151,11 +157,9 @@ RedisConf:
   # Pass: xxx  # 也可以设置密码
 ```
 
-
-
 ### 配置依赖
 
-```shell 
+```shell
 go mod tidy
 ```
 
@@ -166,7 +170,6 @@ cd rpc
 
 go run core.go -f etc/core_dev.yaml
 ```
-
 
 ### 运行 api 服务
 
@@ -197,11 +200,13 @@ yarn serve
 ```
 
 ### 编译
+
 ```shell
 yarn build
 ```
 
 ### 预览
+
 ```shell
 # 编译后再预览
 yarn preview
@@ -242,9 +247,11 @@ VITE_FILE_STORE_URL=http://localhost:8080
 # Interface prefix
 VITE_GLOB_API_URL_PREFIX=
 ```
+
 > 主要修改 VITE_PROXY 中的 sys-api 配置， 使用 localhost 或 127.0.0.1 调试本地，也可设置成其他远程ip, filemanager访问的是文件服务
 
 ## 初始化数据库
+
 ***重要:*** 在初始化数据库前必须先创建数据库, 数据库名称和配置文件中的名称相同.
 
 ```shell
@@ -254,9 +261,11 @@ https://address:port/init
 # 默认
 https://localhost:3100/init
 ```
+
 进入界面
 
 ![pic](/assets/init_zh_cn.png)
 
 > 文件服务初始化是可选的，没有运行文件api可以不初始化
+>
 #### **初始化完成后需要重启 api 和 rpc。**

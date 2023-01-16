@@ -3,15 +3,17 @@ order: 1
 title: 'Simple Admin Tools'
 ---
 # Simple admin tools
+
 Simple admin tools is a tool fork from go-zero.
 It provides more addition features than origin project such as:
+
 - go-swagger : it is different with origin which uses @doc comments
 - multi-language support
 - optimize error message
 - fully support validator and easy to use
 - code auto generation for API, RPC and web
 - error handling which support multi-languages
-- several plugins such as RocketMQ, GORM 
+- several plugins such as RocketMQ, GORM
 - so on
 
 > But it is a little complex to install the goctls and import the dependencies due to forking.\
@@ -31,6 +33,7 @@ go build -o goctls goctl.go
 
 cp ./goctls $GOPATH/bin/goctls
 ```
+
 It is easy right?
 > Now you can just run **sh build.sh** in goctl directory
 
@@ -41,14 +44,15 @@ It is easy right?
 ```shell
 goctls env check -i -f --verbose
 ```
-Run this command can auto install protoc and so on.
+
+Run this command can auto install protoc, swagger and so on.
 
 ## API command
 
 > The command is the same as goctl but you should use goctls instead.
 
 ```shell
-$ goctl api -h
+$ goctls api -h
 NAME:
    goctl api - generate api related files
 
@@ -81,6 +85,7 @@ OPTIONS:
 ```shell
 goctls api go -api core.api -dir .
 ```
+
 This means generating go files by core.api's declaration in current directory. -dir set the output path.
 
 ## Rpc command
@@ -131,11 +136,13 @@ service User {
   rpc Ping(Request) returns(Response);
 }
 ```
+
 > Generate go files
 
 ```shell
 goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
+
 [More](https://go-zero.dev/docs/goctl/zrpc)
 
 > Project go.mod setting
@@ -148,30 +155,32 @@ module github.com/suyuan32/simple-admin-core
 go 1.19
 
 require (
-	github.com/casbin/casbin/v2 v2.52.1
-	github.com/casbin/gorm-adapter/v3 v3.7.4
-	github.com/go-playground/locales v0.14.0
-	github.com/go-playground/validator/v10 v10.11.1
-	github.com/golang-jwt/jwt/v4 v4.4.2
-	github.com/google/uuid v1.3.0
-	github.com/mojocn/base64Captcha v1.3.5
-	github.com/pkg/errors v0.9.1
-	github.com/stretchr/testify v1.8.0
-	github.com/suyuan32/simple-admin-tools/plugins/registry/consul v0.0.0-20220923060146-bde681863b8d
-	github.com/zeromicro/go-zero v1.4.1
-	golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
-	google.golang.org/grpc v1.49.0
-	google.golang.org/protobuf v1.28.1
-	gorm.io/gorm v1.23.8
+ github.com/casbin/casbin/v2 v2.52.1
+ github.com/casbin/gorm-adapter/v3 v3.7.4
+ github.com/go-playground/locales v0.14.0
+ github.com/go-playground/validator/v10 v10.11.1
+ github.com/golang-jwt/jwt/v4 v4.4.2
+ github.com/google/uuid v1.3.0
+ github.com/mojocn/base64Captcha v1.3.5
+ github.com/pkg/errors v0.9.1
+ github.com/stretchr/testify v1.8.0
+ github.com/suyuan32/simple-admin-tools/plugins/registry/consul v0.0.0-20220923060146-bde681863b8d
+ github.com/zeromicro/go-zero v1.4.1
+ golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
+ google.golang.org/grpc v1.49.0
+ google.golang.org/protobuf v1.28.1
+ gorm.io/gorm v1.23.8
 )
 
 replace github.com/zeromicro/go-zero v1.4.1 => github.com/suyuan32/simple-admin-tools v0.0.6
 ```
+
 > In order to make it easier. You can use the command in goctls.
 
 ```shell
 goctls migrate --zero-version v1.4.1 --tool-version v0.0.6
 ```
+
 > It can help you to add replace code but it cannot run multiple times because it will add multiple replace lines
 > in the go.mod file. You can just edit go.mod file can modify the simple-admin-tools version manually and run
 > **go mod tidy**.

@@ -9,8 +9,8 @@ title: 'Minikube Configuration'
 
 [Minikube Install](https://minikube.sigs.k8s.io/docs/start/)
 
-
 ### Start minikube
+>
 > Recommend to set the memory limit in local development，my setting is 3gb
 
 ```shell
@@ -18,6 +18,7 @@ minikube start --memory 3g
 ```
 
 ### minikube add plugins
+>
 > Enable ingress adn metrics (metrics is used in go-zero for auto-scaling monitor)
 
 ```shell
@@ -25,11 +26,13 @@ minikube addons enable ingress
 ```
 
 ### Add alias
+
 ```shell
 alias kubectl="minikube kubectl --"
 ```
 
 ### Deploy the service
+>
 > clone the code，cd deploy/k8s
 
 ```shell
@@ -52,6 +55,7 @@ kubectl apply -f backend-ui.yaml
 > You can just run simple-admin-core/deploy/k8s/setup.sh to finish the job.
 
 ### Ingress Setting
+
 Reference [Official Document](https://minikube.sigs.k8s.io/docs/tutorials/nginx_tcp_udp_ingress/)
 
 ### Firstly, add ingress
@@ -59,6 +63,7 @@ Reference [Official Document](https://minikube.sigs.k8s.io/docs/tutorials/nginx_
 ```shell
 kubectl apply -f ingress.yaml
 ```
+
 > Ingress.yaml file
 
 ```yaml
@@ -93,7 +98,7 @@ spec:
                   number: 9100
 ```
 
-### Register tcp service into ingress configmap 
+### Register tcp service into ingress configmap
 
 ```shell
 # register coreapi
@@ -103,6 +108,7 @@ kubectl patch configmap tcp-services -n ingress-nginx --patch '{"data":{"8080":"
 ```
 
 ### Register service into  ingress controller
+
 ```shell
 kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-patch.yaml)" -n ingress-nginx
 
@@ -110,11 +116,12 @@ kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-patch.y
 
 > You can just run simple-admin-core/deploy/k8s/setup-ingress.sh to finish the job.
 
-> browse ingress IP address 
+> browse ingress IP address
 
 ```shell
 kubectl get ingress
 ```
+
 > You can see
 
 ```shell
@@ -123,7 +130,8 @@ simple-admin-ingress   nginx   simple-admin.com,simple-admin.com   192.168.49.2 
 ```
 
 ### Modify local hosts
-> ip is the same as ingress 
+>
+> ip is the same as ingress
 
 ```shell
 # add dns
@@ -137,4 +145,3 @@ http://simple-admin.com:8080/
 ```
 
 > You can see the web page.
-

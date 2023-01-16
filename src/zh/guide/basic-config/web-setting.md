@@ -8,7 +8,6 @@ title: '前端设置'
 
 ### 主要修改 env 文件
 
-
 > .env
 
 ```text
@@ -24,7 +23,6 @@ VITE_GLOB_APP_SHORT_NAME = Simple_Admin
 ```
 
 可以修改调试端口和系统名称
-
 
 > .env.development
 

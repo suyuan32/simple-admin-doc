@@ -38,6 +38,7 @@ make doc
 # 生成 CRUD 代码 ( 你需要设置model name 和 group name)
 make gen-rpc-ent-logic model={modelName} group={groupName}
 ```
+
 ## 环境变量
 
 | 环境变量            | 介绍                         |

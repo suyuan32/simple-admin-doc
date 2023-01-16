@@ -4,6 +4,7 @@ title: 'Quick Commands'
 ---
 
 # Quick Commands
+
 #### **Note: The system needs to support the make command, linux is recommended**
 
 We offer several commands in makefile ， you can just run in bash:

@@ -5,10 +5,11 @@ title: 'RPC Service'
 # 3 minutes developing RPC service
 
 > Make sure that you have been installed follow software:
+
 - simple-admin-tool (goctls) v0.1.6 +
 
-
 ## Create RPC project
+>
 > Create example project
 >
 ```shell
@@ -78,33 +79,33 @@ Enter ent/schema, change example.go into student.go,  adding mixins and the fiel
 package schema
 
 import (
-	"entgo.io/ent"
-	"entgo.io/ent/schema/field"
-	"github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
+ "entgo.io/ent"
+ "entgo.io/ent/schema/field"
+ "github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
 )
 
 // Student holds the schema definition for the Student entity.
 type Student struct {
-	ent.Schema
+ ent.Schema
 }
 
 // Fields of the Student.
 func (Student) Fields() []ent.Field {
-	return []ent.Field{
-		field.String("name"),
-		field.Int("age"),
-	}
+ return []ent.Field{
+  field.String("name"),
+  field.Int("age"),
+ }
 }
 
 func (Student) Mixin() []ent.Mixin {
-	return []ent.Mixin{
-		mixins.BaseMixin{},
-	}
+ return []ent.Mixin{
+  mixins.BaseMixin{},
+ }
 }
 
 // Edges of the Student.
 func (Student) Edges() []ent.Edge {
-	return nil
+ return nil
 }
 
 
@@ -232,34 +233,36 @@ go run example.go -f etc/example.yaml
 ```
 
 > If you see information below:
+
 ```shell
 Starting server at 127.0.0.1:8080...
 ```
 
 That means the codes run successfully, you need to finish the database initialization like:  [simple admin file](https://github.com/suyuan32/simple-admin-file/blob/master/api/internal/logic/file/init_database_logic.go)
 
-> Project URL https://github.com/suyuan32/simple-admin-example-rpc
+> Project URL <https://github.com/suyuan32/simple-admin-example-rpc>
 
 > How to call the RPC in simple admin example api
 
 ### Add config
+
 ```go
 package config
 
 import (
-	"github.com/suyuan32/simple-admin-core/pkg/config"
-	"github.com/zeromicro/go-zero/core/stores/redis"
-	"github.com/zeromicro/go-zero/rest"
-	"github.com/zeromicro/go-zero/zrpc"
+ "github.com/suyuan32/simple-admin-core/pkg/config"
+ "github.com/zeromicro/go-zero/core/stores/redis"
+ "github.com/zeromicro/go-zero/rest"
+ "github.com/zeromicro/go-zero/zrpc"
 )
 
 type Config struct {
-	rest.RestConf
-	Auth         rest.AuthConf
-	DatabaseConf config.DatabaseConf
-	RedisConf    redis.RedisConf
-	CasbinConf   config.CasbinConf
-	ExampleRpc   zrpc.RpcClientConf
+ rest.RestConf
+ Auth         rest.AuthConf
+ DatabaseConf config.DatabaseConf
+ RedisConf    redis.RedisConf
+ CasbinConf   config.CasbinConf
+ ExampleRpc   zrpc.RpcClientConf
 }
 
 ```
@@ -267,66 +270,69 @@ type Config struct {
 > Small website use endpoint connect directly
 >
 > ExampleRpc:
->  Endpoints:
->   - 127.0.0.1:8080
+> Endpoints:
+>
+> - 127.0.0.1:8080
 >
 > It does not need service discovery， there can be several endpoints.
 
 > Add example rpc in service context
+>
 ### Edit service context
+
 ```go
 package svc
 
 import (
-	"github.com/suyuan32/simple-admin-example-rpc/exampleclient"
-	"github.com/zeromicro/go-zero/zrpc"
+ "github.com/suyuan32/simple-admin-example-rpc/exampleclient"
+ "github.com/zeromicro/go-zero/zrpc"
 
-	"github.com/suyuan32/simple-admin-example-api/internal/config"
-	i18n2 "github.com/suyuan32/simple-admin-example-api/internal/i18n"
-	"github.com/suyuan32/simple-admin-example-api/internal/middleware"
+ "github.com/suyuan32/simple-admin-example-api/internal/config"
+ i18n2 "github.com/suyuan32/simple-admin-example-api/internal/i18n"
+ "github.com/suyuan32/simple-admin-example-api/internal/middleware"
 
-	"github.com/suyuan32/simple-admin-core/pkg/i18n"
+ "github.com/suyuan32/simple-admin-core/pkg/i18n"
 
-	"github.com/casbin/casbin/v2"
-	"github.com/zeromicro/go-zero/core/logx"
-	"github.com/zeromicro/go-zero/rest"
+ "github.com/casbin/casbin/v2"
+ "github.com/zeromicro/go-zero/core/logx"
+ "github.com/zeromicro/go-zero/rest"
 )
 
 type ServiceContext struct {
-	Config     config.Config
-	ExampleRpc exampleclient.Example
-	Casbin     *casbin.Enforcer
-	Authority  rest.Middleware
-	Trans      *i18n.Translator
+ Config     config.Config
+ ExampleRpc exampleclient.Example
+ Casbin     *casbin.Enforcer
+ Authority  rest.Middleware
+ Trans      *i18n.Translator
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
 
-	rds := c.RedisConf.NewRedis()
-	if !rds.Ping() {
-		logx.Error("initialize redis failed")
-		return nil
-	}
+ rds := c.RedisConf.NewRedis()
+ if !rds.Ping() {
+  logx.Error("initialize redis failed")
+  return nil
+ }
 
-	cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
-	if err != nil {
-		logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
-		return nil
-	}
+ cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
+ if err != nil {
+  logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
+  return nil
+ }
 
-	trans := &i18n.Translator{}
-	trans.NewBundle(i18n2.LocaleFS)
-	trans.NewTranslator()
+ trans := &i18n.Translator{}
+ trans.NewBundle(i18n2.LocaleFS)
+ trans.NewTranslator()
 
-	return &ServiceContext{
-		Config:     c,
-		Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
-		Trans:      trans,
-		ExampleRpc: exampleclient.NewExample(zrpc.MustNewClient(c.ExampleRpc)),
-	}
+ return &ServiceContext{
+  Config:     c,
+  Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
+  Trans:      trans,
+  ExampleRpc: exampleclient.NewExample(zrpc.MustNewClient(c.ExampleRpc)),
+ }
 }
 ```
 
 > And then you can call in via l.svcCtx.ExampleRpc in logic code
 
-> simple admin example api  https://github.com/suyuan32/simple-admin-example-api
+> simple admin example api  <https://github.com/suyuan32/simple-admin-example-api>

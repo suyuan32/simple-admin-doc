@@ -131,7 +131,8 @@ make gen-rpc
 |--------------|------------------|-----------------------------------------------------------------------------------------|
 | schema       | Schema folder    | Input the relative path of Ent schema                                                   |
 | style        | File name format | The go_zero means snack format                                                          |
-| service_name | Service name     | The same as the name when use new to generate. e.g. example.go's serviceName is example |
+| service_name | service name | the same as the service name in the proto file |
+| project_name | project name | same as the name you create project, same as main file name, needs to be set in multiple mode, single service is same as service name by default |
 | o            | Output path      | The output path，it can be relative path. It should target to the root path of project.  |
 | model        | Model name       | The structure name in schema，e.g. the Student in example project                        |
 | group        | Group Name       | The group name is used to separate logic code                                           |

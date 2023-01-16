@@ -8,52 +8,52 @@ tagline: Simple Admin是一个基于Go Zero开发的的分布式微服务后端�
 actions:
 
 - text: 快速开始 💡
-    link: /zh/guide/basic-config/env_setting
-    type: primary
+  link: /zh/guide/basic-config/env_setting
+  type: primary
 
 - text: 文档
-    link: /zh/guide/
+  link: /zh/guide/
 
 features:
 
 - title: 完善的后台管理功能
-    icon: fa-solid fa-wrench
-    details: 提供用户管理，角色管理，权限管理，菜单管理,三方登陆管理等多种管理功能
-    link: <http://101.132.124.135/>
+  icon: fa-solid fa-wrench
+  details: 提供用户管理，角色管理，权限管理，菜单管理,三方登陆管理等多种管理功能
+  link: <http://101.132.124.135/>
 
 - title: 强大的生成工具
-    icon: fa-regular fa-screwdriver-wrench
-    details: Simple Admin Tool 提供强大的代码生成功能，快速生成三端CRUD代码
-    link: /zh/guide/basic-config/simple-admin-tools
+  icon: fa-regular fa-screwdriver-wrench
+  details: Simple Admin Tool 提供强大的代码生成功能，快速生成三端CRUD代码
+  link: /zh/guide/basic-config/simple-admin-tools
 
 - title: 内置校验器
-    icon: fa-solid fa-eye
-    details: 内置校验器实现数据快速校验
-    link: /zh/guide/feature/validator
+  icon: fa-solid fa-eye
+  details: 内置校验器实现数据快速校验
+  link: /zh/guide/feature/validator
 
 - title: 统一的错误处理
-    icon: fa-solid fa-circle-exclamation
-    details: 提供多种错误信息处理，且支持国际化翻译错误信息
-    link: /zh/guide/feature/error_handling
+  icon: fa-solid fa-circle-exclamation
+  details: 提供多种错误信息处理，且支持国际化翻译错误信息
+  link: /zh/guide/feature/error_handling
 
 - title: 国际化支持
-    icon: fa-regular fa-earth-americas
-    details: 生成工具支持生成i18n代码，快速提供国际化支持
-    link: /zh/guide/feature/i18n
+  icon: fa-regular fa-earth-americas
+  details: 生成工具支持生成i18n代码，快速提供国际化支持
+  link: /zh/guide/feature/i18n
 
 - title: K8s 支持
-    icon: fa-solid fa-cloud
-    details: 项目提供K8s快速部署脚本，实现项目快速上云
-    link: /zh/guide/basic-config/k8s/k8s-deploy
+  icon: fa-solid fa-cloud
+  details: 项目提供K8s快速部署脚本，实现项目快速上云
+  link: /zh/guide/basic-config/k8s/k8s-deploy
 
 - title: 服务注册发现
-    icon: fa-solid fa-magnifying-glass
-    details: 基于K8s Endpoints 实现服务注册发现
-    link: /zh/guide/basic-config/k8s/k8s-deploy
+  icon: fa-solid fa-magnifying-glass
+  details: 基于K8s Endpoints 实现服务注册发现
+  link: /zh/guide/basic-config/k8s/k8s-deploy
 
 - title: 第三方登陆管理
-    icon: fa-regular fa-building-lock
-    details: 支持第三方登陆管理
-    link: /zh/guide/feature/oauth
+  icon: fa-regular fa-building-lock
+  details: 支持第三方登陆管理
+  link: /zh/guide/feature/oauth
 
 footer: MIT 协议  版权所有 © 2022-present Ryan SU

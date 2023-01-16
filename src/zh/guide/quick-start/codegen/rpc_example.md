@@ -133,11 +133,13 @@ make gen-rpc
 |----------------|--------------|----------------------------------------------|
 | schema         | schema文件地址   | 输入Ent schema 文件夹相对路径                         |
 | style          | 文件名格式        | go_zero为蛇形格式                                 |
-| service_name   | 服务名称         | 和new 时的名称相同，如example.go的serviceName是 example |
+| service_name   | 服务名称         | 和 proto 文件中的service名称相同 |
+| project_name   | 项目名称         | 和new 时的名称相同，和main文件名一致, 在multiple 模式下需要设置，单service默认和service name 相同 |
 | o              | 输出位置         | 文件输出位置，可以为相对路径，指向main文件目录                    |
 | model          | 模型名称         | schema中内部struct名称，如example中的Student          |
 | search_key_num | 搜索字段数量（默认为3） | 列表搜索字段数量，只能自动生成string的字段                     |
 | group          | 分组名称         | 分组名称用于将不同logic文件放到不同文件夹                      |
+| multiple | 多服务 | 若 proto 文件中有多个service, 需要设置为 true |
 
 详细参数请在命令行查看 `goctls rpc ent --help`
 

@@ -8,14 +8,14 @@ title: 'API 微服务'
 
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.6 +
+- simple-admin-tool (goctls) v0.1.7 +
 
 ## 创建 API 项目
 
 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.6 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.7 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 ### `api new`参数介绍
@@ -123,14 +123,24 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 |----------------|-------------------|----------------------------------------------------------------|
 | proto          | proto文件地址         | 输入proto文件的绝对路径                                                 |
 | style          | 文件名格式             | go_zero为蛇形格式                                                   |
-| service_name   | 服务名称              | 和new 时的名称相同，如example.go的serviceName是 example                   |
+| api_service_name   | 服务名称              | api 服务的 service 名称, 在api声明文件中                  |
+| rpc_service_name   | 服务名称              | rpc 服务的名称, 与proto文件中的service名称一致                   |
 | o              | 输出位置              | 文件输出位置，可以为相对路径，指向main文件目录                                      |
 | model          | 模型名称              | schema中内部struct名称，如example中的Student                            |
 | rpc_name       | RPC名称             | 输入Example则生成文件会生成l.svcCtx.ExampleRpc                           |
 | search_key_num | 搜索字段数量（默认为3）      | 列表搜索字段数量，只能自动生成string的字段                                       |
-| grpc_package   | RPC *_grpc.go 包路径 | 在example中是github.com/suyuan32/simple-admin-example-rpc/example |
+| grpc_package   | RPC *_grpc.go 包路径 | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example |
+| multiple | 多服务 | 若 proto 文件中有多个service, 需要设置为 true |
 
 详细参数请在命令行查看 `goctls api proto --help`
+
+> multiple 例子
+
+```shell
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+```
+
+[代码](https://github.com/suyuan32/simple-admin-example-api/tree/multiple)
 
 > 生成效果
 

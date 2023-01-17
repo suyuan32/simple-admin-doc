@@ -6,23 +6,23 @@ title: 'Web Pages'
 
 > Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.6 +
+- simple-admin-tool (goctls) v0.1.7 +
 
 ## Create example codes
 
 ```shell
-goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folderName=example --prefix=example-api --subFolder=student
+goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folder_name=example --prefix=example-api --sub_folder=student
 ```
 
 ### `frontend vben`parameters
 
 | Parameters | Introduction   | Usage                                                                                                                          |
 |------------|----------------|--------------------------------------------------------------------------------------------------------------------------------|
-| apiFile    | Api file path  | Input the api file absolute path，like above student.api                                                                        |
+| api_file    | Api file path  | Input the api file absolute path，like above student.api                                                                        |
 | o          | Output path    | Input simple admin backend ui root directory                                                                                   |
-| folderName | Folder name    | Core service is  sys, in example project is example                                                                            |
+| folder_name | Folder name    | Core service is  sys, in example project is example                                                                            |
 | prefix     | Request prefix | Used for request redirect，such as sys-api in core, example project is example-api, you need to edit env.development, add proxy |
-| subFolder  | Sub directory  | Used for generating sub-dir in views，such as user,token in sys directory                                                       |
+| sub_folder  | Sub directory  | Used for generating sub-dir in views，such as user,token in sys directory                                                       |
 
 > You can get code
 

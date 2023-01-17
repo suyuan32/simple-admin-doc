@@ -6,14 +6,14 @@ title: 'RPC Service'
 
 > Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.6 +
+- simple-admin-tool (goctls) v0.1.7 +
 
 ## Create RPC project
 >
 > Create example project
 >
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.6 --port=8080  --gitlab=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.7 --port=8080  --gitlab=true
 ```
 
 ### `rpc new` parameters
@@ -136,6 +136,15 @@ make gen-rpc
 | o            | Output path      | The output path，it can be relative path. It should target to the root path of project.  |
 | model        | Model name       | The structure name in schema，e.g. the Student in example project                        |
 | group        | Group Name       | The group name is used to separate logic code                                           |
+| multiple | Multiple Service | If your proto file contains multiple service, you should set true |
+
+> multiple Example
+
+```shell
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+```
+
+[Code](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
 
 More parameters please check `goctls rpc ent --help`
 

@@ -8,23 +8,23 @@ title: 'Web 端'
 
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.1-beta +
+- simple-admin-tool (goctls) v0.1.7+
 
 ## 创建 example 代码
 
 ```shell
-goctls frontend vben --apiFile=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folderName=example --prefix=example-api --subFolder=
+goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folder_name=example --prefix=example-api --sub_folder=
 ```
 
 ### `frontend vben`参数介绍
 
 | 参数         | 介绍         | 使用方法                                                               |
 |------------|------------|--------------------------------------------------------------------|
-| apiFile    | api文件的绝对路径 | 填入api文件的绝对路径，如上面的 student.api                                      |
+| api_file    | api文件的绝对路径 | 填入api文件的绝对路径，如上面的 student.api                                      |
 | o          | 输出路径       | 输入 simple admin backend ui 目录                                      |
-| folderName | 文件夹名称      | core服务是 sys, 示例项目是 example                                         |
+| folder_name | 文件夹名称      | core服务是 sys, 示例项目是 example                                         |
 | prefix     | 请求前缀       | 请求前缀用于请求转发，如sys-api, 示例项目为example-api, 需要修改env.development,添加proxy |
-| subFolder  | 子目录        | 用于在views下创建子目录，如sys有user,token等子目录                                 |
+| sub_folder  | 子目录        | 用于在views下创建子目录，如sys有user,token等子目录                                 |
 
 > 执行命令后会生成下面的代码
 

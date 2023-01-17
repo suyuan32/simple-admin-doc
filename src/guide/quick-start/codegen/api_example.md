@@ -6,14 +6,14 @@ title: 'API Service'
 
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.6 +
+- simple-admin-tool (goctls) v0.1.7 +
 
 ## Create API project
 >
 > Create example project
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --toolVersion=v0.1.6 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.7 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 
 ```
 
@@ -122,11 +122,21 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 |--------------|----------------------------|-----------------------------------------------------------------------------------------|
 | proto        | Proto file path            | Input the absolute path of proto file                                                   |
 | style        | File name format           | The go_zero means snack format                                                          |
-| service_name | Service name               | The same as the name when use new to generate. e.g. example.go's serviceName is example |
+| api_service_name | API Service name               | The API service name set in `.api` file |
+| rpc_service_name | RPC Service name               | The RPC service name set in `.proto` file |
 | o            | Output path                | The output path，it can be relative path. It should target to the root path of project.  |
 | model        | Model name                 | The structure name in schema，e.g. the Student in example project                        |
 | rpc_name     | RPC name                   | Input Example will generate l.svcCtx.ExampleRpc                                         |
 | grpc_package | RPC *_grpc.go package path | In example project is github.com/suyuan32/simple-admin-example-rpc/example              |
+| multiple | Multiple Service | If your proto file contains multiple service, you should set true |
+
+> Multiple Service Example
+
+```shell
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+```
+
+[Code](https://github.com/suyuan32/simple-admin-example-api/tree/multiple)
 
 The codes generated is like below:
 

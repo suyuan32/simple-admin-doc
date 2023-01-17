@@ -8,14 +8,14 @@ title: 'RPC 微服务'
 
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.6+
+- simple-admin-tool (goctls) v0.1.7+
 
 ## 创建 RPC 基本项目
 >
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.6 --port=8080 --gitlab=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.7 --port=8080 --gitlab=true
 ```
 
 ### `rpc new`参数介绍
@@ -140,6 +140,14 @@ make gen-rpc
 | search_key_num | 搜索字段数量（默认为3） | 列表搜索字段数量，只能自动生成string的字段                     |
 | group          | 分组名称         | 分组名称用于将不同logic文件放到不同文件夹                      |
 | multiple | 多服务 | 若 proto 文件中有多个service, 需要设置为 true |
+
+> multiple 例子
+
+```shell
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+```
+
+[代码](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
 
 详细参数请在命令行查看 `goctls rpc ent --help`
 

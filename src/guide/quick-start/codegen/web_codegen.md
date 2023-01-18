@@ -2,6 +2,7 @@
 order: 3
 title: 'Web Pages'
 ---
+
 # Vben web code generation
 
 > Make sure that you have been installed follow software:

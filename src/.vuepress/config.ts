@@ -34,6 +34,13 @@ export default defineUserConfig({
       "script",
       {},
       `LA.init({id:"Jw6Oc7YXX4TYmO1Y",ck:"Jw6Oc7YXX4TYmO1Y"})`
-    ]
+    ],
+      [
+          "script",
+        {
+          src: "https://kit.fontawesome.com/05bf663b01.js",
+          crossorigin:"anonymous",
+        }
+      ]
   ]
 });

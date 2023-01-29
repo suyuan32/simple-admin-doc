@@ -13,11 +13,11 @@ Make sure that you have been installed follow software:
 > Create example project
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.7 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.8 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 
 ```
 
-### `api new`parameters
+### `api new` parameters
 
 | Parameter       | Introduction                        | Usage                                                                                               |
 |-----------------|-------------------------------------|-----------------------------------------------------------------------------------------------------|
@@ -35,6 +35,30 @@ More parameters please check `goctls api new --help`
 > You can see the project structure:
 
 ![Example](/assets/example-struct.png)
+
+### File structure
+
+```text
+├── desc                             api declaration file storage directory
+├── etc                              configuration file directory
+└── internal
+     ├──config
+     ├── handler                     handler directory
+     │ ├── base
+     │ ├── student
+     │ └── teacher
+     ├──                             i18n internationalization i18n file directory
+     │ └── locale
+     ├── logic                       logic code directory
+     │ ├── base
+     │ ├── student
+     │ └── teacher
+     ├── middleware                  middleware directory
+     ├── svc                         global parameter directory
+     └── types                       type declaration directory
+
+
+```
 
 > And then edit etc/example.yaml
 
@@ -116,19 +140,19 @@ That means running successfully.
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
 
-### `api proto`parameters
+### `api proto` parameters
 
-| Parameters   | Introduction               | Usage                                                                                   |
-|--------------|----------------------------|-----------------------------------------------------------------------------------------|
-| proto        | Proto file path            | Input the absolute path of proto file                                                   |
-| style        | File name format           | The go_zero means snack format                                                          |
-| api_service_name | API Service name               | The API service name set in `.api` file |
-| rpc_service_name | RPC Service name               | The RPC service name set in `.proto` file |
-| o            | Output path                | The output path，it can be relative path. It should target to the root path of project.  |
-| model        | Model name                 | The structure name in schema，e.g. the Student in example project                        |
-| rpc_name     | RPC name                   | Input Example will generate l.svcCtx.ExampleRpc                                         |
-| grpc_package | RPC *_grpc.go package path | In example project is github.com/suyuan32/simple-admin-example-rpc/example              |
-| multiple | Multiple Service | If your proto file contains multiple service, you should set true |
+| Parameters       | Introduction               | Usage                                                                                  |
+|------------------|----------------------------|----------------------------------------------------------------------------------------|
+| proto            | Proto file path            | Input the absolute path of proto file                                                  |
+| style            | File name format           | The go_zero means snack format                                                         |
+| api_service_name | API Service name           | The API service name set in `.api` file                                                |
+| rpc_service_name | RPC Service name           | The RPC service name set in `.proto` file                                              |
+| o                | Output path                | The output path，it can be relative path. It should target to the root path of project. |
+| model            | Model name                 | The structure name in schema，e.g. the Student in example project                       |
+| rpc_name         | RPC name                   | Input Example will generate l.svcCtx.ExampleRpc                                        |
+| grpc_package     | RPC *_grpc.go package path | In example project is github.com/suyuan32/simple-admin-example-rpc/example             |
+| multiple         | Multiple Service           | If your proto file contains multiple service, you should set true                      |
 
 > Multiple Service Example
 

@@ -34,6 +34,34 @@ More parameters please check `goctls rpc new --help`
 
 ![Example](/assets/example_rpc_struct.png)
 
+### File structure
+
+```text
+├── desc                               proto file directory
+├── ent                                ent file directory
+│ ├── enttest
+│ ├── hook
+│ ├── migrate
+│ ├── predicate
+│ ├── runtime
+│ ├── schema                            ent schema declaration directory
+│ ├── student
+│ ├── teacher
+│ └── template
+├── etc                                 configuration file directory
+├── example                             grpc and types directory
+├── exampleclient                       client directory
+└── internal
+     ├──config
+     ├── logic                          logic code directory
+     │ ├── base
+     │ ├── student
+     │ └── teacher
+     ├── server
+     └── svc                            global service_context directory
+
+```
+
 And then edit etc/example.yaml
 
 ```yaml
@@ -149,6 +177,9 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 [Code](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
 
 More parameters please check `goctls rpc ent --help`
+
+> Note: The tool will automatically recognize the proto files in the desc folder, and subfolders can also be created inside the desc, package and go_package only need to be declared once in base.proto,
+> The tool will automatically merge all proto files into the proto file in the project root directory. To split proto files in old projects, you only need to split the proto in the root directory to the desc folder.
 
 > Quick command: gen-rpc-ent-logic model=Student means only generate structure called 'Student' in schema. If it is empty, generating all structures in schema fold.  
 > Group means logic codes put in the group name folder.

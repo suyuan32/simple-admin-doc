@@ -37,6 +37,35 @@ goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin
 
 ![Example](/assets/example_rpc_struct.png)
 
+
+### 文件结构
+
+```text
+├── desc                                  proto 文件目录
+├── ent                                   ent 文件目录
+│   ├── enttest
+│   ├── hook
+│   ├── migrate
+│   ├── predicate
+│   ├── runtime
+│   ├── schema                            ent schema声明目录
+│   ├── student
+│   ├── teacher
+│   └── template
+├── etc                                   配置文件目录
+├── example                               grpc和types目录
+├── exampleclient                         客户端client目录
+└── internal
+    ├── config
+    ├── logic                             业务代码目录
+    │   ├── base
+    │   ├── student
+    │   └── teacher
+    ├── server
+    └── svc                               全局service_context目录
+
+```
+
 然后编辑 etc/example.yaml
 
 ```yaml
@@ -153,6 +182,9 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 [代码](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
 
 详细参数请在命令行查看 `goctls rpc ent --help`
+
+> 注意： 工具会自动识别desc文件夹中的proto文件，desc内部也可以创建子文件夹，package 和 go_package 只需在 base.proto声明一次，
+> 工具会自动将所有proto文件合并至项目根目录的proto文件中。旧项目拆分proto文件只需将根目录下的proto自行拆分至desc文件夹即可。
 
 > 快捷命令：gen-rpc-ent-logic model=Student 表示只生成 schema 为 Student 的代码， 为空则全部生成 group 为分组文件夹名称
 

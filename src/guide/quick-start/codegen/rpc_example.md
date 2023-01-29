@@ -6,26 +6,27 @@ title: 'RPC Service'
 
 > Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.7 +
+- simple-admin-tool (goctls) v0.1.8 +
 
 ## Create RPC project
 >
 > Create example project
 >
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.7 --port=8080  --gitlab=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.8 --port=8080  --gitlab=true --desc=true
 ```
 
 ### `rpc new` parameters
 
-| Parameter       | Introduction                        | Usage                                                                                               |
-|-----------------|-------------------------------------|-----------------------------------------------------------------------------------------------------|
-| ent             | Whether to use Ent                  | true means use                                                                                      |
-| module_name     | module name in  go.mod              | If your project will be used by other project, you should set as above which is a github repository |
-| go_zero_version | go zero version                     | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release            |
-| tool_version    | simple admin tools version          | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release     |
-| gitlab          | Whether to generating gitlab-ci.yml | true means generating                                                                               |
-| port            | port number                         | The service port                                                                                    |
+| Parameter       | Default | Introduction                                         | Usage                                                                                               |
+|-----------------|---------|------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| ent             | false   | Whether to use Ent                                   | true means use                                                                                      |
+| module_name     |         | Module name in  go.mod                               | If your project will be used by other project, you should set as above which is a github repository |
+| go_zero_version |         | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release            |
+| tool_version    |         | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release     |
+| gitlab          | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                               |
+| port            | 9100    | Port number                                          | The service port                                                                                    |
+| desc            | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                  |
 
 More parameters please check `goctls rpc new --help`
 
@@ -120,23 +121,24 @@ make gen-ent
 ### Generate Student CRUD logic codes
 
 ```shell
-goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student
+goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student --proto_out=./desc/student.proto
 
 make gen-rpc
 ```
 
 ### `rpc ent` parameters
 
-| Parameters   | Introduction     | Usage                                                                                   |
-|--------------|------------------|-----------------------------------------------------------------------------------------|
-| schema       | Schema folder    | Input the relative path of Ent schema                                                   |
-| style        | File name format | The go_zero means snack format                                                          |
-| service_name | service name | the same as the service name in the proto file |
-| project_name | project name | same as the name you create project, same as main file name, needs to be set in multiple mode, single service is same as service name by default |
-| o            | Output path      | The output path，it can be relative path. It should target to the root path of project.  |
-| model        | Model name       | The structure name in schema，e.g. the Student in example project                        |
-| group        | Group Name       | The group name is used to separate logic code                                           |
-| multiple | Multiple Service | If your proto file contains multiple service, you should set true |
+| Parameters   | Default | Introduction                | Usage                                                                                                                                                                                                                                                                                 |
+|--------------|---------|-----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| schema       |         | Schema folder               | Input the relative path of Ent schema                                                                                                                                                                                                                                                 |
+| style        | go_zero | File name format            | The go_zero means snack format                                                                                                                                                                                                                                                        |
+| service_name |         | service name                | The same as the service name in the proto file                                                                                                                                                                                                                                        |
+| project_name |         | project name                | Same as the name you create project, same as main file name, needs to be set in multiple mode, single service is same as service name by default                                                                                                                                      |
+| o            |         | Output path                 | The output path，it can be relative path. It should target to the root path of project.                                                                                                                                                                                                |
+| model        |         | Model name                  | The structure name in schema，e.g. the Student in example project                                                                                                                                                                                                                      |
+| group        |         | Group Name                  | The group name is used to separate logic code                                                                                                                                                                                                                                         |
+| multiple     | false   | Multiple Service            | If your proto file contains multiple service, you should set true                                                                                                                                                                                                                     |
+| proto_out    |         | Proto file output directory | If it is empty, the data will be generated to the proto file in the root directory of the project, otherwise it will be generated in the specified path desc, such as ./desc/student.proto, note that the folder storing proto must be desc, and there can be sub-files inside folder |
 
 > multiple Example
 

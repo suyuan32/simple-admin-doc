@@ -8,26 +8,28 @@ title: 'RPC 微服务'
 
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.7+
+- simple-admin-tool (goctls) v0.1.8+
 
 ## 创建 RPC 基本项目
 >
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.7 --port=8080 --gitlab=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.8 --port=8080 --gitlab=true --desc=true
 ```
 
 ### `rpc new`参数介绍
 
-| 参数              | 介绍                     | 使用方法                                                                                               |
-|-----------------|------------------------|----------------------------------------------------------------------------------------------------|
-| ent             | 是否启用 ent               | true 为启用                                                                                           |
-| module_name     | go.mod 中的module名称      | 如果项目需要被在外部import，需要像上面例子设置为github或者其他地方的仓库网址， 为空则只在本地使用                                            |
-| go_zero_version | go zero版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新release                             |
-| tool_version    | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看simple admin  tools 最新 release |
-| gitlab          | 是否生成 gitlab-ci.yml     | true 为生成                                                                                           |
-| port            | 端口号                    | 服务暴露的端口号                                                                                           |
+| 参数              | 默认值   | 介绍                     | 使用方法                                                                                               |
+|-----------------|-------|------------------------|----------------------------------------------------------------------------------------------------|
+| ent             | false | 是否启用 ent               | true 为启用                                                                                           |
+| module_name     |       | go.mod 中的module名称      | 如果项目需要被在外部import，需要像上面例子设置为github或者其他地方的仓库网址， 为空则只在本地使用                                            |
+| go_zero_version |       | go zero版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新release                             |
+| tool_version    |       | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看simple admin  tools 最新 release |
+| gitlab          | false | 是否生成 gitlab-ci.yml     | true 为生成                                                                                           |
+| port            | 9100  | 端口号                    | 服务暴露的端口号                                                                                           |
+| desc            | false | 是否拆分proto文件到desc文件夹    | true会生成desc文件夹                                                                                     |
+
 
 详细参数请在命令行查看 `goctls rpc new --help`
 
@@ -122,24 +124,25 @@ make gen-ent
 ### 生成 Student 逻辑代码
 
 ```shell
-goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student
+goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student --proto_out=./desc/student.proto
 
 make gen-rpc
 ```
 
 ### `rpc ent`参数介绍
 
-| 参数             | 介绍           | 使用方法                                         |
-|----------------|--------------|----------------------------------------------|
-| schema         | schema文件地址   | 输入Ent schema 文件夹相对路径                         |
-| style          | 文件名格式        | go_zero为蛇形格式                                 |
-| service_name   | 服务名称         | 和 proto 文件中的service名称相同 |
-| project_name   | 项目名称         | 和new 时的名称相同，和main文件名一致, 在multiple 模式下需要设置，单service默认和service name 相同 |
-| o              | 输出位置         | 文件输出位置，可以为相对路径，指向main文件目录                    |
-| model          | 模型名称         | schema中内部struct名称，如example中的Student          |
-| search_key_num | 搜索字段数量（默认为3） | 列表搜索字段数量，只能自动生成string的字段                     |
-| group          | 分组名称         | 分组名称用于将不同logic文件放到不同文件夹                      |
-| multiple | 多服务 | 若 proto 文件中有多个service, 需要设置为 true |
+| 参数             | 默认值     | 介绍           | 使用方法                                                                                              |
+|----------------|---------|--------------|---------------------------------------------------------------------------------------------------|
+| schema         |         | schema文件地址   | 输入Ent schema 文件夹相对路径                                                                              |
+| style          | go_zero | 文件名格式        | go_zero为蛇形格式                                                                                      |
+| service_name   |         | 服务名称         | 和 proto 文件中的service名称相同                                                                           |
+| project_name   |         | 项目名称         | 和new 时的名称相同，和main文件名一致, 在multiple 模式下需要设置，单service默认和service name 相同                              |
+| o              |         | 输出位置         | 文件输出位置，可以为相对路径，指向main文件目录                                                                         |
+| model          |         | 模型名称         | schema中内部struct名称，如example中的Student                                                               |
+| search_key_num | 3       | 搜索字段数量（默认为3） | 列表搜索字段数量，只能自动生成string的字段                                                                          |
+| group          |         | 分组名称         | 分组名称用于将不同logic文件放到不同文件夹                                                                           |
+| multiple       | false   | 多服务          | 若 proto 文件中有多个service, 需要设置为 true                                                                 |
+| proto_out      |         | 是否拆分proto文件  | 若为空则会将数据生成到项目根目录的proto文件，否则将会生成到指定路径desc中，如 ./desc/student.proto, 注意存放proto的文件夹必须为desc, 内部可以有子文件夹 |
 
 > multiple 例子
 

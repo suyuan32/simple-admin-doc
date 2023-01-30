@@ -14,6 +14,13 @@ actions:
 - text: Document
   link: /guide/
 
+- text: GitHub
+  link: https://github.com/suyuan32/simple-admin-core
+
+- text: Gitee
+  link: https://gitee.com/hopefire/simple-admin-core
+
+
 features:
 
 - title: Fully Support Various Managements

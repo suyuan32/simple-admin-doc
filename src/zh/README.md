@@ -14,6 +14,13 @@ actions:
 - text: 文档
   link: /zh/guide/
 
+- text: GitHub
+  link: https://github.com/suyuan32/simple-admin-core
+
+- text: Gitee
+  link: https://gitee.com/hopefire/simple-admin-core
+
+
 features:
 
 - title: 完善的后台管理功能

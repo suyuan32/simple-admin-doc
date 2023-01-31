@@ -5,12 +5,12 @@ export const enNavbar = navbar([
   {
     text: "Document",
     icon: "fa-solid fa-book",
-    link: "/guide/"
+    link: "/guide/",
   },
   {
     text: "Online Preview",
-    icon: "fa-regular fa-laptop",
-    link: "http://101.132.124.135/login"
+    icon: "fa-solid fa-laptop",
+    link: "http://101.132.124.135/login",
   },
   {
     text: "Other Documents",
@@ -19,29 +19,29 @@ export const enNavbar = navbar([
       {
         text: "Ent Document",
         icon: "fa-solid fa-book",
-        link: "https://entgo.io/docs/getting-started"
+        link: "https://entgo.io/docs/getting-started",
       },
       {
         text: "Go Zero Document",
         icon: "fa-solid fa-book",
-        link: "https://go-zero.dev/"
+        link: "https://go-zero.dev/",
       },
       {
         text: "Vben Admin Document",
         icon: "fa-solid fa-book",
-        link: "https://doc.vvbin.cn/"
+        link: "https://doc.vvbin.cn/",
       },
       {
         text: "Go Swagger Document",
         icon: "fa-solid fa-book",
-        link: "https://goswagger.io/"
+        link: "https://goswagger.io/",
       },
       {
         text: "Ant Design Vue Document",
         icon: "fa-solid fa-book",
-        link: "https://antdv.com/components/overview"
+        link: "https://antdv.com/components/overview",
       },
-    ]
+    ],
   },
   {
     text: "Github Repo",
@@ -50,23 +50,23 @@ export const enNavbar = navbar([
       {
         text: "Simple Admin Core",
         icon: "fa-solid fa-box",
-        link: "https://github.com/suyuan32/simple-admin-core"
+        link: "https://github.com/suyuan32/simple-admin-core",
       },
       {
         text: "Simple Admin Backend UI",
         icon: "fa-solid fa-box",
-        link: "https://github.com/suyuan32/simple-admin-backend-ui"
+        link: "https://github.com/suyuan32/simple-admin-backend-ui",
       },
       {
         text: "Simple Admin File Manager",
         icon: "fa-solid fa-box",
-        link: "https://github.com/suyuan32/simple-admin-file"
+        link: "https://github.com/suyuan32/simple-admin-file",
       },
       {
         text: "Simple Admin Tools",
         icon: "fa-solid fa-box",
-        link: "https://github.com/suyuan32/simple-admin-tools"
+        link: "https://github.com/suyuan32/simple-admin-tools",
       },
-    ]
-  }
+    ],
+  },
 ]);

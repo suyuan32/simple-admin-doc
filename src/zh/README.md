@@ -1,10 +1,11 @@
 ---
+
 home: true
 icon: home
 title: 主页
 heroImage: /logo.svg
 heroText: Simple Admin
-tagline: Simple Admin是一个基于Go Zero开发的的分布式微服务后端管理系统脚手架，提供后台管理系统的所有基本功能，支持k8s快速部署，助力快速开发高并发微服务集群，适合学习和商用
+tagline: Simple Admin 是一个基于 Go Zero 开发的的分布式微服务后端管理系统脚手架，提供后台管理系统的所有基本功能，支持 k8s 快速部署，助力快速开发高并发微服务集群，适合学习和商用
 actions:
 
 - text: 快速开始 💡
@@ -20,7 +21,6 @@ actions:
 - text: Gitee
   link: https://gitee.com/hopefire/simple-admin-core
 
-
 features:
 
 - title: 完善的后台管理功能
@@ -29,8 +29,8 @@ features:
   link: <http://101.132.124.135/>
 
 - title: 强大的生成工具
-  icon: fa-regular fa-screwdriver-wrench
-  details: Simple Admin Tool 提供强大的代码生成功能，快速生成三端CRUD代码
+  icon: fa-solid fa-screwdriver-wrench
+  details: Simple Admin Tool 提供强大的代码生成功能，快速生成三端 CRUD 代码
   link: /zh/guide/basic-config/simple-admin-tools
 
 - title: 内置校验器
@@ -44,23 +44,23 @@ features:
   link: /zh/guide/feature/error_handling
 
 - title: 国际化支持
-  icon: fa-regular fa-earth-americas
-  details: 生成工具支持生成i18n代码，快速提供国际化支持
+  icon: fa-solid fa-earth-americas
+  details: 生成工具支持生成 i18n 代码，快速提供国际化支持
   link: /zh/guide/feature/i18n
 
 - title: K8s 支持
   icon: fa-solid fa-cloud
-  details: 项目提供K8s快速部署脚本，实现项目快速上云
+  details: 项目提供 K8s 快速部署脚本，实现项目快速上云
   link: /zh/guide/basic-config/k8s/k8s-deploy
 
 - title: 服务注册发现
   icon: fa-solid fa-magnifying-glass
-  details: 基于K8s Endpoints 实现服务注册发现
+  details: 基于 K8s Endpoints 实现服务注册发现
   link: /zh/guide/basic-config/k8s/k8s-deploy
 
 - title: 第三方登陆管理
-  icon: fa-regular fa-building-lock
+  icon: fa-solid fa-building-lock
   details: 支持第三方登陆管理
   link: /zh/guide/feature/oauth
 
-footer: MIT 协议  版权所有 © 2022-present Ryan SU
+footer: MIT 协议 版权所有 © 2022-present Ryan SU

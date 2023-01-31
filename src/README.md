@@ -1,4 +1,5 @@
 ---
+
 home: true
 icon: home
 title: Index
@@ -20,7 +21,6 @@ actions:
 - text: Gitee
   link: https://gitee.com/hopefire/simple-admin-core
 
-
 features:
 
 - title: Fully Support Various Managements
@@ -29,7 +29,7 @@ features:
   link: <http://101.132.124.135/>
 
 - title: Powerful Generation Tools
-  icon: fa-regular fa-screwdriver-wrench
+  icon: fa-solid fa-screwdriver-wrench
   details: Simple Admin Tool provides powerful code generation function to quickly generate three-terminal CRUD codes
   link: /guide/basic-config/simple-admin-tools
 
@@ -44,7 +44,7 @@ features:
   link: /guide/feature/error_handling
 
 - title: Internationalization Support
-  icon: fa-regular fa-earth-americas
+  icon: fa-solid fa-earth-americas
   details: The generation tool supports generating i18n code and quickly provides internationalization support
   link: /guide/feature/i18n
 
@@ -59,8 +59,8 @@ features:
   link: /guide/basic-config/k8s/k8s-deploy
 
 - title: Third-party Login Management
-  icon: fa-regular fa-building-lock
+  icon: fa-solid fa-building-lock
   details: Support Third-party Login Management
   link: /guide/feature/oauth
 
-footer: MIT License  Copyright © 2022-present Ryan SU
+footer: MIT License Copyright © 2022-present Ryan SU

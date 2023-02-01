@@ -187,29 +187,29 @@ git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 ### Sync dependencies
 
 ```shell
-yarn install
+pnpm install
 ```
 
 ### Run in development mode
 
 ```shell
-yarn serve
+pnpm serve
 ```
 
 ### Build
 
 ```shell
-yarn build
+pnpm build
 ```
 
 ### Preview
 
 ```shell
 # build and preview
-yarn preview
+pnpm preview
 
 # preview existing directory
-yarn preview:dist
+pnpm preview:dist
 ```
 
 > Notice: Set the API address

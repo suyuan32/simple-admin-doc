@@ -190,29 +190,29 @@ git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 ### 下载依赖
 
 ```shell
-yarn install
+pnpm install
 ```
 
 ### 运行
 
 ```shell
-yarn serve
+pnpm serve
 ```
 
 ### 编译
 
 ```shell
-yarn build
+pnpm build
 ```
 
 ### 预览
 
 ```shell
 # 编译后再预览
-yarn preview
+pnpm preview
 
 # 直接预览dist文件夹，不重复编译
-yarn preview:dist
+pnpm preview:dist
 ```
 
 ### 注意 配置后端 API 地址

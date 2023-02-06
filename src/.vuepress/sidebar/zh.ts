@@ -17,6 +17,10 @@ export const zhSidebar = sidebar({
           prefix: "quick-start/",
           children: [
             {
+              text: "开发流程",
+              link: "process"
+            },
+            {
               text: "为core贡献代码",
               prefix: "core/",
               children: "structure"

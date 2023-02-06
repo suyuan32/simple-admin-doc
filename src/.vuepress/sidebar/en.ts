@@ -17,6 +17,10 @@ export const enSidebar = sidebar({
           prefix: "quick-start/",
           children: [
             {
+              text: "Develop Process",
+              link: "process"
+            },
+            {
               text: "Contribute To Core Service",
               prefix: "core/",
               children: "structure"

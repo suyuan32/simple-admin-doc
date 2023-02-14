@@ -3,105 +3,23 @@ order: 2
 title: '前端开发流程'
 ---
 
+## web 端, department 为例
 
-## Example web 端
+执行命令
 
-### 首先添加 API
-
-> 添加 model 到 simple-admin-backend-ui/src/api/sys/model 中
-
-src/api/sys/model/exampleModel.ts
-
-```typescript
-/**
- *  author: Ryan Su
- *  @description: example requst
- */
-export interface HelloReq {
-  name: string;
-}
-
+```shell
+ goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-core/api/desc/department.api --o=./ --folder_name=sys --prefix=sys-api --sub_folder=department
 ```
 
-> 添加 example.ts 到 simple-admin-backend-ui/src/api/sys
+将会自动生成api, model, view, locale， 需要自行修改下 data.ts 内的列和 locale中的翻译
 
-```typescript
-import { defHttp } from '/@/utils/http/axios';
-import { ErrorMessageMode } from '/#/axios';
-import { BaseResp } from '/@/api/model/baseModel';
-import { HelloReq } from './model/exampleModel';
+### 请求消息返回显示效果
 
-enum Api {
-    Hello = '/sys-api/example/hello',
-}
-
-/**
- * @description: Get hello msg
- */
-
-export const Hello = (params: HelloReq, mode: ErrorMessageMode = 'modal') => {
-    return defHttp.post<BaseResp>(
-        { url: Api.Hello, params: params },
-        {
-            errorMessageMode: mode,
-        },
-    );
-};
-
-```
-
-### 添加view
-
-> 添加 view :  src/view/example/index.vue
-
-```vue
-<template>
-  <PageWrapper>
-    <p>{{ resp }}</p>
-    <AForm
-      :model="name"
-      name="basic"
-      :label-col="{ span: 8 }"
-      :wrapper-col="{ span: 16 }"
-      autocomplete="off"
-    >
-      <AFormItem
-        label="Name"
-        name="name"
-        :rules="[{ required: true, message: 'Please input your username!' }]"
-      >
-        <a-input v-model:value="name" />
-      </AFormItem>
-
-      <AFormItem :wrapper-col="{ offset: 8, span: 16 }">
-        <a-button type="primary" @click="SayHello">Submit</a-button>
-      </AFormItem>
-    </AForm>
-  </PageWrapper>
-</template>
-<script lang="ts" setup>
-  import { PageWrapper } from '/@/components/Page';
-  import { ref } from 'vue';
-  import { Hello } from '/@/api/sys/example';
-
-  const name = ref<string>('');
-  const resp = ref<string>('');
-
-  async function SayHello() {
-    const result = await Hello({ name: name.value }, 'message');
-    resp.value = 'Hello ' + result.msg;
-    console.log(result);
-  }
-</script>
-```
-
-注意 **await Hello({ name: name.value }, 'message')** \
-
-># message 模式显示效果如下
+> message 模式显示效果如下
 
 ![example](/assets/example_validator_message_mode.png)
 
-># modal 模式显示效果如下
+> modal 模式显示效果如下
 
 ![example](/assets/example_validator_modal_mode.png)
 

@@ -344,6 +344,41 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
     }
 })
 ```
+> Not Empty Update 模板
+
+用于部分更新数据，例如：
+```go
+func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core.BaseResp, error) {
+	err := l.svcCtx.DB.Department.UpdateOneID(in.Id).
+		SetNotEmptyStatus(uint8(in.Status)).
+		SetNotEmptySort(in.Sort).
+		SetNotEmptyName(in.Name).
+		SetNotEmptyAncestors(in.Ancestors).
+		SetNotEmptyLeader(in.Leader).
+		SetNotEmptyPhone(in.Phone).
+		SetNotEmptyEmail(in.Email).
+		SetNotEmptyRemark(in.Remark).
+		SetNotEmptyParentID(in.ParentId).
+		Exec(l.ctx)
+	if err != nil {
+		switch {
+		case ent.IsNotFound(err):
+			logx.Errorw(err.Error(), logx.Field("detail", in))
+			return nil, statuserr.NewInvalidArgumentError(i18n.TargetNotFound)
+		case ent.IsConstraintError(err):
+			logx.Errorw(err.Error(), logx.Field("detail", in))
+			return nil, statuserr.NewInvalidArgumentError(i18n.UpdateFailed)
+		default:
+			logx.Errorw(logmsg.DatabaseError, logx.Field("detail", err.Error()))
+			return nil, statuserr.NewInternalError(i18n.DatabaseError)
+		}
+	}
+
+	return &core.BaseResp{Msg: i18n.UpdateSuccess}, nil
+}
+```
+
+注意： not empty update只支持字符和数字类型，不支持布尔和UUID,需要自行判断
 
 默认使用ID排序，可以不用设置
 

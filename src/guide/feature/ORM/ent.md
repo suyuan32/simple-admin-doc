@@ -341,6 +341,41 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
     }
 })
 ```
+> Not Empty Update template
+
+Used to partially update data, for example:
+```go
+func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core.BaseResp, error) {
+	err := l.svcCtx.DB.Department.UpdateOneID(in.Id).
+		SetNotEmptyStatus(uint8(in.Status)).
+		SetNotEmptySort(in.Sort).
+		SetNotEmptyName(in.Name).
+		SetNotEmptyAncestors(in.Ancestors).
+		SetNotEmptyLeader(in.Leader).
+		SetNotEmptyPhone(in.Phone).
+		SetNotEmptyEmail(in.Email).
+		SetNotEmptyRemark(in.Remark).
+		SetNotEmptyParentID(in.ParentId).
+		Exec(l.ctx)
+	if err != nil {
+		switch {
+		case ent.IsNotFound(err):
+			logx.Errorw(err.Error(), logx.Field("detail", in))
+			return nil, statuserr.NewInvalidArgumentError(i18n.TargetNotFound)
+		case ent.IsConstraintError(err):
+			logx.Errorw(err.Error(), logx.Field("detail", in))
+			return nil, statuserr.NewInvalidArgumentError(i18n.UpdateFailed)
+		default:
+			logx.Errorw(logmsg.DatabaseError, logx.Field("detail", err.Error()))
+			return nil, statuserr.NewInternalError(i18n.DatabaseError)
+		}
+	}
+
+	return &core.BaseResp{Msg: i18n.UpdateSuccess}, nil
+}
+```
+
+Note: not empty update only supports string and number types such as float, int, does not support Boolean and UUID, you need to judge them by yourself
 
 By default, we order by ID, you do not need to set it.
 

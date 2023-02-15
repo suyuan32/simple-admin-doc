@@ -3,7 +3,7 @@ order: 14
 title: 'Tracing Analysis'
 ---
 
-## Go Zero supports jaeger for link tracking by default, just declare it in the etc configuration file
+## Go Zero supports Jaeger for link tracking by default, just declare it in the etc configuration file
 
 ```yaml
 Telemetry:

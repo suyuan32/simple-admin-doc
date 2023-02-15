@@ -65,6 +65,7 @@ CoreRpc:
 > The configuration is similar as core
 > Run code the same as core
 > Init database in <http://localhost:3100/init>
+> Add API interface permissions on the role page, then restart the API service of file manager
 
 ### K8s Deployment
 >

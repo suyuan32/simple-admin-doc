@@ -20,16 +20,16 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool
 
 ### `api new` 参数介绍
 
-| 参数              | 介绍                     | 使用方法                                                                                               |
-|-----------------|------------------------|----------------------------------------------------------------------------------------------------|
-| i18n            | 是否启用 i18n              | true 为启用                                                                                           |
-| casbin          | 是否启用 casbin            | true 为启用                                                                                           |
-| module_name     | go.mod 中的module名称      | 如果项目需要被在外部import，需要像上面例子设置为github或者其他地方的仓库网址， 为空则只在本地使用                                            |
-| go_zero_version | go zero版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新release                             |
-| tool_version    | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看simple admin  tools 最新 release |
-| trans_err       | 国际化翻译错误信息              | true 为启用                                                                                           |
-| gitlab          | 是否生成 gitlab-ci.yml     | true 为生成                                                                                           |
-| port            | 端口号                    | 服务暴露的端口号                                                                                           |
+| 参数              | 必须  | 默认值   | 介绍                     | 使用方法                                                                                               |
+|-----------------|-----|-------|------------------------|----------------------------------------------------------------------------------------------------|
+| i18n            | 否   | false | 是否启用 i18n              | true 为启用                                                                                           |
+| casbin          | 否   | false | 是否启用 casbin            | true 为启用                                                                                           |
+| module_name     | 是   |       | go.mod 中的module名称      | 如果项目需要被在外部import，需要像上面例子设置为github或者其他地方的仓库网址， 为空则只在本地使用                                            |
+| go_zero_version | 是   |       | go zero版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新release                             |
+| tool_version    | 是   |       | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看simple admin  tools 最新 release |
+| trans_err       | 否   | false | 国际化翻译错误信息              | true 为启用                                                                                           |
+| gitlab          | 否   | false | 是否生成 gitlab-ci.yml     | true 为生成                                                                                           |
+| port            | 否   | 9100  | 端口号                    | 服务暴露的端口号                                                                                           |
 
 详细参数请在命令行查看 `goctls api new --help`
 
@@ -144,18 +144,17 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 ### `api proto` 参数介绍
 
-| 参数               | 介绍                | 使用方法                                                            |
-|------------------|-------------------|-----------------------------------------------------------------|
-| proto            | proto文件地址         | 输入proto文件的绝对路径                                                  |
-| style            | 文件名格式             | go_zero为蛇形格式                                                    |
-| api_service_name | 服务名称              | api 服务的 service 名称, 在api声明文件中                                   |
-| rpc_service_name | 服务名称              | rpc 服务的名称, 与proto文件中的service名称一致                                |
-| o                | 输出位置              | 文件输出位置，可以为相对路径，指向main文件目录                                       |
-| model            | 模型名称              | schema中内部struct名称，如example中的Student                             |
-| rpc_name         | RPC名称             | 输入Example则生成文件会生成l.svcCtx.ExampleRpc                            |
-| search_key_num   | 搜索字段数量（默认为3）      | 列表搜索字段数量，只能自动生成string的字段                                        |
-| grpc_package     | RPC *_grpc.go 包路径 | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example |
-| multiple         | 多服务               | 若 proto 文件中有多个service, 需要设置为 true                               |
+| 参数               | 必须  | 默认值     | 介绍                | 使用方法                                                            |
+|------------------|-----|---------|-------------------|-----------------------------------------------------------------|
+| proto            | 是   |         | proto文件地址         | 输入proto文件的绝对路径                                                  |
+| style            | 否   | go_zero | 文件名格式             | go_zero为蛇形格式                                                    |
+| api_service_name | 是   |         | 服务名称              | api 服务的 service 名称, 在api声明文件中                                   |
+| rpc_service_name | 是   |         | 服务名称              | rpc 服务的名称, 与proto文件中的service名称一致                                |
+| o                | 是   |         | 输出位置              | 文件输出位置，可以为相对路径，指向main文件目录                                       |
+| model            | 是   |         | 模型名称              | schema中内部struct名称，如example中的Student                             |
+| rpc_name         | 是   |         | RPC名称             | 输入Example则生成文件会生成l.svcCtx.ExampleRpc                            |
+| grpc_package     | 是   |         | RPC *_grpc.go 包路径 | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example |
+| multiple         | 否   | false   | 多服务               | 若 proto 文件中有多个service, 需要设置为 true                               |
 
 详细参数请在命令行查看 `goctls api proto --help`
 

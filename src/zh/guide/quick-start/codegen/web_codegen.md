@@ -18,13 +18,13 @@ goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-a
 
 ### `frontend vben`参数介绍
 
-| 参数         | 介绍         | 使用方法                                                               |
-|------------|------------|--------------------------------------------------------------------|
-| api_file    | api文件的绝对路径 | 填入api文件的绝对路径，如上面的 student.api                                      |
-| o          | 输出路径       | 输入 simple admin backend ui 目录                                      |
-| folder_name | 文件夹名称      | core服务是 sys, 示例项目是 example                                         |
-| prefix     | 请求前缀       | 请求前缀用于请求转发，如sys-api, 示例项目为example-api, 需要修改env.development,添加proxy |
-| sub_folder  | 子目录        | 用于在views下创建子目录，如sys有user,token等子目录                                 |
+| 参数          | 必须  | 默认值 | 介绍         | 使用方法                                                               |
+|-------------|-----|-----|------------|--------------------------------------------------------------------|
+| api_file    | 是   |     | api文件的绝对路径 | 填入api文件的绝对路径，如上面的 student.api                                      |
+| o           | 是   |     | 输出路径       | 输入 simple admin backend ui 目录                                      |
+| folder_name | 是   |     | 文件夹名称      | core服务是 sys, 示例项目是 example                                         |
+| prefix      | 是   |     | 请求前缀       | 请求前缀用于请求转发，如sys-api, 示例项目为example-api, 需要修改env.development,添加proxy |
+| sub_folder  | 否   |     | 子目录        | 用于在views下创建子目录，如sys有user,token等子目录                                 |
 
 > 执行命令后会生成下面的代码
 

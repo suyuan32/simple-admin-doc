@@ -22,7 +22,7 @@ docker-compose up -d
 
 The local docker was deployed and you can visit `http://localhost:16686/` locally.
 
-> To use ES, please cancel the ES comment in `docker-compose.yaml`, jaeger supports multiple backends at the same time, see [Backend Storage](https://www.jaegertracing.io/docs/1.18/deployment /#storage-backends)
+> To use ES, please cancel the ES comment in `docker-compose.yaml`, Jaeger supports multiple backends at the same time, see [Backend Storage](https://www.jaegertracing.io/docs/1.18/deployment /#storage-backends)
 
 ## Preview
 

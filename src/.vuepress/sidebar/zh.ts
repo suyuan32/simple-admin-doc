@@ -50,10 +50,6 @@ export const zhSidebar = sidebar({
           text: "常见问题",
           link: "FAQ"
         },
-        {
-          text: "项目规范",
-          link: "standard"
-        },
       ],
     },
   ],

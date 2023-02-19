@@ -50,10 +50,6 @@ export const enSidebar = sidebar({
           text: "FAQ",
           link: "FAQ"
         },
-        {
-          text: "Project Specification",
-          link: "standard"
-        },
       ],
     },
   ],

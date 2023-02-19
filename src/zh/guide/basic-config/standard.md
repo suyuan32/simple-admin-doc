@@ -1,5 +1,5 @@
 ---
-order: 7
+order: 4
 title: '项目规范'
 ---
 

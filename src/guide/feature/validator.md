@@ -2,7 +2,9 @@
 order: 3
 title: 'Validator'
 ---
-## Validator 使用
+## Validator Tutorial
+
+Simple Admin Tools integration [validator](https://github.com/go-playground/validator) library
 
 > You can just edit api file and add validate tag for the struct.
 
@@ -96,6 +98,15 @@ func NewValidator() *Validator {
         // Max length: 100
         Email     string `json:"email" validate:"omitempty,email,max=100"`
     }
+```
+## Cancel validating
+### If you do not want to use validator, set isValidate in Parse to false in Handler
+
+```go
+if err := httpx. Parse(r, &req, false); err != nil {
+     httpx.ErrorCtx(r.Context(), w, err)
+     return
+}
 ```
 
 ## Support Types

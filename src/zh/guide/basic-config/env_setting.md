@@ -193,6 +193,8 @@ git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 pnpm install
 ```
 
+> 如果下载依赖失败，请升级 pnpm 至最新版
+
 ### 运行
 
 ```shell

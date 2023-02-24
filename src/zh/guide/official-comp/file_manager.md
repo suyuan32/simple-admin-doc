@@ -6,13 +6,13 @@ title: '文件上传'
 
 ## 文件上传服务
 
-> 下载代码
+### 下载代码
 
 ```shell
 git clone https://github.com/suyuan32/simple-admin-file.git
 ```
 
-> 修改配置文件 etc/file.yaml
+### 修改配置文件 etc/file.yaml
 
 #### value
 

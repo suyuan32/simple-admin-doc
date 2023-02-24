@@ -190,6 +190,8 @@ git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 pnpm install
 ```
 
+> If downloading dependencies fails, please upgrade pnpm to the latest version
+
 ### Run in development mode
 
 ```shell

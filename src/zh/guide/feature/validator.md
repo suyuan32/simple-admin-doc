@@ -5,6 +5,8 @@ title: '验证器'
 
 ## Validator 使用
 
+Simple Admin Tools 集成 [validator](https://github.com/go-playground/validator) 库
+
 > 只需要在 api 中结构声明中使用 validate tag 即可实现校验
 
 ```text
@@ -97,6 +99,16 @@ func NewValidator() *Validator {
         // Max length: 100
         Email     string `json:"email" validate:"omitempty,email,max=100"`
     }
+```
+## 取消校验
+
+### 若不需要校验可以在 Handler 中将 Parse 中的 isValidate 设置为 false
+
+```go
+if err := httpx.Parse(r, &req, false); err != nil {
+    httpx.ErrorCtx(r.Context(), w, err)
+    return
+}
 ```
 
 ## 支持的校验类型

@@ -5,13 +5,13 @@ title: 'File Manager'
 
 ## File manager service
 
-> Get code
+### Get code
 
 ```shell
 git clone https://github.com/suyuan32/simple-admin-file.git
 ```
 
-> Modify configuration file
+### Modify configuration file
 
 ```yaml
 Name: file_manager_0

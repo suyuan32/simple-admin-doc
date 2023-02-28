@@ -403,4 +403,57 @@ SetAge(10).
 SaveX(context.Background())
 ```
 
+### Transaction
+
+The project provides the WithTx method to use database transactions locally, taking updating user information as an example：
+
+
+```go
+
+func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) {
+	err := utils.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
+		updateQuery := tx.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).
+			SetNotEmptyUsername(in.Username).
+			SetNotEmptyNickname(in.Nickname).
+			SetNotEmptyEmail(in.Email).
+			SetNotEmptyMobile(in.Mobile).
+			SetNotEmptyAvatar(in.Avatar).
+			SetNotEmptyHomePath(in.HomePath).
+			SetNotEmptyDescription(in.Description).
+			SetNotEmptyDepartmentID(in.DepartmentId)
+
+		if in.Password != "" {
+			updateQuery = updateQuery.SetNotEmptyPassword(utils.BcryptEncrypt(in.Password))
+		}
+
+		if in.RoleIds != nil {
+			err := l.svcCtx.DB.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).ClearRoles().Exec(l.ctx)
+			if err != nil {
+				return err
+			}
+
+			updateQuery = updateQuery.AddRoleIDs(in.RoleIds...)
+		}
+
+		if in.PositionIds != nil {
+			err := l.svcCtx.DB.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).ClearPositions().Exec(l.ctx)
+			if err != nil {
+				return err
+			}
+
+			updateQuery = updateQuery.AddPositionIDs(in.PositionIds...)
+		}
+
+		return updateQuery.Exec(l.ctx)
+	})
+	if err != nil {
+		return nil, errorhandler.DefaultEntError(err, in)
+	}
+
+	return &core.BaseResp{
+		Msg: i18n.Success,
+	}, nil
+}
+```
+
 > Ent schema import tool [ent import](https://github.com/ariga/entimport)

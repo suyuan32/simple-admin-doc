@@ -8,7 +8,7 @@ title: 'RPC 微服务'
 
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.8+
+- simple-admin-tool (goctls) v0.2.2+
 
 ## 创建 RPC 基本项目
 >

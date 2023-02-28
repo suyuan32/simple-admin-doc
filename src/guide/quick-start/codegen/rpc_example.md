@@ -6,7 +6,7 @@ title: 'RPC Service'
 
 > Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.8 +
+- simple-admin-tool (goctls) v0.2.2 +
 
 ## Create RPC project
 >
@@ -59,6 +59,7 @@ More parameters please check `goctls rpc new --help`
      │ └── teacher
      ├── server
      └── svc                            global service_context directory
+     └── utils                          tools such as ent error handler and ent transaction function
 
 ```
 

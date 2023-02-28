@@ -15,7 +15,7 @@ title: 'RPC 微服务'
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.8 --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.4 --tool_version=v0.2.2 --port=8080 --gitlab=true --desc=true
 ```
 
 ### `rpc new`参数介绍
@@ -63,6 +63,7 @@ goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin
     │   └── teacher
     ├── server
     └── svc                               全局service_context目录
+    └── utils                             工具库如 ent 错误处理以及事务函数
 
 ```
 

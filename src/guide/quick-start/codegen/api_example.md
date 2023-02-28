@@ -6,14 +6,14 @@ title: 'API Service'
 
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.7 +
+- simple-admin-tool (goctls) v0.2.2 +
 
 ## Create API project
 >
 > Create example project
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.8 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool_version=v0.2.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 
 ```
 

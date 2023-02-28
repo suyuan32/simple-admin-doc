@@ -3,6 +3,7 @@ title: Introduction
 icon: book
 author: Ryan SU
 ---
+
 <div align="center">
 <img src="https://i.postimg.cc/nh8mVKkf/logo.png" width="300px" height="300px"/>
 <h1>Simple Admin</h1>
@@ -10,7 +11,6 @@ author: Ryan SU
 
 **English** | [中文](./README.md)
 ---
-
 [![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.4.3-brightgreen.svg)](https://go-zero.dev/)
 [![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.8.0-yellow.svg)](https://vvbin.cn/doc-next/)
 [![Ent](https://img.shields.io/badge/Ent-v0.11.0-blue.svg)](https://entgo.io/)
@@ -18,14 +18,13 @@ author: Ryan SU
 [![Release](https://img.shields.io/badge/Release-v0.2.1-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![SimpleAdmin](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
-
 ## Introduction
 
 Simple Admin is a powerful microservice framework for basic management.
 It is based on go-zero and supports several advanced features.
 It can help you to develop a microservice back-end management core in a short time.
 
-#### [Gorm version here](https://github.com/suyuan32/simple-admin-core/tree/gorm)
+#### Note: Before v1.0.0 comes out, the interface and API are unstable and may change. It is recommended to be used for learning.
 
 ## Feature
 
@@ -37,63 +36,44 @@ It can help you to develop a microservice back-end management core in a short ti
 - **Authority** Manage authority via Casbin, based on RBAC
 - **Other** builtin concurrency control, adaptive circuit breaker, adaptive load shedding, auto-trigger, auto recover
 
-## Current Progress
+## Support functions
 
-- [x] Login and Register
-- [x] Menu Management
-- [x] Role Management
-- [x] Role Authority
-- [x] User Management
-- [x] Operation log
-- [x] Service discovery
-- [x] Dictionary management
-- [x] Oauth management
-- [x] Fully support K8s
-- [x] Service Monitor
-- [x] Log collecting
-- [x] JWT blacklist
-- [x] Job Schedule
-- [x] Message queue
-- [x] Ent
-- [x] Backend CRUD generation
-- [x] Frontend CRUD code generation
-- [x] docker-compose script
-- [x] RPC logic group
+- User management: The user is the system operator, and this function mainly completes the system user configuration.
+- Department management: Configure the system organization (company, department, group), and the tree structure shows the support data permissions.
+- Position management: configure the positions that system users belong to.
+- Menu management: configure system menu, operation authority, button authority identification, interface authority, etc.
+- Role management: role menu permission assignment, role setting, data range permission division by organization.
+- Dictionary management: maintain some relatively fixed data frequently used in the system.
+- Operation log: system normal operation log record and query; system abnormal information log record and query.
+- Member management: manage registered member information
+- Interface documents: Automatically generate relevant API interface documents based on business codes.
+- Code generation: Generate corresponding additions, deletions, modifications, and queries based on the data table structure
+- Service monitoring: View some basic information about servers
 
-### The use of consul for service registration discovery in the early stage of the project is mainly to adapt to low-configuration servers. In the near future, the deployment process of K8s will be mainly optimized, and the project will mainly use K8s for deployment in the future
+## Project Planning Progress
+
+[RoadMap](https://github.com/suyuan32/simple-admin-core/issues/63)
 
 ## Preview
 
 ### Online preview
-
 [Online Preview](http://101.132.124.135/#/dashboard)
 Account:   admin
 Password:  simple-admin
-
 #### Read Only, cannot register and modify
 
 ![pic](https://i.postimg.cc/qqPNR02x/register-zh-cn.png)
 ![pic](https://i.postimg.cc/PxczkCr6/dashboard-zh-cn.png)
 
-[More](https://suyuan32.github.io/simple-admin-core/#/simple-admin/zh-cn/docs/screenshot)
-
 ## Documentation
 
-[Document](https://suyuan32.github.io/simple-admin-core/)
-
-or running locally
-
-```shell
-cd docs
-docsify serve .
-```
+[Simple Admin Document](https://doc.ryansu.pro)
 
 - go-zero
   [Document](https://go-zero.dev/)
 - ant-design-vue [Document](https://antdv.com/components/overview)
 
 ## Preparation
-
 - [Golang](http://go.dev/) and [git](https://git-scm.com/) - Project development environment
 - [Ent](https://entgo.io/docs/getting-started) - Ent
 - [Mysql](https://www.mysql.com/) - Familiar with mysql database
@@ -117,6 +97,7 @@ docsify serve .
 ## Optional Components
 
 - [Simple Admin File Manager](https://github.com/suyuan32/simple-admin-file)
+
 
 ## How to contribute
 
@@ -157,6 +138,7 @@ You are very welcome to join！[Raise an issue](https://github.com/suyuan32/simp
 ## Stars
 
 [![Star History Chart](https://api.star-history.com/svg?repos=suyuan32/simple-admin-core&type=Date)](https://github.com/suyuan32/simple-admin-core)
+
 
 ## Maintainer
 

@@ -8,14 +8,14 @@ title: 'API 微服务'
 
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.7 +
+- simple-admin-tool (goctls) v0.2.2 +
 
 ## 创建 API 项目
 
 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.3 --tool_version=v0.1.7 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool_version=v0.2.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 ### `api new` 参数介绍

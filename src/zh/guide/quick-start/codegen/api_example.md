@@ -10,6 +10,15 @@ title: 'API 微服务'
 
 - simple-admin-tool (goctls) v0.2.2 +
 
+## API服务的职责
+在 simple admin 中， API 服务充当网关的角色，主要提供以下功能：
+
+- 用户鉴权， 如 JWT
+- 数据处理， 如数据过滤筛选，国际化翻译
+- 限流和熔断
+
+一个API可以接入多个 RPC， 提供统一的请求入口
+
 ## 创建 API 项目
 
 创建 example

@@ -8,6 +8,15 @@ title: 'RPC Service'
 
 - simple-admin-tool (goctls) v0.2.2 +
 
+## RPC Responsibilities
+In Simple Admin, RPC is mainly used to obtain data and provide extended functions. It mainly has the following responsibilities:
+
+- Interact with the database to obtain the required data, such as PostgreSql
+- Interact with data sources to obtain data, such as ES
+- Provide additional functions for API layer calls, such as sending text messages and emails
+
+Multiple different APIs can access the same RPC to call its functions.
+
 ## Create RPC project
 >
 > Create example project

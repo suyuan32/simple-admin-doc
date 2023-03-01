@@ -8,6 +8,15 @@ Make sure that you have been installed follow software:
 
 - simple-admin-tool (goctls) v0.2.2 +
 
+## Responsibilities of the API service
+In simple admin, the API service acts as a gateway, mainly providing the following functions:
+
+- User authentication, such as JWT
+- Data processing, such as data filtering, international translation
+- Current limiting and fusing
+
+An API can access multiple RPCs, providing a unified request entry。
+
 ## Create API project
 >
 > Create example project

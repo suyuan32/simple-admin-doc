@@ -3,12 +3,20 @@ order: 2
 title: 'RPC 微服务'
 ---
 
-
 # 3分钟开发 RPC 服务
 
 > 首先确认你安装了以下软件:
 
 - simple-admin-tool (goctls) v0.2.2+
+
+## RPC 职责
+在Simple Admin 中， RPC 主要用于获取数据以及提供扩展功能， 主要有以下职责：
+
+- 与数据库交互，获取所需数据， 如 PostgreSql
+- 与数据源交互获取数据， 如 ES
+- 提供额外功能供API层调用，如发短信，邮件
+
+多个不同的API都可以接入同一个RPC调用其功能。
 
 ## 创建 RPC 基本项目
 >

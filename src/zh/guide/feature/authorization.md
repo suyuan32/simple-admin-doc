@@ -8,13 +8,10 @@ title: '权限验证'
 我们使用Casbin进行权限验证.
 
 ## 初始化
+使用 redis 监控权限变化
 
 ```go
-cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
-if err != nil {
- logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
- return nil
-}
+cbn := c.CasbinConf.MustNewCasbinWithRedisWatcher(c.DatabaseConf.Type, c.DatabaseConf.GetDSN(), c.RedisConf)
 ```
 
 [cbn](https://github.com/suyuan32/simple-admin-core/blob/master/api/internal/svc/servicecontext.go)

@@ -8,8 +8,10 @@ We use Casbin to do authorization validating.
 
 ## Initialization
 
+Use Redis to watch the changes.
+
 ```go
-cbn := utils.NewCasbin(db)
+cbn := c.CasbinConf.MustNewCasbinWithRedisWatcher(c.DatabaseConf.Type, c.DatabaseConf.GetDSN(), c.RedisConf)
 ```
 
 [cbn](https://github.com/suyuan32/simple-admin-core/blob/master/api/internal/svc/servicecontext.go)

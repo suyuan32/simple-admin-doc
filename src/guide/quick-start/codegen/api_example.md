@@ -146,22 +146,22 @@ That means running successfully.
 ## Code generation（based on Proto file）
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
 
 ### `api proto` parameters
 
-| Parameters       | Must | Default | Introduction               | Usage                                                                                  |
-|------------------|------|---------|----------------------------|----------------------------------------------------------------------------------------|
-| proto            | Yes  |         | Proto file path            | Input the absolute path of proto file                                                  |
-| style            | No   | go_zero | File name format           | The go_zero means snack format                                                         |
-| api_service_name | Yes  |         | API Service name           | The API service name set in `.api` file                                                |
-| rpc_service_name | Yes  |         | RPC Service name           | The RPC service name set in `.proto` file                                              |
-| o                | Yes  |         | Output path                | The output path，it can be relative path. It should target to the root path of project. |
-| model            | Yes  |         | Model name                 | The structure name in schema，e.g. the Student in example project                       |
-| rpc_name         | Yes  |         | RPC name                   | Input Example will generate l.svcCtx.ExampleRpc                                        |
-| grpc_package     | Yes  |         | RPC *_grpc.go package path | In example project is github.com/suyuan32/simple-admin-example-rpc/example             |
-| multiple         | No   | false   | Multiple Service           | If your proto file contains multiple service, you should set true                      |
+| Parameters       | Must | Default | Introduction               | Usage                                                                                        |
+|------------------|------|---------|----------------------------|----------------------------------------------------------------------------------------------|
+| proto            | Yes  |         | Proto file path            | Input the absolute path of proto file, it should be the proto in root directory, not in desc |
+| style            | No   | go_zero | File name format           | The go_zero means snack format                                                               |
+| api_service_name | Yes  |         | API Service name           | The API service name set in `.api` file                                                      |
+| rpc_service_name | Yes  |         | RPC Service name           | The RPC service name set in `.proto` file                                                    |
+| o                | Yes  |         | Output path                | The output path，it can be relative path. It should target to the root path of project.       |
+| model            | Yes  |         | Model name                 | The structure name in schema，e.g. the Student in example project                             |
+| rpc_name         | Yes  |         | RPC name                   | Input Example will generate l.svcCtx.ExampleRpc                                              |
+| grpc_package     | Yes  |         | RPC *_grpc.go package path | In example project is github.com/suyuan32/simple-admin-example-rpc/example                   |
+| multiple         | No   | false   | Multiple Service           | If your proto file contains multiple service, you should set true                            |
 
 > Multiple Service Example
 

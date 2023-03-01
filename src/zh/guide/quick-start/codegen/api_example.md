@@ -148,14 +148,14 @@ Starting server at 127.0.0.1:8081...
 ## 代码生成（基于Proto）
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
 
 ### `api proto` 参数介绍
 
 | 参数               | 必须  | 默认值     | 介绍                | 使用方法                                                            |
 |------------------|-----|---------|-------------------|-----------------------------------------------------------------|
-| proto            | 是   |         | proto文件地址         | 输入proto文件的绝对路径                                                  |
+| proto            | 是   |         | proto文件地址         | 输入proto文件的绝对路径, 注意要为合并后的proto即根目录下的proto ，不是desc 文件夹中的          |
 | style            | 否   | go_zero | 文件名格式             | go_zero为蛇形格式                                                    |
 | api_service_name | 是   |         | 服务名称              | api 服务的 service 名称, 在api声明文件中                                   |
 | rpc_service_name | 是   |         | 服务名称              | rpc 服务的名称, 与proto文件中的service名称一致                                |

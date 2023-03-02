@@ -63,13 +63,15 @@ CoreRpc:
   Target: k8s://default/core-rpc-svc:9101 # core rpc address, use endpoint in local | core 服务RPC地址，本地测试使用直连
 ```
 
-> 你可以使用nginx 将 PublicStorePath 转发为静态地址方便前端调用
+::: info
+- 你可以使用nginx 将 PublicStorePath 转发为静态地址方便前端调用
 
-> 确保 AccessSecret 和 simple-admin-core的api配置文件内一致
-> 配置方式参考core
-> 运行方式同理
-> 初始化数据库 <http://localhost:3100/init>
-> 在角色页面添加API接口权限，然后重启 file 的 API
+- 确保 AccessSecret 和 simple-admin-core的api配置文件内一致
+- 配置方式参考core
+- 运行方式同理
+- 初始化数据库 <http://localhost:3100/init>
+- 在角色页面添加API接口权限，然后重启 file 的 API
+:::
 
 ### K8s 部署
 >

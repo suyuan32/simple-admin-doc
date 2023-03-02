@@ -7,13 +7,15 @@ title: 'Local Development Setting'
 
 > Environment Requirement
 - golang 1.19 +
-- nodejs 18.8.0 +
-- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + recommended)
+- **nodejs 18.8.0 +**
+- **mysql 8.0 +** | MariaDB 10.7 + | Postgres 14 + (**Postgres 15 + recommended**)
 - redis 6.0 +
 - [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/guide/basic-config/simple-admin-tools.md)
-  
-> It is recommended to develop under linux, because the make command is required
+
+::: info 
+It is recommended to develop under linux, because the make command is required. We use Ubuntu 22.10.
+:::
 
 ## Backend Setting
 
@@ -21,10 +23,10 @@ title: 'Local Development Setting'
 simple admin core is the core service for simple admin. It offers user management, authorization,
 menu management and API management and so on. It must be running.
 
-#### Default Account
-
-username:     admin  
-password:     simple-admin
+::: info Default Account
+username:     **admin**  
+password:     **simple-admin**
+:::
 
 > Clone the core code 
 
@@ -97,6 +99,7 @@ CasbinConf:
 
 ```
 
+::: warning
 > Small website use endpoint connect directly
 
 ```yaml
@@ -106,6 +109,7 @@ CoreRpc:
 ```
 
 > it does not need service discovery，when you develop locally, you should also use this mode. There can be several endpoints.
+:::
 
 > Add rpc/etc/core_dev.yaml
 
@@ -190,7 +194,9 @@ git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 pnpm install
 ```
 
-> If downloading dependencies fails, please upgrade pnpm to the latest version
+::: warning
+If downloading dependencies fails, please upgrade pnpm to the latest version
+:::
 
 ### Run in development mode
 
@@ -250,7 +256,10 @@ VITE_GLOB_API_URL_PREFIX=
 > you can also set your own address, file-manager is the API for upload it is optional
 
 ## Initialize database
+
+::: warning
 ***Important:*** You should create the database before initialization, the database name should be the same as core_dev.yaml.
+:::
 
 ```shell
 # visit the address
@@ -266,4 +275,7 @@ https://localhost:3100/init
 ![pic](/assets/init_zh_cn.png)
 
 > File manager service is optional [File Manager](/simple-admin/en/docs/file_manager.md)
-#### **After initialization, you should restart api and rpc service.**
+
+::: warning
+**After initialization, you should restart api and rpc service.**
+:::

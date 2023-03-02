@@ -4,9 +4,16 @@ title: 'RPC Service'
 ---
 # 3 minutes developing RPC service
 
-> Make sure that you have been installed follow software:
+::: warning
+Make sure that you have been installed follow software:
 
 - simple-admin-tool (goctls) v0.2.2 +
+
+ \
+Must know go-zero's RPC command.  [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
+ \
+Refer to the [Example](https://github.com/suyuan32/simple-admin-example-rpc) project to generate it again, confirm that the generated file is consistent with the Example project, and the Example project has complete commands.
+:::
 
 ## RPC Responsibilities
 In Simple Admin, RPC is mainly used to obtain data and provide extended functions. It mainly has the following responsibilities:
@@ -178,21 +185,26 @@ make gen-rpc
 | multiple     | No   | false   | Multiple Service            | If your proto file contains multiple service, you should set true                                                                                                                                                                                                                     |
 | proto_out    | No   |         | Proto file output directory | If it is empty, the data will be generated to the proto file in the root directory of the project, otherwise it will be generated in the specified path desc, such as ./desc/student.proto, note that the folder storing proto must be desc, and there can be sub-files inside folder |
 
-> multiple Example
+::: info
+Multiple Example, multiple is used to generate separate RPC client when there are several RPC service in one proto file.
 
 ```shell
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
 ```
 
-[Code](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
+[Example Code](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
+:::
 
-More parameters please check `goctls rpc ent --help`
+**More parameters please check `goctls rpc ent --help`**
 
-> Note: The tool will automatically recognize the proto files in the desc folder, and subfolders can also be created inside the desc, package and go_package only need to be declared once in base.proto,
-> The tool will automatically merge all proto files into the proto file in the project root directory. To split proto files in old projects, you only need to split the proto in the root directory to the desc folder.
+::: warning
+Note: The tool will automatically recognize the proto files in the desc folder, and subfolders can also be created inside the desc, package and go_package only need to be declared once in base.proto,
+The tool will automatically merge all proto files into the proto file in the project root directory. To split proto files in old projects, you only need to split the proto in the root directory to the desc folder.
+:::
 
-> Quick command: gen-rpc-ent-logic model=Student means only generate structure called 'Student' in schema. If it is empty, generating all structures in schema fold.  
-> Group means logic codes put in the group name folder.
+::: info
+Quick command: gen-rpc-ent-logic model=Student means only generate structure called 'Student' in schema. If it is empty, generating all structures in schema fold. \  
+Group means logic codes put in the group name folder.
 
 ```shell
 make gen-rpc-ent-logic model=Student group=student
@@ -206,6 +218,7 @@ go mod tidy
 ![logic](/assets/ent_gen_logic.png)
 
 You can see CRUD code !
+:::
 
 > And then you can run the code !
 
@@ -320,17 +333,20 @@ type Config struct {
 
 ```
 
-> Small website use endpoint connect directly
->
-> ExampleRpc:
-> Endpoints:
->
-> - 127.0.0.1:8080
->
-> It does not need service discovery， there can be several endpoints.
+::: info
+Small website use endpoint connect directly \
 
-> Add example rpc in service context
->
+```yaml
+ExampleRpc:
+ Endpoints:
+  - 127.0.0.1:8080
+```
+
+It does not need service discovery， there can be several endpoints. \
+:::
+
+## Add example rpc in service context
+
 ### Edit service context
 
 ```go
@@ -386,6 +402,6 @@ func NewServiceContext(c config.Config) *ServiceContext {
 }
 ```
 
-> And then you can call in via l.svcCtx.ExampleRpc in logic code
+> **And then you can call in via l.svcCtx.ExampleRpc in logic code.**
 
 > simple admin example api  <https://github.com/suyuan32/simple-admin-example-api>

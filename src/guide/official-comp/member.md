@@ -17,15 +17,18 @@ git clone https://github.com/suyuan32/simple-admin-member-rpc.git
 
 ### Modify configuration file
 
-The config file is similar with core service's. You should check the CoreRpc config in rpc service and the 
-MmsConf in api service.
+The config file is similar with core service's. 
+::: warning
+You should check the CoreRpc config in rpc service and the MmsConf in api service.
+:::
 
-
-> Make sure AccessSecret is the same as simple-admin-core's api set
-> The configuration is similar as core
-> Run code the same as core
-> Init database in <http://localhost:3100/init>
-> Add API interface permissions on the role page, then restart the API service of file manager
+::: info
+- Make sure AccessSecret is the same as simple-admin-core's api set
+- The configuration is similar as core
+- Run code the same as core
+- Init database in <http://localhost:3100/init>
+- Add API interface permissions on the role page, then restart the API service of file manager
+:::
 
 ### K8s Deployment
 

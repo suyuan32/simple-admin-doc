@@ -48,4 +48,6 @@ make gen-rpc-ent-logic model={modelName} group={groupName}
 | DOCKER_PASSWORD | docker 仓库密码                |
 | REPO            | docker 仓库地址， 官网为 docker.io |
 
-> 若要发布镜像需要 export 上述环境变量
+::: warning
+若要发布镜像需要 export 上述环境变量
+:::

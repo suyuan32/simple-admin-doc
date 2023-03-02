@@ -18,14 +18,18 @@ git clone https://github.com/suyuan32/simple-admin-member-rpc.git
 
 ### 修改配置文件 etc/mms.yaml
 
-注意配置时检查 member rpc 中的 CoreRpc 配置， member api 中的 MmsRpc 配置 
+::: warning
+注意配置时检查 member rpc 中的 CoreRpc 配置， member api 中的 MmsRpc 配置 \
+ \
+确保 AccessSecret 和 simple-admin-core的api配置文件内一致
+:::
 
-
-> 确保 AccessSecret 和 simple-admin-core的api配置文件内一致
-> 配置方式参考core
-> 运行方式同理
-> 初始化数据库 <http://localhost:3100/init>
-> 在角色页面添加API接口权限，然后重启 RPC 的 API
+::: info
+- 配置方式参考core
+- 运行方式同理
+- 初始化数据库 <http://localhost:3100/init>
+- 在角色页面添加API接口权限，然后重启 RPC 的 API
+:::
 
 ### K8s 部署
 >

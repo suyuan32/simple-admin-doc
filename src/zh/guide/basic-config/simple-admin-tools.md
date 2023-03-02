@@ -37,9 +37,9 @@ go build -o goctls goctl.go
 cp ./goctls $GOPATH/bin/goctls
 ```
 
-> 简单方法： 直接运行在 goctl 文件夹运行 `sh build.sh`
-
-> 如何使用？
+::: info 简单方式
+直接运行在 goctl 文件夹运行 `sh build.sh`
+:::
 
 ## 自动下载依赖
 
@@ -147,7 +147,9 @@ service User {
 goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
-[More](https://go-zero.dev/docs/goctl/zrpc)
+::: info
+可以访问官网查看更多 [RPC command](https://go-zero.dev/docs/goctl/zrpc)
+:::
 
 > go.mod 配置
 

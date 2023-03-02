@@ -5,9 +5,15 @@ title: 'RPC 微服务'
 
 # 3分钟开发 RPC 服务
 
-> 首先确认你安装了以下软件:
+::: warning
+首先确认你安装了以下软件:
 
 - simple-admin-tool (goctls) v0.2.2+
+
+必须了解 go zero 的 RPC 命令  [RPC命令](https://go-zero.dev/cn/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC服务](https://go-zero.dev/cn/docs/advance/rpc-call)
+\
+参考 [Example](https://github.com/suyuan32/simple-admin-example-rpc) 项目生成一遍，确认生成文件与Example项目一致，Example项目有完整的命令
+:::
 
 ## RPC 职责
 在Simple Admin 中， RPC 主要用于获取数据以及提供扩展功能， 主要有以下职责：
@@ -182,18 +188,22 @@ make gen-rpc
 | multiple       | 否   | false   | 多服务          | 若 proto 文件中有多个service, 需要设置为 true                                                                 |
 | proto_out      | 否   |         | 是否拆分proto文件  | 若为空则会将数据生成到项目根目录的proto文件，否则将会生成到指定路径desc中，如 ./desc/student.proto, 注意存放proto的文件夹必须为desc, 内部可以有子文件夹 |
 
-> multiple 例子
+::: info 
+multiple 例子, multiple 用于根据不同服务生成多个 rpcclient
 
 ```shell
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
 ```
 
-[代码](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
+[示例代码](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)
+:::
 
 详细参数请在命令行查看 `goctls rpc ent --help`
 
-> 注意： 工具会自动识别desc文件夹中的proto文件，desc内部也可以创建子文件夹，package 和 go_package 只需在 base.proto声明一次，
-> 工具会自动将所有proto文件合并至项目根目录的proto文件中。旧项目拆分proto文件只需将根目录下的proto自行拆分至desc文件夹即可。
+::: warning
+注意： 工具会自动识别desc文件夹中的proto文件，desc内部也可以创建子文件夹，package 和 go_package 只需在 base.proto声明一次，
+工具会自动将所有proto文件合并至项目根目录的proto文件中。旧项目拆分proto文件只需将根目录下的proto自行拆分至desc文件夹即可。
+:::
 
 > 快捷命令：gen-rpc-ent-logic model=Student 表示只生成 schema 为 Student 的代码， 为空则全部生成 group 为分组文件夹名称
 
@@ -294,11 +304,15 @@ go run example.go -f etc/example.yaml
 Starting server at 127.0.0.1:8080...
 ```
 
-说明运行成功. 注意后续还需要修改数据库初始化函数，参考 [simple admin file](https://github.com/suyuan32/simple-admin-file/blob/master/api/internal/logic/file/init_database_logic.go)
+说明运行成功. 
+
+::: warning
+后续还需要修改数据库初始化函数，参考 [simple admin member](https://github.com/suyuan32/simple-admin-member-rpc/blob/main/internal/logic/base/init_database_logic.go)
+:::
 
 > 项目地址 <https://github.com/suyuan32/simple-admin-example-rpc>
 
-> simple admin example api 中如何远程调用该 RPC
+## simple admin example api 中如何远程调用该 RPC
 
 ### 添加 config
 
@@ -389,6 +403,6 @@ func NewServiceContext(c config.Config) *ServiceContext {
 }
 ```
 
-> 然后在 logic 直接调用 l.svcCtx.ExampleRpc 即可
+然后在 logic 直接调用 l.svcCtx.ExampleRpc 即可
 
 > simple admin example api 地址 <https://github.com/suyuan32/simple-admin-example-api>

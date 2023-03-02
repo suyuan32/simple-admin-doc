@@ -8,13 +8,15 @@ title: '本地开发环境配置'
 ## 环境需求
 
 - golang 1.19 +
-- nodejs 18.8.0 +
-- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + 推荐)
+- **nodejs 18.8.0 +**
+- **mysql 8.0 +** | MariaDB 10.7 + | Postgres 14 + (**Postgres 15 + 推荐**)
 - redis 6.0 +
 - [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
 
-> 推荐在linux下开发，因为需要用到make命令
+::: info 
+推荐在linux下开发，因为需要用到make命令，官方在 Ubuntu 22.10 环境下开发
+:::
 
 ## 后端部署
 
@@ -22,10 +24,10 @@ title: '本地开发环境配置'
 
 simple admin core 是核心代码，主要负责用户注册鉴权和充当网关的角色以及后台的各类配置。
 
-#### 默认账号
-
-username:     admin  
-password:     simple-admin
+::: info 默认账号
+username:     **admin**  
+password:     **simple-admin**
+:::
 
 ### 下载代码
 
@@ -100,6 +102,7 @@ CasbinConf:
     m = r.sub == p.sub && keyMatch2(r.obj,p.obj) && r.act == p.act
 ```
 
+::: warning
 > 小型网站直接使用
 
 ```yaml
@@ -109,6 +112,7 @@ CoreRpc:
 ```
 
 > 的方式直连，不需要服务发现，本地调试也是使用直连的方式， Endpoints 可以有多个
+:::
 
 > 添加 rpc/etc/core_dev.yaml
 
@@ -193,7 +197,9 @@ git clone https://github.com/suyuan32/simple-admin-backend-ui.git
 pnpm install
 ```
 
-> 如果下载依赖失败，请升级 pnpm 至最新版
+::: warning
+如果下载依赖失败，请升级 pnpm 至最新版
+:::
 
 ### 运行
 
@@ -254,7 +260,9 @@ VITE_GLOB_API_URL_PREFIX=
 
 ## 初始化数据库
 
+::: warning
 ***重要:*** 在初始化数据库前必须先创建数据库, 数据库名称和配置文件中的名称相同.
+:::
 
 ```shell
 # 访问前端地址端口
@@ -269,5 +277,7 @@ https://localhost:3100/init
 ![pic](/assets/init_zh_cn.png)
 
 > 文件服务初始化是可选的，没有运行文件api可以不初始化
->
-#### **初始化完成后需要重启 api 和 rpc。**
+
+::: warning
+**初始化完成后需要重启 api 和 rpc。**
+:::

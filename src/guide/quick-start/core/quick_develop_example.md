@@ -5,8 +5,11 @@ title: 'Backend Development'
 
 ## Rapid development demo
 
-> Unless you want to contribute code to the core service, it is not recommended to write your own code into the core. Please imitate [example-api](https://github.com/suyuan32/simple-admin-example-api) and [simple-admin-file](https://github.com/suyuan32/simple-admin-file ) to create your own service
-> See [API Microservice](../api_example.md) to quickly create an API
+::: warning
+Unless you want to contribute code to the core service, it is not recommended to write your own code into the core. Please imitate [example-api](https://github.com/suyuan32/simple-admin-example-api) and [simple-admin-file](https://github.com/suyuan32/simple-admin-file ) to create your own service\
+ \
+See [API Microservice](../api_example.md) to quickly create an API
+:::
 
 ## Install goctls
 

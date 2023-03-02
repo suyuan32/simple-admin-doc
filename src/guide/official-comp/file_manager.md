@@ -60,15 +60,17 @@ CoreRpc:
   Target: k8s://default/core-rpc-svc:9101 # core rpc address, use endpoint in local | core 服务RPC地址，本地测试使用直连
 ```
 
-> You should use nginx to set PublicStorePath as static path for front end.
-> Make sure AccessSecret is the same as simple-admin-core's api set
-> The configuration is similar as core
-> Run code the same as core
-> Init database in <http://localhost:3100/init>
-> Add API interface permissions on the role page, then restart the API service of file manager
+::: info
+- You should use nginx to set PublicStorePath as static path for front end.
+- Make sure AccessSecret is the same as simple-admin-core's api set
+- The configuration is similar as core
+- Run code the same as core
+- Init database in <http://localhost:3100/init>
+- Add API interface permissions on the role page, then restart the API service of file manager
+:::
 
 ### K8s Deployment
->
+
 > It is similar with core api.
 
 You should do these step:

@@ -47,4 +47,6 @@ make gen-rpc-ent-logic model={modelName} group={groupName}
 | DOCKER_PASSWORD       | docker repository password                         |
 | REPO                  | docker repository address， official hub: docker.io |
 
-> If you want to publish docker images, you must set all environment variables above.
+::: warning
+If you want to publish docker images, you must set all environment variables above.
+:::

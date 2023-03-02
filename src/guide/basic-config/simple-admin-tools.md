@@ -34,10 +34,9 @@ go build -o goctls goctl.go
 cp ./goctls $GOPATH/bin/goctls
 ```
 
-It is easy right?
-> Now you can just run **sh build.sh** in goctl directory
-
-> How to use it?
+::: info Easy Way
+You can just run **sh build.sh** in goctl directory
+:::
 
 ## Auto fix all dependencies command
 
@@ -49,7 +48,7 @@ Run this command can auto install protoc, swagger and so on.
 
 ## API command
 
-> The command is the same as goctl but you should use goctls instead.
+> The command is the same as goctl, but you should use goctls instead.
 
 ```shell
 $ goctls api -h
@@ -143,9 +142,11 @@ service User {
 goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
-[More](https://go-zero.dev/docs/goctl/zrpc)
+::: info 
+You can get [More Document](https://go-zero.dev/docs/goctl/zrpc) on go zero official website.
+:::
 
-> Project go.mod setting
+## Project go.mod setting
 
 We know that if we want to import fork project we should use replace command.
 

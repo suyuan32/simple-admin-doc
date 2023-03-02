@@ -56,5 +56,7 @@ VITE_GLOB_API_URL_PREFIX=
 
 Mainly modify the VITE_PROXY to CROS request to different host.
 
-> You must write your code in one line.
-> VITE_PROXY = [["/sys-api","http://localhost:9100"],["/file-manager","http://localhost:9102"]]
+::: warning
+You must write your code in one line. \
+VITE_PROXY = [["/sys-api","http://localhost:9100"],["/file-manager","http://localhost:9102"]]
+:::

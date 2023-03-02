@@ -6,9 +6,16 @@ title: 'API 微服务'
 
 # 3 分钟开发 API 服务
 
+::: warning
 首先确认你安装了以下软件:
 
 - simple-admin-tool (goctls) v0.2.2 +
+
+必须了解 go zero 的 API 命令  [API命令](https://go-zero.dev/cn/docs/goctl/api) [api文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
+\
+参考 [Example](https://github.com/suyuan32/simple-admin-example-api) 项目生成一遍，确认生成文件与Example项目一致，Example项目有完整的命令
+:::
+
 
 ## API服务的职责
 在 simple admin 中， API 服务充当网关的角色，主要提供以下功能：
@@ -40,7 +47,7 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool
 | gitlab          | 否   | false | 是否生成 gitlab-ci.yml     | true 为生成                                                                                           |
 | port            | 否   | 9100  | 端口号                    | 服务暴露的端口号                                                                                           |
 
-详细参数请在命令行查看 `goctls api new --help`
+**详细参数请在命令行查看 `goctls api new --help`**
 
 > 你可以看到以下结构
 
@@ -147,6 +154,10 @@ Starting server at 127.0.0.1:8081...
 
 ## 代码生成（基于Proto）
 
+::: warning
+proto 必须为 ```goctls rpc ent``` 生成的 proto
+:::
+
 ```shell
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
@@ -165,15 +176,17 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | grpc_package     | 是   |         | RPC *_grpc.go 包路径 | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example |
 | multiple         | 否   | false   | 多服务               | 若 proto 文件中有多个service, 需要设置为 true                               |
 
-详细参数请在命令行查看 `goctls api proto --help`
+**详细参数请在命令行查看 `goctls api proto --help`**
 
-> multiple 例子
+::: info
+multiple 例子, multiple 用于根据不同服务生成多个 rpcclient
 
 ```shell
 goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
 ```
 
 [代码](https://github.com/suyuan32/simple-admin-example-api/tree/multiple)
+:::
 
 > 生成效果
 
@@ -181,4 +194,6 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 > 详情查看 simple admin example api 地址 <https://github.com/suyuan32/simple-admin-example-api>
 
-注意还需要手动添加下 service_context, config, etc, ExampleRpc
+::: warning
+还需要手动添加下 service_context, config, etc, ExampleRpc
+:::

@@ -7,7 +7,7 @@ title: 'Web Pages'
 
 > Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.1.7 +
+- simple-admin-tool (goctls) v0.2.2 +
 
 ## Create example codes
 

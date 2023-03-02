@@ -6,9 +6,11 @@ title: 'Web 端'
 
 # Vben Web 端代码生成
 
+::: warning
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.1.7+
+- simple-admin-tool (goctls) v0.2.2+
+:::
 
 ## 创建 example 代码
 

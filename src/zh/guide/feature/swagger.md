@@ -196,7 +196,9 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 
 你可以修改不同的 response， 或者进行更复杂的配置， 它不会被覆盖，除非将文件删除。
 
-> 注意 goctls 的生成只会覆盖 internal/types/* 和 internal/handler/routes.go， 如果 handler 需要重新生成需要手动删除再生成
+::: warning
+注意 goctls 的生成只会覆盖 internal/types/* 和 internal/handler/routes.go， 如果 handler 需要重新生成需要手动删除再生成。
+:::
 
 ## go swagger 报错
 安装最新版 go-swagger

@@ -203,8 +203,10 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 
 You can add more config in handler because it will not be over write if the file exists.
 
-> Notice: goctls' generating will only overwrite internal/types/* and internal/handler/routes.go.
-> If  handler and logic and so on need to regenerate, you must delete them by yourself.
+::: warning
+goctls' generating will only overwrite internal/types/* and internal/handler/routes.go. \
+If  handler and logic and so on need to regenerate, you must delete them by yourself.
+:::
 
 ## Go swagger report error
 Install the latest version of go-swagger

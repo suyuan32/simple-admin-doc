@@ -8,7 +8,7 @@ title: 'K8s Deployment'
 ## Environment Requirement
 
 - minikube v1.23.0 +
-- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + recommended)
+- **mysql 8.0 +** | MariaDB 10.7 + | Postgres 14 + (**Postgres 15 + recommended**)
 - redis 6.0 +
 - docker
 
@@ -19,7 +19,7 @@ title: 'K8s Deployment'
 ### K8s Setting
 
 #### API service
->
+
 > api/etc/core.yaml
 
 ```yaml
@@ -133,7 +133,9 @@ make docker
 make publish-docker
 ```
 
-> Recommend to use gitlab-ci. The project had been provided .gitlab-ci.yml， You need set variable ： $DOCKER_USERNAME 和 $DOCKER_PASSWORD in gitlab runner.
+::: info
+Recommend to use gitlab-ci. The project had been provided .gitlab-ci.yml， You need set variable ： $DOCKER_USERNAME 和 $DOCKER_PASSWORD in gitlab runner.
+:::
 
 ```text
 variables:
@@ -184,11 +186,13 @@ clean-job:
 - upload to docker repository
 - run in k8s ->  kubectl apply -f deploy/k8s/coreapi.yaml
 
-> You can use gitlab-ci to automatically build and push docker image
+::: info
+You can use gitlab-ci to automatically build and push docker image
+:::
 
 ### coreapi k8s deployment file tutorial
 
-> core api the name of service, you can find in label and metadata:name \
+> `core-api` is the name of service, you can find in label and metadata:name \
 > Namespace is  default, you can change your own namespace
 
 ```yaml
@@ -373,7 +377,9 @@ server {
 }
 ```
 
-> Notice: proxy_pass format:   <http://{service-name}.{namespace}.svc.cluster.local:{port}/>
+::: warning
+proxy_pass format:   <http://{service-name}.{namespace}.svc.cluster.local:{port}/>
+:::
 
 #### Quick Deployment
 

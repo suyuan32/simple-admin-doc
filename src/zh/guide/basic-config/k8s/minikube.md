@@ -21,7 +21,7 @@ minikube start --memory 3g
 ```
 
 ### minikube 启用插件
->
+
 > 启用 ingress 和 metrics (metrics是gozero默认使用的,用于自动扩展)
 
 ```shell
@@ -35,7 +35,7 @@ alias kubectl="minikube kubectl --"
 ```
 
 ### 部署服务
->
+
 > clone 代码，进入 deploy/k8s 文件夹
 
 ```shell
@@ -55,7 +55,9 @@ kubectl apply -f core-api.yaml
 kubectl apply -f backend-ui.yaml
 ```
 
-> 可以直接运行 simple-admin-core/deploy/k8s/setup.sh 完成以上操作
+::: info
+可以直接运行 simple-admin-core/deploy/k8s/setup.sh 完成以上操作
+:::
 
 ### Ingress 配置
 
@@ -117,7 +119,9 @@ kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-patch.y
 
 ```
 
-> 以直接运行 simple-admin-core/deploy/k8s/setup-ingress.sh 完成以上操作
+::: info
+可以直接运行 simple-admin-core/deploy/k8s/setup-ingress.sh 完成以上操作
+:::
 
 > 查看 ingress 地址
 

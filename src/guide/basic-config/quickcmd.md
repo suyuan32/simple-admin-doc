@@ -5,7 +5,9 @@ title: 'Quick Commands'
 
 # Quick Commands
 
-#### **Note: The system needs to support the make command, linux is recommended**
+::: warning
+**Note: The system needs to support the make command, linux is recommended**
+:::
 
 We offer several commands in makefile ， you can just run in bash:
 
@@ -37,6 +39,7 @@ make doc
 # generate CRUD code ( You need to set model name and group name)
 make gen-rpc-ent-logic model={modelName} group={groupName}
 ```
+> You can also learn the commands from the Makefile. 
 
 ## Environment variables
 

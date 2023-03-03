@@ -12,4 +12,4 @@ title: 'Project Specification'
 
 - The proto file split is defined in the desc folder
 - Since proto3 has a default value such as bool's default value is false, it is impossible to judge whether to update, so it is recommended to use a number above 1 for the status. If you use bool, you need to carry this parameter every time you update
-- set not empty only supports string and int - float types, only set can be used for bool
+- `SetNotEmpty` function only supports string and int - float types, only `Set` can be used for bool

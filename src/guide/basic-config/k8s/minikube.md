@@ -18,7 +18,7 @@ minikube start --memory 3g
 ```
 
 ### minikube add plugins
->
+
 > Enable ingress adn metrics (metrics is used in go-zero for auto-scaling monitor)
 
 ```shell
@@ -32,7 +32,7 @@ alias kubectl="minikube kubectl --"
 ```
 
 ### Deploy the service
->
+
 > clone the code，cd deploy/k8s
 
 ```shell
@@ -52,7 +52,9 @@ kubectl apply -f core-api.yaml
 kubectl apply -f backend-ui.yaml
 ```
 
-> You can just run simple-admin-core/deploy/k8s/setup.sh to finish the job.
+::: info
+You can just run simple-admin-core/deploy/k8s/setup.sh to finish the job.
+:::
 
 ### Ingress Setting
 
@@ -114,7 +116,9 @@ kubectl patch deployment ingress-nginx-controller --patch "$(cat ingress-patch.y
 
 ```
 
-> You can just run simple-admin-core/deploy/k8s/setup-ingress.sh to finish the job.
+::: info
+You can just run simple-admin-core/deploy/k8s/setup-ingress.sh to finish the job.
+:::
 
 > browse ingress IP address
 

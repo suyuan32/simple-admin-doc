@@ -105,4 +105,6 @@ func (m *AuthorityMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 
 [How to use middleware](https://go-zero.dev/docs/advance/middleware)
 
-#### At present, API generation already supports automatic generation of authentication middleware
+::: info
+At present, API generation already supports automatic generation of authentication middleware
+:::

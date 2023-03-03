@@ -12,4 +12,4 @@ title: '项目规范'
 
 - proto 文件拆分定义在desc文件夹中
 - 由于proto3有默认值如bool的默认值为false,导致无法判断是否更新，所以建议状态使用数字1以上，使用bool的话需要每次更新都要携带该参数
-- set not empty 只支持 string 和 int - float 类型，对于bool只能使用set
+- `SetNotEmpty` 只支持 string 和 int - float 类型，对于bool只能使用 `Set`

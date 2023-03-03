@@ -9,7 +9,7 @@ title: 'K8s 部署'
 ## 环境需求
 
 - minikube v1.23.0 +
-- mysql 8.0 + | MariaDB 10.7 + | Postgres 14 + (Postgres 15 + 推荐)
+- **mysql 8.0 +** | MariaDB 10.7 + | Postgres 14 + (**Postgres 15 + 推荐**)
 - redis 6.0 +
 - docker
 
@@ -20,7 +20,7 @@ title: 'K8s 部署'
 ### K8s配置
 
 #### API 服务
->
+
 > api/etc/core.yaml
 
 ```yaml
@@ -185,7 +185,9 @@ clean-job:
 - 上传docker仓库
 - 在k8s集群使用命令 kubectl apply -f deploy/k8s/coreapi.yaml 等直接部署
 
-> 生成镜像和上传仓库建议直接使用gitlab-ci自动发布
+::: warning
+生成镜像和上传仓库建议直接使用gitlab-ci自动发布
+:::
 
 ### coreapi 部署文件详解
 
@@ -372,7 +374,9 @@ server {
 }
 ```
 
-> 注意 proxy_pass 格式  <http://{service-name}.{namespace}.svc.cluster.local:{port}/>
+::: warning
+proxy_pass 格式  <http://{service-name}.{namespace}.svc.cluster.local:{port}/>
+:::
 
 #### 快速部署
 

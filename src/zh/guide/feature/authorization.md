@@ -105,4 +105,6 @@ func (m *AuthorityMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 
 [如何使用中间件](https://go-zero.dev/cn/docs/advance/middleware)
 
-#### 目前API生成已支持自动生成鉴权中间件
+::: info
+目前API生成已支持自动生成鉴权中间件
+:::

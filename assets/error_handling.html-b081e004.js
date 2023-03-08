@@ -1,13 +1,13 @@
 import{_ as n,W as s,X as a,a0 as e}from"./framework-2d290880.js";const t={},i=e(`<h1 id="error-handling" tabindex="-1"><a class="header-anchor" href="#error-handling" aria-hidden="true">#</a> Error Handling</h1><h3 id="error-type" tabindex="-1"><a class="header-anchor" href="#error-type" aria-hidden="true">#</a> Error Type</h3><p>Simple Admin has three error types</p><ul><li>ApiError : Api error, used to return error return information with http status code</li><li>CodeError : The business code type is wrong, the error status code is uniformly 200, and the detailed status code is in the return body</li><li>Status Error: RPC error</li></ul><h3 id="rpc-error" tabindex="-1"><a class="header-anchor" href="#rpc-error" aria-hidden="true">#</a> RPC Error</h3><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code>status<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>codes<span class="token punctuation">.</span>Internal<span class="token punctuation">,</span> result<span class="token punctuation">.</span>Error<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Just return status.Error</p><p>Easy way</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>statuserr.NewInternalError(msg)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>Just return status.Error</p><p>Easy way</p><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>errorx.NewInternalError(msg)
 
-statuserr.NewInvalidArgumentError(msg)
+errorx.NewInvalidArgumentError(msg)
 
-statuserr.NewNotFoundError(msg)
+errorx.NewNotFoundError(msg)
 
-statuserr.NewAlreadyExistsError(msg)
+errorx.NewAlreadyExistsError(msg)
 
-statuserr.NewUnauthenticatedError
+errorx.NewUnauthenticatedError
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="code-error" tabindex="-1"><a class="header-anchor" href="#code-error" aria-hidden="true">#</a> Code Error</h3><p>Use CodeError to return error in API layer.</p><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code>errorx<span class="token punctuation">.</span><span class="token function">CodeError</span><span class="token punctuation">(</span>enum<span class="token punctuation">.</span>InvalidArgument<span class="token punctuation">,</span> <span class="token string">&quot;Please log in&quot;</span><span class="token punctuation">)</span>
 
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>Easy Way</p><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code>

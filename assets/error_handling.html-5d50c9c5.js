@@ -1,13 +1,13 @@
 import{_ as n,W as s,X as a,a0 as e}from"./framework-2d290880.js";const t={},i=e(`<h1 id="错误处理" tabindex="-1"><a class="header-anchor" href="#错误处理" aria-hidden="true">#</a> 错误处理</h1><h3 id="错误类型" tabindex="-1"><a class="header-anchor" href="#错误类型" aria-hidden="true">#</a> 错误类型</h3><p>simple admin 有三种错误类型</p><ul><li>ApiError : Api 错误，用于返回带http状态码的错误返回信息</li><li>CodeError : 业务代码类型错误, 错误状态码统一为 200, 详细状态码在返回体中</li><li>Status Error: RPC 错误</li></ul><h3 id="rpc-错误" tabindex="-1"><a class="header-anchor" href="#rpc-错误" aria-hidden="true">#</a> RPC 错误</h3><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code>status<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span>codes<span class="token punctuation">.</span>Internal<span class="token punctuation">,</span> result<span class="token punctuation">.</span>Error<span class="token punctuation">.</span><span class="token function">Error</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>直接 return status.Error</p><blockquote><p>简便方法</p></blockquote><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>statuserr.NewInternalError(msg)
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>直接 return status.Error</p><blockquote><p>简便方法</p></blockquote><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>errorx.NewInternalError(msg)
 
-statuserr.NewInvalidArgumentError(msg)
+errorx.NewInvalidArgumentError(msg)
 
-statuserr.NewNotFoundError(msg)
+errorx.NewNotFoundError(msg)
 
-statuserr.NewAlreadyExistsError(msg)
+errorx.NewAlreadyExistsError(msg)
 
-statuserr.NewUnauthenticatedError
+errorx.NewUnauthenticatedError
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="业务码错误" tabindex="-1"><a class="header-anchor" href="#业务码错误" aria-hidden="true">#</a> 业务码错误</h3><p>使用 CodeError 返回 API 层的业务码错误，</p><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code>errorx<span class="token punctuation">.</span><span class="token function">CodeError</span><span class="token punctuation">(</span>enum<span class="token punctuation">.</span>InvalidArgument<span class="token punctuation">,</span> <span class="token string">&quot;Please log in&quot;</span><span class="token punctuation">)</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>简便方法</p><div class="language-go line-numbers-mode" data-ext="go"><pre class="language-go"><code>
 <span class="token keyword">func</span> <span class="token function">NewCodeCanceledError</span><span class="token punctuation">(</span>msg <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token builtin">error</span> <span class="token punctuation">{</span>

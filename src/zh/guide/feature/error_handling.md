@@ -24,15 +24,15 @@ status.Error(codes.Internal, result.Error.Error())
 > 简便方法
 
 ```text
-statuserr.NewInternalError(msg)
+errorx.NewInternalError(msg)
 
-statuserr.NewInvalidArgumentError(msg)
+errorx.NewInvalidArgumentError(msg)
 
-statuserr.NewNotFoundError(msg)
+errorx.NewNotFoundError(msg)
 
-statuserr.NewAlreadyExistsError(msg)
+errorx.NewAlreadyExistsError(msg)
 
-statuserr.NewUnauthenticatedError
+errorx.NewUnauthenticatedError
 ```
 
 ### 业务码错误

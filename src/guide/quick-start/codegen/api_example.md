@@ -162,18 +162,18 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 ### `api proto` parameters
 
-| Parameters       | Must | Default | Introduction               | Usage                                                                                        |
-|------------------|------|---------|----------------------------|----------------------------------------------------------------------------------------------|
-| proto            | Yes  |         | Proto file path            | Input the absolute path of proto file, it should be the proto in root directory, not in desc |
-| style            | No   | go_zero | File name format           | The go_zero means snack format                                                               |
-| api_service_name | Yes  |         | API Service name           | The API service name set in `.api` file                                                      |
-| rpc_service_name | Yes  |         | RPC Service name           | The RPC service name set in `.proto` file                                                    |
-| o                | Yes  |         | Output path                | The output path，it can be relative path. It should target to the root path of project.       |
-| model            | Yes  |         | Model name                 | The structure name in schema，e.g. the Student in example project                             |
-| rpc_name         | Yes  |         | RPC name                   | Input Example will generate l.svcCtx.ExampleRpc                                              |
-| grpc_package     | Yes  |         | RPC *_grpc.go package path | In example project is github.com/suyuan32/simple-admin-example-rpc/example                   |
-| multiple         | No   | false   | Multiple Service           | If your proto file contains multiple service, you should set true                            |
-
+| Parameters       | Must | Default | Introduction                                    | Usage                                                                                        |
+|------------------|------|---------|-------------------------------------------------|----------------------------------------------------------------------------------------------|
+| proto            | Yes  |         | Proto file path                                 | Input the absolute path of proto file, it should be the proto in root directory, not in desc |
+| style            | No   | go_zero | File name format                                | The go_zero means snack format                                                               |
+| api_service_name | Yes  |         | API Service name                                | The API service name set in `.api` file                                                      |
+| rpc_service_name | Yes  |         | RPC Service name                                | The RPC service name set in `.proto` file                                                    |
+| o                | Yes  |         | Output path                                     | The output path，it can be relative path. It should target to the root path of project.       |
+| model            | Yes  |         | Model name                                      | The structure name in schema，e.g. the Student in example project                             |
+| rpc_name         | Yes  |         | RPC name                                        | Input Example will generate l.svcCtx.ExampleRpc                                              |
+| grpc_package     | Yes  |         | RPC *_grpc.go package path                      | In example project is github.com/suyuan32/simple-admin-example-rpc/example                   |
+| multiple         | No   | false   | Multiple Service                                | If your proto file contains multiple service, you should set true                            |
+| json_style       | No   | goZero  | JSON tag format, the default is small camelCase | go_zero is underscore, GoZero is large camelCase                                             |
 ::: info
 Multiple Service Example, multiple is used to generate separate RPC client when there are several RPC service in one proto file.
 

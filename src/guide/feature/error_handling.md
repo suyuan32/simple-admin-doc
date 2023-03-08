@@ -23,15 +23,15 @@ Just return status.Error
 Easy way
 
 ```text
-statuserr.NewInternalError(msg)
+errorx.NewInternalError(msg)
 
-statuserr.NewInvalidArgumentError(msg)
+errorx.NewInvalidArgumentError(msg)
 
-statuserr.NewNotFoundError(msg)
+errorx.NewNotFoundError(msg)
 
-statuserr.NewAlreadyExistsError(msg)
+errorx.NewAlreadyExistsError(msg)
 
-statuserr.NewUnauthenticatedError
+errorx.NewUnauthenticatedError
 ```
 
 ### Code Error

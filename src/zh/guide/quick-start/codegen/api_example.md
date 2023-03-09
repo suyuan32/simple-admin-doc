@@ -176,6 +176,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | grpc_package     | 是   |         | RPC *_grpc.go 包路径  | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example |
 | multiple         | 否   | false   | 多服务                | 若 proto 文件中有多个service, 需要设置为 true                               |
 | json_style       | 否   | goZero  | JSON tag的格式，默认为小驼峰 | go_zero 为下划线， GoZero为大驼峰                                        |
+| overwrite        | 否   | false   | 是否覆盖生成文件           | true则会覆盖所有生成的文件                                                 |
 
 
 **详细参数请在命令行查看 `goctls api proto --help`**

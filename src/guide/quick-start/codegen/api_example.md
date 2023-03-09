@@ -174,6 +174,8 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | grpc_package     | Yes  |         | RPC *_grpc.go package path                      | In example project is github.com/suyuan32/simple-admin-example-rpc/example                   |
 | multiple         | No   | false   | Multiple Service                                | If your proto file contains multiple service, you should set true                            |
 | json_style       | No   | goZero  | JSON tag format, the default is small camelCase | go_zero is underscore, GoZero is large camelCase                                             |
+| overwrite        | No   | false   | Whether it covers the generated file            | `true` will cover all generated files                                                        |
+
 ::: info
 Multiple Service Example, multiple is used to generate separate RPC client when there are several RPC service in one proto file.
 

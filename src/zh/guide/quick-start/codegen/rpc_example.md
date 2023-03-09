@@ -187,6 +187,7 @@ make gen-rpc
 | group          | 是   |         | 分组名称         | 分组名称用于将不同logic文件放到不同文件夹                                                                           |
 | multiple       | 否   | false   | 多服务          | 若 proto 文件中有多个service, 需要设置为 true                                                                 |
 | proto_out      | 否   |         | 是否拆分proto文件  | 若为空则会将数据生成到项目根目录的proto文件，否则将会生成到指定路径desc中，如 ./desc/student.proto, 注意存放proto的文件夹必须为desc, 内部可以有子文件夹 |
+| overwrite      | 否   | false   | 是否覆盖生成文件     | true则会覆盖所有生成的文件                                                                                   |
 
 ::: info 
 multiple 例子, multiple 用于根据不同服务生成多个 rpcclient

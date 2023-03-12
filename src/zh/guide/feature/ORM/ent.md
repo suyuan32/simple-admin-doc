@@ -86,11 +86,12 @@ func (Role) Annotations() []schema.Annotation {
 
 ### Mixin 介绍
 
-目前项目提供了三种 Mixin 位于 `simple-admin-core/pkg/ent/schema/mixins`
+目前项目提供了三种 Mixin 位于 `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
 
 - base: 提供自增整数id, created_at, updated_at
 - uuid: 提供uuid类型的id作为主键, created_at, updated_at
 - status: 提供状态字段 status
+- sort: 提供排序字段
 
 #### uuidx 提供两个方法用于转换 uuid
 
@@ -146,7 +147,9 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 ### Ent 驱动
 
-注意： ent driver 有两种驱动，带缓存和不带缓存
+::: warning
+ent driver 有两种驱动，带缓存和不带缓存
+:::
 
 > 带缓存 （会导致更新数据需要等待缓存时间过去才能看到更新，适合更新少的系统）
 
@@ -168,7 +171,11 @@ db := ent.NewClient(
 )
 ```
 
-> 使用效果
+::: info
+[Ent cache 文档](https://github.com/ariga/entcache)
+:::
+
+### 使用效果
 
 更新角色状态 rpc/internal/logic/update_role_status_logic.go
 
@@ -378,7 +385,9 @@ func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core
 }
 ```
 
-注意： not empty update只支持字符和数字类型，不支持布尔和UUID,需要自行判断
+::: warning
+not empty update只支持字符和数字类型，不支持布尔和UUID,需要自行判断
+:::
 
 默认使用ID排序，可以不用设置
 
@@ -413,7 +422,7 @@ SaveX(context.Background())
 ```go
 
 func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) {
-	err := utils.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
+	err := entx.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
 		updateQuery := tx.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).
 			SetNotEmptyUsername(in.Username).
 			SetNotEmptyNickname(in.Nickname).

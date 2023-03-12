@@ -83,11 +83,12 @@ func (Role) Annotations() []schema.Annotation {
 
 ### Mixin Introduction
 
-Currently, the project provides three Mixins located in `simple-admin-core/pkg/ent/schema/mixins`
+Currently, the project provides four Mixins located in `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
 
-- base: provide self-incrementing integer id, created_at, updated_at
+- base: Provide self-incrementing integer id, created_at, updated_at
 - uuid: Provide uuid type id as primary key, created_at, updated_at
 - status: Provide status field status
+- sort: Provide sort field
 
 #### uuidx provides two methods for converting uuid
 
@@ -143,7 +144,9 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 ### Ent Driver
 
-Notice： There are two drivers for ent，cache and no cache.
+::: warning
+There are two drivers for ent，cache and no cache.
+:::
 
 > Cache （Will cause changes show slowly, suitable for system whose data have less changes）
 
@@ -164,6 +167,10 @@ db := ent.NewClient(
     ent.Debug(), // debug mode
 )
 ```
+
+::: info
+[Ent cache Document](https://github.com/ariga/entcache)
+:::
 
 ### Usage in logic
 
@@ -374,8 +381,9 @@ func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core
 	return &core.BaseResp{Msg: i18n.UpdateSuccess}, nil
 }
 ```
-
-Note: not empty update only supports string and number types such as float, int, does not support Boolean and UUID, you need to judge them by yourself
+::: warning
+not empty update only supports string and number types such as float, int, does not support Boolean and UUID, you need to judge them by yourself
+:::
 
 By default, we order by ID, you do not need to set it.
 
@@ -411,7 +419,7 @@ The project provides the WithTx method to use database transactions locally, tak
 ```go
 
 func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) {
-	err := utils.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
+	err := entx.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
 		updateQuery := tx.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).
 			SetNotEmptyUsername(in.Username).
 			SetNotEmptyNickname(in.Nickname).

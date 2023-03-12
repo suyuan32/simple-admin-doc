@@ -187,3 +187,16 @@ serviceGroup.Add(dynamicperiodictask.NewDPTask(ctx))
 // serviceGroup.Add(scheduletask.NewSchedulerTask(ctx))
 ```
 :::
+
+### 定时任务表达式
+
+定时任务支持常用 Cron 表达式
+
+::: info 默认格式
+> `* * * * *`
+表示每秒钟都会执行
+:::
+
+::: info every
+> `@every` 如 `@every 5s` 表示每5秒执行一次
+:::

@@ -187,3 +187,17 @@ serviceGroup.Add(dynamicperiodictask.NewDPTask(ctx))
 // serviceGroup.Add(scheduletask.NewSchedulerTask(ctx))
 ```
 :::
+
+
+### Timing cron expression
+
+Timing tasks support common Cron expressions
+
+::: info default format
+> `* * * * *`
+Indicates that it will be executed every second
+:::
+
+::: info every
+> `@every` such as `@every 5s` means to execute every 5 seconds
+:::

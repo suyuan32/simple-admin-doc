@@ -9,7 +9,7 @@ title: 'API 微服务'
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.2.2 +
+- simple-admin-tool (goctls) v0.2.7 +
 
 必须了解 go zero 的 API 命令  [API命令](https://go-zero.dev/cn/docs/goctl/api) [api文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
 \
@@ -31,7 +31,7 @@ title: 'API 微服务'
 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool_version=v0.2.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool_version=v0.2.7 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 ### `api new` 参数介绍

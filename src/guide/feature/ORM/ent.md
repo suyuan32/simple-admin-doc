@@ -148,7 +148,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 There are two drivers for ent，cache and no cache.
 :::
 
-> Cache （Will cause changes show slowly, suitable for system whose data have less changes）
+> Cache （Use Context control the cache）
 
 ```go
 db := ent.NewClient(

@@ -7,7 +7,7 @@ title: 'API Service'
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.2.2 +
+- simple-admin-tool (goctls) v0.2.7 +
 
  \
 Must know go-zero's  API command.  [API Command](https://go-zero.dev/docs/goctl/api) [Api Service](https://go-zero.dev/docs/advance/api-coding) \
@@ -29,7 +29,7 @@ An API can access multiple RPCs, providing a unified request entry。
 > Create example project
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool_version=v0.2.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.4.4 --tool_version=v0.2.7 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 
 ```
 

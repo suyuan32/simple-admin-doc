@@ -151,7 +151,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 ent driver 有两种驱动，带缓存和不带缓存
 :::
 
-> 带缓存 （会导致更新数据需要等待缓存时间过去才能看到更新，适合更新少的系统）
+> 带缓存 （使用context控制缓存）
 
 ```go
 db := ent.NewClient(

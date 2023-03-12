@@ -55,81 +55,46 @@ func NewServiceContext(c config.Config) *ServiceContext {
 > 使用方法
 
 ```go
-package logic
+package api
 
 import (
- "context"
+	"context"
 
- "github.com/suyuan32/simple-admin-core/pkg/ent"
- "github.com/suyuan32/simple-admin-core/pkg/msg/i18n"
- "github.com/suyuan32/simple-admin-core/pkg/statuserr"
- "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
- "github.com/suyuan32/simple-admin-core/rpc/types/core"
+	"github.com/suyuan32/simple-admin-core/pkg/utils/errorhandler"
+	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+	"github.com/suyuan32/simple-admin-core/rpc/types/core"
 
- "github.com/zeromicro/go-zero/core/errorx"
- "github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/logx"
+
+	"github.com/suyuan32/simple-admin-common/i18n"
 )
 
-type CreateOrUpdateApiLogic struct {
- ctx    context.Context
- svcCtx *svc.ServiceContext
- logx.Logger
+type CreateApiLogic struct {
+	ctx    context.Context
+	svcCtx *svc.ServiceContext
+	logx.Logger
 }
 
-func NewCreateOrUpdateApiLogic(ctx context.Context, svcCtx *svc.ServiceContext) *CreateOrUpdateApiLogic {
- return &CreateOrUpdateApiLogic{
-  ctx:    ctx,
-  svcCtx: svcCtx,
-  Logger: logx.WithContext(ctx),
- }
+func NewCreateApiLogic(ctx context.Context, svcCtx *svc.ServiceContext) *CreateApiLogic {
+	return &CreateApiLogic{
+		ctx:    ctx,
+		svcCtx: svcCtx,
+		Logger: logx.WithContext(ctx),
+	}
 }
 
-// api management service
-func (l *CreateOrUpdateApiLogic) CreateOrUpdateApi(in *core.ApiInfo) (*core.BaseResp, error) {
- if in.Id == 0 {
-  err := l.svcCtx.DB.API.Create().
-   SetPath(in.Path).
-   SetDescription(in.Description).
-   SetAPIGroup(in.Group).
-   SetMethod(in.Method).
-   Exec(l.ctx)
+func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
+	result, err := l.svcCtx.DB.API.Create().
+		SetPath(in.Path).
+		SetDescription(in.Description).
+		SetAPIGroup(in.ApiGroup).
+		SetMethod(in.Method).
+		Save(l.ctx)
+	if err != nil {
+		return nil, errorhandler.DefaultEntError(l.Logger, err, in)
+	}
 
-  if err != nil {
-   switch {
-   case ent.IsConstraintError(err):
-    logx.Errorw(err.Error(), logx.Field("detail", in))
-    return nil, statuserr.NewInvalidArgumentError(i18n.ApiAlreadyExists)
-   default:
-    logx.Errorw(logmsg.DatabaseError, logx.Field("detail", err.Error()))
-    return nil, statuserr.NewInternalError(i18n.DatabaseError)
-   }
-  }
-
-  return &core.BaseResp{Msg: i18n.CreateSuccess}, nil
- } else {
-  err := l.svcCtx.DB.API.UpdateOneID(in.Id).
-   SetPath(in.Path).
-   SetDescription(in.Description).
-   SetAPIGroup(in.Group).
-   SetMethod(in.Method).
-   Exec(l.ctx)
-
-  if err != nil {
-   switch {
-   case ent.IsNotFound(err):
-    logx.Errorw(err.Error(), logx.Field("detail", in))
-    return nil, statuserr.NewInvalidArgumentError(i18n.TargetNotFound)
-   case ent.IsConstraintError(err):
-    logx.Errorw(err.Error(), logx.Field("detail", in))
-    return nil, statuserr.NewInvalidArgumentError(i18n.UpdateFailed)
-   default:
-    logx.Errorw(logmsg.DatabaseError, logx.Field("detail", err.Error()))
-    return nil, statuserr.NewInternalError(i18n.DatabaseError)
-   }
-  }
-
-  return &core.BaseResp{Msg: i18n.UpdateSuccess}, nil
- }
+	return &core.BaseIDResp{Id: result.ID, Msg: i18n.CreateSuccess}, nil
 }
 
 ```

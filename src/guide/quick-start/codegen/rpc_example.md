@@ -7,7 +7,7 @@ title: 'RPC Service'
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.2.2 +
+- simple-admin-tool (goctls) v0.2.7 +
 
  \
 Must know go-zero's RPC command.  [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
@@ -29,7 +29,7 @@ Multiple different APIs can access the same RPC to call its functions.
 > Create example project
 >
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.3 --tool_version=v0.1.8 --port=8080  --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.4 --tool_version=v0.2.7 --port=8080  --gitlab=true --desc=true
 ```
 
 ### `rpc new` parameters

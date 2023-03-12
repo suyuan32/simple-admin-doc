@@ -8,7 +8,7 @@ title: 'RPC 微服务'
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.2.2+
+- simple-admin-tool (goctls) v0.2.7+
 
 必须了解 go zero 的 RPC 命令  [RPC命令](https://go-zero.dev/cn/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC服务](https://go-zero.dev/cn/docs/advance/rpc-call)
 \
@@ -29,7 +29,7 @@ title: 'RPC 微服务'
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.4 --tool_version=v0.2.2 --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.4 --tool_version=v0.2.7 --port=8080 --gitlab=true --desc=true
 ```
 
 ### `rpc new`参数介绍

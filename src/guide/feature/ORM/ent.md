@@ -16,7 +16,7 @@ go get -d entgo.io/ent/cmd/ent
 
 ### Initialize code
 
-Run in pkg directory
+Run in rpc directory
 
 ```shell
 # Creat User schema
@@ -28,7 +28,7 @@ go run -mod=mod entgo.io/ent/cmd/ent generate --template glob="./ent/template/*.
 
 ### Defined schema
 
-In pkg/ent ，you mainly modify files in schema directory. It is used to define all the models，most of other files in other directories are
+In rpc/ent ，you mainly modify files in schema directory. It is used to define all the models，most of other files in other directories are
 generated. Mixin is used to define common fields, such as
 
 ```go
@@ -41,7 +41,7 @@ import (
  "entgo.io/ent/schema/edge"
  "entgo.io/ent/schema/field"
 
- "github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
+ "github.com/suyuan32/simple-admin-core/rpc/ent/schema/mixins"
 )
 
 type Role struct {
@@ -105,7 +105,7 @@ See rpc/internal/svc/service_context.go
 package svc
 
 import (
- "github.com/suyuan32/simple-admin-core/pkg/ent"
+ "github.com/suyuan32/simple-admin-core/rpc/ent"
  "github.com/suyuan32/simple-admin-core/rpc/internal/config"
 
  "github.com/zeromicro/go-zero/core/logx"
@@ -174,64 +174,49 @@ db := ent.NewClient(
 
 ### Usage in logic
 
-Update role status.  rpc/internal/logic/update_role_status_logic.go
+Create an API  `rpc/internal/logic/update_role_status_logic.go`
 
 ```go
-package logic
+package api
 
 import (
- "context"
- "fmt"
- "strconv"
+	"context"
 
- "github.com/suyuan32/simple-admin-core/pkg/ent"
- "github.com/suyuan32/simple-admin-core/pkg/msg/logmsg"
- "github.com/suyuan32/simple-admin-core/pkg/statuserr"
- "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
- "github.com/suyuan32/simple-admin-core/rpc/types/core"
+	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+	"github.com/suyuan32/simple-admin-core/rpc/internal/utils/errorhandler"
+	"github.com/suyuan32/simple-admin-core/rpc/types/core"
 
- "github.com/zeromicro/go-zero/core/errorx"
- "github.com/zeromicro/go-zero/core/logx"
+	"github.com/zeromicro/go-zero/core/logx"
+
+	"github.com/suyuan32/simple-admin-common/i18n"
 )
 
-type UpdateRoleStatusLogic struct {
- ctx    context.Context
- svcCtx *svc.ServiceContext
- logx.Logger
+type CreateApiLogic struct {
+	ctx    context.Context
+	svcCtx *svc.ServiceContext
+	logx.Logger
 }
 
-func NewUpdateRoleStatusLogic(ctx context.Context, svcCtx *svc.ServiceContext) *UpdateRoleStatusLogic {
- return &UpdateRoleStatusLogic{
-  ctx:    ctx,
-  svcCtx: svcCtx,
-  Logger: logx.WithContext(ctx),
- }
+func NewCreateApiLogic(ctx context.Context, svcCtx *svc.ServiceContext) *CreateApiLogic {
+	return &CreateApiLogic{
+		ctx:    ctx,
+		svcCtx: svcCtx,
+		Logger: logx.WithContext(ctx),
+	}
 }
 
-func (l *UpdateRoleStatusLogic) UpdateRoleStatus(in *core.StatusCodeReq) (*core.BaseResp, error) {
- role, err := l.svcCtx.DB.Role.UpdateOneID(in.Id).SetStatus(uint8(in.Status)).Save(l.ctx)
+func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
+	result, err := l.svcCtx.DB.API.Create().
+		SetPath(in.Path).
+		SetDescription(in.Description).
+		SetAPIGroup(in.ApiGroup).
+		SetMethod(in.Method).
+		Save(l.ctx)
+	if err != nil {
+		return nil, errorhandler.DefaultEntError(l.Logger, err, in)
+	}
 
- if err != nil {
-  switch {
-  case ent.IsNotFound(err):
-   logx.Errorw(err.Error(), logx.Field("detail", in))
-   return nil, statuserr.NewInvalidArgumentError(i18n.TargetNotFound)
-  default:
-   logx.Errorw(logmsg.DatabaseError, logx.Field("detail", err.Error()))
-   return nil, statuserr.NewInternalError(i18n.DatabaseError)
-  }
- }
-
- // update redis
-
- err = l.svcCtx.Redis.Hset("roleData", fmt.Sprintf("%d", role.ID), role.Name)
- err = l.svcCtx.Redis.Hset("roleData", fmt.Sprintf("%d_value", role.ID), role.Value)
- err = l.svcCtx.Redis.Hset("roleData", fmt.Sprintf("%d_status", role.ID), strconv.Itoa(int(role.Status)))
- if err != nil {
-  return nil, statuserr.NewInternalError(i18n.RedisError)
- }
-
- return &core.BaseResp{Msg: i18n.UpdateSuccess}, nil
+	return &core.BaseIDResp{Id: result.ID, Msg: i18n.CreateSuccess}, nil
 }
 
 ```
@@ -241,76 +226,70 @@ func (l *UpdateRoleStatusLogic) UpdateRoleStatus(in *core.StatusCodeReq) (*core.
 See [Predicates](http://ent.ryansu.pro/#/zh-cn/predicates)
 
 ```go
-package logic
+package api
 
 import (
- "context"
+	"context"
 
- "github.com/suyuan32/simple-admin-core/pkg/ent/api"
- "github.com/suyuan32/simple-admin-core/pkg/ent/predicate"
- "github.com/suyuan32/simple-admin-core/pkg/i18n"
- "github.com/suyuan32/simple-admin-core/pkg/statuserr"
- "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
- "github.com/suyuan32/simple-admin-core/rpc/types/core"
+	"github.com/suyuan32/simple-admin-core/rpc/ent/predicate"
 
- "github.com/zeromicro/go-zero/core/logx"
+	"github.com/suyuan32/simple-admin-core/rpc/ent/api"
+
+	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+	"github.com/suyuan32/simple-admin-core/rpc/internal/utils/errorhandler"
+	"github.com/suyuan32/simple-admin-core/rpc/types/core"
+
+	"github.com/zeromicro/go-zero/core/logx"
 )
 
 type GetApiListLogic struct {
- ctx    context.Context
- svcCtx *svc.ServiceContext
- logx.Logger
+	ctx    context.Context
+	svcCtx *svc.ServiceContext
+	logx.Logger
 }
 
 func NewGetApiListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *GetApiListLogic {
- return &GetApiListLogic{
-  ctx:    ctx,
-  svcCtx: svcCtx,
-  Logger: logx.WithContext(ctx),
- }
+	return &GetApiListLogic{
+		ctx:    ctx,
+		svcCtx: svcCtx,
+		Logger: logx.WithContext(ctx),
+	}
 }
 
-func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, error) {
- var predicates []predicate.API
+func (l *GetApiListLogic) GetApiList(in *core.ApiListReq) (*core.ApiListResp, error) {
+	var predicates []predicate.API
+	if in.Path != "" {
+		predicates = append(predicates, api.PathContains(in.Path))
+	}
+	if in.Description != "" {
+		predicates = append(predicates, api.DescriptionContains(in.Description))
+	}
+	if in.ApiGroup != "" {
+		predicates = append(predicates, api.APIGroupContains(in.ApiGroup))
+	}
+	if in.Method != "" {
+		predicates = append(predicates, api.Method(in.Method))
+	}
+	result, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, in.PageSize)
+	if err != nil {
+		return nil, errorhandler.DefaultEntError(l.Logger, err, in)
+	}
 
- if in.Path != "" {
-  predicates = append(predicates, api.PathContains(in.Path))
- }
+	resp := &core.ApiListResp{}
+	resp.Total = result.PageDetails.Total
 
- if in.Description != "" {
-  predicates = append(predicates, api.DescriptionContains(in.Description))
- }
+	for _, v := range result.List {
+		resp.Data = append(resp.Data, &core.ApiInfo{
+			Id:          v.ID,
+			CreatedAt:   v.CreatedAt.UnixMilli(),
+			Path:        v.Path,
+			Description: v.Description,
+			ApiGroup:    v.APIGroup,
+			Method:      v.Method,
+		})
+	}
 
- if in.Method != "" {
-  predicates = append(predicates, api.MethodContains(in.Method))
- }
-
- if in.Group != "" {
-  predicates = append(predicates, api.APIGroupContains(in.Group))
- }
-
- apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, in.PageSize)
-
- if err != nil {
-  logx.Error(err.Error())
-  return nil, statuserr.NewInternalError(i18n.DatabaseError)
- }
-
- resp := &core.ApiListResp{}
- resp.Total = apis.PageDetails.Total
-
- for _, v := range apis.List {
-  resp.Data = append(resp.Data, &core.ApiInfo{
-   Id:          v.ID,
-   CreatedAt:   v.CreatedAt.UnixMilli(),
-   Path:        v.Path,
-   Description: v.Description,
-   Group:       v.APIGroup,
-   Method:      v.Method,
-  })
- }
-
- return resp, nil
+	return resp, nil
 }
 
 ```
@@ -320,7 +299,7 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, er
 If you want to execute raw sql ，you need to modify makefile ， add flag --feature sql/execquery
 
 ```shell
-go run -mod=mod entgo.io/ent/cmd/ent generate --template glob="./pkg/ent/template/*.tmpl" ./pkg/ent/schema --feature sql/execquery
+go run -mod=mod entgo.io/ent/cmd/ent generate --template glob="./rpc/ent/template/*.tmpl" ./rpc/ent/schema --feature sql/execquery
 ```
 
 and then you can use client.QueryContext to execute raw sql
@@ -331,7 +310,7 @@ students, err := client.QueryContext(context.Background(), "select * from studen
 
 ### Project add pagination template by default, you can copy this template to other project
 
-In ent/template/pagination.tmpl，add flag --template glob="./pkg/ent/template/*.tmpl" when generating code and
+In ent/template/pagination.tmpl，add flag --template glob="./rpc/ent/template/*.tmpl" when generating code and
 then you can use pagination like below:
 
 ```go

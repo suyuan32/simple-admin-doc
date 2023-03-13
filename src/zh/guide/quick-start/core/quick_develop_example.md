@@ -17,7 +17,7 @@ title: 'core 后端开发'
 
 ## RPC服务例子,以department为例
 
-> 首先在 pkg/ent/schema 文件夹内添加 department.go
+> 首先在 rpc/ent/schema 文件夹内添加 department.go
 
 ```protobuf
 package schema
@@ -28,8 +28,7 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
-
-	"github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
+	"github.com/suyuan32/simple-admin-common/orm/ent/mixins"
 )
 
 type Department struct {
@@ -80,26 +79,24 @@ make gen-rpc-ent-logic model=Department group=department
 ```
 实际执行命令
 ```shell
-goctls rpc ent --schema=./pkg/ent/schema --service_name=core --project_name=core --o=./rpc --model=Department --group=department --proto_out=./rpc/desc/department.proto
+goctls rpc ent --schema=./rpc/ent/schema --service_name=core --project_name=core --o=./rpc --model=Department --group=department --proto_out=./rpc/desc/department.proto
 ```
 
 > 需要再执行 `make gen-rpc` 生成 types 文件
 
-### 由于 core 的 ent 文件目录在 pkg 中，所以logic文件内的import路径需要修改下
+### 由于 core 的 ent 文件目录在 rpc 中，所以logic文件内的import路径需要修改下
 
 ```go
 import (
 	"context"
 
-	"github.com/suyuan32/simple-admin-core/pkg/ent"
 	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+	"github.com/suyuan32/simple-admin-core/rpc/internal/utils/errorhandler"
 	"github.com/suyuan32/simple-admin-core/rpc/types/core"
 
-	"github.com/suyuan32/simple-admin-core/pkg/i18n"
-	"github.com/suyuan32/simple-admin-core/pkg/msg/logmsg"
-	"github.com/suyuan32/simple-admin-core/pkg/statuserr"
-
 	"github.com/zeromicro/go-zero/core/logx"
+
+	"github.com/suyuan32/simple-admin-common/i18n"
 )
 ```
 
@@ -114,14 +111,14 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-core/rpc/core.pr
 
 将会自动生成CRUD代码，同样需要修改import
 
-
-
-> 由于默认需要支持两种语言，所以要分别在 pkg/i18n/locals/zh.json  和  pkg/i18n/locals/en.json 添加 route
+::: warning
+由于默认需要支持两种语言，所以要分别在 `api/internal/i18n/locals/zh.json`  和  `api/internal/i18n/locals/en.json` 添加 route
 
 ![example](/assets/example_zh_title.png)
 ![example](/assets/example_en_title.png)
+:::
 
-> 启动 rpc 和 api
+### 启动 rpc 和 api
 
 分别在 api rpc 目录下执行
 
@@ -129,5 +126,5 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-core/rpc/core.pr
 go run core.go -f etc/core.yaml 
 ```
 
-> 网页端开发
+### 网页端开发
 [Simple Admin UI](web_develop_example.md)

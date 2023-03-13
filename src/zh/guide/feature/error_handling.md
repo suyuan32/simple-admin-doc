@@ -82,7 +82,7 @@ func NewDefaultError(msg string) error {
 
 > 错误码
 
-所有的错误码都放在 pkg/enum/errorcode 中， 默认前 17 个错误码与 grpc保持一致， 你也可以自己添加错误码
+所有的错误码都放在 `github.com/suyuan32/simple-admin-common/enum/errorcode` 中， 默认前 17 个错误码与 grpc保持一致， 你也可以自己添加错误码
 
 ```go
 package enum
@@ -294,63 +294,67 @@ func NewApiBadGatewayError(msg string) error {
 
 ```
 
-> 注意： 所有错误都会被自动翻译， 不为0的错误会在前端产生弹窗， 通过 api ErrorMessageMode 控制
-
+::: warning
+所有错误都会被自动翻译， 不为0的错误会在前端产生弹窗， 通过 api ErrorMessageMode 控制
 > 在生成 Api 的时候使用 --trans_err=true 会在 handler 使用翻译
+:::
+
 
 ```shell
-goctls api go --api ./api/desc/core.api --dir ./api --transErr=true
+goctls api go --api ./api/desc/core.api --dir ./api --trans_err=true
 ```
 
 ```go
 package api
 
 import (
- "net/http"
+	"net/http"
 
- "github.com/zeromicro/go-zero/rest/httpx"
+	"github.com/zeromicro/go-zero/rest/httpx"
 
- "github.com/suyuan32/simple-admin-core/api/internal/logic/api"
- "github.com/suyuan32/simple-admin-core/api/internal/svc"
- "github.com/suyuan32/simple-admin-core/api/internal/types"
+	"github.com/suyuan32/simple-admin-core/api/internal/logic/api"
+	"github.com/suyuan32/simple-admin-core/api/internal/svc"
+	"github.com/suyuan32/simple-admin-core/api/internal/types"
 )
 
-// swagger:route post /api api CreateOrUpdateApi
+// swagger:route post /api/create api CreateApi
 //
-// Create or update API information | 创建或更新API
+// Create API information | 创建API
 //
-// Create or update API information | 创建或更新API
+// Create API information | 创建API
 //
 // Parameters:
 //  + name: body
 //    require: true
 //    in: body
-//    type: CreateOrUpdateApiReq
+//    type: ApiInfo
 //
 // Responses:
 //  200: BaseMsgResp
 
-func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
- return func(w http.ResponseWriter, r *http.Request) {
-  var req types.CreateOrUpdateApiReq
-  if err := httpx.Parse(r, &req); err != nil {
-   httpx.Error(w, err)
-   return
-  }
+func CreateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		var req types.ApiInfo
+		if err := httpx.Parse(r, &req, true); err != nil {
+			httpx.ErrorCtx(r.Context(), w, err)
+			return
+		}
 
-  l := api.NewCreateOrUpdateApiLogic(r, svcCtx)
-  resp, err := l.CreateOrUpdateApi(&req)
-  if err != nil {
-   err = svcCtx.Trans.TransError(r.Header.Get("Accept-Language"), err)
-   httpx.Error(w, err)
-  } else {
-   httpx.OkJson(w, resp)
-  }
- }
+		l := api.NewCreateApiLogic(r.Context(), svcCtx)
+		resp, err := l.CreateApi(&req)
+		if err != nil {
+			err = svcCtx.Trans.TransError(r.Context(), err)
+			httpx.ErrorCtx(r.Context(), w, err)
+		} else {
+			httpx.OkJsonCtx(r.Context(), w, resp)
+		}
+	}
 }
 
 ```
 
-err = svcCtx.Trans.TransError(r.Header.Get("Accept-Language"), err)
+err = svcCtx.Trans.TransError(r.Context(), err)
 
-> 注意： CodeError 是将错误码写在返回体中，返回的状态全部为 200 StatusOK, 若需要返回带http请求状态码的错误信息，请使用 errorx.ApiError.
+::: warning
+CodeError 是将错误码写在返回体中，返回的状态全部为 200 StatusOK, 若需要返回带http请求状态码的错误信息，请使用 errorx.ApiError.
+:::

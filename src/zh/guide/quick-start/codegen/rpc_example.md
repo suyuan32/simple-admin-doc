@@ -129,7 +129,7 @@ package schema
 import (
  "entgo.io/ent"
  "entgo.io/ent/schema/field"
- "github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
+ "github.com/suyuan32/simple-admin-core/rpc/ent/schema/mixins"
 )
 
 // Student holds the schema definition for the Student entity.
@@ -321,7 +321,7 @@ Starting server at 127.0.0.1:8080...
 package config
 
 import (
- "github.com/suyuan32/simple-admin-core/pkg/config"
+ "github.com/suyuan32/simple-admin-core/rpc/config"
  "github.com/zeromicro/go-zero/core/stores/redis"
  "github.com/zeromicro/go-zero/rest"
  "github.com/zeromicro/go-zero/zrpc"
@@ -362,7 +362,7 @@ import (
  i18n2 "github.com/suyuan32/simple-admin-example-api/internal/i18n"
  "github.com/suyuan32/simple-admin-example-api/internal/middleware"
 
- "github.com/suyuan32/simple-admin-core/pkg/i18n"
+ "github.com/suyuan32/simple-admin-core/api/internal/i18n"
 
  "github.com/casbin/casbin/v2"
  "github.com/zeromicro/go-zero/core/logx"

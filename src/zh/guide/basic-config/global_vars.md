@@ -14,7 +14,7 @@ package svc
 import (
 	"github.com/suyuan32/simple-admin-core/api/internal/config"
 	"github.com/suyuan32/simple-admin-core/api/internal/middleware"
-	"github.com/suyuan32/simple-admin-core/pkg/i18n"
+	"github.com/suyuan32/simple-admin-core/api/internal/i18n"
 	"github.com/suyuan32/simple-admin-core/rpc/coreclient"
 
 	"github.com/casbin/casbin/v2"
@@ -60,7 +60,7 @@ package api
 import (
 	"context"
 
-	"github.com/suyuan32/simple-admin-core/pkg/utils/errorhandler"
+	"github.com/suyuan32/simple-admin-core/rpc/utils/errorhandler"
 	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
 	"github.com/suyuan32/simple-admin-core/rpc/types/core"
 

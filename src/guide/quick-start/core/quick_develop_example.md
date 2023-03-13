@@ -17,7 +17,7 @@ See [API Microservice](../api_example.md) to quickly create an API
 
 ## RPC service example, take department as an example
 
-> First add department.go in pkg/ent/schema folder
+> First add department.go in rpc/ent/schema folder
 
 ```protobuf
 package schema
@@ -28,8 +28,7 @@ import (
 	"entgo.io/ent/schema"
 	"entgo.io/ent/schema/edge"
 	"entgo.io/ent/schema/field"
-
-	"github.com/suyuan32/simple-admin-core/pkg/ent/schema/mixins"
+	"github.com/suyuan32/simple-admin-common/orm/ent/mixins"
 )
 
 type Department struct {
@@ -68,7 +67,6 @@ func (Department) Annotations() []schema.Annotation {
 		entsql.Annotation{Table: "sys_departments"},
 	}
 }
-
 ```
 
 ## Generate department RPC code
@@ -80,26 +78,24 @@ make gen-rpc-ent-logic model=Department group=department
 ```
 actually execute the command
 ```shell
-goctls rpc ent --schema=./pkg/ent/schema --service_name=core --project_name=core --o=./rpc --model=Department --group=department --proto_out=./rpc/desc /department.proto
+goctls rpc ent --schema=./rpc/ent/schema --service_name=core --project_name=core --o=./rpc --model=Department --group=department --proto_out=./rpc/desc /department.proto
 ```
 
 > Need to execute `make gen-rpc` to generate the types file
 
-### Since the core ent file directory is in pkg, the import path in the logic file needs to be modified
+### Since the core ent file directory is in rpc, the import path in the logic file needs to be modified
 
 ```go
 import (
     "context"
-    
-    "github.com/suyuan32/simple-admin-core/pkg/ent"
-    "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
-    "github.com/suyuan32/simple-admin-core/rpc/types/core"
-    
-    "github.com/suyuan32/simple-admin-core/pkg/i18n"
-    "github.com/suyuan32/simple-admin-core/pkg/msg/logmsg"
-    "github.com/suyuan32/simple-admin-core/pkg/statuserr"
-    
-    "github.com/zeromicro/go-zero/core/logx"
+
+	"github.com/suyuan32/simple-admin-core/rpc/internal/svc"
+	"github.com/suyuan32/simple-admin-core/rpc/internal/utils/errorhandler"
+	"github.com/suyuan32/simple-admin-core/rpc/types/core"
+
+	"github.com/zeromicro/go-zero/core/logx"
+
+	"github.com/suyuan32/simple-admin-common/i18n"
 )
 ```
 
@@ -114,14 +110,14 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-core/rpc/core.pr
 
 The CRUD code will be automatically generated, and the import also needs to be modified
 
-
-
-> Since two languages need to be supported by default, add routes to pkg/i18n/locals/zh.json and pkg/i18n/locals/en.json respectively
+::: warning
+Since two languages need to be supported by default, add routes to api/internal/i18n/locals/zh.json and api/internal/i18n/locals/en.json respectively
 
 ![example](/assets/example_zh_title.png)
 ![example](/assets/example_en_title.png)
+:::
 
-> Start rpc and api
+### Start rpc and api
 
 Execute in the api rpc directory respectively
 
@@ -129,5 +125,5 @@ Execute in the api rpc directory respectively
 go run core.go -f etc/core.yaml
 ```
 
-> Web development
+### Web development
 [Simple Admin UI](web_develop_example.md)

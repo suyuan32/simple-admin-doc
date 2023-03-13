@@ -163,7 +163,7 @@ require (
  github.com/golang-jwt/jwt/v4 v4.4.2
  github.com/google/uuid v1.3.0
  github.com/mojocn/base64Captcha v1.3.5
- github.com/pkg/errors v0.9.1
+ github.com/rpc/errors v0.9.1
  github.com/stretchr/testify v1.8.0
  github.com/suyuan32/simple-admin-tools/plugins/registry/consul v0.0.0-20220923060146-bde681863b8d
  github.com/zeromicro/go-zero v1.4.1

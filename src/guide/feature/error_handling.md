@@ -82,7 +82,7 @@ func NewDefaultError(msg string) error {
 
 > Error code
 
-All error codes are in pkg/enum/errorcode. The first 17 error codes are the same as grpc， you can also add your own error code.
+All error codes are in `github.com/suyuan32/simple-admin-common/enum/errorcode`. The first 17 error codes are the same as grpc， you can also add your own error code.
 
 ```go
 package enum
@@ -254,7 +254,9 @@ const (
 
 ```
 
-> Note： the code which is not 0 will show message in front-end， front-end control it via api ErrorMessageMode.
+::: warning
+the code which is not 0 will show message in front-end， front-end control it via api ErrorMessageMode.
+:::
 
 ### ApiError
 
@@ -299,7 +301,7 @@ func NewApiBadGatewayError(msg string) error {
 > If you add the tag --trans_err=true to generate Api files, it will add translation in handler.
 
 ```shell
-goctls api go --api ./api/desc/core.api --dir ./api --transErr=true
+goctls api go --api ./api/desc/core.api --dir ./api --trans_err=true
 ```
 
 ```go
@@ -351,7 +353,9 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 
 ```
 
-err = svcCtx.Trans.TransError(r.Header.Get("Accept-Language"), err)
+err = svcCtx.Trans.TransError(r.Context(), err)
 
-> Notice： CodeError puts the error code in response body, all the status is 200 StatusOK.
-> If you want to response with status code such as 400，please use  errorx.ApiError .
+::: warning
+CodeError puts the error code in response body, all the status is 200 StatusOK.
+If you want to response with status code such as 400，please use  errorx.ApiError .
+:::

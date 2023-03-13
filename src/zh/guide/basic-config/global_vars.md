@@ -5,7 +5,8 @@ title: '全局变量'
 
 # 全局变量
 
-> 我们将全局变量定义到 internal/svc/servicecontext.go 中，并初始化 \
+> **我们将全局变量定义到 `internal/svc/servicecontext.go` 中，并初始化**
+
 例如
 
 ```go
@@ -99,4 +100,4 @@ func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
 
 ```
 
-> 我们可以通过 l.svcCtx 访问全局变量
+> **我们可以通过 l.svcCtx 访问全局变量**

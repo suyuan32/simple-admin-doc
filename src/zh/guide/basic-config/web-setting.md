@@ -57,5 +57,7 @@ VITE_GLOB_API_URL_PREFIX=
 ```
 
 主要修改 VITE_PROXY 用于实现跨域请求不同地址，
-> 注意必须写在同一行
-VITE_PROXY = [["/sys-api","http://localhost:8500"],["/file-manager","http://localhost:9102"]]
+
+::: warning
+必须写在同一行 `VITE_PROXY = [["/sys-api","http://localhost:8500"],["/file-manager","http://localhost:9102"]]`
+:::

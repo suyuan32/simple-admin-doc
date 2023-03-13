@@ -5,7 +5,8 @@ title: 'Global Variables'
 
 # Global Variables
 
-> We define the global variables in internal/svc/servicecontext.go, and initialize them. \
+> **We define the global variables in `internal/svc/servicecontext.go`, and initialize them. **
+
 For example:
 
 ```go
@@ -98,4 +99,4 @@ func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
 
 ```
 
-> We can get the global variables via l.svcCtx.
+> **We can get the global variables via l.svcCtx.**

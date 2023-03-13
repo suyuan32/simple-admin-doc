@@ -289,3 +289,9 @@ CasbinConf:
 #  Sampler: 1.0
 #  Batcher: jaeger
 ```
+
+### 效果展示
+
+![管理页面](/assets/cron_zh.png)
+
+![效果](/assets/cron_console.png)

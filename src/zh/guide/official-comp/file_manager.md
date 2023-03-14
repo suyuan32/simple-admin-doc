@@ -40,7 +40,20 @@ RedisConf:
   Host: 127.0.0.1:6379
   Type: node
 
+# File Manager 服务的数据库
 DatabaseConf:
+  Type: mysql
+  Host: 127.0.0.1
+  Port: 3306
+  DBName: simple_admin
+  Username: # set your username
+  Password: # set your password
+  MaxOpenConn: 100
+  SSLMode: disable
+  CacheTime: 5
+
+# Casbin 数据库，需要 Core鉴权的话和 Core 保持一致
+CasbinDatabaseConf:
   Type: mysql
   Host: 127.0.0.1
   Port: 3306

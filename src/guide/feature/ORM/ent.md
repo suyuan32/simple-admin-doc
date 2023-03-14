@@ -83,12 +83,12 @@ func (Role) Annotations() []schema.Annotation {
 
 ### Mixin Introduction
 
-Currently, the project provides four Mixins located in `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
+Currently, the project provides several Mixins located in `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
 
-- base: Provide self-incrementing integer id, created_at, updated_at
-- uuid: Provide uuid type id as primary key, created_at, updated_at
-- status: Provide status field status
-- sort: Provide sort field
+- base: Provide self-incrementing integer `id`, `created_at`, `updated_at`
+- uuid: Provide `UUID` type `id` as primary key, `created_at`, `updated_at`
+- status: Provide `status` field
+- sort: Provide `sort` field
 
 #### uuidx provides two methods for converting uuid
 

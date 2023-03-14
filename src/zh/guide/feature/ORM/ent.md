@@ -86,7 +86,7 @@ func (Role) Annotations() []schema.Annotation {
 
 ### Mixin 介绍
 
-目前项目提供了三种 Mixin 位于 `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
+目前项目提供了多种 Mixin 位于 `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
 
 - base: 提供自增整数id, created_at, updated_at
 - uuid: 提供uuid类型的id作为主键, created_at, updated_at

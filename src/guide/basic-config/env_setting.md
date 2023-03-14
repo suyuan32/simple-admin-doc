@@ -64,9 +64,17 @@ RedisConf:
   # Pass: xxx  # You can also set the password 
 
 # The main difference between k8s and local development
+# Core service
 CoreRpc:
   Endpoints:
-    - 127.0.0.1:9101 # the same as rpc address
+    - 127.0.0.1:9101 # The same as Core RPC's address.
+  Enabled: true # Whether to enable the service
+
+# Scheduled Task RPC service
+JobRpc:
+  Endpoints:
+    - 127.0.0.1:9105 # The same as Job RPC's address.
+  Enabled: false  # Whether to enable the service
 
 Captcha:
   KeyLong: 5 # captcha key length

@@ -68,9 +68,17 @@ RedisConf:
   # Pass: xxx  # 也可以设置密码
 
 # 与 k8s 主要是此处服务发现不同
+# 核心模块
 CoreRpc:
   Endpoints:
-    - 127.0.0.1:9101 # 与 rpc 地址相同
+    - 127.0.0.1:9101 # 与 Core RPC 地址相同
+  Enabled: true # 是否启用
+
+# 定时任务模块
+JobRpc:
+  Endpoints:
+    - 127.0.0.1:9105 # 与 Job RPC 地址相同
+  Enabled: false  # 是否启用
 
 Captcha:
   KeyLong: 5 # 验证码长度

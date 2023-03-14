@@ -1,15 +1,14 @@
 ---
 order: 11
-title: '消息队列'
+title: 'Rocket MQ Message Queue'
 ---
-
-# 消息队列
+# Message Queue
 
 ## RocketMQ
 
-### Producer
+## Producer
 
-将 producer 的任务添加到 job/internal/mqs/producer 中， 参考
+Add producer task into  job/internal/mqs/producer ， such as
 
 ```go
 package producer
@@ -60,7 +59,7 @@ func (l *DeleteInvalidTokenTask) Start() {
   }
   msg.WithKeys([]string{"DeleteInvalidTokenTask"})
 
-  res, err := l.producer.SendSync(context.Background(), msg)
+  res, err := l.producer.SendSync(l.ctx, msg)
 
   if err != nil {
    logx.Errorf("DeleteInvalidTokenTask send message error: %s\n", err.Error())
@@ -91,7 +90,7 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 ### Consumer
 
-将 Consumer 的任务添加到 job/internal/mqs/consumer 中， 参考
+Add Consumer task into  job/internal/mqs/consumer ， such as
 
 ```go
 package consumer
@@ -158,11 +157,11 @@ func (l *DeleteInvalidTokenTask) Stop() {
 
 ```
 
->注意： 需要实现 Start 和 Stop 方法
+> Notice： You need to implement Start and Stop interface
 
-### 添加监听
+### Add listener
 
-修改 job/internal/listen/rmq.go
+Modify job/internal/listen/rmq.go
 
 ```go
 package listen
@@ -188,17 +187,17 @@ func Rmq(c config.Config, ctx context.Context, svcCtx *svc.ServiceContext) []ser
 
 ```
 
-### 启动服务
+### Start service
 
-在 job 文件夹执行
+Run in job directory
 
 ```shell
 go run core.go -f etc/core.yaml
 ```
 
-### 集成 producer 进 rpc 或 api
+### Add producer into rpc or api
 
-需要在 service_context.go 初始化全局变量， 还需要在 config 添加配置
+You need to set up global variables in service_context.go. Remember to add config.
 
 ```go
 package svc

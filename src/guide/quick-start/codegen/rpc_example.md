@@ -199,12 +199,12 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 **More parameters please check `goctls rpc ent --help`**
 
 ::: warning
-Note: The tool will automatically recognize the proto files in the desc folder, and subfolders can also be created inside the desc, package and go_package only need to be declared once in base.proto,
+The tool will automatically recognize the proto files in the `desc` folder, and subfolders can also be created inside the `desc`, `package` and `go_package` only need to be declared once in base.proto,
 The tool will automatically merge all proto files into the proto file in the project root directory. To split proto files in old projects, you only need to split the proto in the root directory to the desc folder.
 :::
 
 ::: info
-Quick command: gen-rpc-ent-logic model=Student means only generate structure called 'Student' in schema. If it is empty, generating all structures in schema fold. \  
+Quick command: `gen-rpc-ent-logic model=Student` means only generate structure called 'Student' in schema. If it is empty, generating all structures in schema fold. \  
 Group means logic codes put in the group name folder.
 
 ```shell
@@ -334,21 +334,9 @@ type Config struct {
 
 ```
 
-::: info
-Small website use endpoint connect directly \
+### Add example rpc in service context
 
-```yaml
-ExampleRpc:
- Endpoints:
-  - 127.0.0.1:8080
-```
-
-It does not need service discovery， there can be several endpoints. \
-:::
-
-## Add example rpc in service context
-
-### Edit service context
+> Edit service context
 
 ```go
 package svc
@@ -378,27 +366,17 @@ type ServiceContext struct {
 
 func NewServiceContext(c config.Config) *ServiceContext {
 
- rds := c.RedisConf.NewRedis()
- if !rds.Ping() {
-  logx.Error("initialize redis failed")
-  return nil
- }
+ rds := redis.MustNewRedis(c.RedisConf)
 
- cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
- if err != nil {
-  logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
-  return nil
- }
+ cbn := c.CasbinConf.MustNewCasbinWithRedisWatcher(c.DatabaseConf.Type, c.DatabaseConf.GetDSN(), c.RedisConf)
 
- trans := &i18n.Translator{}
- trans.NewBundle(i18n2.LocaleFS)
- trans.NewTranslator()
-
+ trans := i18n.NewTranslator(i18n2.LocaleFS)
+	
  return &ServiceContext{
   Config:     c,
   Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
   Trans:      trans,
-  ExampleRpc: exampleclient.NewExample(zrpc.MustNewClient(c.ExampleRpc)),
+  ExampleRpc: exampleclient.NewExample(zrpc.NewClientIfEnable(c.ExampleRpc)),
  }
 }
 ```

@@ -206,7 +206,9 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 工具会自动将所有proto文件合并至项目根目录的proto文件中。旧项目拆分proto文件只需将根目录下的proto自行拆分至desc文件夹即可。
 :::
 
-> 快捷命令：gen-rpc-ent-logic model=Student 表示只生成 schema 为 Student 的代码， 为空则全部生成 group 为分组文件夹名称
+::: info
+快捷命令：`gen-rpc-ent-logic model=Student group=student` 表示只生成 schema 为 Student 的代码， 为空则全部生成 group 为分组文件夹名称
+:::
 
 ```shell
 make gen-rpc-ent-logic model=Student group=student
@@ -338,18 +340,9 @@ type Config struct {
 
 ```
 
-> 小型网站直接使用
->
-> ExampleRpc:
-> Endpoints:
->
-> - 127.0.0.1:8080
->
-> 的方式直连，不需要服务发现， Endpoints 可以有多个
+### 添加 example rpc
 
-> 添加 example rpc
-
-### 修改 service context
+> 修改 service context
 
 ```go
 package svc
@@ -379,27 +372,17 @@ type ServiceContext struct {
 
 func NewServiceContext(c config.Config) *ServiceContext {
 
- rds := c.RedisConf.NewRedis()
- if !rds.Ping() {
-  logx.Error("initialize redis failed")
-  return nil
- }
+ rds := redis.MustNewRedis(c.RedisConf)
 
- cbn, err := c.CasbinConf.NewCasbin(c.DatabaseConf.Type, c.DatabaseConf.GetDSN())
- if err != nil {
-  logx.Errorw("initialize casbin failed", logx.Field("detail", err.Error()))
-  return nil
- }
+ cbn := c.CasbinConf.MustNewCasbinWithRedisWatcher(c.DatabaseConf.Type, c.DatabaseConf.GetDSN(), c.RedisConf)
 
- trans := &i18n.Translator{}
- trans.NewBundle(i18n2.LocaleFS)
- trans.NewTranslator()
+ trans := i18n.NewTranslator(i18n2.LocaleFS)
 
  return &ServiceContext{
   Config:     c,
   Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
   Trans:      trans,
-  ExampleRpc: exampleclient.NewExample(zrpc.MustNewClient(c.ExampleRpc)),
+  ExampleRpc: exampleclient.NewExample(zrpc.NewClientIfEnable(c.ExampleRpc)),
  }
 }
 ```

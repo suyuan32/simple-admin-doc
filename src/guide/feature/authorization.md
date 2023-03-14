@@ -14,8 +14,6 @@ Use Redis to watch the changes.
 cbn := c.CasbinConf.MustNewCasbinWithRedisWatcher(c.DatabaseConf.Type, c.DatabaseConf.GetDSN(), c.RedisConf)
 ```
 
-[cbn](https://github.com/suyuan32/simple-admin-core/blob/master/api/internal/svc/servicecontext.go)
-
 ## Use in middleware
 
 ```go

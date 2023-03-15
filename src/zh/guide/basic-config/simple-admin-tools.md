@@ -18,6 +18,10 @@ Simple admin tools 是一个基于go-zero的fork项目。
 
 由于本工具是fork项目，因此使用goctls会有些麻烦. 使用fork主要是为了同步官方最新代码。
 
+::: warning
+由于目前版本迭代较快，如果代码生成出现问题，请先 `git pull` 下载最新代码重新编译，如果还有问题，欢迎提交 issue
+:::
+
 我们不能直接使用 go get and go install 命令安装 goctl 因为他会安装官方的文件，我们需要自行编译。
 
 下面是构建goctls的过程.

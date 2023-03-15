@@ -15,7 +15,8 @@ title: '本地开发环境配置'
 - [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
 
 ::: info 
-推荐在linux下开发，因为需要用到make命令，官方在 Ubuntu 22.10 环境下开发
+推荐在linux下开发，因为需要用到make命令，官方在 `Ubuntu 22.10` 环境下开发. \
+**`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, `Windows`环境有部分 bug**
 :::
 
 ## 后端部署

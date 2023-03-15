@@ -16,7 +16,12 @@ It provides more addition features than origin project such as:
 - several plugins such as RocketMQ, GORM
 - so on
 
-> But it is a little complex to install the goctls and import the dependencies due to forking.\
+::: warning
+Due to the rapid iteration of the current version, if there is a problem with code generation, please run `git pull` to download the latest code and recompile.
+If there are still problems, please submit an issue.
+:::
+
+It is a little complex to install the `goctls` due to forking project.
 Let me show you how to build the code by yourself.
 
 > Build goctls

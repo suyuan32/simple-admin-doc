@@ -14,7 +14,8 @@ title: 'Local Development Setting'
 - [Simple Admin Tool](/guide/basic-config/simple-admin-tools.md)
 
 ::: info 
-It is recommended to develop under linux, because the make command is required. We use Ubuntu 22.10.
+It is recommended to develop under linux, because the make command is required. We develop in Ubuntu 22.10. \
+**`Windows` users are recommended to develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment, the `Windows` environment has some bugs.**
 :::
 
 ## Backend Setting

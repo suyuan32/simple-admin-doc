@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 2
 title: 'RocketMQ 消息队列'
 ---
 ## 如何添加 Producer 到 RPC 中？

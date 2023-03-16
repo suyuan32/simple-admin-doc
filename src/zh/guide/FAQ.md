@@ -59,3 +59,13 @@ git checkout master
 ```shell 
 git merge upstream/master
 ```
+
+## 如何获取环境变量？
+
+只需要在 `config.go` 的变量中声明 `env`
+
+```go
+type Config struct {
+     ServiceName string `json:",env=SERVICE_NAME"`
+}
+```

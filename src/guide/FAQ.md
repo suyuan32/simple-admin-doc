@@ -58,3 +58,13 @@ git checkout master
 ```shell
 git merge upstream/master
 ```
+
+## How to get environment variables?
+
+Just declare `env` in the variable of `config.go`
+
+```go
+type Config struct {
+      ServiceName string `json:",env=SERVICE_NAME"`
+}
+```

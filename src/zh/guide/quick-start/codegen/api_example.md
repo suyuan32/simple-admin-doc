@@ -164,19 +164,19 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 ### `api proto` 参数介绍
 
-| 参数               | 必须  | 默认值     | 介绍                 | 使用方法                                                            |
-|------------------|-----|---------|--------------------|-----------------------------------------------------------------|
-| proto            | 是   |         | proto文件地址          | 输入proto文件的绝对路径, 注意要为合并后的proto即根目录下的proto ，不是desc 文件夹中的          |
-| style            | 否   | go_zero | 文件名格式              | go_zero为蛇形格式                                                    |
-| api_service_name | 是   |         | 服务名称               | api 服务的 service 名称, 在api声明文件中                                   |
-| rpc_service_name | 是   |         | 服务名称               | rpc 服务的名称, 与proto文件中的service名称一致                                |
-| o                | 是   |         | 输出位置               | 文件输出位置，可以为相对路径，指向main文件目录                                       |
-| model            | 是   |         | 模型名称               | schema中内部struct名称，如example中的Student                             |
-| rpc_name         | 是   |         | RPC名称              | 输入Example则生成文件会生成l.svcCtx.ExampleRpc                            |
-| grpc_package     | 是   |         | RPC *_grpc.go 包路径  | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example |
-| multiple         | 否   | false   | 多服务                | 若 proto 文件中有多个service, 需要设置为 true                               |
-| json_style       | 否   | goZero  | JSON tag的格式，默认为小驼峰 | go_zero 为下划线， GoZero为大驼峰                                        |
-| overwrite        | 否   | false   | 是否覆盖生成文件           | true则会覆盖所有生成的文件                                                 |
+| 参数               | 必须  | 默认值     | 介绍                 | 使用方法                                                                           |
+|------------------|-----|---------|--------------------|--------------------------------------------------------------------------------|
+| proto            | 是   |         | proto文件地址          | 输入proto文件的绝对路径。 **注意要为合并后的proto即根目录下的proto ，不是desc 文件夹中的，因为要获取package和Base结构** |
+| style            | 否   | go_zero | 文件名格式              | go_zero为蛇形格式                                                                   |
+| api_service_name | 是   |         | 服务名称               | api 服务的 service 名称, 在api声明文件中                                                  |
+| rpc_service_name | 是   |         | 服务名称               | rpc 服务的名称, 与proto文件中的service名称一致                                               |
+| o                | 是   |         | 输出位置               | 文件输出位置，可以为相对路径，指向main文件目录                                                      |
+| model            | 是   |         | 模型名称               | schema中内部struct名称，如example中的Student                                            |
+| rpc_name         | 是   |         | RPC名称              | 输入Example则生成文件会生成l.svcCtx.ExampleRpc                                           |
+| grpc_package     | 是   |         | RPC *_grpc.go 包路径  | 在example中是 github.com/suyuan32/simple-admin-example-rpc/example                |
+| multiple         | 否   | false   | 多服务                | 若 proto 文件中有多个service, 需要设置为 true                                              |
+| json_style       | 否   | goZero  | JSON tag的格式，默认为小驼峰 | go_zero 为下划线， GoZero为大驼峰                                                       |
+| overwrite        | 否   | false   | 是否覆盖生成文件           | true则会覆盖所有生成的文件                                                                |
 
 
 **详细参数请在命令行查看 `goctls api proto --help`**
@@ -198,5 +198,5 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 > 详情查看 simple admin example api 地址 <https://github.com/suyuan32/simple-admin-example-api>
 
 ::: warning
-还需要手动添加下 service_context, config, etc, ExampleRpc
+还需要手动添加`ExampleRpc`到`service_context`, `config`, `etc`
 :::

@@ -155,43 +155,6 @@ goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 可以访问官网查看更多 [RPC command](https://go-zero.dev/docs/goctl/zrpc)
 :::
 
-> go.mod 配置
-
-导入fork项目需要使用 replace 命令。
-
-```mod
-module github.com/suyuan32/simple-admin-core
-
-go 1.19
-
-require (
- github.com/casbin/casbin/v2 v2.52.1
- github.com/casbin/gorm-adapter/v3 v3.7.4
- github.com/go-playground/locales v0.14.0
- github.com/go-playground/validator/v10 v10.11.1
- github.com/golang-jwt/jwt/v4 v4.4.2
- github.com/google/uuid v1.3.0
- github.com/mojocn/base64Captcha v1.3.5
- github.com/rpc/errors v0.9.1
- github.com/stretchr/testify v1.8.0
- github.com/suyuan32/simple-admin-tools/plugins/registry/consul v0.0.0-20220923060146-bde681863b8d
- github.com/zeromicro/go-zero v1.4.1
- golang.org/x/crypto v0.0.0-20220722155217-630584e8d5aa
- google.golang.org/grpc v1.49.0
- google.golang.org/protobuf v1.28.1
- gorm.io/gorm v1.23.8
-)
-
-replace github.com/zeromicro/go-zero v1.4.3 => github.com/suyuan32/simple-admin-tools v0.1.5
-```
-
-> 简单的方法是使用 goctls migrate命令.
-
-```shell
-goctls migrate --zero-version v1.4.3 --tool-version v0.1.5
-```
-
-> 这个命令可以快速添加 replace 语句， 但是不要运行多次， 会导致添加重复和 replace, 后续需要升级依赖的话直接修改 simple-admin-tools 的版本即可，然后
- **go mod tidy**.
-
-> 新版本API和RPC均支持新建时直接设置tool版本进行replace
+::: warning
+我们提供了 `make gen-rpc` 和 `make gen-api` 用于快速生成官方代码
+:::

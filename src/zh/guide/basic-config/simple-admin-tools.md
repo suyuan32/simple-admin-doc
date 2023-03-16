@@ -13,7 +13,6 @@ Simple admin tools 是一个基于go-zero的fork项目。
 - 优化错误信息处理,支持多语言错误
 - 简单易用的校验器
 - 支持代码生成，生成API,RPC 和 web 端的CRUD代码
-- 支持多种额外插件如GORM, RocketMQ
 - 对Simple Admin 的针对性优化
 
 由于本工具是fork项目，因此使用goctls会有些麻烦. 使用fork主要是为了同步官方最新代码。
@@ -42,7 +41,7 @@ cp ./goctls $GOPATH/bin/goctls
 ```
 
 ::: info 简单方式
-直接运行在 goctl 文件夹运行 `sh build.sh`
+`linux` 用户直接在 `goctl` 文件夹运行 `sh build.sh`. `Windows` 用户在 `git bash` 运行 `sh build_win.sh`. 
 :::
 
 ## 自动下载依赖

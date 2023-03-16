@@ -13,7 +13,6 @@ It provides more addition features than origin project such as:
 - fully support validator and easy to use
 - code auto generation for API, RPC and web
 - error handling which support multi-languages
-- several plugins such as RocketMQ, GORM
 - so on
 
 ::: warning
@@ -40,7 +39,7 @@ cp ./goctls $GOPATH/bin/goctls
 ```
 
 ::: info Easy Way
-You can just run **sh build.sh** in goctl directory
+`Linux` users can just run **sh build.sh** in goctl directory. `Windows` users should run **sh build_win.sh** in `git bash`.
 :::
 
 ## Auto fix all dependencies command

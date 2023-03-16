@@ -1,0 +1,27 @@
+import{_ as i,W as o,X as c,Y as n,Z as s,$ as e,a1 as d,a0 as r,D as a}from"./framework-2d2f73c4.js";const u={},p=n("h1",{id:"快捷命令",tabindex:"-1"},[n("a",{class:"header-anchor",href:"#快捷命令","aria-hidden":"true"},"#"),s(" 快捷命令")],-1),m=n("p",null,"我们提供了许多快捷命令在 makefile 中， 只需在根目录执行即可",-1),v={class:"hint-container warning"},k=n("p",{class:"hint-container-title"},"注意",-1),_=r(`<div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token comment"># 编译 docker image, 需要设置环境变量 DOCKER_USERNAME VERSION </span>
+<span class="token function">make</span> <span class="token function">docker</span>  
+
+<span class="token comment"># 发布 docker 需要设置环境变量 DOCKER_USERNAME VERSION DOCKER_PASSWORD</span>
+<span class="token function">make</span> publish-docker
+
+<span class="token comment"># 根据 api/desc 生成 api代码并更新 swagger</span>
+<span class="token function">make</span> gen-api
+
+<span class="token comment"># 根据 rpc/core.proto 生成代码</span>
+<span class="token function">make</span> gen-rpc
+
+<span class="token comment"># 生成 ent 代码</span>
+<span class="token function">make</span> gen-ent
+
+<span class="token comment"># 生成 swagger</span>
+<span class="token function">make</span> gen-swagger
+
+<span class="token comment"># 启动 swagger 服务</span>
+<span class="token function">make</span> serve-swagger
+
+<span class="token comment"># 本地查看 doc</span>
+<span class="token function">make</span> doc
+
+<span class="token comment"># 生成 CRUD 代码 ( 你需要设置model name 和 group name)</span>
+<span class="token function">make</span> gen-rpc-ent-logic <span class="token assign-left variable">model</span><span class="token operator">=</span><span class="token punctuation">{</span>modelName<span class="token punctuation">}</span> <span class="token assign-left variable">group</span><span class="token operator">=</span><span class="token punctuation">{</span>groupName<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p><strong>你也可以通过查看Makefile了解执行的命令</strong></p></blockquote><h2 id="环境变量" tabindex="-1"><a class="header-anchor" href="#环境变量" aria-hidden="true">#</a> 环境变量</h2>`,3),h=n("thead",null,[n("tr",null,[n("th",null,"环境变量"),n("th",null,"介绍")])],-1),b=n("tr",null,[n("td",null,"VERSION"),n("td",null,"版本号")],-1),g=n("tr",null,[n("td",null,"DOCKER_USERNAME"),n("td",null,"docker 仓库用户名")],-1),f=n("tr",null,[n("td",null,"DOCKER_PASSWORD"),n("td",null,"docker 仓库密码")],-1),E=n("td",null,"REPO",-1),R={href:"http://docker.io",target:"_blank",rel:"noopener noreferrer"},w=n("div",{class:"hint-container warning"},[n("p",{class:"hint-container-title"},"注意"),n("p",null,"若要发布镜像需要 export 上述环境变量")],-1);function x(D,N){const l=a("RouterLink"),t=a("ExternalLinkIcon");return o(),c("div",null,[p,m,n("div",v,[k,n("p",null,[n("strong",null,[s("注意：需要系统支持make命令，建议linux, Windows 用户请先配置环境 "),e(l,{to:"/zh/guide/FAQ.html#%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE-windows-%E7%8E%AF%E5%A2%83"},{default:d(()=>[s("Windows")]),_:1})])])]),_,n("table",null,[h,n("tbody",null,[b,g,f,n("tr",null,[E,n("td",null,[s("docker 仓库地址， 官网为 "),n("a",R,[s("docker.io"),e(t)])])])])]),w])}const S=i(u,[["render",x],["__file","quickcmd.html.vue"]]);export{S as default};

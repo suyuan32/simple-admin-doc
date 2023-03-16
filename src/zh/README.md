@@ -5,7 +5,7 @@ icon: home
 title: 主页
 heroImage: /logo.svg
 heroText: Simple Admin
-tagline: Simple Admin 是一个基于 Go Zero 开发的的分布式微服务后端管理系统脚手架，提供后台管理系统的所有基本功能，支持 k8s 快速部署，助力快速开发高并发微服务集群，适合学习和商用
+tagline: Simple Admin是一个基于Go Zero开发面向中大型项目的分布式微服务后端管理系统脚手架，提供丰富的后台管理功能，支持k8s快速部署，助力快速开发高并发微服务集群，适合学习和商用
 actions:
 
 - text: 快速开始 💡
@@ -25,8 +25,8 @@ features:
 
 - title: 完善的后台管理功能
   icon: fa-solid fa-wrench
-  details: 提供用户管理，角色管理，权限管理，菜单管理,三方登陆管理等多种管理功能
-  link: <http://101.132.124.135/>
+  details: 提供丰富的后台管理功能
+  link: http://101.132.124.135/
 
 - title: 强大的生成工具
   icon: fa-solid fa-screwdriver-wrench

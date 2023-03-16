@@ -28,7 +28,7 @@ server := rest.MustNewServer(c.RestConf, rest.WithCors("*"))
 
 修改 `*` 为自己的域名或IP,默认为`*`，允许所有。
 
-## 如何同步 fork 仓库
+## 如何同步 fork 仓库?
 
 > 给fork配置远程库,先查看远程状态
 
@@ -69,3 +69,28 @@ type Config struct {
      ServiceName string `json:",env=SERVICE_NAME"`
 }
 ```
+
+## 如何配置 Windows 环境？
+
+> **首先安装 `git` , 我们需要  `git bash` 命令行执行 linux 命令** \
+> **其次需要安装 `make` 命令， 我们通过 [Chocolatey](https://chocolatey.org/install#individual) 进行安装**
+
+```shell
+# 在管理员状态下的 POWERSHELL 执行
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+## 然后执行
+
+choco install make
+```
+
+> 安装完成 `make` 后重启 IDE 即可，IDE 的命令行均选择 `git bash`
+
+::: warning
+`git bash` 下的路径使用 `/` 分隔， windows 默认为 `\`
+
+```shell
+goctls api proto --proto=D:/projects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
+```
+:::

@@ -27,7 +27,7 @@ server := rest.MustNewServer(c.RestConf, rest.WithCors("*"))
 
 Modify `*` to your own domain name or IP, the default is `*`, allowing all.
 
-## How to sync a fork repository
+## How to sync a fork repository?
 
 > Configure the remote library for fork, check the remote status first
 
@@ -68,3 +68,27 @@ type Config struct {
       ServiceName string `json:",env=SERVICE_NAME"`
 }
 ```
+
+## How to configure the Windows environment?
+
+> **First install `git`, we need `git bash` command line to execute linux commands** \
+> **Secondly, you need to install the `make` command, we install it through [Chocolatey](https://chocolatey.org/install#individual)**
+
+```shell
+# POWERSHELL Execution in Admin State
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+# And then run 
+choco install make
+```
+
+> Restart the IDE after `make` is installed, and select `git bash` for the command line of the IDE
+
+::: warning
+Paths under `git bash` are separated by `/`, windows defaults to `\`
+
+```shell
+goctls api proto --proto=D:/projects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
+```
+:::

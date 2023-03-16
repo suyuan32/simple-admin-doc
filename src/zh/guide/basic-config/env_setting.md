@@ -16,7 +16,7 @@ title: '本地开发环境配置'
 
 ::: info 
 推荐在linux下开发，因为需要用到make命令，官方在 `Ubuntu 22.10` 环境下开发. \
-**`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, `Windows`环境有部分 bug**
+**`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, 你也可以自行配置环境， 参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
 :::
 
 ## 后端部署

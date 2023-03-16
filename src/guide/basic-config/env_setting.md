@@ -15,7 +15,7 @@ title: 'Local Development Setting'
 
 ::: info 
 It is recommended to develop under linux, because the make command is required. We develop in Ubuntu 22.10. \
-**`Windows` users are recommended to develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment, the `Windows` environment has some bugs.**
+**`Windows` users are recommended to develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment, you can also cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment).**
 :::
 
 ## Backend Setting

@@ -6,7 +6,7 @@ title: 'Quick Commands'
 # Quick Commands
 
 ::: warning
-**Note: The system needs to support the make command, linux is recommended**
+**Note: The system needs to support the make command, linux is recommended. `Windows` users need to set up environment [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment).**
 :::
 
 We offer several commands in makefile ， you can just run in bash:

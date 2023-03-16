@@ -9,7 +9,7 @@ title: '快捷命令'
 我们提供了许多快捷命令在 makefile 中， 只需在根目录执行即可
 
 ::: warning
-**注意：需要系统支持make命令，建议linux**
+**注意：需要系统支持make命令，建议linux, Windows 用户请先配置环境 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
 :::
 
 ```shell

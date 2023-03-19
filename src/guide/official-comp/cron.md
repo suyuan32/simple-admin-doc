@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 'Timed Task Module'
+title: "Timed Task Module"
 ---
 
 ## Timing task module
@@ -18,44 +18,48 @@ Name: job.rpc
 ListenOn: 0.0.0.0:9105
 
 DatabaseConf:
-   Type: mysql
-   Host: 127.0.0.1
-   Port: 3306
-   DBName: simple_admin
-   Username: # set your username
-   Password: # set your password
-   MaxOpenConn: 100
-   SSLMode: disable
-   CacheTime: 5
+  Type: mysql
+  Host: 127.0.0.1
+  Port: 3306
+  DBName: simple_admin
+  Username: # set your username
+  Password: # set your password
+  MaxOpenConn: 100
+  SSLMode: disable
+  CacheTime: 5
 
 RedisConf:
-   Host: 127.0.0.1:6379
-   Type: node
+  Host: 127.0.0.1:6379
+  Type: node
 
 Log:
-   ServiceName: jobRpcLogger
-   Mode: file
-   Path: /home/data/logs/job/rpc
-   Encoding: json
-   Level: info
-   Compress: false
-   KeepDays: 7
-   StackCoolDownMillis: 100
+  ServiceName: jobRpcLogger
+  Mode: file
+  Path: /home/data/logs/job/rpc
+  Encoding: json
+  Level: info
+  Compress: false
+  KeepDays: 7
+  StackCoolDownMillis: 100
 
 Prometheus:
-   Host: 0.0.0.0
-   Port: 4005
-   Path: /metrics
+  Host: 0.0.0.0
+  Port: 4005
+  Path: /metrics
 
 AsynqConf:
-# If you don't use the WithRedisConf method, you need to untie the following annotations to define the configuration
+  # If you don't use the WithRedisConf method, you need to untie the following annotations to define the configuration
 
-# Addr: localhost:6379 # Redis address
-# Pass: # Redis Password
-# DB: 0 # Redis database index
-# Concurrency: 20 # max concurrent process job task num
-# SyncInterval: 10 # seconds, this field specifies how often sync should happen
-   Enable: true
+  # Addr: localhost:6379 # Redis address
+  # Pass: # Redis Password
+  # DB: 0 # Redis database index
+  # Concurrency: 20 # max concurrent process job task num
+  # SyncInterval: 10 # seconds, this field specifies how often sync should happen
+  Enable: true
+
+TaskConf:
+  EnableScheduledTask: false # Whether to enable static scheduled tasks
+  EnableDPTask: true # Whether to enable dynamic scheduled tasks
 ```
 
 ### Next Steps
@@ -177,29 +181,54 @@ The project uses asynq as the scheduled task manager by default, and only needs 
 - You can see the effect after adding
 
 ::: warning
-If you don't need a static timing task, just comment it out in main
+If you need a static scheduled task, just declare it in the configuration file
 
-`job.go`
+`job.yaml`
 
 ```go
-serviceGroup.Add(mqtask.NewMQTask(ctx))
-serviceGroup.Add(dynamicperiodictask.NewDPTask(ctx))
-// serviceGroup.Add(scheduletask.NewSchedulerTask(ctx))
+TaskConf:
+   EnableScheduledTask: true # Whether to enable static scheduled tasks
+   EnableDPTask: true # Whether to enable dynamic scheduled tasks
 ```
-:::
-
 
 ### Timing cron expression
 
 Timing tasks support common Cron expressions
 
 ::: info default format
+
 > `* * * * *`
-Indicates that it will be executed every second
+> Indicates that it will be executed every second
+
+| Field            | Range                    |
+| ---------------- | ------------------------ |
+| Minute           | 0-59                     |
+| Hour             | 0-23                     |
+| Day of the month | 1-31                     |
+| Month            | 1-12                     |
+| Day of the week  | 0-6 (Sunday to Saturday) |
+
+| Cron expression | Schedule                           |
+| --------------- | ---------------------------------- |
+| \* \* \* \* \*  | Every minute                       |
+| 0 \* \* \* \*   | Every hour                         |
+| 0 0 \* \* \*    | Every day at 12:00 AM              |
+| 0 0 \* \* FRI   | At 12:00 AM, only on Friday        |
+| 0 0 1 \* \*     | At 12:00 AM, on day 1 of the month |
+
 :::
 
 ::: info every
+
 > `@every` such as `@every 5s` means to execute every 5 seconds
+
+```text
+s for seconds
+m for minutes
+h for hours
+d for days
+```
+
 :::
 
 ### How to enable job in core
@@ -214,7 +243,7 @@ Timeout: 30000
 
 Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2
-  AccessExpire: 259200  # Seconds
+  AccessExpire: 259200 # Seconds
 
 Log:
   ServiceName: coreApiLogger
@@ -226,7 +255,7 @@ Log:
   StackCoolDownMillis: 100
 
 RedisConf:
-  Host: localhost:6379  # change to your own ip or address
+  Host: localhost:6379 # change to your own ip or address
   Type: node
 
 CoreRpc:

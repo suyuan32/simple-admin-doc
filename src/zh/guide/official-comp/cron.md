@@ -1,6 +1,6 @@
 ---
 order: 3
-title: '定时任务模块'
+title: "定时任务模块"
 ---
 
 ## 定时任务模块
@@ -48,19 +48,23 @@ Prometheus:
   Path: /metrics
 
 AsynqConf:
-# 如果你不使用 WithRedisConf 方法的话, 你需要解开以下注释定义配置
+  # 如果你不使用 WithRedisConf 方法的话, 你需要解开以下注释定义配置
 
-#  Addr: localhost:6379  # Redis address
-#  Pass: # Redis Password
-#  DB: 0 # Redis database index
-#  Concurrency: 20 # max concurrent process job task num
-#  SyncInterval: 10 # seconds, this field specifies how often sync should happen
+  #  Addr: localhost:6379  # Redis address
+  #  Pass: # Redis Password
+  #  DB: 0 # Redis database index
+  #  Concurrency: 20 # max concurrent process job task num
+  #  SyncInterval: 10 # seconds, this field specifies how often sync should happen
   Enable: true
+
+TaskConf:
+  EnableScheduledTask: false # 是否启用静态定时任务
+  EnableDPTask: true # 是否启用动态定时任务
 ```
 
 ### 接下来的步骤
 
-- 启动项目和core服务
+- 启动项目和 core 服务
 - 初始化数据库
 - 在菜单中修改隐藏为显示
 
@@ -123,7 +127,7 @@ AsynqConf:
 │   │       └── update_task_logic.go
 │   ├── mqs
 │   │   └── amq
-│   │       ├── handler                                         # handler 目录， 用于存放任务操作逻辑
+│   │       ├── handler                                   # handler 目录， 用于存放任务操作逻辑
 │   │       │   └── amq
 │   │       │       └── base
 │   │       │           └── hello_world.go                # hello world demo
@@ -132,7 +136,7 @@ AsynqConf:
 │   │       │   │   └── dynamic_periodic_task.go
 │   │       │   ├── mqtask
 │   │       │   │   ├── mqtask.go
-│   │       │   │   └── register.go                 # 在此处注册任务worker
+│   │       │   │   └── register.go                       # 在此处注册任务worker
 │   │       │   └── scheduletask
 │   │       │       ├── register.go                       # 在此处注册静态的定时任务
 │   │       │       └── scheduletask.go
@@ -177,15 +181,16 @@ AsynqConf:
 - 添加完即可看到效果
 
 ::: warning
-如果你不需要静态定时任务，只需要在main 注释掉即可
+如果你需要静态定时任务，只需在配置文件声明
 
-`job.go`
+`job.yaml`
 
 ```go
-serviceGroup.Add(mqtask.NewMQTask(ctx))
-serviceGroup.Add(dynamicperiodictask.NewDPTask(ctx))
-// serviceGroup.Add(scheduletask.NewSchedulerTask(ctx))
+TaskConf:
+  EnableScheduledTask: true # 是否启用静态定时任务
+  EnableDPTask: true # 是否启用动态定时任务
 ```
+
 :::
 
 ### 定时任务表达式
@@ -193,15 +198,42 @@ serviceGroup.Add(dynamicperiodictask.NewDPTask(ctx))
 定时任务支持常用 Cron 表达式
 
 ::: info 默认格式
+
 > `* * * * *`
-表示每秒钟都会执行
+> 表示每秒钟都会执行
+
+| 字段 | 取值范围             |
+| ---- | -------------------- |
+| 分钟 | 0-59                 |
+| 小时 | 0-23                 |
+| 日   | 1-31                 |
+| 月份 | 1-12                 |
+| 星期 | 0-6 (星期天到星期六) |
+
+| Cron 表达式    | 时间表              |
+| -------------- | ------------------- |
+| \* \* \* \* \* | 每分钟              |
+| 0 \* \* \* \*  | 每小时              |
+| 0 0 \* \* \*   | 每天凌晨 12 点      |
+| 0 0 \* \* FRI  | 每周五凌晨 12 点    |
+| 0 0 1 \* \*    | 每月 1 号凌晨 12 点 |
+
 :::
 
 ::: info every
-> `@every` 如 `@every 5s` 表示每5秒执行一次
+
+> `@every` 如 `@every 5s` 表示每 5 秒执行一次
+
+```text
+s  秒
+m  分
+h  小时
+d  天
+```
+
 :::
 
-### 如何在core 启用 job
+### 如何在 core 启用 job
 
 JobRpc `enable` 设置为 true
 
@@ -213,7 +245,7 @@ Timeout: 30000
 
 Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2
-  AccessExpire: 259200  # Seconds
+  AccessExpire: 259200 # Seconds
 
 Log:
   ServiceName: coreApiLogger
@@ -225,7 +257,7 @@ Log:
   StackCoolDownMillis: 100
 
 RedisConf:
-  Host: localhost:6379  # change to your own ip or address
+  Host: localhost:6379 # change to your own ip or address
   Type: node
 
 CoreRpc:

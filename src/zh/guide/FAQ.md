@@ -1,14 +1,13 @@
 ---
 order: 6
-title: '常见问题'
+title: "常见问题"
 ---
 
 # FAQ
 
-
 ## 默认账号是什么？
 
-A: 账号: admin   密码: simple-admin
+A: 账号: admin 密码: simple-admin
 
 ## 注册的账号不能登录?
 
@@ -26,23 +25,23 @@ A: 修改 api/core.go
 server := rest.MustNewServer(c.RestConf, rest.WithCors("*"))
 ```
 
-修改 `*` 为自己的域名或IP,默认为`*`，允许所有。
+修改 `*` 为自己的域名或 IP,默认为`*`，允许所有。
 
 ## 如何同步 fork 仓库?
 
-> 给fork配置远程库,先查看远程状态
+> 给 fork 配置远程库,先查看远程状态
 
-```shell 
+```shell
 git remote -v
 ```
 
-> 确定一个将被同步给 fork 远程的上游仓库, upstream后的地址是你即将同步的git地址
+> 确定一个将被同步给 fork 远程的上游仓库, upstream 后的地址是你即将同步的 git 地址
 
 ```shell
 git remote add upstream https://github.com/suyuan32/simple-admin-core.git
 ```
 
-> 开始同步fork
+> 开始同步 fork
 
 ```shell
 git fetch upstream
@@ -50,13 +49,13 @@ git fetch upstream
 
 > 切换到本地主分支
 
-```shell 
+```shell
 git checkout master
 ```
 
 > 把 upstream/master 分支合并到本地 master 上，这样就完成了同步，并且不会丢掉本地修改的内容。
 
-```shell 
+```shell
 git merge upstream/master
 ```
 
@@ -72,7 +71,7 @@ type Config struct {
 
 ## 如何配置 Windows 环境？
 
-> **首先安装 `git` , 我们需要  `git bash` 命令行执行 linux 命令** \
+> **首先安装 `git` , 我们需要 `git bash` 命令行执行 linux 命令** \
 > **其次需要安装 `make` 命令， 我们通过 [Chocolatey](https://chocolatey.org/install#individual) 进行安装**
 
 ```shell
@@ -93,4 +92,10 @@ choco install make
 ```shell
 goctls api proto --proto=D:/projects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
+
 :::
+
+### 菜单有哪些特殊组件？
+
+- LAYOUT - 当菜单为目录时，组件需要设置为 LAYOUT
+- IFrame - 当菜单为 Iframe 时需要设置为 Iframe, 内嵌和外链都需要设置为 Iframe

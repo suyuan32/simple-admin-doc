@@ -1,6 +1,6 @@
 ---
 order: 6
-title: 'FAQ'
+title: "FAQ"
 ---
 
 # FAQ
@@ -79,7 +79,7 @@ type Config struct {
 
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
-# And then run 
+# And then run
 choco install make
 ```
 
@@ -91,4 +91,10 @@ Paths under `git bash` are separated by `/`, windows defaults to `\`
 ```shell
 goctls api proto --proto=D:/projects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
+
 :::
+
+### What special components does the menu have?
+
+- LAYOUT - When the menu is a directory, the component needs to be set to `LAYOUT`
+- IFrame - When the menu is an Iframe, it needs to be set to `Iframe`, and both embedded and external links need to be set to `Iframe`

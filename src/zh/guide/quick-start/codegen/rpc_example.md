@@ -1,56 +1,55 @@
 ---
 order: 2
-title: 'RPC 微服务'
+title: "RPC 微服务"
 ---
 
-# 3分钟开发 RPC 服务
+# 3 分钟开发 RPC 服务
 
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.2.7+
+- simple-admin-tool (goctls) v0.2.8+
 
-必须了解 go zero 的 RPC 命令  [RPC命令](https://go-zero.dev/cn/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC服务](https://go-zero.dev/cn/docs/advance/rpc-call)
+必须了解 go zero 的 RPC 命令 [RPC 命令](https://go-zero.dev/cn/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC 服务](https://go-zero.dev/cn/docs/advance/rpc-call)
 \
-参考 [Example](https://github.com/suyuan32/simple-admin-example-rpc) 项目生成一遍，确认生成文件与Example项目一致，Example项目有完整的命令
+参考 [Example](https://github.com/suyuan32/simple-admin-example-rpc) 项目生成一遍，确认生成文件与 Example 项目一致，Example 项目有完整的命令
 :::
 
 ## RPC 职责
-在Simple Admin 中， RPC 主要用于获取数据以及提供扩展功能， 主要有以下职责：
+
+在 Simple Admin 中， RPC 主要用于获取数据以及提供扩展功能， 主要有以下职责：
 
 - 与数据库交互，获取所需数据， 如 PostgreSql
 - 与数据源交互获取数据， 如 ES
-- 提供额外功能供API层调用，如发短信，邮件
+- 提供额外功能供 API 层调用，如发短信，邮件
 
-多个不同的API都可以接入同一个RPC调用其功能。
+多个不同的 API 都可以接入同一个 RPC 调用其功能。
 
 ## 创建 RPC 基本项目
->
+
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.4 --tool_version=v0.2.7 --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.0 --tool_version=v0.2.8 --port=8080 --gitlab=true --desc=true
 ```
 
 ### `rpc new`参数介绍
 
-| 参数              | 必须  | 默认值   | 介绍                     | 使用方法                                                                                               |
-|-----------------|-----|-------|------------------------|----------------------------------------------------------------------------------------------------|
-| ent             | 否   | false | 是否启用 ent               | true 为启用                                                                                           |
-| module_name     | 否   |       | go.mod 中的module名称      | 如果项目需要被在外部import，需要像上面例子设置为github或者其他地方的仓库网址， 为空则只在本地使用                                            |
-| go_zero_version | 是   |       | go zero版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新release                             |
-| tool_version    | 是   |       | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看simple admin  tools 最新 release |
-| gitlab          | 否   | false | 是否生成 gitlab-ci.yml     | true 为生成                                                                                           |
-| port            | 否   | 9100  | 端口号                    | 服务暴露的端口号                                                                                           |
-| desc            | 否   | false | 是否拆分proto文件到desc文件夹    | true会生成desc文件夹                                                                                     |
-
+| 参数            | 必须 | 默认值 | 介绍                              | 使用方法                                                                                                  |
+| --------------- | ---- | ------ | --------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| ent             | 否   | false  | 是否启用 ent                      | true 为启用                                                                                               |
+| module_name     | 否   |        | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则只在本地使用      |
+| go_zero_version | 是   |        | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                            |
+| tool_version    | 是   |        | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release |
+| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml            | true 为生成                                                                                               |
+| port            | 否   | 9100   | 端口号                            | 服务暴露的端口号                                                                                          |
+| desc            | 否   | false  | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                   |
 
 详细参数请在命令行查看 `goctls rpc new --help`
 
 > 你可以看到如下项目结构
 
 ![Example](/assets/example_rpc_struct.png)
-
 
 ### 文件结构
 
@@ -116,7 +115,6 @@ Prometheus:
   Host: 0.0.0.0
   Port: 4001
   Path: /metrics
-
 ```
 
 ### 编辑 schema
@@ -175,21 +173,21 @@ make gen-rpc
 
 ### `rpc ent`参数介绍
 
-| 参数             | 必须  | 默认值     | 介绍           | 使用方法                                                                                              |
-|----------------|-----|---------|--------------|---------------------------------------------------------------------------------------------------|
-| schema         | 是   |         | schema文件地址   | 输入Ent schema 文件夹相对路径                                                                              |
-| style          | 否   | go_zero | 文件名格式        | go_zero为蛇形格式                                                                                      |
-| service_name   | 是   |         | 服务名称         | 和 proto 文件中的service名称相同                                                                           |
-| project_name   | 是   |         | 项目名称         | 和new 时的名称相同，和main文件名一致, 在multiple 模式下需要设置，单service默认和service name 相同                              |
-| o              | 是   |         | 输出位置         | 文件输出位置，可以为相对路径，指向main文件目录                                                                         |
-| model          | 是   |         | 模型名称         | schema中内部struct名称，如example中的Student                                                               |
-| search_key_num | 否   | 3       | 搜索字段数量（默认为3） | 列表搜索字段数量，只能自动生成string的字段                                                                          |
-| group          | 是   |         | 分组名称         | 分组名称用于将不同logic文件放到不同文件夹                                                                           |
-| multiple       | 否   | false   | 多服务          | 若 proto 文件中有多个service, 需要设置为 true                                                                 |
-| proto_out      | 否   |         | 是否拆分proto文件  | 若为空则会将数据生成到项目根目录的proto文件，否则将会生成到指定路径desc中，如 ./desc/student.proto, 注意存放proto的文件夹必须为desc, 内部可以有子文件夹 |
-| overwrite      | 否   | false   | 是否覆盖生成文件     | true则会覆盖所有生成的文件                                                                                   |
+| 参数           | 必须 | 默认值  | 介绍                     | 使用方法                                                                                                                                                       |
+| -------------- | ---- | ------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| schema         | 是   |         | schema 文件地址          | 输入 Ent schema 文件夹相对路径                                                                                                                                 |
+| style          | 否   | go_zero | 文件名格式               | go_zero 为蛇形格式                                                                                                                                             |
+| service_name   | 是   |         | 服务名称                 | 和 proto 文件中的 service 名称相同                                                                                                                             |
+| project_name   | 是   |         | 项目名称                 | 和 new 时的名称相同，和 main 文件名一致, 在 multiple 模式下需要设置，单 service 默认和 service name 相同                                                       |
+| o              | 是   |         | 输出位置                 | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                                               |
+| model          | 是   |         | 模型名称                 | schema 中内部 struct 名称，如 example 中的 Student                                                                                                             |
+| search_key_num | 否   | 3       | 搜索字段数量（默认为 3） | 列表搜索字段数量，只能自动生成 string 的字段                                                                                                                   |
+| group          | 是   |         | 分组名称                 | 分组名称用于将不同 logic 文件放到不同文件夹                                                                                                                    |
+| multiple       | 否   | false   | 多服务                   | 若 proto 文件中有多个 service, 需要设置为 true                                                                                                                 |
+| proto_out      | 否   |         | 是否拆分 proto 文件      | 若为空则会将数据生成到项目根目录的 proto 文件，否则将会生成到指定路径 desc 中，如 ./desc/student.proto, 注意存放 proto 的文件夹必须为 desc, 内部可以有子文件夹 |
+| overwrite      | 否   | false   | 是否覆盖生成文件         | true 则会覆盖所有生成的文件                                                                                                                                    |
 
-::: info 
+::: info
 multiple 例子, multiple 用于根据不同服务生成多个 rpcclient
 
 ```shell
@@ -202,8 +200,8 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 详细参数请在命令行查看 `goctls rpc ent --help`
 
 ::: warning
-注意： 工具会自动识别desc文件夹中的proto文件，desc内部也可以创建子文件夹，package 和 go_package 只需在 base.proto声明一次，
-工具会自动将所有proto文件合并至项目根目录的proto文件中。旧项目拆分proto文件只需将根目录下的proto自行拆分至desc文件夹即可。
+注意： 工具会自动识别 desc 文件夹中的 proto 文件，desc 内部也可以创建子文件夹，package 和 go_package 只需在 base.proto 声明一次，
+工具会自动将所有 proto 文件合并至项目根目录的 proto 文件中。旧项目拆分 proto 文件只需将根目录下的 proto 自行拆分至 desc 文件夹即可。
 :::
 
 ::: info
@@ -216,7 +214,7 @@ make gen-rpc-ent-logic model=Student group=student
 make gen-rpc
 
 # 可能需要运行下
-go mod tidy 
+go mod tidy
 ```
 
 ![logic](/assets/ent_gen_logic.png)
@@ -293,7 +291,7 @@ service Example {
 
 ```
 
-使用group注释给 rpc 分组
+使用 group 注释给 rpc 分组
 
 > 然后代码就可以运行啦 !
 
@@ -307,7 +305,7 @@ go run example.go -f etc/example.yaml
 Starting server at 127.0.0.1:8080...
 ```
 
-说明运行成功. 
+说明运行成功.
 
 ::: warning
 后续还需要修改数据库初始化函数，参考 [simple admin member](https://github.com/suyuan32/simple-admin-member-rpc/blob/main/internal/logic/base/init_database_logic.go)

@@ -9,20 +9,20 @@ author: Ryan SU
 <h1>Simple Admin</h1>
 </div>
 
-**中文** | [English](./README.En.md)
----
+## **中文** | [English](./README.En.md)
+
 [![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.5.0-brightgreen.svg)](https://go-zero.dev/)
 [![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.8.0-yellow.svg)](https://vvbin.cn/doc-next/)
 [![Ent](https://img.shields.io/badge/Ent-v0.11.9-blue.svg)](https://entgo.io/)
 [![Casbin](https://img.shields.io/badge/Casbin-v2.52.1-orange.svg)](https://github.com/casbin/casbin)
-[![Release](https://img.shields.io/badge/Release-v0.2.7-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
+[![Release](https://img.shields.io/badge/Release-v0.2.8-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![SimpleAdmin](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
 ![QQ群](https://img.shields.io/badge/QQ%E7%BE%A4-801043319-blue)
 
 ## 简介
 
-Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基于go-zero开发，为开发中大型后台提供了丰富的功能，支持三端代码生成。
+Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基于 go-zero 开发，为开发中大型后台提供了丰富的功能，支持三端代码生成。
 官方自带多种扩展，助力中小企业快速上云，快速迭代。适合用于微服务学习和商用，开源免费。
 
 #### [Ent 中文文档](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started)
@@ -30,14 +30,14 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 ## 特性
 
 - **最新技术栈**：使用 ent, casbin, kafka 等前沿技术开发
-- **完全支持go-swagger**: 直接在api文件内编写注释即可直接生成swagger文档
+- **完全支持 go-swagger**: 直接在 api 文件内编写注释即可直接生成 swagger 文档
 - **统一的错误处理**: 整个系统拥有国际化的统一错误处理
 - **国际化**：内置完善的国际化方案
-- **服务注册发现**: 完善的服务注册发现机制，原生支持K8s
-- **权限**: 内置完善的动态路由权限生成方案, 集成RBAC权限控制
+- **服务注册发现**: 完善的服务注册发现机制，原生支持 K8s
+- **权限**: 内置完善的动态路由权限生成方案, 集成 RBAC 权限控制
 - **代码生成**: 内置三端 Web, API, RPC 代码生成
 - **多种扩展**: 提供多种扩展，同时具有非常简单的接入功能
-- **其他**: 流量控制， ES服务
+- **其他**: 流量控制， ES 服务
 
 ## 支持功能
 
@@ -49,7 +49,7 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 - 字典管理：对系统中经常使用的一些较为固定的数据进行维护。
 - 操作日志：系统正常操作日志记录和查询；系统异常信息日志记录和查询。
 - 会员管理：管理注册会员信息
-- 接口文档：根据业务代码自动生成相关的api接口文档。
+- 接口文档：根据业务代码自动生成相关的 api 接口文档。
 - 代码生成：根据数据表结构生成对应的增删改查相对应业务
 - 服务监控：查看一些服务器的基本信息
 
@@ -60,9 +60,11 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 ## 预览
 
 ### 在线预览
+
 [在线预览](http://101.132.124.135/#/dashboard)
 账号 admin
 密码 simple-admin
+
 #### 只读，不可修改和注册
 
 ![pic](https://i.postimg.cc/qqPNR02x/register-zh-cn.png)
@@ -72,7 +74,6 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 
 [Simple Admin 文档](https://doc.ryansu.pro)
 
-
 - go-zero
   [Document](https://go-zero.dev/)
 - ant-design-vue [Document](https://antdv.com/components/overview)
@@ -81,8 +82,8 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 
 - [Golang](http://go.dev/) and [git](https://git-scm.com/) - Go 语言
 - [Ent](https://entgo.io/docs/getting-started) - Ent
-- [Mysql](https://www.mysql.com/) - Mysql数据库
-- [GORM](https://gorm.io/) - GORM 数据库ORM组件
+- [Mysql](https://www.mysql.com/) - Mysql 数据库
+- [GORM](https://gorm.io/) - GORM 数据库 ORM 组件
 - [Casbin](https://casbin.org/) - 权限管理
 - [Go-swagger](https://goswagger.io/) - Go-swagger 文档生成调试
 
@@ -136,9 +137,10 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
   - `wip` 开发中
 
 ## 交流群
+
 > QQ 801043319
 
->[Discord](https://discord.gg/NDED5p2hJk)
+> [Discord](https://discord.gg/NDED5p2hJk)
 
 > [论坛](https://github.com/suyuan32/simple-admin-core/discussions)
 

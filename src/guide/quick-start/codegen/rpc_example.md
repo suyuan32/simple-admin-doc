@@ -1,21 +1,23 @@
 ---
 order: 2
-title: 'RPC Service'
+title: "RPC Service"
 ---
+
 # 3 minutes developing RPC service
 
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.2.7 +
+- simple-admin-tool (goctls) v0.2.8 +
 
- \
-Must know go-zero's RPC command.  [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
+\
+Must know go-zero's RPC command. [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
  \
 Refer to the [Example](https://github.com/suyuan32/simple-admin-example-rpc) project to generate it again, confirm that the generated file is consistent with the Example project, and the Example project has complete commands.
 :::
 
 ## RPC Responsibilities
+
 In Simple Admin, RPC is mainly used to obtain data and provide extended functions. It mainly has the following responsibilities:
 
 - Interact with the database to obtain the required data, such as PostgreSql
@@ -25,19 +27,19 @@ In Simple Admin, RPC is mainly used to obtain data and provide extended function
 Multiple different APIs can access the same RPC to call its functions.
 
 ## Create RPC project
->
+
 > Create example project
->
+
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.4.4 --tool_version=v0.2.7 --port=8080  --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.0 --tool_version=v0.2.8 --port=8080  --gitlab=true --desc=true
 ```
 
 ### `rpc new` parameters
 
 | Parameter       | Must | Default | Introduction                                         | Usage                                                                                               |
-|-----------------|------|---------|------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| --------------- | ---- | ------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | ent             | No   | false   | Whether to use Ent                                   | true means use                                                                                      |
-| module_name     | Yes  |         | Module name in  go.mod                               | If your project will be used by other project, you should set as above which is a github repository |
+| module_name     | Yes  |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository |
 | go_zero_version | Yes  |         | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release            |
 | tool_version    | Yes  |         | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release     |
 | gitlab          | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                               |
@@ -114,12 +116,11 @@ Prometheus:
   Host: 0.0.0.0
   Port: 4001
   Path: /metrics
-
 ```
 
 ### Edit schema
 
-Enter ent/schema, change example.go into student.go,  adding mixins and the fields address, uuid
+Enter ent/schema, change example.go into student.go, adding mixins and the fields address, uuid
 
 ```go
 package schema
@@ -174,13 +175,13 @@ make gen-rpc
 ### `rpc ent` parameters
 
 | Parameters   | Must | Default | Introduction                         | Usage                                                                                                                                                                                                                                                                                 |
-|--------------|------|---------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------ | ---- | ------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | schema       | Yes  |         | Schema folder                        | Input the relative path of Ent schema                                                                                                                                                                                                                                                 |
 | style        | No   | go_zero | File name format                     | The go_zero means snack format                                                                                                                                                                                                                                                        |
 | service_name | Yes  |         | service name                         | The same as the service name in the proto file                                                                                                                                                                                                                                        |
 | project_name | Yes  |         | project name                         | Same as the name you create project, same as main file name, needs to be set in multiple mode, single service is same as service name by default                                                                                                                                      |
-| o            | Yes  |         | Output path                          | The output path，it can be relative path. It should target to the root path of project.                                                                                                                                                                                                |
-| model        | Yes  |         | Model name                           | The structure name in schema，e.g. the Student in example project                                                                                                                                                                                                                      |
+| o            | Yes  |         | Output path                          | The output path，it can be relative path. It should target to the root path of project.                                                                                                                                                                                               |
+| model        | Yes  |         | Model name                           | The structure name in schema，e.g. the Student in example project                                                                                                                                                                                                                     |
 | group        | Yes  |         | Group Name                           | The group name is used to separate logic code                                                                                                                                                                                                                                         |
 | multiple     | No   | false   | Multiple Service                     | If your proto file contains multiple service, you should set true                                                                                                                                                                                                                     |
 | proto_out    | No   |         | Proto file output directory          | If it is empty, the data will be generated to the proto file in the root directory of the project, otherwise it will be generated in the specified path desc, such as ./desc/student.proto, note that the folder storing proto must be desc, and there can be sub-files inside folder |
@@ -212,8 +213,8 @@ make gen-rpc-ent-logic model=Student group=student
 
 make gen-rpc
 
-# You may need to run 
-go mod tidy 
+# You may need to run
+go mod tidy
 ```
 
 ![logic](/assets/ent_gen_logic.png)
@@ -305,7 +306,7 @@ go run example.go -f etc/example.yaml
 Starting server at 127.0.0.1:8080...
 ```
 
-That means the codes run successfully, you need to finish the database initialization like:  [simple admin file](https://github.com/suyuan32/simple-admin-file/blob/master/api/internal/logic/file/init_database_logic.go)
+That means the codes run successfully, you need to finish the database initialization like: [simple admin file](https://github.com/suyuan32/simple-admin-file/blob/master/api/internal/logic/file/init_database_logic.go)
 
 > Project URL <https://github.com/suyuan32/simple-admin-example-rpc>
 
@@ -371,7 +372,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
  cbn := c.CasbinConf.MustNewCasbinWithRedisWatcher(c.DatabaseConf.Type, c.DatabaseConf.GetDSN(), c.RedisConf)
 
  trans := i18n.NewTranslator(i18n2.LocaleFS)
-	
+
  return &ServiceContext{
   Config:     c,
   Authority:  middleware.NewAuthorityMiddleware(cbn, rds).Handle,
@@ -383,4 +384,4 @@ func NewServiceContext(c config.Config) *ServiceContext {
 
 > **And then you can call in via l.svcCtx.ExampleRpc in logic code.**
 
-> simple admin example api  <https://github.com/suyuan32/simple-admin-example-api>
+> simple admin example api <https://github.com/suyuan32/simple-admin-example-api>

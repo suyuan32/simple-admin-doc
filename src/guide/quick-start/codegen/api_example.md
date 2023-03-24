@@ -8,7 +8,7 @@ title: "API Service"
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.2.8 +
+- simple-admin-tool (goctls) v0.2.9-beta +
 
 \
 Must know go-zero's API command. [API Command](https://go-zero.dev/docs/goctl/api) [Api Service](https://go-zero.dev/docs/advance/api-coding) \
@@ -196,3 +196,105 @@ The codes generated is like below:
 ::: warning
 You need to add `ExampleRpc` manually into `service_context`, `config`, `etc`.
 :::
+
+
+## Code generation (Ent-based single service)
+
+::: warning
+Single services need to set `--ent=true` when using the `api new` command. \
+Learn from [Single Example](https://github.com/suyuan32/simple-admin-example-api-single)
+:::
+
+```shell
+goctls api ent --schema=./ent/schema --api_service_name=example --o=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
+```
+
+| Parameter        | Required | Default | Description                                                  | Usage                                                            |
+| ---------------- | -------- | ------- | ------------------------------------------------------------ | ---------------------------------------------------------------- |
+| schema           | Yes      |         | The address of the Ent schema file.                          | Enter the relative path of the Ent schema folder.               |
+| style            | No       | go_zero | The format of the file name.                                 | snake case format for go_zero.                                   |
+| api_service_name | Yes      |         | The service name of the API, used in the API declaration file. | In the API declaration file.                                     |
+| o                | Yes      |         | The output location of the file, relative path is accepted.   | Points to the main file directory.                               |
+| model            | Yes      |         | The name of the model in the schema.                          | The internal struct name in the schema, such as Student in example. |
+| search_key_num   | No       | 3       | The number of search fields in the list (default is 3).      | Only string type fields can be automatically generated.          |
+| group            | Yes      |         | The name of the group, used to put different logic files in different folders. | Put different logic files in different folders.                  |
+| json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero. | Underline for go_zero, upper camel case for GoZero.               |
+| overwrite        | No       | false   | Whether to overwrite the generated files.                     | Overwrite all generated files when true.                          |
+
+::: info
+The shortcut command `make gen-api-ent-logic model={modelName} group={groupName}` means to generate the code whose schema is `{modelName}`, and `{groupName}` is the group name. Note that the first letter of modelName needs to be capitalized. Be consistent with the struct name in the schema
+:::
+
+### Directory Structure
+
+```text
+
+example
+├── Dockerfile
+├── Makefile
+├── desc                                   # declaration directory
+│ ├── all.api
+│ └── base.api
+├── ent                                    # Ent directory
+│ ├── client.go
+│ ├── ent.go
+│ ├── enttest
+│ │ └── enttest.go
+│ ├── example
+│ │ ├── example.go
+│ │ └── where.go
+│ ├── example.go
+│ ├── example_create.go
+│ ├── example_delete.go
+│ ├── example_query.go
+│ ├── example_update.go
+│ ├── generate.go
+│ ├── hook
+│ │ └── hook.go
+│ ├── migrate
+│ │ ├── migrate.go
+│ │ └── schema.go
+│ ├── mutation.go
+│ ├── predicate
+│ │ └── predicate.go
+│ ├── runtime
+│ │ └── runtime.go
+│ ├── runtime.go
+│ ├── schema                                 # model directory
+│ │ └── example.go
+│ ├── template
+│ │ ├── not_empty_update.tmpl
+│ │ └── pagination.tmpl
+│ └── tx.go
+├── etc                                      # configuration file directory
+│ └── example.yaml
+├── example.go
+├── go.mod
+├── go.sum
+└── internal
+     ├──config
+     │ └── config.go
+     ├── handler
+     │ ├── base
+     │ │ └── init_database_handler.go
+     │ └── routes.go
+     ├── i18n                                 # Internationalization file directory
+     │ ├── locale
+     │ │ ├── en.json
+     │ │ └── zh.json
+     │ └── vars.go
+     ├── logic
+     │ └── base
+     │ └── init_database_logic.go
+     ├── middleware
+     │ └── authority_middleware.go
+     ├── svc
+     │ └── service_context.go
+     ├── types
+     │ └── types.go
+     └── utils                                # tools directory
+         ├── dberrorhandler                   # Ent error handling tool
+         │ └── error_handler.go
+         └── entx                             # Ent transaction support function
+             └── ent_tx.go
+```

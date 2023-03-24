@@ -205,10 +205,10 @@ The tool will automatically merge all proto files into the proto file in the pro
 :::
 
 ::: info
-Quick command: `gen-rpc-ent-logic model=Student` means only generate structure called 'Student' in schema. If it is empty, generating all structures in schema fold. \  
-Group means logic codes put in the group name folder.
+Quick command: `make gen-rpc-ent-logic model={modelName} group={groupName}` indicates that only the code whose schema is `{modelName}` is generated, and `{groupName}` is the group name. Note that modelName needs an initial Uppercase, consistent with the struct name in the schema。
 
 ```shell
+# Generate the Student structure in the schema
 make gen-rpc-ent-logic model=Student group=student
 
 make gen-rpc

@@ -205,10 +205,11 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 :::
 
 ::: info
-快捷命令：`gen-rpc-ent-logic model=Student group=student` 表示只生成 schema 为 Student 的代码， 为空则全部生成 group 为分组文件夹名称
+快捷命令：`make gen-rpc-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致
 :::
 
 ```shell
+# 生成 schema 中的 Student 结构
 make gen-rpc-ent-logic model=Student group=student
 
 make gen-rpc

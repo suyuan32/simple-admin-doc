@@ -8,7 +8,7 @@ title: "API 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.2.8 +
+- simple-admin-tool (goctls) v0.2.9-beta +
 
 必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/cn/docs/goctl/api) [api 文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
 \
@@ -45,6 +45,8 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.0 --tool
 | trans_err       | 否   | false  | 国际化翻译错误信息        | true 为启用                                                                                               |
 | gitlab          | 否   | false  | 是否生成 gitlab-ci.yml    | true 为生成                                                                                               |
 | port            | 否   | 9100   | 端口号                    | 服务暴露的端口号                                                                                          |
+| ent             | 否   | false  | 是否启用 Ent              | true 为启用，启用Ent可用于单体API服务 |
+
 
 **详细参数请在命令行查看 `goctls api new --help`**
 
@@ -196,3 +198,105 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 ::: warning
 还需要手动添加`ExampleRpc`到`service_context`, `config`, `etc`
 :::
+
+
+## 代码生成 (基于Ent的单体服务)
+
+::: warning
+单体服务需要在 使用 `api new` 命令时设置  `--ent=true`. \
+示例项目 [Single Example](https://github.com/suyuan32/simple-admin-example-api-single)
+:::
+
+```shell
+goctls api ent --schema=./ent/schema --api_service_name=example --o=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
+```
+
+| 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                                                                                                          |
+| ---------------- | ---- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| schema         | 是   |         | schema 文件地址          | 输入 Ent schema 文件夹相对路径                                                                                                                                 |
+| style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                                                                                                |
+| api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中                                                                                        |
+| o                | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                  |
+| model            | 是   |         | 模型名称                      | schema 中内部 struct 名称，如 example 中的 Student                                                                                |
+| search_key_num | 否   | 3       | 搜索字段数量（默认为 3） | 列表搜索字段数量，只能自动生成 string 的字段                                                                                                                   |
+| group          | 是   |         | 分组名称                 | 分组名称用于将不同 logic 文件放到不同文件夹                                                                                                                    |
+| json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                                                                                |
+| overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                                                                       |
+
+::: info 
+快捷命令  `make gen-api-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致
+:::
+
+### 目录结构
+
+```text
+
+example
+├── Dockerfile
+├── Makefile
+├── desc                                       # 声明目录
+│   ├── all.api
+│   └── base.api
+├── ent                                        # Ent 目录
+│   ├── client.go
+│   ├── ent.go
+│   ├── enttest
+│   │   └── enttest.go
+│   ├── example
+│   │   ├── example.go
+│   │   └── where.go
+│   ├── example.go
+│   ├── example_create.go
+│   ├── example_delete.go
+│   ├── example_query.go
+│   ├── example_update.go
+│   ├── generate.go
+│   ├── hook
+│   │   └── hook.go
+│   ├── migrate
+│   │   ├── migrate.go
+│   │   └── schema.go
+│   ├── mutation.go
+│   ├── predicate
+│   │   └── predicate.go
+│   ├── runtime
+│   │   └── runtime.go
+│   ├── runtime.go
+│   ├── schema                                  # 模型目录
+│   │   └── example.go
+│   ├── template
+│   │   ├── not_empty_update.tmpl
+│   │   └── pagination.tmpl
+│   └── tx.go
+├── etc                                         # 配置文件目录
+│   └── example.yaml
+├── example.go
+├── go.mod
+├── go.sum
+└── internal
+    ├── config
+    │   └── config.go
+    ├── handler
+    │   ├── base
+    │   │   └── init_database_handler.go
+    │   └── routes.go
+    ├── i18n                                    # 国际化文件目录
+    │   ├── locale 
+    │   │   ├── en.json
+    │   │   └── zh.json
+    │   └── vars.go
+    ├── logic
+    │   └── base
+    │       └── init_database_logic.go
+    ├── middleware
+    │   └── authority_middleware.go
+    ├── svc
+    │   └── service_context.go
+    ├── types
+    │   └── types.go
+    └── utils                                  # 工具目录
+        ├── dberrorhandler                     # Ent错误处理工具
+        │   └── error_handler.go
+        └── entx                               # Ent事务支持函数
+            └── ent_tx.go
+```

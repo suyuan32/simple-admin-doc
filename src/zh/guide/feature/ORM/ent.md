@@ -1,16 +1,18 @@
 ---
 order: 1
-title: 'Ent'
+title: "Ent"
 ---
 
 ## Ent 快速入门
 
-#### [官方文档](https://entgo.io/zh/docs/getting-started/)
+::: info
+[官方文档](https://entgo.io/zh/docs/getting-started/) [schema 中文文档(推荐)](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started) \
 
-#### [schema中文文档(推荐)](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started)
+[教学项目](https://github.com/suyuan32/simple-admin-example-ent) 帮助你快速提升
+:::
 
 ## 实战
->
+
 > 安装
 
 ```shell
@@ -88,15 +90,15 @@ func (Role) Annotations() []schema.Annotation {
 
 目前项目提供了多种 Mixin 位于 `"github.com/suyuan32/simple-admin-common/orm/ent/mixins"`
 
-- base: 提供自增整数id, created_at, updated_at
-- uuid: 提供uuid类型的id作为主键, created_at, updated_at
+- base: 提供自增整数 id, created_at, updated_at
+- uuid: 提供 uuid 类型的 id 作为主键, created_at, updated_at
 - status: 提供状态字段 status
 - sort: 提供排序字段
 
 #### uuidx 提供两个方法用于转换 uuid
 
-- uuidx.ParseUUIDSlice 用于将uuid的string数组转化为ent的uuid数组类型
-- uuidx.ParseUUIDString  用于将 uuid 的 string 转化为 uuid 类型
+- uuidx.ParseUUIDSlice 用于将 uuid 的 string 数组转化为 ent 的 uuid 数组类型
+- uuidx.ParseUUIDString 用于将 uuid 的 string 转化为 uuid 类型
 
 ### 软删除可查看 [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete)
 
@@ -151,7 +153,7 @@ func NewServiceContext(c config.Config) *ServiceContext {
 ent driver 有两种驱动，带缓存和不带缓存
 :::
 
-> 带缓存 （使用context控制缓存）
+> 带缓存 （使用 context 控制缓存）
 
 ```go
 db := ent.NewClient(
@@ -297,7 +299,7 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiListReq) (*core.ApiListResp, er
 
 ```
 
-### 执行raw sql
+### 执行 raw sql
 
 若要支持纯 sql ，需要修改 makefile 生成代码， 添加 --feature sql/execquery
 
@@ -305,7 +307,7 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiListReq) (*core.ApiListResp, er
 go run -mod=mod entgo.io/ent/cmd/ent generate --template glob="./rpc/ent/template/*.tmpl" ./rpc/ent/schema --feature sql/execquery
 ```
 
-即可通过client.QueryContext 调用
+即可通过 client.QueryContext 调用
 
 ```go
 students, err := client.QueryContext(context.Background(), "select * from student")
@@ -313,8 +315,8 @@ students, err := client.QueryContext(context.Background(), "select * from studen
 
 ### 项目默认添加了 page 模板
 
-位于 ent/template/pagination.tmpl，生成代码时通过 --template glob="./rpc/ent/template/*.tmpl" 导入, 提供简便的分页功能,
-如果你的其他项目也想要这个分页功能需要将 template 文件夹复制到新项目的ent文件夹中。
+位于 ent/template/pagination.tmpl，生成代码时通过 --template glob="./rpc/ent/template/\*.tmpl" 导入, 提供简便的分页功能,
+如果你的其他项目也想要这个分页功能需要将 template 文件夹复制到新项目的 ent 文件夹中。
 
 ```go
 apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, in.PageSize)
@@ -330,9 +332,11 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
     }
 })
 ```
+
 > Not Empty Update 模板
 
 用于部分更新数据，例如：
+
 ```go
 func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core.BaseResp, error) {
 	err := l.svcCtx.DB.Department.UpdateOneID(in.Id).
@@ -365,12 +369,12 @@ func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core
 ```
 
 ::: warning
-not empty update只支持字符和数字类型，不支持布尔和UUID,需要自行判断
+not empty update 只支持字符和数字类型，不支持布尔和 UUID,需要自行判断
 :::
 
-默认使用ID排序，可以不用设置
+默认使用 ID 排序，可以不用设置
 
-> 常见结果返回函数，用于query末尾
+> 常见结果返回函数，用于 query 末尾
 
 ```go
 // .ExecX() 只执行，不返回错误和数据
@@ -445,6 +449,5 @@ func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) 
 	}, nil
 }
 ```
-
 
 ### Ent schema 生成工具 [ent import](https://github.com/ariga/entimport)

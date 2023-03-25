@@ -1,10 +1,14 @@
 ---
 order: 1
-title: 'Ent'
+title: "Ent"
 ---
+
 ## Ent
 
-#### [Official Doc](https://entgo.io/docs/getting-started)
+::: info
+[Official Doc](https://entgo.io/docs/getting-started) \
+ [Tutorial Project](https://github.com/suyuan32/simple-admin-example-ent) helps you to imporve the skills
+:::
 
 ## Quick Start
 
@@ -174,7 +178,7 @@ db := ent.NewClient(
 
 ### Usage in logic
 
-Create an API  `rpc/internal/logic/update_role_status_logic.go`
+Create an API `rpc/internal/logic/update_role_status_logic.go`
 
 ```go
 package api
@@ -310,7 +314,7 @@ students, err := client.QueryContext(context.Background(), "select * from studen
 
 ### Project add pagination template by default, you can copy this template to other project
 
-In ent/template/pagination.tmpl，add flag --template glob="./rpc/ent/template/*.tmpl" when generating code and
+In ent/template/pagination.tmpl，add flag --template glob="./rpc/ent/template/\*.tmpl" when generating code and
 then you can use pagination like below:
 
 ```go
@@ -327,9 +331,11 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
     }
 })
 ```
+
 > Not Empty Update template
 
 Used to partially update data, for example:
+
 ```go
 func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core.BaseResp, error) {
 	err := l.svcCtx.DB.Department.UpdateOneID(in.Id).
@@ -360,6 +366,7 @@ func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core
 	return &core.BaseResp{Msg: i18n.UpdateSuccess}, nil
 }
 ```
+
 ::: warning
 not empty update only supports string and number types such as float, int, does not support Boolean and UUID, you need to judge them by yourself
 :::
@@ -393,7 +400,6 @@ SaveX(context.Background())
 ### Transaction
 
 The project provides the WithTx method to use database transactions locally, taking updating user information as an example：
-
 
 ```go
 

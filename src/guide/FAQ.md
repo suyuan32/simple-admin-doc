@@ -98,3 +98,14 @@ goctls api proto --proto=D:/projects/simple-admin-example-rpc/example.proto --st
 
 - LAYOUT - When the menu is a directory, the component needs to be set to `LAYOUT`
 - IFrame - When the menu is an Iframe, it needs to be set to `Iframe`, and both embedded and external links need to be set to `Iframe`
+
+### How to develop multiple interdependent projects locally?
+
+Use the workspace mode. After go 1.18, there is a workspace mode. You only need to put the api and rpc projects in the same folder and execute the command:
+
+```shell
+# Such as putting multiple projects in one place for development
+go work init simple-admin-common/ simple-admin-core/ simple-admin-tools/
+```
+
+You can get the latest code changes locally without committing to the repository.

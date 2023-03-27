@@ -1,6 +1,6 @@
 ---
 order: 2
-title: '本地开发环境配置'
+title: "本地开发环境配置"
 ---
 
 # 本地开发环境配置
@@ -14,8 +14,8 @@ title: '本地开发环境配置'
 - [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
 
-::: info 
-推荐在linux下开发，因为需要用到make命令，官方在 `Ubuntu 22.10` 环境下开发. \
+::: info
+推荐在 linux 下开发，因为需要用到 make 命令，官方在 `Ubuntu 22.10` 环境下开发. \
 **`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, 你也可以自行配置环境， 参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
 :::
 
@@ -26,8 +26,8 @@ title: '本地开发环境配置'
 simple admin core 是核心代码，主要负责用户注册鉴权和充当网关的角色以及后台的各类配置。
 
 ::: info 默认账号
-username:     **admin**  
-password:     **simple-admin**
+username: **admin**  
+password: **simple-admin**
 :::
 
 ### 下载代码
@@ -40,7 +40,7 @@ git clone https://github.com/suyuan32/simple-admin-core.git
 
 #### API 服务
 
-##### 注意本地测试最好创建 core_dev.yaml 与部署文件core.yaml区分开
+##### 注意本地测试最好创建 core_dev.yaml 与部署文件 core.yaml 区分开
 
 > 添加 api/etc/core_dev.yaml
 
@@ -51,20 +51,20 @@ Port: 9100
 Timeout: 30000
 
 Auth:
-  AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2  # JWT的加密密钥，各个API应保持一致才能解析
-  AccessExpire: 259200  # 秒，过期时间
+  AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2 # JWT的加密密钥，各个API应保持一致才能解析
+  AccessExpire: 259200 # 秒，过期时间
 
 Log:
   ServiceName: coreApiLogger
   Mode: file
-  Path: /home/ryan/logs/core/api  # log 保存路径，使用filebeat同步
+  Path: /home/ryan/logs/core/api # log 保存路径，使用filebeat同步
   Level: info
   Compress: false
-  KeepDays: 7  # 保存时长（天）
+  KeepDays: 7 # 保存时长（天）
   StackCoolDownMillis: 100
 
 RedisConf:
-  Host: 127.0.0.1:6379  # 改成自己的redis地址
+  Host: 127.0.0.1:6379 # 改成自己的redis地址
   Type: node
   # Pass: xxx  # 也可以设置密码
 
@@ -79,7 +79,7 @@ CoreRpc:
 JobRpc:
   Endpoints:
     - 127.0.0.1:9105 # 与 Job RPC 地址相同
-  Enabled: false  # 是否启用
+  Enabled: false # 是否启用
 
 Captcha:
   KeyLong: 5 # 验证码长度
@@ -87,14 +87,15 @@ Captcha:
   ImgHeight: 80 # 验证码图片高度
 
 DatabaseConf:
-  Type: mysql # 支持 mysql 和 postgres
-  Host: "127.0.0.1"  # 修改成自己的mysql地址
+  Type: mysql # 支持 mysql, postgres, sqlite3
+  Host: "127.0.0.1" # 修改成自己的mysql地址
   Port: 3306
   DBName: simple_admin # 数据库名称
-  Username: root   # 用户名
+  Username: root # 用户名
   Password: "123456" # 密码
   MaxOpenConn: 100 # 最大连接数
   SSLMode: disable # 是否在 postgresql 中使用 SSL, disable 或 require
+# DBPath: /home/data/sqlite.db # Sqlite 数据库文件存放位置，使用 sqlite3时必须设置
 
 # casbin 规则
 CasbinConf:
@@ -112,6 +113,7 @@ CasbinConf:
 ```
 
 ::: warning
+
 > 小型网站直接使用
 
 ```yaml
@@ -121,20 +123,20 @@ CoreRpc:
 ```
 
 > 的方式直连，不需要服务发现，本地调试也是使用直连的方式， Endpoints 可以有多个
-:::
+> :::
 
 > 添加 rpc/etc/core_dev.yaml
 
 ```yaml
 Name: core.rpc
-ListenOn: 0.0.0.0:9101  # ip可以是0.0.0.0也可以是127.0.0.1,如需其他外部主机访问则需要为 0.0.0.0
+ListenOn: 0.0.0.0:9101 # ip可以是0.0.0.0也可以是127.0.0.1,如需其他外部主机访问则需要为 0.0.0.0
 
 DatabaseConf:
   Type: mysql # 支持 mysql 和 postgres
-  Host: "127.0.0.1"  # 修改成自己的mysql地址
+  Host: "127.0.0.1" # 修改成自己的mysql地址
   Port: 3306
   DBName: simple_admin # 数据库名称
-  Username: root   # 用户名
+  Username: root # 用户名
   Password: "123456" # 密码
   MaxOpenConn: 100 # 最大连接数
   SSLMode: disable # 是否在 postgresql 中使用 SSL, disable 或 require
@@ -157,15 +159,15 @@ CasbinConf:
 Log:
   ServiceName: coreRpcLogger
   Mode: file
-  Path: /home/ryan/logs/core/rpc  # log 保存路径，使用filebeat同步
+  Path: /home/ryan/logs/core/rpc # log 保存路径，使用filebeat同步
   Encoding: json
   Level: info
   Compress: false
-  KeepDays: 7  # 保存时长（天）
+  KeepDays: 7 # 保存时长（天）
   StackCoolDownMillis: 100
 
 RedisConf:
-  Host: 192.168.50.216:6379   # 改成自己的redis地址
+  Host: 192.168.50.216:6379 # 改成自己的redis地址
   Type: node
   # Pass: xxx  # 也可以设置密码
 ```
@@ -265,12 +267,12 @@ VITE_FILE_STORE_URL=http://localhost:8080
 VITE_GLOB_API_URL_PREFIX=
 ```
 
-> 主要修改 VITE_PROXY 中的 sys-api 配置， 使用 localhost 或 127.0.0.1 调试本地，也可设置成其他远程ip, filemanager访问的是文件服务
+> 主要修改 VITE_PROXY 中的 sys-api 配置， 使用 localhost 或 127.0.0.1 调试本地，也可设置成其他远程 ip, filemanager 访问的是文件服务
 
 ## 初始化数据库
 
 ::: warning
-***重要:*** 在初始化数据库前必须先创建数据库, 数据库名称和配置文件中的名称相同.
+**_重要:_** 在初始化数据库前必须先创建数据库, 数据库名称和配置文件中的名称相同.
 :::
 
 ```shell
@@ -285,7 +287,7 @@ https://localhost:3100/init
 
 ![pic](/assets/init_zh_cn.png)
 
-> 文件服务初始化是可选的，没有运行文件api可以不初始化
+> 文件服务初始化是可选的，没有运行文件 api 可以不初始化
 
 ::: warning
 **初始化完成后需要重启 api 和 rpc。**

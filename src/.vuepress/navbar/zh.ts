@@ -67,6 +67,16 @@ export const zhNavbar = navbar([
         icon: "fa-solid fa-box",
         link: "https://github.com/suyuan32/simple-admin-tools",
       },
+      {
+        text: "Simple Admin Job",
+        icon: "fa-solid fa-box",
+        link: "https://github.com/suyuan32/simple-admin-job",
+      },
+      {
+        text: "Simple Admin Common",
+        icon: "fa-solid fa-box",
+        link: "https://github.com/suyuan32/simple-admin-common",
+      },
     ],
   },
 ]);

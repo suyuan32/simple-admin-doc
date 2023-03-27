@@ -1,7 +1,8 @@
 ---
 order: 1
-title: 'GORM'
+title: "GORM"
 ---
+
 # GORM Usage
 
 #### [Gorm Version Here](https://github.com/suyuan32/simple-admin-core/tree/gorm)
@@ -11,7 +12,7 @@ title: 'GORM'
 ## Import
 
 ```go
-import "github.com/suyuan32/simple-utils/gormsql"
+import "github.com/suyuan32/simple-admin-common/orm/gorm"
 ```
 
 ## Config file definition
@@ -19,7 +20,7 @@ import "github.com/suyuan32/simple-utils/gormsql"
 ```go
 type Config struct {
  zrpc.RpcServerConf
- DatabaseConf gormsql.GORMConf
+ DatabaseConf gorm.Conf
  RedisConf    redis.RedisConf
 }
 ```
@@ -33,8 +34,8 @@ DatabaseConf:
   Port: 3306
   Config: charset=utf8mb4&parseTime=True&loc=Local
   DBName: simple_admin
-  Username: 
-  Password: 
+  Username:
+  Password:
   MaxIdleConn: 10
   MaxOpenConn: 100
   LogMode: error
@@ -80,7 +81,7 @@ package logic
 import (
  "context"
 
- "github.com/suyuan32/simple-admin-core/common/logmessage"
+ "github.com/suyuan32/simple-admin-common/msg/logmsg"
  "github.com/suyuan32/simple-admin-core/rpc/internal/model"
  "github.com/suyuan32/simple-admin-core/rpc/internal/svc"
  "github.com/suyuan32/simple-admin-core/rpc/types/core"

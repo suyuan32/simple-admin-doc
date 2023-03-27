@@ -197,8 +197,11 @@ The codes generated is like below:
 You need to add `ExampleRpc` manually into `service_context`, `config`, `etc`.
 :::
 
-
 ## Code generation (Ent-based single service)
+
+::: info
+If your project is small, single API service is a good choise. It doesn't need RPC services.
+:::
 
 ::: warning
 Single services need to set `--ent=true` when using the `api new` command. \
@@ -209,17 +212,17 @@ Learn from [Single Example](https://github.com/suyuan32/simple-admin-example-api
 goctls api ent --schema=./ent/schema --api_service_name=example --o=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
 ```
 
-| Parameter        | Required | Default | Description                                                  | Usage                                                            |
-| ---------------- | -------- | ------- | ------------------------------------------------------------ | ---------------------------------------------------------------- |
-| schema           | Yes      |         | The address of the Ent schema file.                          | Enter the relative path of the Ent schema folder.               |
-| style            | No       | go_zero | The format of the file name.                                 | snake case format for go_zero.                                   |
-| api_service_name | Yes      |         | The service name of the API, used in the API declaration file. | In the API declaration file.                                     |
-| o                | Yes      |         | The output location of the file, relative path is accepted.   | Points to the main file directory.                               |
-| model            | Yes      |         | The name of the model in the schema.                          | The internal struct name in the schema, such as Student in example. |
-| search_key_num   | No       | 3       | The number of search fields in the list (default is 3).      | Only string type fields can be automatically generated.          |
-| group            | Yes      |         | The name of the group, used to put different logic files in different folders. | Put different logic files in different folders.                  |
-| json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero. | Underline for go_zero, upper camel case for GoZero.               |
-| overwrite        | No       | false   | Whether to overwrite the generated files.                     | Overwrite all generated files when true.                          |
+| Parameter        | Required | Default | Description                                                                    | Usage                                                               |
+| ---------------- | -------- | ------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| schema           | Yes      |         | The address of the Ent schema file.                                            | Enter the relative path of the Ent schema folder.                   |
+| style            | No       | go_zero | The format of the file name.                                                   | snake case format for go_zero.                                      |
+| api_service_name | Yes      |         | The service name of the API, used in the API declaration file.                 | In the API declaration file.                                        |
+| o                | Yes      |         | The output location of the file, relative path is accepted.                    | Points to the main file directory.                                  |
+| model            | Yes      |         | The name of the model in the schema.                                           | The internal struct name in the schema, such as Student in example. |
+| search_key_num   | No       | 3       | The number of search fields in the list (default is 3).                        | Only string type fields can be automatically generated.             |
+| group            | Yes      |         | The name of the group, used to put different logic files in different folders. | Put different logic files in different folders.                     |
+| json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero.                 | Underline for go_zero, upper camel case for GoZero.                 |
+| overwrite        | No       | false   | Whether to overwrite the generated files.                                      | Overwrite all generated files when true.                            |
 
 ::: info
 The shortcut command `make gen-api-ent-logic model={modelName} group={groupName}` means to generate the code whose schema is `{modelName}`, and `{groupName}` is the group name. Note that the first letter of modelName needs to be capitalized. Be consistent with the struct name in the schema

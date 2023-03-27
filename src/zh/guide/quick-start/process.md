@@ -25,4 +25,4 @@ title: "开发流程"
 
 ![单体API开发整体流程](/assets/single-api-dev-process.png)
 
-![单体API业务开发流程](/assets/single_api_develop_process_en.png)
+![单体API业务开发流程](/assets/single_api_develop_process_zh.png)

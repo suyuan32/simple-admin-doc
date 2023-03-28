@@ -1,20 +1,19 @@
 ---
 order: 5
-title: '快捷命令'
+title: "快捷命令"
 ---
-
 
 # 快捷命令
 
 我们提供了许多快捷命令在 makefile 中， 只需在根目录执行即可
 
 ::: warning
-**注意：需要系统支持make命令，建议linux, Windows 用户请先配置环境 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
+**注意：需要系统支持 make 命令，建议 linux, Windows 用户请先配置环境 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
 :::
 
 ```shell
-# 编译 docker image, 需要设置环境变量 DOCKER_USERNAME VERSION 
-make docker  
+# 编译 docker image, 需要设置环境变量 DOCKER_USERNAME VERSION
+make docker
 
 # 发布 docker 需要设置环境变量 DOCKER_USERNAME VERSION DOCKER_PASSWORD
 make publish-docker
@@ -40,15 +39,18 @@ make doc
 # 生成 CRUD 代码 ( 你需要设置model name 和 group name)
 make gen-rpc-ent-logic model={modelName} group={groupName}
 ```
-> **你也可以通过查看Makefile了解执行的命令**
+
+::: info
+**你也可以通过执行 `make help` 获取所有命令**
+:::
 
 ## 环境变量
 
-| 环境变量            | 介绍                         |
-|-----------------|----------------------------|
-| VERSION         | 版本号                        |
-| DOCKER_USERNAME | docker 仓库用户名               |
-| DOCKER_PASSWORD | docker 仓库密码                |
+| 环境变量        | 介绍                               |
+| --------------- | ---------------------------------- |
+| VERSION         | 版本号                             |
+| DOCKER_USERNAME | docker 仓库用户名                  |
+| DOCKER_PASSWORD | docker 仓库密码                    |
 | REPO            | docker 仓库地址， 官网为 docker.io |
 
 ::: warning

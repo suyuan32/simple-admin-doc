@@ -1,6 +1,6 @@
 ---
 order: 5
-title: 'Quick Commands'
+title: "Quick Commands"
 ---
 
 # Quick Commands
@@ -12,8 +12,8 @@ title: 'Quick Commands'
 We offer several commands in makefile ， you can just run in bash:
 
 ```shell
-# build docker image, require environment variables DOCKER_USERNAME VERSION 
-make docker  
+# build docker image, require environment variables DOCKER_USERNAME VERSION
+make docker
 
 # publish docker, require environment variables DOCKER_USERNAME VERSION DOCKER_PASSWORD
 make publish-docker
@@ -39,15 +39,18 @@ make doc
 # generate CRUD code ( You need to set model name and group name)
 make gen-rpc-ent-logic model={modelName} group={groupName}
 ```
-> You can also learn the commands from the Makefile. 
+
+::: info
+You can get all commands by `make help`.
+:::
 
 ## Environment variables
 
-| Environment Variables | Introduction                                       |
-|-----------------------|----------------------------------------------------|
-| VERSION               | Version number such as 0.0.1                       |
-| DOCKER_USERNAME       | docker repository username                         |
-| DOCKER_PASSWORD       | docker repository password                         |
+| Environment Variables | Introduction                                        |
+| --------------------- | --------------------------------------------------- |
+| VERSION               | Version number such as 0.0.1                        |
+| DOCKER_USERNAME       | docker repository username                          |
+| DOCKER_PASSWORD       | docker repository password                          |
 | REPO                  | docker repository address， official hub: docker.io |
 
 ::: warning

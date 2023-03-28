@@ -7,7 +7,7 @@ title: "Local Development Setting"
 
 > Environment Requirement
 
-- golang 1.19 +
+- golang 1.20 +
 - **nodejs 18.8.0 +**
 - **mysql 8.0 +** | MariaDB 10.7 + | Postgres 14 + (**Postgres 15 + recommended**)
 - redis 6.0 +

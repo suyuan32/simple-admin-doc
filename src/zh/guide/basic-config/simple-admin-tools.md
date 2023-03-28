@@ -1,21 +1,21 @@
 ---
 order: 1
-title: 'Simple Admin Tools 开发工具'
+title: "Simple Admin Tools 开发工具"
 ---
 
 # Simple admin tools
 
-Simple admin tools 是一个基于go-zero的fork项目。
+Simple admin tools 是一个基于 go-zero 的 fork 项目。
 它提供了许多额外的功能，例如:
 
-- go-swagger : 基于go-swagger而不是官方的@doc注解
+- go-swagger : 基于 go-swagger 而不是官方的@doc 注解
 - 多国语言支持
 - 优化错误信息处理,支持多语言错误
 - 简单易用的校验器
-- 支持代码生成，生成API,RPC 和 web 端的CRUD代码
-- 对Simple Admin 的针对性优化
+- 支持代码生成，生成 API,RPC 和 web 端的 CRUD 代码
+- 对 Simple Admin 的针对性优化
 
-由于本工具是fork项目，因此使用goctls会有些麻烦. 使用fork主要是为了同步官方最新代码。
+由于本工具是 fork 项目，因此使用 goctls 会有些麻烦. 使用 fork 主要是为了同步官方最新代码。
 
 ::: warning
 由于目前版本迭代较快，如果代码生成出现问题，请先 `git pull` 下载最新代码重新编译，如果还有问题，欢迎提交 issue
@@ -23,7 +23,7 @@ Simple admin tools 是一个基于go-zero的fork项目。
 
 我们不能直接使用 go get and go install 命令安装 goctl 因为他会安装官方的文件，我们需要自行编译。
 
-下面是构建goctls的过程.
+下面是构建 goctls 的过程.
 
 > 构建 goctls
 
@@ -32,17 +32,15 @@ git clone https://github.com/suyuan32/simple-admin-tools.git
 
 cd tools/goctl
 
-go mod tidy
+# windows
+make win
 
-# 输出goctls文件避免和官方的goctl冲突
-go build -o goctls goctl.go
+# linux
+make linux
 
-cp ./goctls $GOPATH/bin/goctls
+# mac
+make mac
 ```
-
-::: info 简单方式
-`linux` 用户直接在 `goctl` 文件夹运行 `sh build.sh`. `Windows` 用户在 `git bash` 运行 `sh build_win.sh`. 
-:::
 
 ## 自动下载依赖
 
@@ -54,7 +52,7 @@ goctls env check -i -f --verbose
 
 ### API 命令
 
-> 命令和goctl一样，但是需要改成 goctls.
+> 命令和 goctl 一样，但是需要改成 goctls.
 
 ```shell
 $ goctls api -h
@@ -116,7 +114,7 @@ OPTIONS:
    --verbose, -v     enable log output
 ```
 
-> 例子: 生成proto的模板
+> 例子: 生成 proto 的模板
 
 ```shell
 goctl rpc template -o=user.proto
@@ -140,11 +138,11 @@ message Response {
 
 service User {
   rpc Ping(Request) returns(Response);
-} 
+}
 
 ```
 
-> 生成go文件
+> 生成 go 文件
 
 ```shell
 goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.

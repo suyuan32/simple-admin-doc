@@ -1,7 +1,8 @@
 ---
 order: 1
-title: 'Simple Admin Tools'
+title: "Simple Admin Tools"
 ---
+
 # Simple admin tools
 
 Simple admin tools is a tool fork from go-zero.
@@ -32,15 +33,15 @@ cd tools/goctl
 
 go mod tidy
 
-# output goctls in order not to conflict with goctl
-go build -o goctls goctl.go
+# windows
+make win
 
-cp ./goctls $GOPATH/bin/goctls
+# linux
+make linux
+
+# mac
+make mac
 ```
-
-::: info Easy Way
-`Linux` users can just run **sh build.sh** in goctl directory. `Windows` users should run **sh build_win.sh** in `git bash`.
-:::
 
 ## Auto fix all dependencies command
 
@@ -115,7 +116,7 @@ OPTIONS:
 ```
 
 > Example: \
-Generate proto template
+> Generate proto template
 
 ```shell
 goctl rpc template -o=user.proto
@@ -146,7 +147,7 @@ service User {
 goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
-::: info 
+::: info
 You can get [More Document](https://go-zero.dev/docs/goctl/zrpc) on go zero official website.
 :::
 

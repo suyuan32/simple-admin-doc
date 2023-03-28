@@ -163,6 +163,23 @@ db := ent.NewClient(
 )
 ```
 
+::: info
+控制缓存非常简单，默认是有缓存的，有以下几种方法控制缓存：
+
+```go
+// 对于任何请求都是通过 l.ctx 控制缓存，下面是默认启用缓存
+result, err := l.svcCtx.DB.API.Get(l.ctx, in.Id)
+
+// 下面是跳过缓存
+result, err := l.svcCtx.DB.API.Get(entcache.Skip(l.ctx), in.Id)
+
+// 下面是跳过并删除缓存，与skip不同， skip 只是单行跳过缓存，实际上缓存还在，其他语句还是可以获得他的缓存的
+result, err := l.svcCtx.DB.API.Get(entcache.Evict(l.ctx), in.Id)
+
+```
+
+:::
+
 > 不带缓存 (数据立即更新)
 
 ```go

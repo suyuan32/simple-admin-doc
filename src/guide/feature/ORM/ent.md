@@ -162,6 +162,23 @@ db := ent.NewClient(
 )
 ```
 
+::: info
+Controlling the cache is very simple. By default, the cache is enabled. There are several ways to control the cache:
+
+```go
+// For any request, the cache is controlled by l.ctx, the following is the default cache enabled
+result, err := l.svcCtx.DB.API.Get(l.ctx, in.Id)
+
+// The following is to skip the cache
+result, err := l.svcCtx.DB.API.Get(entcache.Skip(l.ctx), in.Id)
+
+// The following is to skip and delete the cache. Unlike skip, skip just skips the cache in a single line. In fact, the cache is still there, and other statements can still get his cache
+result, err := l.svcCtx.DB.API.Get(entcache.Evict(l.ctx), in.Id)
+
+```
+
+:::
+
 > No cache (Changes will show immediately)
 
 ```go

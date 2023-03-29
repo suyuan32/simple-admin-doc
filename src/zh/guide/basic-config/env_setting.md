@@ -132,7 +132,7 @@ Name: core.rpc
 ListenOn: 0.0.0.0:9101 # ip可以是0.0.0.0也可以是127.0.0.1,如需其他外部主机访问则需要为 0.0.0.0
 
 DatabaseConf:
-  Type: mysql # 支持 mysql 和 postgres
+  Type: mysql # 支持 mysql, postgres, sqlite3
   Host: "127.0.0.1" # 修改成自己的mysql地址
   Port: 3306
   DBName: simple_admin # 数据库名称
@@ -140,7 +140,7 @@ DatabaseConf:
   Password: "123456" # 密码
   MaxOpenConn: 100 # 最大连接数
   SSLMode: disable # 是否在 postgresql 中使用 SSL, disable 或 require
-  CacheTime: 5 # 秒, 数据库存时间，会导致更新数据延迟显示修改，但会加速查询
+# DBPath: /home/data/sqlite.db # Sqlite 数据库文件存放位置，使用 sqlite3时必须设置
 
 # casbin 规则
 CasbinConf:

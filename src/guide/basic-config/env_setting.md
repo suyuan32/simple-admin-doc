@@ -133,7 +133,7 @@ Name: core.rpc
 ListenOn: 0.0.0.0:9101 # ip can be 0.0.0.0 or 127.0.0.1, it should be 0.0.0.0 if you want to access from another host
 
 DatabaseConf:
-  Type: mysql # support mysql and postgres
+  Type: mysql # support mysql, postgres, sqlite3
   Host: "127.0.0.1" # change to your own mysql address
   Port: 3306
   DBName: simple_admin # database name, you can set your own name
@@ -141,7 +141,7 @@ DatabaseConf:
   Password: "123456" # password
   MaxOpenConn: 100 # the maximum number of opened connections in the  connection pool
   SSLMode: disable # in postgresql, disable or require
-  CacheTime: 5 # second, database cache time，it will cause delay when update or create，but it can help to speed up get data.
+# DBPath: /home/data/sqlite.db # Database Path, you must set it when you use sqlite3.
 
 # casbin rule
 CasbinConf:

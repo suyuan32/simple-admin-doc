@@ -95,12 +95,12 @@ goctls api proto --proto=D:/projects/simple-admin-example-rpc/example.proto --st
 
 :::
 
-### 菜单有哪些特殊组件？
+## 菜单有哪些特殊组件？
 
 - LAYOUT - 当菜单为目录时，组件需要设置为 LAYOUT
 - IFrame - 当菜单为 Iframe 时需要设置为 Iframe, 内嵌和外链都需要设置为 Iframe
 
-### 如何在本地开发多个相互依赖的项目？
+## 如何在本地开发多个相互依赖的项目？
 
 使用工作区模式， 在 go 1.18 后有了 workspace 模式， 只需要将 api 和 rpc 项目放在同一个文件夹下，执行命令：
 

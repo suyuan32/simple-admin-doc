@@ -32,6 +32,8 @@ git clone https://github.com/suyuan32/simple-admin-tools.git
 
 cd tools/goctl
 
+go mod tidy
+
 # windows
 make win
 

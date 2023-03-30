@@ -273,6 +273,8 @@ VITE_GLOB_API_URL_PREFIX=
 
 ::: warning
 **_重要:_** 在初始化数据库前必须先创建数据库, 数据库名称和配置文件中的名称相同.
+
+**初始化完成后需要重启 API, 用于刷新 casbin 缓存**
 :::
 
 ```shell
@@ -288,7 +290,3 @@ https://localhost:3100/init
 ![pic](/assets/init_zh_cn.png)
 
 > 文件服务初始化是可选的，没有运行文件 api 可以不初始化
-
-::: warning
-**初始化完成后需要重启 api 和 rpc。**
-:::

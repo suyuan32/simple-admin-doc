@@ -1,14 +1,20 @@
 ---
 order: 4
-title: 'Swagger API Document'
+title: "Swagger API Document"
 ---
+
 ## Use swagger
 
-### Environment setting
+::: info
 
-[go-swagger](https://zhuanlan.zhihu.com/p/556171256?)
+> [Official Documentation](https://goswagger.io/use/spec/meta.html)
 
-> [Office Document](https://goswagger.io/use/spec/meta.html)
+[Sample project](https://github.com/suyuan32/simple-admin-example-features/tree/main/swagger) [Path and Query request example](https://github.com/suyuan32/simple-admin -example-features/blob/main/swagger/desc/base.api)
+:::
+
+::: warning
+`goctls` already supports to directly generate `swagger path` based on `go zero path`, `goctls` requires `v0.3.0+`
+:::
 
 > In the root of project run simple-admin-core/
 
@@ -29,7 +35,7 @@ make serve-swagger
 ![pic](/assets/swagger.png)
 
 ### Get Token
->
+
 > Firstly, log in the system and press F12 to get authorization from any request
 
 ![pic](/assets/get_token.png)
@@ -40,7 +46,7 @@ make serve-swagger
 
 ### Comment Example
 
-We use normally use Req suffix to represent  Request， Resp to represent Response.
+We use normally use Req suffix to represent Request， Resp to represent Response.
 
 #### If the type name has suffix "Req" and "Info", you can omit the swagger model type declaration
 
@@ -137,7 +143,7 @@ type ApiInfo struct {
 }
 ```
 
-#### If the type name has suffix "Resp"  you can omit the swagger response type declaration. Just like "Info" and "Req"
+#### If the type name has suffix "Resp" you can omit the swagger response type declaration. Just like "Info" and "Req"
 
 > For route, you can just add a comment for it.
 
@@ -204,11 +210,12 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 You can add more config in handler because it will not be over write if the file exists.
 
 ::: warning
-goctls' generating will only overwrite internal/types/* and internal/handler/routes.go. \
-If  handler and logic and so on need to regenerate, you must delete them by yourself.
+goctls' generating will only overwrite internal/types/\* and internal/handler/routes.go. \
+If handler and logic and so on need to regenerate, you must delete them by yourself.
 :::
 
 ## Go swagger report error
+
 Install the latest version of go-swagger
 
 ```shell

@@ -1,15 +1,20 @@
 ---
 order: 4
-title: 'Swagger API文档'
+title: "Swagger API文档"
 ---
 
-## 使用swagger
+## 使用 swagger
 
-### 环境配置
-
-[go-swagger](https://zhuanlan.zhihu.com/p/556171256?)
+::: info
 
 > [官方文档](https://goswagger.io/use/spec/meta.html)
+
+[示例项目](https://github.com/suyuan32/simple-admin-example-features/tree/main/swagger) [Path 和 Query 请求例子](https://github.com/suyuan32/simple-admin-example-features/blob/main/swagger/desc/base.api)
+:::
+
+::: warning
+`goctls` 已支持根据 `go zero path` 直接生成 `swagger path`, `goctls` 需要 `v0.3.0+`
+:::
 
 > 在项目根目录运行 simple-admin-core/
 
@@ -82,7 +87,7 @@ type ApiInfo struct {
 
 ```
 
-你也可以覆盖掉它, 添加自己的swagger类型，如下：
+你也可以覆盖掉它, 添加自己的 swagger 类型，如下：
 
 ```go
 type (
@@ -130,7 +135,7 @@ type ApiInfo struct {
 }
 ```
 
-#### 如果类型后缀为"Resp"，你可以忽略swagger注解，系统自动添加 response 注解. 和 "Info" "Req" 类似
+#### 如果类型后缀为"Resp"，你可以忽略 swagger 注解，系统自动添加 response 注解. 和 "Info" "Req" 类似
 
 > 对于 route 来说，只需添加简单的一行介绍即可
 
@@ -197,10 +202,11 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 你可以修改不同的 response， 或者进行更复杂的配置， 它不会被覆盖，除非将文件删除。
 
 ::: warning
-注意 goctls 的生成只会覆盖 internal/types/* 和 internal/handler/routes.go， 如果 handler 需要重新生成需要手动删除再生成。
+注意 goctls 的生成只会覆盖 internal/types/\* 和 internal/handler/routes.go， 如果 handler 需要重新生成需要手动删除再生成。
 :::
 
 ## go swagger 报错
+
 安装最新版 go-swagger
 
 ```shell

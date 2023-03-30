@@ -8,7 +8,7 @@ title: "API Service"
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.2.9-beta +
+- simple-admin-tool (goctls) v0.3.0
 
 \
 Must know go-zero's API command. [API Command](https://go-zero.dev/docs/goctl/api) [Api Service](https://go-zero.dev/docs/advance/api-coding) \

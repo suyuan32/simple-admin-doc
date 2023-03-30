@@ -8,7 +8,7 @@ title: "API 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.2.9-beta +
+- simple-admin-tool (goctls) v0.3.0
 
 必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/cn/docs/goctl/api) [api 文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
 \

@@ -14,6 +14,7 @@ title: "Swagger API文档"
 
 ::: warning
 `goctls` 已支持根据 `go zero path` 直接生成 `swagger path`, `goctls` 需要 `v0.3.0+`
+`goctls` 已支持根据 `validate` 直接生成 `swagger`校验规则, `goctls` 需要 `v0.3.1+`
 :::
 
 > 在项目根目录运行 simple-admin-core/

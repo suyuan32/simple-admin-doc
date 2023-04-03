@@ -14,6 +14,7 @@ title: "Swagger API Document"
 
 ::: warning
 `goctls` already supports to directly generate `swagger path` based on `go zero path`, `goctls` requires `v0.3.0+`
+`goctls` already supports to directly generate `swagger` validation rules based on `validate`, `goctls` requires `v0.3.1+`
 :::
 
 > In the root of project run simple-admin-core/

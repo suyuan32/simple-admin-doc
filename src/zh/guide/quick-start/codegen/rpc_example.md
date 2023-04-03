@@ -173,19 +173,20 @@ make gen-rpc
 
 ### `rpc ent`参数介绍
 
-| 参数           | 必须 | 默认值  | 介绍                     | 使用方法                                                                                                                                                       |
-| -------------- | ---- | ------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| schema         | 是   |         | schema 文件地址          | 输入 Ent schema 文件夹相对路径                                                                                                                                 |
-| style          | 否   | go_zero | 文件名格式               | go_zero 为蛇形格式                                                                                                                                             |
-| service_name   | 是   |         | 服务名称                 | 和 proto 文件中的 service 名称相同                                                                                                                             |
-| project_name   | 是   |         | 项目名称                 | 和 new 时的名称相同，和 main 文件名一致, 在 multiple 模式下需要设置，单 service 默认和 service name 相同                                                       |
-| o              | 是   |         | 输出位置                 | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                                               |
-| model          | 是   |         | 模型名称                 | schema 中内部 struct 名称，如 example 中的 Student                                                                                                             |
-| search_key_num | 否   | 3       | 搜索字段数量（默认为 3） | 列表搜索字段数量，只能自动生成 string 的字段                                                                                                                   |
-| group          | 是   |         | 分组名称                 | 分组名称用于将不同 logic 文件放到不同文件夹                                                                                                                    |
-| multiple       | 否   | false   | 多服务                   | 若 proto 文件中有多个 service, 需要设置为 true                                                                                                                 |
-| proto_out      | 否   |         | 是否拆分 proto 文件      | 若为空则会将数据生成到项目根目录的 proto 文件，否则将会生成到指定路径 desc 中，如 ./desc/student.proto, 注意存放 proto 的文件夹必须为 desc, 内部可以有子文件夹 |
-| overwrite      | 否   | false   | 是否覆盖生成文件         | true 则会覆盖所有生成的文件                                                                                                                                    |
+| 参数              | 必须 | 默认值  | 介绍                     | 使用方法                                                                                                                                                       |
+| ----------------- | ---- | ------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| schema            | 是   |         | schema 文件地址          | 输入 Ent schema 文件夹相对路径                                                                                                                                 |
+| style             | 否   | go_zero | 文件名格式               | go_zero 为蛇形格式                                                                                                                                             |
+| service_name      | 是   |         | 服务名称                 | 和 proto 文件中的 service 名称相同                                                                                                                             |
+| project_name      | 是   |         | 项目名称                 | 和 new 时的名称相同，和 main 文件名一致, 在 multiple 模式下需要设置，单 service 默认和 service name 相同                                                       |
+| o                 | 是   |         | 输出位置                 | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                                               |
+| model             | 是   |         | 模型名称                 | schema 中内部 struct 名称，如 example 中的 Student                                                                                                             |
+| search_key_num    | 否   | 3       | 搜索字段数量（默认为 3） | 列表搜索字段数量，只能自动生成 string 的字段                                                                                                                   |
+| group             | 是   |         | 分组名称                 | 分组名称用于将不同 logic 文件放到不同文件夹                                                                                                                    |
+| multiple          | 否   | false   | 多服务                   | 若 proto 文件中有多个 service, 需要设置为 true                                                                                                                 |
+| proto_out         | 否   |         | 是否拆分 proto 文件      | 若为空则会将数据生成到项目根目录的 proto 文件，否则将会生成到指定路径 desc 中，如 ./desc/student.proto, 注意存放 proto 的文件夹必须为 desc, 内部可以有子文件夹 |
+| proto_field_style | 否   | go_zero | proto 字段命名格式       | 默认为下划线                                                                                                                                                   |
+| overwrite         | 否   | false   | 是否覆盖生成文件         | true 则会覆盖所有生成的文件                                                                                                                                    |
 
 ::: info
 multiple 例子, multiple 用于根据不同服务生成多个 rpcclient

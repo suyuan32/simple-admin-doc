@@ -215,6 +215,19 @@ goctls' generating will only overwrite internal/types/\* and internal/handler/ro
 If handler and logic and so on need to regenerate, you must delete them by yourself.
 :::
 
+## `prefix` Parameters
+
+```text
+@server(
+    jwt: Auth
+    group: api
+    middleware: Authority
+    prefix: /v1
+)
+```
+
+Starting from `goctls v0.3.2-beta`, it supports setting a prefix for the route by setting the `prefix` parameter and regenerating the `handler`.
+
 ## Go swagger report error
 
 Install the latest version of go-swagger

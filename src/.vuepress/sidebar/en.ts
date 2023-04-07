@@ -10,7 +10,7 @@ export const enSidebar = sidebar({
         {
           text: "Basic Configuration",
           prefix: "basic-config/",
-          children: 'structure',
+          children: "structure",
         },
         {
           text: "Quick Start",
@@ -18,37 +18,42 @@ export const enSidebar = sidebar({
           children: [
             {
               text: "Develop Process",
-              link: "process"
+              link: "process",
             },
             {
               text: "Contribute To Core Service",
               prefix: "core/",
-              children: "structure"
+              children: "structure",
             },
             {
               text: "Code Generation",
               prefix: "codegen/",
-              children: "structure"
+              children: "structure",
+            },
+            {
+              text: "Extra Generating Command",
+              prefix: "extra/",
+              children: "structure",
             },
             {
               text: "Preview with docker-compose",
-              link: "all_in_one"
+              link: "all_in_one",
             },
-          ]
+          ],
         },
         {
           text: "Features",
           prefix: "feature/",
-          children: "structure"
+          children: "structure",
         },
         {
           text: "Official Modules",
           prefix: "official-comp/",
-          children: "structure"
+          children: "structure",
         },
         {
           text: "FAQ",
-          link: "FAQ"
+          link: "FAQ",
         },
       ],
     },

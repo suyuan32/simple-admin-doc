@@ -206,6 +206,19 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 注意 goctls 的生成只会覆盖 internal/types/\* 和 internal/handler/routes.go， 如果 handler 需要重新生成需要手动删除再生成。
 :::
 
+## `prefix` 参数
+
+```text
+@server(
+    jwt: Auth
+    group: api
+    middleware: Authority
+    prefix: /v1
+)
+```
+
+在 `goctls v0.3.2-beta` 已支持 prefix 设置路由前缀，只需设置 `prefix` ，并重新生成 `handler` 即可
+
 ## go swagger 报错
 
 安装最新版 go-swagger

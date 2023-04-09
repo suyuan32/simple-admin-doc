@@ -27,6 +27,10 @@ Simple admin tools 是一个基于 go-zero 的 fork 项目。
 
 > 构建 goctls
 
+::: warning
+**`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, 你也可以自行配置环境， 参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
+:::
+
 ```shell
 git clone https://github.com/suyuan32/simple-admin-tools.git
 

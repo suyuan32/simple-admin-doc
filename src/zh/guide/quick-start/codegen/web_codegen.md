@@ -9,13 +9,13 @@ title: "Web 端"
 
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.2.8+
+- simple-admin-tool (goctls) v0.3.2 +
   :::
 
 ## 创建 example 代码
 
 ```shell
-goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --o=./ --folder_name=example --prefix=example-api --sub_folder=
+goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-api/desc/student.api --output=./ --folder_name=example --prefix=example-api --sub_folder=
 ```
 
 ### `frontend vben`参数介绍
@@ -23,11 +23,31 @@ goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-a
 | 参数        | 必须 | 默认值 | 介绍               | 使用方法                                                                                      |
 | ----------- | ---- | ------ | ------------------ | --------------------------------------------------------------------------------------------- |
 | api_file    | 是   |        | api 文件的绝对路径 | 填入 api 文件的绝对路径，如上面的 student.api                                                 |
-| o           | 是   |        | 输出路径           | 输入 simple admin backend ui 目录                                                             |
+| output      | 是   |        | 输出路径           | 输入 simple admin backend ui 目录                                                             |
 | folder_name | 是   |        | 文件夹名称         | core 服务是 sys, 示例项目是 example                                                           |
 | prefix      | 是   |        | 请求前缀           | 请求前缀用于请求转发，如 sys-api, 示例项目为 example-api, 需要修改 env.development,添加 proxy |
 | sub_folder  | 否   |        | 子目录             | 用于在 views 下创建子目录，如 sys 有 user,token 等子目录                                      |
 | overwrite   | 否   | false  | 是否覆盖生成文件   | true 则会覆盖所有生成的文件                                                                   |
+
+> 运行 `goctls frontend vben --help` 查看详细命令
+
+```shell
+$ goctls frontend vben --help
+Generate frontend related files
+
+Usage:
+  goctl frontend vben [flags]
+
+Flags:
+  -a, --api_file string      The absolute path of api file
+  -f, --folder_name string   The folder name to generate file in different directory. e.g. file folder in simple admin backend ui which is to store file manager service files (default "sys")
+  -h, --help                 help for vben
+  -m, --model_name string    The model name. e.g. Example
+  -o, --output string        The output directory, it should be the root directory of simple admin backend ui (default "./")
+  -w, --overwrite            Whether to overwrite the files, it will overwrite all generated files
+  -p, --prefix string        The request prefix for proxy. e.g. sys-api (default "sys-api")
+  -s, --sub_folder string    The sub folder name. e.g. src/views/sys sub folder user which path is src/views/sys/user
+```
 
 > 执行命令后会生成下面的代码
 

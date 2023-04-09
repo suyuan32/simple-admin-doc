@@ -26,6 +26,10 @@ Let me show you how to build the code by yourself.
 
 > Build goctls
 
+::: warning
+**`Windows` users are recommended to develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment, you can also cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment).**
+:::
+
 ```shell
 git clone https://github.com/suyuan32/simple-admin-tools.git
 

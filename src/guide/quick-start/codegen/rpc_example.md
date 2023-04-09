@@ -8,7 +8,7 @@ title: "RPC Service"
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.2.8 +
+- simple-admin-tool (goctls) v0.3.2 +
 
 \
 Must know go-zero's RPC command. [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
@@ -31,7 +31,7 @@ Multiple different APIs can access the same RPC to call its functions.
 > Create example project
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.0 --tool_version=v0.2.8 --port=8080  --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.1 --tool_version=v0.3.2 --port=8080  --gitlab=true --desc=true
 ```
 
 ### `rpc new` parameters
@@ -46,7 +46,32 @@ goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin
 | port            | No   | 9100    | Port number                                          | The service port                                                                                    |
 | desc            | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                  |
 
-More parameters please check `goctls rpc new --help`
+** More parameters please check `goctls rpc new --help` **
+
+```shell
+$ goctls rpc new --help
+Generate rpc demo service
+
+Usage:
+  goctl rpc new [flags]
+
+Flags:
+      --branch string            The branch of the remote repo, it does work with --remote
+  -d, --desc                     Whether to create desc folder for splitting proto files
+  -e, --ent                      Whether use Ent in project
+  -g, --gitlab                   Whether to use gitlab-ci
+  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.0, see [https://github.com/zeromicro/go-zero/releases]
+  -h, --help                     help for new
+      --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+      --idea                     For idea plugin [optional]
+  -m, --module_name string       The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
+  -p, --port int                 The service port exposed (default 9110)
+      --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+                                 The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
+  -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v0.3.0, see [https://github.com/suyuan32/simple-admin-tools/releases]
+  -v, --verbose                  Enable log output
+```
 
 > You can see the project structure:
 
@@ -167,7 +192,7 @@ make gen-ent
 ### Generate Student CRUD logic codes
 
 ```shell
-goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --o=./ --model=Student --group=student --proto_out=./desc/student.proto
+goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --output=./ --model=Student --group=student --proto_out=./desc/student.proto
 
 make gen-rpc
 ```
@@ -180,7 +205,7 @@ make gen-rpc
 | style             | No   | go_zero | File name format                     | The go_zero means snack format                                                                                                                                                                                                                                                        |
 | service_name      | Yes  |         | service name                         | The same as the service name in the proto file                                                                                                                                                                                                                                        |
 | project_name      | Yes  |         | project name                         | Same as the name you create project, same as main file name, needs to be set in multiple mode, single service is same as service name by default                                                                                                                                      |
-| o                 | Yes  |         | Output path                          | The output path，it can be relative path. It should target to the root path of project.                                                                                                                                                                                               |
+| output            | Yes  |         | Output path                          | The output path，it can be relative path. It should target to the root path of project.                                                                                                                                                                                               |
 | model             | Yes  |         | Model name                           | The structure name in schema，e.g. the Student in example project                                                                                                                                                                                                                     |
 | group             | Yes  |         | Group Name                           | The group name is used to separate logic code                                                                                                                                                                                                                                         |
 | multiple          | No   | false   | Multiple Service                     | If your proto file contains multiple service, you should set true                                                                                                                                                                                                                     |
@@ -199,6 +224,29 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 :::
 
 **More parameters please check `goctls rpc ent --help`**
+
+```shell
+$ goctls rpc ent --help
+Generate CRUD template codes by Ent
+
+Usage:
+  goctl rpc ent [flags]
+
+Flags:
+  -g, --group string               The group name for logic. e.g. user
+  -h, --help                       help for ent
+  -m, --model string               The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
+      --multiple                   Generated in multiple rpc service mode
+  -o, --output string              The output path
+  -w, --overwrite                  Whether to overwrite the files, it will overwrite all generated files
+  -p, --project_name string        The project name
+  -f, --proto_field_style string   The proto field style (default "go_zero")
+  -t, --proto_out string           The output proto file path
+  -c, --schema string              The schema path of the Ent
+  -k, --search_key_num int         The max number of search keys (default 3)
+  -r, --service_name string        The service name
+  -s, --style string               The file name format style (default "go_zero")
+```
 
 ::: warning
 The tool will automatically recognize the proto files in the `desc` folder, and subfolders can also be created inside the `desc`, `package` and `go_package` only need to be declared once in base.proto,

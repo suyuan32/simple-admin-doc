@@ -8,7 +8,7 @@ title: "API 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.3.0
+- simple-admin-tool (goctls) v0.3.2 +
 
 必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/cn/docs/goctl/api) [api 文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
 \
@@ -30,7 +30,7 @@ title: "API 微服务"
 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.0 --tool_version=v0.2.8 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v0.3.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 ### `api new` 参数介绍
@@ -48,6 +48,31 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.0 --tool
 | ent             | 否   | false  | 是否启用 Ent              | true 为启用，启用 Ent 可用于单体 API 服务                                                                 |
 
 **详细参数请在命令行查看 `goctls api new --help`**
+
+```shell
+$ goctls api new --help
+Fast create api service
+
+Usage:
+  goctl api new [flags]
+
+Flags:
+      --branch string            The branch of the remote repo, it does work with --remote
+  -c, --casbin                   Whether to use the Casbin
+  -e, --ent                      Whether to use Ent in API service
+  -g, --gitlab                   Whether to use gitlab CI/CD
+  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.0, see [https://github.com/zeromicro/go-zero/releases]
+  -h, --help                     help for new
+      --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+  -i, --i18n                     Whether to use i18n
+  -m, --module_name string       The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
+  -p, --port int                 The service port exposed (default 9100)
+      --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+                                 The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
+  -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v0.3.0, see [https://github.com/suyuan32/simple-admin-tools/releases]
+  -a, --trans_err                Whether to translate the error
+```
 
 > 你可以看到以下结构
 
@@ -157,7 +182,7 @@ proto 必须为 `goctls rpc ent` 生成的 proto
 :::
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --o=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --output=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
 ```
 
 ### `api proto` 参数介绍
@@ -168,7 +193,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                                                                                                |
 | api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中                                                                                        |
 | rpc_service_name | 是   |         | 服务名称                      | rpc 服务的名称, 与 proto 文件中的 service 名称一致                                                                                |
-| o                | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                  |
+| output           | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                  |
 | model            | 是   |         | 模型名称                      | schema 中内部 struct 名称，如 example 中的 Student                                                                                |
 | rpc_name         | 是   |         | RPC 名称                      | 输入 Example 则生成文件会生成 l.svcCtx.ExampleRpc                                                                                 |
 | grpc_package     | 是   |         | RPC \*\_grpc.go 包路径        | 在 example 中是 github.com/suyuan32/simple-admin-example-rpc/example                                                              |
@@ -177,6 +202,29 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                                                                       |
 
 **详细参数请在命令行查看 `goctls api proto --help`**
+
+```shell
+$ goctls api proto --help
+Generate CRUD template from proto file
+
+Usage:
+  goctl api proto [flags]
+
+Flags:
+  -a, --api_service_name string   The API service name
+  -g, --grpc_package string       The rpc package which stores pb file. e.g. github.com/suyuan32/simple-admin-job/types/job
+  -h, --help                      help for proto
+  -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
+  -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
+      --multiple                  Whether the proto contains multiple services
+  -o, --output string             The output path
+  -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
+  -p, --proto string              The proto path
+  -n, --rpc_name string           The rpc name in service context. e.g. CoreRpc
+  -r, --rpc_service_name string   The RPC service name
+  -k, --search_key_num int        The max number of search keys (default 3)
+  -s, --style string              The file name format style (default "go_zero")
+```
 
 ::: info
 multiple 例子, multiple 用于根据不同服务生成多个 rpcclient
@@ -210,7 +258,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 :::
 
 ```shell
-goctls api ent --schema=./ent/schema --api_service_name=example --o=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
+goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
 ```
 
 | 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                           |
@@ -218,7 +266,7 @@ goctls api ent --schema=./ent/schema --api_service_name=example --o=./ --model={
 | schema           | 是   |         | schema 文件地址               | 输入 Ent schema 文件夹相对路径                     |
 | style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                 |
 | api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中         |
-| o                | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录   |
+| output           | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录   |
 | model            | 是   |         | 模型名称                      | schema 中内部 struct 名称，如 example 中的 Student |
 | search_key_num   | 否   | 3       | 搜索字段数量（默认为 3）      | 列表搜索字段数量，只能自动生成 string 的字段       |
 | group            | 是   |         | 分组名称                      | 分组名称用于将不同 logic 文件放到不同文件夹        |
@@ -228,6 +276,28 @@ goctls api ent --schema=./ent/schema --api_service_name=example --o=./ --model={
 ::: info
 快捷命令 `make gen-api-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致
 :::
+
+> ** 运行 `goctls api ent --help` 查看详细命令 **
+
+```shell
+$ goctls api ent --help
+Generate CRUD logic files from ent file
+
+Usage:
+  goctl api ent [flags]
+
+Flags:
+  -a, --api_service_name string   The API service name
+  -g, --group string              The group name for logic. e.g. user
+  -h, --help                      help for ent
+  -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
+  -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
+  -o, --output string             The output path
+  -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
+  -c, --schema string             The schema path of the Ent
+  -k, --search_key_num int        The max number of search keys (default 3)
+  -s, --style string              The file name format style (default "go_zero")
+```
 
 ### 目录结构
 

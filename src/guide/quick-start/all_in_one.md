@@ -1,11 +1,11 @@
 ---
 order: 3
-title: 'Preview with docker-compose'
+title: "Preview with docker-compose"
 ---
 
 # Quick start with docker-compose
 
-In `deploy/docker-compose/all_in_one` directory
+In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suyuan32/simple-admin-core/blob/master/deploy/docker-compose/all_in_one/docker-compose.yaml)
 
 ## 3 Steps
 
@@ -21,8 +21,8 @@ docker-compose up -d
 
 ### Restart core-api, core-rpc container
 
-::: info 
-In `deploy/docker-compose/all_in_one` folder, you can check the  api and rpc configuration
+::: info
+In `deploy/docker-compose/all_in_one` folder, you can check the api and rpc configuration
 :::
 
 ::: warning

@@ -1,12 +1,11 @@
 ---
 order: 3
-title: '快速体验docker-compose'
+title: "快速体验docker-compose"
 ---
-
 
 # 一键体验 docker-compose
 
-在 deploy/docker-compose/all_in_one 文件夹下
+在 deploy/docker-compose/all_in_one 文件夹下, [Github](https://github.com/suyuan32/simple-admin-core/blob/master/deploy/docker-compose/all_in_one/docker-compose.yaml)
 
 ## 只需三步
 
@@ -27,5 +26,5 @@ docker-compose up -d
 :::
 
 ::: warning
-部署自己的服务到docker只需修改为自己的镜像即可
+部署自己的服务到 docker 只需修改为自己的镜像即可
 :::

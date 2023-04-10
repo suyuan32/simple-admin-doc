@@ -34,17 +34,23 @@ Multiple different APIs can access the same RPC to call its functions.
 goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.1 --tool_version=v0.3.2 --port=8080  --gitlab=true --desc=true
 ```
 
+> Simpler Command
+
+```shell
+goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -g -d
+```
+
 ### `rpc new` parameters
 
-| Parameter       | Must | Default | Introduction                                         | Usage                                                                                               |
-| --------------- | ---- | ------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| ent             | No   | false   | Whether to use Ent                                   | true means use                                                                                      |
-| module_name     | Yes  |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository |
-| go_zero_version | Yes  |         | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release            |
-| tool_version    | Yes  |         | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release     |
-| gitlab          | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                               |
-| port            | No   | 9100    | Port number                                          | The service port                                                                                    |
-| desc            | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                  |
+| Parameter       | Must | Default | Introduction                                         | Usage                                                                                                                                                             |
+| --------------- | ---- | ------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ent             | No   | false   | Whether to use Ent                                   | true means use                                                                                                                                                    |
+| module_name     | No   |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
+| go_zero_version | No   | v1.5.1  | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release                                                                          |
+| tool_version    | No   | v0.3.2  | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
+| gitlab          | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                                                                                             |
+| port            | No   | 9100    | Port number                                          | The service port                                                                                                                                                  |
+| desc            | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                                                                                |
 
 ** More parameters please check `goctls rpc new --help` **
 

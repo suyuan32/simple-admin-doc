@@ -27,25 +27,31 @@ title: "API 微服务"
 
 ## 创建 API 项目
 
-创建 example
+> 创建 example
 
 ```shell
 goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v0.3.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
+> 简单命令
+
+```shell
+goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081 -g
+```
+
 ### `api new` 参数介绍
 
-| 参数            | 必须 | 默认值 | 介绍                      | 使用方法                                                                                                  |
-| --------------- | ---- | ------ | ------------------------- | --------------------------------------------------------------------------------------------------------- |
-| i18n            | 否   | false  | 是否启用 i18n             | true 为启用                                                                                               |
-| casbin          | 否   | false  | 是否启用 casbin           | true 为启用                                                                                               |
-| module_name     | 是   |        | go.mod 中的 module 名称   | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则只在本地使用      |
-| go_zero_version | 是   |        | go zero 版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                            |
-| tool_version    | 是   |        | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release |
-| trans_err       | 否   | false  | 国际化翻译错误信息        | true 为启用                                                                                               |
-| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml    | true 为生成                                                                                               |
-| port            | 否   | 9100   | 端口号                    | 服务暴露的端口号                                                                                          |
-| ent             | 否   | false  | 是否启用 Ent              | true 为启用，启用 Ent 可用于单体 API 服务                                                                 |
+| 参数            | 必须 | 默认值 | 介绍                      | 使用方法                                                                                                   |
+| --------------- | ---- | ------ | ------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| i18n            | 否   | false  | 是否启用 i18n             | true 为启用                                                                                                |
+| casbin          | 否   | false  | 是否启用 casbin           | true 为启用                                                                                                |
+| module_name     | 否   |        | go.mod 中的 module 名称   | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
+| go_zero_version | 否   | v1.5.1 | go zero 版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
+| tool_version    | 否   | v0.3.2 | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
+| trans_err       | 否   | false  | 国际化翻译错误信息        | true 为启用                                                                                                |
+| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml    | true 为生成                                                                                                |
+| port            | 否   | 9100   | 端口号                    | 服务暴露的端口号                                                                                           |
+| ent             | 否   | false  | 是否启用 Ent              | true 为启用，启用 Ent 可用于单体 API 服务                                                                  |
 
 **详细参数请在命令行查看 `goctls api new --help`**
 

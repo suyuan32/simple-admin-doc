@@ -1,6 +1,6 @@
 ---
-order: 3
-title: "快速体验docker-compose"
+order: 6
+title: "Docker一键部署"
 ---
 
 # 一键体验 docker-compose

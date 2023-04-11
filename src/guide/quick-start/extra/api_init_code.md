@@ -22,6 +22,21 @@ goctls extra init_code --model_name=StudentInfo --target=core --output=D:\projec
 | target        | Yes      |               | Currently supports `core`, which means to generate api initialization information in the core project                               |
 | output        | No       |               | If it is empty, it will be output to the command line, copied by itself, or set to the absolute path of `init_database_api_data.go` |
 
+> Run `goctls extra init_code -h` see more details
+
+```shell
+Generating initialize code
+
+Usage:
+  goctl extra init_code [flags]
+
+Flags:
+  -h, --help                help for init_code
+  -m, --model_name string   The model name, it should be camelcase, such as StudentInfo
+  -o, --output string       The output path, only support core generating, such as ./rpc/internal/logic/base/init_database_api_data.go
+  -t, --target string       The target type, now only support core
+```
+
 ### Console generation preview
 
 ```text

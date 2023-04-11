@@ -1,6 +1,6 @@
 ---
-order: 3
-title: "Preview with docker-compose"
+order: 6
+title: "Docker Deploy"
 ---
 
 # Quick start with docker-compose

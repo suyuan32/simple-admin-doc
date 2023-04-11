@@ -21,7 +21,7 @@ export const enSidebar = sidebar({
               link: "process",
             },
             {
-              text: "Contribute To Core Service",
+              text: "Contribute To Core",
               prefix: "core/",
               children: "structure",
             },
@@ -31,13 +31,9 @@ export const enSidebar = sidebar({
               children: "structure",
             },
             {
-              text: "Extra Generating Command",
+              text: "Extra Generation",
               prefix: "extra/",
               children: "structure",
-            },
-            {
-              text: "Preview with docker-compose",
-              link: "all_in_one",
             },
           ],
         },

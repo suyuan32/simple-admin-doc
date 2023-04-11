@@ -1,6 +1,6 @@
 ---
 order: 2
-title: "API 初始化代码生成"
+title: "API初始化"
 ---
 
 ## API 初始化代码生成
@@ -15,12 +15,26 @@ goctls v0.3.2-beta +
 goctls extra init_code --model_name=StudentInfo --target=core --output=D:\projects\simple-workspace\simple-admin-core\rpc\internal\logic\base\init_database_api_data.go
 ```
 
-| 参数名称      | 必须 | 默认值 | 介绍                                                                                |
-| ------------- | ---- | ------ | ----------------------------------------------------------------------------------- |
-| model_name    | 是   |        | 模型名称，schema 中内部 struct 名称，如 example 中的 Student                        |
-| model_name_zh | 是   |        | 模型中文名称                                                                        |
-| target        | 是   |        | 目前支持 core, 意思是生成 core 项目中的 api 初始化信息                              |
-| output        | 否   |        | 若为空则会输出至命令行，自行复制，或者设置为 `init_database_api_data.go` 的绝对路径 |
+| 参数名称   | 必须 | 默认值 | 介绍                                                                                |
+| ---------- | ---- | ------ | ----------------------------------------------------------------------------------- |
+| model_name | 是   |        | 模型名称，schema 中内部 struct 名称，如 example 中的 Student                        |
+| target     | 是   |        | 目前支持 core, 意思是生成 core 项目中的 api 初始化信息                              |
+| output     | 否   |        | 若为空则会输出至命令行，自行复制，或者设置为 `init_database_api_data.go` 的绝对路径 |
+
+> 运行 `goctls extra init_code -h` 查看更多
+
+```shell
+Generating initialize code
+
+Usage:
+  goctl extra init_code [flags]
+
+Flags:
+  -h, --help                help for init_code
+  -m, --model_name string   The model name, it should be camelcase, such as StudentInfo
+  -o, --output string       The output path, only support core generating, such as ./rpc/internal/logic/base/init_database_api_data.go
+  -t, --target string       The target type, now only support core
+```
 
 ### console 生成效果
 

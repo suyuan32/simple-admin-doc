@@ -181,6 +181,12 @@ Starting server at 127.0.0.1:8081...
 
 说明运行成功.
 
+## 代码生成说明
+我们可以从两个地方生成 API 服务的代码。
+
+- 基于我们生成的 RPC 服务的 proto 文件（而且此 proto 文件必须是使用 goctls rpc ent 命令来从 ENT 模型生成的 Proto 文件）。
+- 基于我们编写的 ENT 模型（在我们的 API是单体服务API且 需要访问 数据库的情况下）
+
 ## 代码生成（基于 Proto）
 
 ::: warning

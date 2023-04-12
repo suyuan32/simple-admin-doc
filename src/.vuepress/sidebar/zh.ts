@@ -21,11 +21,6 @@ export const zhSidebar = sidebar({
               link: "process",
             },
             {
-              text: "Core开发",
-              prefix: "core/",
-              children: "structure",
-            },
-            {
               text: "代码生成",
               prefix: "codegen/",
               children: "structure",
@@ -33,6 +28,11 @@ export const zhSidebar = sidebar({
             {
               text: "额外生成",
               prefix: "extra/",
+              children: "structure",
+            },
+            {
+              text: "Core开发",
+              prefix: "core/",
               children: "structure",
             },
           ],

@@ -21,11 +21,6 @@ export const enSidebar = sidebar({
               link: "process",
             },
             {
-              text: "Contribute To Core",
-              prefix: "core/",
-              children: "structure",
-            },
-            {
               text: "Code Generation",
               prefix: "codegen/",
               children: "structure",
@@ -33,6 +28,11 @@ export const enSidebar = sidebar({
             {
               text: "Extra Generation",
               prefix: "extra/",
+              children: "structure",
+            },
+            {
+              text: "Core Development",
+              prefix: "core/",
               children: "structure",
             },
           ],

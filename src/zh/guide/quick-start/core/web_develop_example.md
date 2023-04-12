@@ -1,6 +1,6 @@
 ---
 order: 2
-title: '前端开发流程'
+title: "后台页面"
 ---
 
 ## web 端, department 为例
@@ -11,7 +11,7 @@ title: '前端开发流程'
  goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-core/api/desc/department.api --o=./ --folder_name=sys --prefix=sys-api --sub_folder=department
 ```
 
-将会自动生成api, model, view, locale， 需要自行修改下 data.ts 内的列和 locale中的翻译
+将会自动生成 api, model, view, locale， 需要自行修改下 data.ts 内的列和 locale 中的翻译
 
 ### 请求消息返回显示效果
 
@@ -41,11 +41,11 @@ title: '前端开发流程'
 ![Example](/assets/example_api_desc_title_en.png)
 ![Example](/assets/example_api_desc_title_zh.png)
 
-### 新增API
+### 新增 API
 
 ![Example](/assets/add_example_api_zh.png)
 
-### 添加API权限
+### 添加 API 权限
 
 ![Example](/assets/add_example_authority_zh.png)
 

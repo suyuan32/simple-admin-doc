@@ -1,6 +1,6 @@
 ---
 order: 6
-title: 'Oauth 第三方登陆'
+title: "第三方登陆"
 ---
 
 # Oauth
@@ -8,8 +8,8 @@ title: 'Oauth 第三方登陆'
 > 目前系统已默认提供 google 和 github Oauth 登录功能
 
 > 如何获取 clientID 和 client secret?
-[google](https://developers.google.com/identity/protocols/oauth2)
-[github](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps)
+> [google](https://developers.google.com/identity/protocols/oauth2)
+> [github](https://docs.github.com/en/developers/apps/building-oauth-apps/authorizing-oauth-apps)
 
 ## 添加第三方
 
@@ -27,6 +27,6 @@ title: 'Oauth 第三方登陆'
 </div>
 ```
 
-> 添加对应的provider名称即可。
+> 添加对应的 provider 名称即可。
 > param 模式是将请求放在网址中
 > header 模式是将请求放在 authorization 内

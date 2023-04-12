@@ -1,6 +1,6 @@
 ---
-order: 1
-title: "Simple Admin Tools 开发工具"
+order: 2
+title: "Simple Admin Tools"
 ---
 
 # Simple admin tools

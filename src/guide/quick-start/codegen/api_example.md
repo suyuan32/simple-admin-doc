@@ -40,6 +40,10 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool
 goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081 -g
 ```
 
+::: warning
+Create a project name that only supports lowercase and camelcase
+:::
+
 ### `api new` parameters
 
 | Parameter       | Must | Default | Introduction                        | Usage                                                                                                                                                             |

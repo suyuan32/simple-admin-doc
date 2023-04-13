@@ -39,6 +39,10 @@ goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool
 goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081 -g
 ```
 
+::: warning
+创建项目名称仅支持小写和驼峰命名
+:::
+
 ### `api new` 参数介绍
 
 | 参数            | 必须 | 默认值 | 介绍                      | 使用方法                                                                                                   |

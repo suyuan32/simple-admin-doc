@@ -39,6 +39,10 @@ goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin
 goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -g -d
 ```
 
+::: warning
+创建项目名称仅支持小写和驼峰命名
+:::
+
 ### `rpc new`参数介绍
 
 | 参数            | 必须 | 默认值 | 介绍                              | 使用方法                                                                                                   |

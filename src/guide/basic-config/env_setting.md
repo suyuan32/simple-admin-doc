@@ -124,7 +124,6 @@ CoreRpc:
 ```
 
 > it does not need service discovery，when you develop locally, you should also use this mode. There can be several endpoints.
-> :::
 
 > Add rpc/etc/core_dev.yaml
 
@@ -274,6 +273,8 @@ VITE_GLOB_API_URL_PREFIX=
 
 ::: warning
 **_Important:_** You should create the database before initialization, the database name should be the same as core_dev.yaml.
+
+**After initialization, you should restart api service. It can force refreshing casbin cache.**
 :::
 
 ```shell
@@ -289,7 +290,3 @@ https://localhost:3100/init
 ![pic](/assets/init_zh_cn.png)
 
 > File manager service is optional [File Manager](/simple-admin/en/docs/file_manager.md)
-
-::: warning
-**After initialization, you should restart api and rpc service.**
-:::

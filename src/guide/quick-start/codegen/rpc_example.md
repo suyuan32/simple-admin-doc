@@ -40,6 +40,10 @@ goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin
 goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -g -d
 ```
 
+::: warning
+Create a project name that only supports lowercase and camelcase
+:::
+
 ### `rpc new` parameters
 
 | Parameter       | Must | Default | Introduction                                         | Usage                                                                                                                                                             |

@@ -8,7 +8,7 @@ title: "RPC 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.3.2 +
+- simple-admin-tool (goctls) v1.5.2 +
 
 必须了解 go zero 的 RPC 命令 [RPC 命令](https://go-zero.dev/cn/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC 服务](https://go-zero.dev/cn/docs/advance/rpc-call)
 \
@@ -30,7 +30,7 @@ title: "RPC 微服务"
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.1 --tool_version=v0.3.2 --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.1 --tool_version=v1.5.2 --port=8080 --gitlab=true --desc=true
 ```
 
 > 简单命令
@@ -50,7 +50,7 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 | ent             | 否   | false  | 是否启用 ent                      | true 为启用                                                                                                |
 | module_name     | 否   |        | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
 | go_zero_version | 否   | v1.5.1 | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v0.3.2 | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
+| tool_version    | 否   | v1.5.2 | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
 | gitlab          | 否   | false  | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
 | port            | 否   | 9100   | 端口号                            | 服务暴露的端口号                                                                                           |
 | desc            | 否   | false  | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |

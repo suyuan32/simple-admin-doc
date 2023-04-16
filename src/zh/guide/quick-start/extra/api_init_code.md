@@ -6,7 +6,7 @@ title: "API初始化"
 ## API 初始化代码生成
 
 ::: warning
-goctls v0.3.2-beta +
+goctls v1.5.2 +
 :::
 
 ### `goctls extra init_code`

@@ -8,7 +8,7 @@ title: "API 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.3.2 +
+- simple-admin-tool (goctls) v1.5.2 +
 
 必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/cn/docs/goctl/api) [api 文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
 \
@@ -30,7 +30,7 @@ title: "API 微服务"
 > 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v0.3.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v1.5.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 > 简单命令
@@ -51,7 +51,7 @@ goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api 
 | casbin          | 否   | false  | 是否启用 casbin           | true 为启用                                                                                                |
 | module_name     | 否   |        | go.mod 中的 module 名称   | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
 | go_zero_version | 否   | v1.5.1 | go zero 版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v0.3.2 | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
+| tool_version    | 否   | v1.5.2 | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
 | trans_err       | 否   | false  | 国际化翻译错误信息        | true 为启用                                                                                                |
 | gitlab          | 否   | false  | 是否生成 gitlab-ci.yml    | true 为生成                                                                                                |
 | port            | 否   | 9100   | 端口号                    | 服务暴露的端口号                                                                                           |
@@ -308,7 +308,9 @@ Flags:
   -k, --search_key_num int        The max number of search keys (default 3)
   -s, --style string              The file name format style (default "go_zero")
 ```
+
 **goctls api ent 会同时生成 .api 文件**
+
 ### 目录结构
 
 ```text

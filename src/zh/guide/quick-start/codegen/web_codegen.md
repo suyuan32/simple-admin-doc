@@ -9,7 +9,7 @@ title: "Web 端"
 
 > 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v0.3.2 +
+- simple-admin-tool (goctls) v1.5.2 +
   :::
 
 ## 创建 example 代码

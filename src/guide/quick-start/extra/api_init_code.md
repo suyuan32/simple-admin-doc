@@ -6,7 +6,7 @@ title: "API Initialize Code Generation"
 ## API Initialize Code Generation
 
 ::: warning
-goctls v0.3.2-beta +
+goctls v1.5.2 +
 :::
 
 ### `goctls extra init_code`

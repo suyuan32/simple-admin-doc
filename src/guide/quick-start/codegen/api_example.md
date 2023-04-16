@@ -8,7 +8,7 @@ title: "API Service"
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v0.3.2 +
+- simple-admin-tool (goctls) v1.5.2 +
 
 \
 Must know go-zero's API command. [API Command](https://go-zero.dev/docs/goctl/api) [Api Service](https://go-zero.dev/docs/advance/api-coding) \
@@ -31,7 +31,7 @@ An API can access multiple RPCs, providing a unified request entry。
 > Create example project
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v0.3.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v1.5.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 > Simpler Command
@@ -52,7 +52,7 @@ Create a project name that only supports lowercase and camelcase
 | casbin          | No   | false   | Whether to use casbin               | true means use                                                                                                                                                    |
 | module_name     | No   |         | Module name in go.mod               | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
 | go_zero_version | No   | v1.5.1  | go zero version                     | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release                                                                          |
-| tool_version    | No   | v0.3.2  | simple admin tools version          | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
+| tool_version    | No   | v1.5.2  | simple admin tools version          | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
 | trans_err       | No   | false   | Whether to use i18n in error        | true means use                                                                                                                                                    |
 | gitlab          | No   | false   | Whether to generating gitlab-ci.yml | true means generating                                                                                                                                             |
 | port            | No   | 9100    | port number                         | The service port                                                                                                                                                  |

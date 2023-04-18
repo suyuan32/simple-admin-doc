@@ -9,8 +9,8 @@ title: "本地开发环境配置"
 
 - golang 1.20 +
 - **nodejs 18.8.0 +**
-- **mysql 8.0 +** | MariaDB 10.7 + | Postgres 14 + (**Postgres 15 + 推荐**)
-- redis 6.0 +
+- **mysql 8.0.21 +** | MariaDB 10.7 + | Postgres 13 + (**Postgres 14 推荐**)
+- redis 7.0 +
 - [go-swagger](https://goswagger.io/install.html)
 - [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
 

@@ -19,6 +19,10 @@ title: "本地开发环境配置"
 **`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, 你也可以自行配置环境， 参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
 :::
 
+::: info
+[视频教程](https://www.bilibili.com/video/BV1Hg4y1M7T5)
+:::
+
 ## 后端部署
 
 ### simple admin core

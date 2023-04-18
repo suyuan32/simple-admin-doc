@@ -123,7 +123,9 @@ CoreRpc:
     - 127.0.0.1:9101 # the same as rpc address
 ```
 
-> it does not need service discovery，when you develop locally, you should also use this mode. There can be several endpoints.
+> It does not need service discovery，when you develop locally, you should also use this mode. There can be several endpoints.
+
+:::
 
 > Add rpc/etc/core_dev.yaml
 

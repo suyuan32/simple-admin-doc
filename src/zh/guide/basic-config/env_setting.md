@@ -123,7 +123,8 @@ CoreRpc:
 ```
 
 > 的方式直连，不需要服务发现，本地调试也是使用直连的方式， Endpoints 可以有多个
-> :::
+
+:::
 
 > 添加 rpc/etc/core_dev.yaml
 

@@ -49,15 +49,16 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 
 ### `rpc new`参数介绍
 
-| 参数            | 必须 | 默认值 | 介绍                              | 使用方法                                                                                                   |
-| --------------- | ---- | ------ | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| ent             | 否   | false  | 是否启用 ent                      | true 为启用                                                                                                |
-| module_name     | 否   |        | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
-| go_zero_version | 否   | v1.5.1 | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v1.5.2 | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
-| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
-| port            | 否   | 9100   | 端口号                            | 服务暴露的端口号                                                                                           |
-| desc            | 否   | false  | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
+| 参数            | 必须 | 默认值  | 介绍                              | 使用方法                                                                                                   |
+| --------------- | ---- | ------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ent             | 否   | false   | 是否启用 ent                      | true 为启用                                                                                                |
+| module_name     | 否   |         | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
+| style           | 否   | go_zero | 文件名格式                        | go_zero 为蛇形格式                                                                                         |
+| go_zero_version | 否   | v1.5.1  | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
+| tool_version    | 否   | v1.5.2  | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
+| gitlab          | 否   | false   | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
+| port            | 否   | 9100    | 端口号                            | 服务暴露的端口号                                                                                           |
+| desc            | 否   | false   | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
 
 ** 详细参数请在命令行查看 `goctls rpc new --help` **
 

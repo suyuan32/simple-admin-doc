@@ -15,6 +15,10 @@ title: "RPC 微服务"
 参考 [Example](https://github.com/suyuan32/simple-admin-example-rpc) 项目生成一遍，确认生成文件与 Example 项目一致，Example 项目有完整的命令
 :::
 
+::: info
+[视频教程](https://www.bilibili.com/video/BV12s4y1R755)
+:::
+
 ## RPC 职责
 
 在 Simple Admin 中， RPC 主要用于获取数据以及提供扩展功能， 主要有以下职责：

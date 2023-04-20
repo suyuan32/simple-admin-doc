@@ -15,6 +15,10 @@ title: "API 微服务"
 参考 [Example](https://github.com/suyuan32/simple-admin-example-api) 项目生成一遍，确认生成文件与 Example 项目一致，Example 项目有完整的命令
 :::
 
+::: info
+[视频教程](https://www.bilibili.com/video/BV1Lh411E7Xv)
+:::
+
 ## API 服务的职责
 
 在 simple admin 中， API 服务充当网关的角色，主要提供以下功能：
@@ -257,6 +261,10 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 :::
 
 ## 代码生成 (基于 Ent 的单体服务)
+
+::: info
+[视频教程](https://www.bilibili.com/video/BV1oa4y1A7rT/)
+:::
 
 ::: info
 如果你的项目较小， 单体 API 服务比较适合你。直接在 API 层操作数据库，无需连接 RPC。

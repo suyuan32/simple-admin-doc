@@ -55,6 +55,7 @@ Create a project name that only supports lowercase and camelcase
 | gitlab          | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                                                                                             |
 | port            | No   | 9100    | Port number                                          | The service port                                                                                                                                                  |
 | desc            | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                                                                                |
+| style           | No   | go_zero | The format of the file name.                         | snake case format is go_zero.                                                                                                                                     |
 
 ** More parameters please check `goctls rpc new --help` **
 

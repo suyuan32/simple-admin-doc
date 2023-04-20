@@ -56,6 +56,7 @@ Create a project name that only supports lowercase and camelcase
 | trans_err       | No   | false   | Whether to use i18n in error        | true means use                                                                                                                                                    |
 | gitlab          | No   | false   | Whether to generating gitlab-ci.yml | true means generating                                                                                                                                             |
 | port            | No   | 9100    | port number                         | The service port                                                                                                                                                  |
+| style           | No   | go_zero | The format of the file name.        | snake case format is go_zero.                                                                                                                                     |
 
 **More parameters please check `goctls api new --help`**
 

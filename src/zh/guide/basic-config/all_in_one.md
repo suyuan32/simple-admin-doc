@@ -9,17 +9,21 @@ title: "Docker一键部署"
 
 ## 只需三步
 
-### 启动 docker-compose
+### 1. 启动 docker-compose
 
 ```shell
 docker-compose up -d
 ```
 
-### 初始化数据库
+### 2. 初始化数据库
 
 <http://localhost/init>
 
-### 重启 core-api, core-rpc 容器
+### 3. 重启 API
+
+::: warning
+初始化完成后需要重启 core-api 容器，强制刷新 casbin 缓存
+:::
 
 ::: info
 `deploy/docker-compose/all_in_one`文件夹下有 api 和 rpc 的 etc 配置文件参考

@@ -9,17 +9,21 @@ In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suy
 
 ## 3 Steps
 
-### Run docker-compose
+### 1. Run docker-compose
 
 ```shell
 docker-compose up -d
 ```
 
-### Initialize database
+### 2. Initialize database
 
 > <http://localhost/init>
 
-### Restart core-api, core-rpc container
+### 3. Restart API container
+
+::: warning
+You should restart core-api container after initalization in order to refresh casbin cache
+:::
 
 ::: info
 In `deploy/docker-compose/all_in_one` folder, you can check the api and rpc configuration

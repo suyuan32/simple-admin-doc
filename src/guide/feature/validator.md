@@ -27,40 +27,61 @@ Simple Admin Tools integration [validator](https://github.com/go-playground/vali
     }
 ```
 
-> Default translation support Chinese and English, you can add other languages in servicecontext.go like below
+> Extend interface
 
-[File](https://github.com/suyuan32/simple-admin-tools/blob/master/rest/httpx/util.go)
+The following three interfaces are provided for extending the validator, which only need to be called in the main function
 
 ```go
-func NewValidator() *Validator {
- v := Validator{}
- en := enLang.New()
- zh := zhLang.New()
- v.Uni = ut.New(zh, en, zh)
- v.Validator = validator.New()
- enTrans, _ := v.Uni.GetTranslator("en")
- zhTrans, _ := v.Uni.GetTranslator("zh")
- v.Trans = make(map[string]ut.Translator)
- v.Trans["en"] = enTrans
- v.Trans["zh"] = zhTrans
- // add support languages
- initSupportLanguages()
+// Register additional languages
+httpx.RegisterValidationTranslation(tag string, trans ut.Translator, registerFn validator.RegisterTranslationsFunc,
+translationFn validator. TranslationFunc)
 
- err := enTranslations.RegisterDefaultTranslations(v.Validator, enTrans)
- if err != nil {
-  logx.Errorw("register English translation failed", logx.Field("detail", err.Error()))
-  return nil
- }
- err = zhTranslations.RegisterDefaultTranslations(v.Validator, zhTrans)
- if err != nil {
-  logx.Errorw("register Chinese translation failed", logx.Field("detail", err.Error()))
+// register custom method
+httpx.RegisterValidation(tag string, fn validator.Func)
 
-  return nil
- }
+// Set a custom error code
+httpx.SetValidatorErrorCode(code int)
+```
 
- return &v
+Example
+
+```go
+package main
+
+import (
+	"flag"
+	"fmt"
+
+	"github.com/zeromicro/go-zero/rest/httpx"
+
+	"github.com/suyuan32/simple-admin-core/api/internal/config"
+	"github.com/suyuan32/simple-admin-core/api/internal/handler"
+	"github.com/suyuan32/simple-admin-core/api/internal/svc"
+
+	"github.com/zeromicro/go-zero/core/conf"
+	"github.com/zeromicro/go-zero/rest"
+)
+
+var configFile = flag.String("f", "etc/core.yaml", "the config file")
+
+func main() {
+	flag.Parse()
+
+	var c config.Config
+	conf.MustLoad(*configFile, &c, conf.UseEnv())
+
+	server := rest.MustNewServer(c.RestConf, rest.WithCors("*"))
+	defer server.Stop()
+
+	ctx := svc.NewServiceContext(c)
+	handler.RegisterHandlers(server, ctx)
+
+    // Set custom error code for validator
+	httpx.SetValidatorErrorCode(5000)
+
+	fmt.Printf("Starting server at %s:%d...\n", c.Host, c.Port)
+	server.Start()
 }
-
 ```
 
 > Notice： validate tag dose not allow empty by default，if you allow empty, you should add omitempty

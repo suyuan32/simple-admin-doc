@@ -86,6 +86,7 @@ Captcha:
   KeyLong: 5 # captcha key length
   ImgWidth: 240 # captcha image width
   ImgHeight: 80 # captcha image height
+  Driver: digit # support three drivers: digit, string, math, default is digit
 
 DatabaseConf:
   Type: mysql # support mysql, postgres, sqlite3
@@ -97,6 +98,9 @@ DatabaseConf:
   MaxOpenConn: 100 # the maximum number of opened connections in the  connection pool
   SSLMode: disable # in postgresql, disable or require
 # DBPath: /home/data/sqlite.db # Database Path, you must set it when you use sqlite3.
+# MysqlConfig: '&charset=utf8&loc=Asia/Shanghai' # Additional configuration of Mysql
+# PGConfig: '' # Additional configuration for Postgresql
+# SqliteConfig: '' # Additional configuration for Sqlite
 
 # casbin rule
 CasbinConf:
@@ -143,6 +147,9 @@ DatabaseConf:
   MaxOpenConn: 100 # the maximum number of opened connections in the  connection pool
   SSLMode: disable # in postgresql, disable or require
 # DBPath: /home/data/sqlite.db # Database Path, you must set it when you use sqlite3.
+# MysqlConfig: '&charset=utf8&loc=Asia/Shanghai' # Additional configuration of Mysql
+# PGConfig: '' # Additional configuration for Postgresql
+# SqliteConfig: '' # Additional configuration for Sqlite
 
 # casbin rule
 CasbinConf:

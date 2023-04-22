@@ -89,6 +89,7 @@ Captcha:
   KeyLong: 5 # 验证码长度
   ImgWidth: 240 # 验证码图片宽度
   ImgHeight: 80 # 验证码图片高度
+  Driver: digit # 支持三种驱动 digit, string, math, 默认为 digit
 
 DatabaseConf:
   Type: mysql # 支持 mysql, postgres, sqlite3
@@ -100,6 +101,9 @@ DatabaseConf:
   MaxOpenConn: 100 # 最大连接数
   SSLMode: disable # 是否在 postgresql 中使用 SSL, disable 或 require
 # DBPath: /home/data/sqlite.db # Sqlite 数据库文件存放位置，使用 sqlite3时必须设置
+# MysqlConfig: '&charset=utf8&loc=Asia/Shanghai' # Mysql的额外配置
+# PGConfig: ''  # Postgresql 的额外配置
+# SqliteConfig: '' # Sqlite 的额外配置
 
 # casbin 规则
 CasbinConf:
@@ -146,6 +150,9 @@ DatabaseConf:
   MaxOpenConn: 100 # 最大连接数
   SSLMode: disable # 是否在 postgresql 中使用 SSL, disable 或 require
 # DBPath: /home/data/sqlite.db # Sqlite 数据库文件存放位置，使用 sqlite3时必须设置
+# MysqlConfig: '&charset=utf8&loc=Asia/Shanghai' # Mysql的额外配置
+# PGConfig: ''  # Postgresql 的额外配置
+# SqliteConfig: '' # Sqlite 的额外配置
 
 # casbin 规则
 CasbinConf:

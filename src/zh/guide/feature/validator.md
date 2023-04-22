@@ -27,40 +27,61 @@ Simple Admin Tools 集成 [validator](https://github.com/go-playground/validator
     }
 ```
 
-> 支持多语言，默认支持中文和英文，如果需要其他语言请自行添加
+### 额外扩展
 
-[文件](https://github.com/suyuan32/simple-admin-tools/blob/master/rest/httpx/util.go)
+以下提供三个接口用于扩展 validator, 只需要在 main 函数中调用即可
 
 ```go
-func NewValidator() *Validator {
- v := Validator{}
- en := enLang.New()
- zh := zhLang.New()
- v.Uni = ut.New(zh, en, zh)
- v.Validator = validator.New()
- enTrans, _ := v.Uni.GetTranslator("en")
- zhTrans, _ := v.Uni.GetTranslator("zh")
- v.Trans = make(map[string]ut.Translator)
- v.Trans["en"] = enTrans
- v.Trans["zh"] = zhTrans
- // add support languages
- initSupportLanguages()
+// 注册额外语言
+httpx.RegisterValidationTranslation(tag string, trans ut.Translator, registerFn validator.RegisterTranslationsFunc,
+	translationFn validator.TranslationFunc)
 
- err := enTranslations.RegisterDefaultTranslations(v.Validator, enTrans)
- if err != nil {
-  logx.Errorw("register English translation failed", logx.Field("detail", err.Error()))
-  return nil
- }
- err = zhTranslations.RegisterDefaultTranslations(v.Validator, zhTrans)
- if err != nil {
-  logx.Errorw("register Chinese translation failed", logx.Field("detail", err.Error()))
+// 注册自定义方法
+httpx.RegisterValidation(tag string, fn validator.Func)
 
-  return nil
- }
+// 设置自定义错误码
+httpx.SetValidatorErrorCode(code int)
+```
 
- return &v
+例子
+
+```go
+package main
+
+import (
+	"flag"
+	"fmt"
+
+	"github.com/zeromicro/go-zero/rest/httpx"
+
+	"github.com/suyuan32/simple-admin-core/api/internal/config"
+	"github.com/suyuan32/simple-admin-core/api/internal/handler"
+	"github.com/suyuan32/simple-admin-core/api/internal/svc"
+
+	"github.com/zeromicro/go-zero/core/conf"
+	"github.com/zeromicro/go-zero/rest"
+)
+
+var configFile = flag.String("f", "etc/core.yaml", "the config file")
+
+func main() {
+	flag.Parse()
+
+	var c config.Config
+	conf.MustLoad(*configFile, &c, conf.UseEnv())
+
+	server := rest.MustNewServer(c.RestConf, rest.WithCors("*"))
+	defer server.Stop()
+
+	ctx := svc.NewServiceContext(c)
+	handler.RegisterHandlers(server, ctx)
+
+    // 设置自定义错误码
+	httpx.SetValidatorErrorCode(5000)
+
+	fmt.Printf("Starting server at %s:%d...\n", c.Host, c.Port)
+	server.Start()
 }
-
 ```
 
 > 注意： 添加 validate 标签后默认不能为空，若需要允许为空需要添加 omitempty

@@ -8,7 +8,7 @@ title: "Local Development Setting"
 > Environment Requirement
 
 - golang 1.20 +
-- **nodejs 18.8.0 +**
+- **nodejs 19.8.0 +**
 - **mysql 8.0.21 +** | MariaDB 10.7 + | Postgres 13 + (**Postgres 14 recommended**)
 - redis 7.0 +
 - [go-swagger](https://goswagger.io/install.html)

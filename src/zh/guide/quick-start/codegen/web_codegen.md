@@ -12,6 +12,10 @@ title: "Web 端"
 - simple-admin-tool (goctls) v1.5.2 +
   :::
 
+::: info
+[视频教程](https://www.bilibili.com/video/BV1DL411a7wo)
+:::
+
 ## 创建 example 代码
 
 ```shell

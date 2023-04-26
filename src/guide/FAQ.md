@@ -7,11 +7,11 @@ title: "FAQ"
 
 ## What is the default account?
 
-A: Account: admin Password: simple-admin
+A: Account: `admin` Password: `simple-admin`
 
 ## Registered account can not log in?
 
-A: The default role after successful registration is a member, without the right to log in. You need to modify the role permissions or set the user's role to administrator.
+A: The default role after successful registration is a staff, without the permission to log in. You need to modify the role permissions or set the user's role to administrator.
 
 ## How many ways does go-zero have for service registration and discovery?
 

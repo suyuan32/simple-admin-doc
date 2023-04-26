@@ -5,7 +5,7 @@ title: "Project Specification"
 
 ## API specification
 
-- API Types naming requests follow Req ending with request, Resp ending with return value, Info ending with information body
+- API Types naming requests follow `request` ending with `Req` , `return value` ending with `Resp` , `information body` ending with `Info`
 - It is recommended to add detailed comments for generating swagger
 
 ## RPC specification

@@ -175,9 +175,9 @@ The project uses asynq as the scheduled task manager by default, and only needs 
 
 ### How to add tasks?
 
-- First, you need to define the execution logic of the task in the handler, to imitate hello world, you must implement the ProcessTask method
-- Register tasks with mqtask
-- Add tasks in the background, the pattern must be consistent with the pattern in mqtask or the beginning, the system will automatically find the closest task
+- First, you need to define the execution logic of the task in the handler, to imitate hello world, you must implement the `ProcessTask` method
+- Register tasks with `mqtask`
+- Add tasks in the background, the pattern must be consistent with the `pattern` in mqtask or the beginning, the system will automatically find the closest task
 - You can see the effect after adding
 
 ::: warning

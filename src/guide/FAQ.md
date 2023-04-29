@@ -109,3 +109,8 @@ go work init simple-admin-common/ simple-admin-core/ simple-admin-tools/
 ```
 
 You can get the latest code changes locally without committing to the repository.
+
+## How to debug Backend UI?
+
+- First run the project, execute `pnpm dev`
+- Then set breakpoint and press `F5` in vscode to debug

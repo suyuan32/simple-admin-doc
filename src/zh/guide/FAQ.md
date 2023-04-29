@@ -110,3 +110,8 @@ go work init simple-admin-common/ simple-admin-core/ simple-admin-tools/
 ```
 
 即可在本地获取最新代码变化，而不需要提交仓库。
+
+## 如何调试 Backend UI ?
+
+- 首先运行项目，执行 `pnpm dev`
+- 然后设置断点并在 vscode 按 `F5` 即可调试

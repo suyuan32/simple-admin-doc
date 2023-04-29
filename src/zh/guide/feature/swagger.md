@@ -12,6 +12,10 @@ title: "Swagger"
 [示例项目](https://github.com/suyuan32/simple-admin-example-features/tree/main/swagger) [Path 和 Query 请求例子](https://github.com/suyuan32/simple-admin-example-features/blob/main/swagger/desc/base.api)
 :::
 
+::: info
+[视频教程](https://www.bilibili.com/video/BV1sg4y1L7ju)
+:::
+
 ::: warning
 `goctls` 已支持根据 `go zero path` 直接生成 `swagger path`, `goctls` 需要 `v0.3.0+`
 `goctls` 已支持根据 `validate` 直接生成 `swagger`校验规则, `goctls` 需要 `v0.3.1+`

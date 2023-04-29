@@ -5,6 +5,10 @@ title: "验证器"
 
 ## Validator 使用
 
+::: info
+[视频教程](https://www.bilibili.com/video/BV19s4y1c7Br)
+:::
+
 Simple Admin Tools 集成 [validator](https://github.com/go-playground/validator) 库
 
 > 只需要在 api 中结构声明中使用 validate tag 即可实现校验

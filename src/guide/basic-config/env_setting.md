@@ -19,6 +19,10 @@ It is recommended to develop under linux, because the make command is required. 
 **`Windows` users are recommended to develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment, you can also cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment).**
 :::
 
+::: info
+[Backend UI Doc](https://vben.ryansu.pro/)
+:::
+
 ## Backend Setting
 
 ### simple admin core

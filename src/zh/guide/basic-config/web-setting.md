@@ -1,8 +1,11 @@
 ---
 order: 3
-title: '前端设置'
+title: "前端设置"
 ---
 
+::: info
+[Backend UI 文档](https://vben.ryansu.pro/zh/)
+:::
 
 ## 前端设置
 

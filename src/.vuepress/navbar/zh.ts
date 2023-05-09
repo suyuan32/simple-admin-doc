@@ -29,7 +29,7 @@ export const zhNavbar = navbar([
       {
         text: "Vben Admin 文档",
         icon: "fa-solid fa-book",
-        link: "https://doc.vvbin.cn/",
+        link: "https://vben.ryansu.pro/",
       },
       {
         text: "Go Swagger 文档",

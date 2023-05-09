@@ -1,8 +1,13 @@
 ---
 order: 3
-title: 'Web Setting'
+title: "Web Setting"
 ---
+
 ## Web UI setting
+
+::: info
+[Backend UI Doc](https://vben.ryansu.pro/)
+:::
 
 > Mainly modify env file
 

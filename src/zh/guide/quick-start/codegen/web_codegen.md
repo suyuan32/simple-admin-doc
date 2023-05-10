@@ -37,20 +37,20 @@ goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-a
 
 ```shell
 $ goctls frontend vben --help
-Generate frontend related files
+生成与前端相关的文件
 
-Usage:
-  goctl frontend vben [flags]
+用法：
+  goctl frontend vben [选项]
 
-Flags:
-  -a, --api_file string      The absolute path of api file
-  -f, --folder_name string   The folder name to generate file in different directory. e.g. file folder in simple admin backend ui which is to store file manager service files (default "sys")
-  -h, --help                 help for vben
-  -m, --model_name string    The model name. e.g. Example
-  -o, --output string        The output directory, it should be the root directory of simple admin backend ui (default "./")
-  -w, --overwrite            Whether to overwrite the files, it will overwrite all generated files
-  -p, --prefix string        The request prefix for proxy. e.g. sys-api (default "sys-api")
-  -s, --sub_folder string    The sub folder name. e.g. src/views/sys sub folder user which path is src/views/sys/user
+选项：
+  -a, --api_file string      API 文件的绝对路径
+  -f, --folder_name string   用于在不同目录中生成文件的文件夹名称。例如 simple admin 后端 UI 中用于存储文件管理器服务文件的文件夹 (默认为 "sys")
+  -h, --help                 显示帮助信息
+  -m, --model_name string    模型名称。例如 Example
+  -o, --output string        输出目录，它应该是 simple admin 后端 UI 的根目录 (默认为 "./")
+  -w, --overwrite            是否覆盖已生成的文件，它将覆盖所有已生成的文件
+  -p, --prefix string        代理请求的前缀。例如 sys-api (默认为 "sys-api")
+  -s, --sub_folder string    子文件夹名称。例如 src/views/sys 子文件夹 user，其路径为 src/views/sys/user
 ```
 
 > 执行命令后会生成下面的代码

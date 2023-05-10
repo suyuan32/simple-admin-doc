@@ -19,13 +19,13 @@ goctls extra ent template -u
 | add      | 否   |        | 添加模板，需要为列表内的模板                                         |
 
 ```shell
-Usage:
-  goctl extra ent template [flags]
+用法：
+  goctl extra ent template [选项]
 
-Flags:
-  -a, --add string   Add template for ent
-  -d, --dir string   The ent directory. If it is empty, goctls will try to find it automatically
-  -h, --help         help for template
-  -l, --list         List all support templates
-  -u, --update       Update all templates
+选项：
+  -a, --add string   添加 ent 模板
+  -d, --dir string   ent 目录。如果为空，则 goctls 将自动查找
+  -h, --help         显示帮助信息
+  -l, --list         列出所有支持的模板
+  -u, --update       更新所有模板
 ```

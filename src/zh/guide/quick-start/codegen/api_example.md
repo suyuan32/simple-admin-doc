@@ -8,7 +8,7 @@ title: "API 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v1.5.2 +
+- simple-admin-tool (goctls) v1.5.5 +
 
 必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/cn/docs/goctl/api) [api 文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
 \
@@ -34,7 +34,7 @@ title: "API 微服务"
 > 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.1 --tool_version=v1.5.2 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.2 --tool_version=v1.5.5 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 > 简单命令
@@ -49,43 +49,42 @@ goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api 
 
 ### `api new` 参数介绍
 
-| 参数            | 必须 | 默认值 | 介绍                      | 使用方法                                                                                                   |
-| --------------- | ---- | ------ | ------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| i18n            | 否   | false  | 是否启用 i18n             | true 为启用                                                                                                |
-| casbin          | 否   | false  | 是否启用 casbin           | true 为启用                                                                                                |
-| module_name     | 否   |        | go.mod 中的 module 名称   | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
-| go_zero_version | 否   | v1.5.1 | go zero 版本              | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v1.5.2 | simple admin tools 版本号 | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
-| trans_err       | 否   | false  | 国际化翻译错误信息        | true 为启用                                                                                                |
-| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml    | true 为生成                                                                                                |
-| port            | 否   | 9100   | 端口号                    | 服务暴露的端口号                                                                                           |
-| ent             | 否   | false  | 是否启用 Ent              | true 为启用，启用 Ent 可用于单体 API 服务                                                                  |
+| 参数            | 必须 | 默认值 | 介绍                                     | 使用方法                                                                                                   |
+| --------------- | ---- | ------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| i18n            | 否   | false  | 是否启用 i18n                            | true 为启用                                                                                                |
+| casbin          | 否   | false  | 是否启用 casbin 进行鉴权并自动添加中间件 | true 为启用                                                                                                |
+| module_name     | 否   |        | go.mod 中的 module 名称                  | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
+| go_zero_version | 否   | v1.5.2 | go zero 版本                             | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
+| tool_version    | 否   | v1.5.5 | simple admin tools 版本号                | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
+| trans_err       | 否   | false  | 国际化翻译错误信息                       | true 为启用                                                                                                |
+| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml                   | true 为生成                                                                                                |
+| port            | 否   | 9100   | 端口号                                   | 服务暴露的端口号                                                                                           |
+| ent             | 否   | false  | 是否启用 Ent                             | true 为启用，启用 Ent 可用于单体 API 服务                                                                  |
 
 **详细参数请在命令行查看 `goctls api new --help`**
 
 ```shell
 $ goctls api new --help
-Fast create api service
+快速创建 API 服务
 
-Usage:
-  goctl api new [flags]
+用法：
+  goctl api new [选项]
 
-Flags:
-      --branch string            The branch of the remote repo, it does work with --remote
-  -c, --casbin                   Whether to use the Casbin
-  -e, --ent                      Whether to use Ent in API service
-  -g, --gitlab                   Whether to use gitlab CI/CD
-  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.0, see [https://github.com/zeromicro/go-zero/releases]
-  -h, --help                     help for new
-      --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-  -i, --i18n                     Whether to use i18n
-  -m, --module_name string       The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
-  -p, --port int                 The service port exposed (default 9100)
-      --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                                 The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-  -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
-  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v0.3.0, see [https://github.com/suyuan32/simple-admin-tools/releases]
-  -a, --trans_err                Whether to translate the error
+选项：
+      --branch string            远程仓库的分支，需要与 --remote 一起使用
+  -c, --casbin                   是否使用 Casbin
+  -e, --ent                      是否在 API 服务中使用 Ent
+  -g, --gitlab                   是否使用 GitLab CI/CD
+  -z, --go_zero_version string   用于替换的 go zero 版本，例如 v1.5.0，参见 [https://github.com/zeromicro/go-zero/releases]
+  -h, --help                     显示帮助信息
+      --home string              模板的 goctl home 路径，不能与 --remote 同时设置，如果同时设置，则以 --remote 为准
+  -i, --i18n                     是否使用 i18n
+  -m, --module_name string       在 go.mod 中的模块名称，例如 github.com/suyuan32/simple-admin-core
+  -p, --port int                 暴露的服务端口号 (默认为 9100)
+      --remote string            模板的远程 git 仓库，不能与 --home 同时设置，如果同时设置，则以 --remote 为准 git 仓库目录结构必须与 https://github.com/zeromicro/go-zero-template 一致
+  -s, --style string             文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (默认为 "go_zero")
+  -t, --tool_version string      用于迁移的 simple admin 工具版本，例如 v0.3.0，参见 [https://github.com/suyuan32/simple-admin-tools/releases]
+  -a, --trans_err                是否翻译错误信息
 ```
 
 > 你可以看到以下结构
@@ -219,25 +218,25 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 ```shell
 $ goctls api proto --help
-Generate CRUD template from proto file
+从 proto 文件生成 CRUD 模板
 
-Usage:
-  goctl api proto [flags]
+用法：
+  goctl api proto [选项]
 
-Flags:
-  -a, --api_service_name string   The API service name
-  -g, --grpc_package string       The rpc package which stores pb file. e.g. github.com/suyuan32/simple-admin-job/types/job
-  -h, --help                      help for proto
-  -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
-  -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
-      --multiple                  Whether the proto contains multiple services
-  -o, --output string             The output path
-  -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
-  -p, --proto string              The proto path
-  -n, --rpc_name string           The rpc name in service context. e.g. CoreRpc
-  -r, --rpc_service_name string   The RPC service name
-  -k, --search_key_num int        The max number of search keys (default 3)
-  -s, --style string              The file name format style (default "go_zero")
+选项：
+  -a, --api_service_name string   API 服务名称
+  -g, --grpc_package string       存储 pb 文件的 RPC 包。例如 github.com/suyuan32/simple-admin-job/types/job
+  -h, --help                      显示帮助信息
+  -j, --json_style string         JSON 标签格式，默认为驼峰式 (默认为 "goZero")
+  -m, --model string              要生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
+      --multiple                  proto 文件是否包含多个服务
+  -o, --output string             输出路径
+  -w, --overwrite                 是否覆盖已生成的文件，它将覆盖所有已生成的文件
+  -p, --proto string              proto 文件路径
+  -n, --rpc_name string           服务上下文中的 RPC 名称。例如 CoreRpc
+  -r, --rpc_service_name string   RPC 服务名称
+  -k, --search_key_num int        搜索键的最大数量 (默认为 3)
+  -s, --style string              文件名格式样式 (默认为 "go_zero")
 ```
 
 ::: info
@@ -299,22 +298,22 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 
 ```shell
 $ goctls api ent --help
-Generate CRUD logic files from ent file
+从 ent 文件生成 CRUD 逻辑文件
 
-Usage:
-  goctl api ent [flags]
+用法：
+  goctl api ent [选项]
 
-Flags:
-  -a, --api_service_name string   The API service name
-  -g, --group string              The group name for logic. e.g. user
-  -h, --help                      help for ent
-  -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
-  -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
-  -o, --output string             The output path
-  -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
-  -c, --schema string             The schema path of the Ent
-  -k, --search_key_num int        The max number of search keys (default 3)
-  -s, --style string              The file name format style (default "go_zero")
+选项：
+  -a, --api_service_name string   API 服务名称
+  -g, --group string              逻辑文件的组名称，例如 user
+  -h, --help                      显示帮助信息
+  -j, --json_style string         JSON 标签格式，默认为驼峰格式 (默认为 "goZero")
+  -m, --model string              要生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
+  -o, --output string             输出路径
+  -w, --overwrite                 是否覆盖已生成的文件，它将覆盖所有已生成的文件
+  -c, --schema string             Ent 的 schema 路径
+  -k, --search_key_num int        搜索键的最大数量 (默认为 3)
+  -s, --style string              文件名格式样式 (默认为 "go_zero")
 ```
 
 **goctls api ent 会同时生成 .api 文件**

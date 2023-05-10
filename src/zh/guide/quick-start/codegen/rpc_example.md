@@ -8,7 +8,7 @@ title: "RPC 微服务"
 ::: warning
 首先确认你安装了以下软件:
 
-- simple-admin-tool (goctls) v1.5.2 +
+- simple-admin-tool (goctls) v1.5.5 +
 
 必须了解 go zero 的 RPC 命令 [RPC 命令](https://go-zero.dev/cn/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC 服务](https://go-zero.dev/cn/docs/advance/rpc-call)
 \
@@ -34,7 +34,7 @@ title: "RPC 微服务"
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.1 --tool_version=v1.5.2 --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.2 --tool_version=v1.5.5 --port=8080 --gitlab=true --desc=true
 ```
 
 > 简单命令
@@ -54,8 +54,8 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 | ent             | 否   | false   | 是否启用 ent                      | true 为启用                                                                                                |
 | module_name     | 否   |         | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
 | style           | 否   | go_zero | 文件名格式                        | go_zero 为蛇形格式                                                                                         |
-| go_zero_version | 否   | v1.5.1  | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v1.5.2  | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
+| go_zero_version | 否   | v1.5.2  | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
+| tool_version    | 否   | v1.5.5  | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
 | gitlab          | 否   | false   | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
 | port            | 否   | 9100    | 端口号                            | 服务暴露的端口号                                                                                           |
 | desc            | 否   | false   | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
@@ -64,27 +64,26 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 
 ```shell
 $ goctls rpc new --help
-Generate rpc demo service
+生成 RPC 示例服务
 
-Usage:
-  goctl rpc new [flags]
+用法：
+  goctl rpc new [选项]
 
-Flags:
-      --branch string            The branch of the remote repo, it does work with --remote
-  -d, --desc                     Whether to create desc folder for splitting proto files
-  -e, --ent                      Whether use Ent in project
-  -g, --gitlab                   Whether to use gitlab-ci
-  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.0, see [https://github.com/zeromicro/go-zero/releases]
-  -h, --help                     help for new
-      --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-      --idea                     For idea plugin [optional]
-  -m, --module_name string       The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
-  -p, --port int                 The service port exposed (default 9110)
-      --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                                 The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-  -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
-  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v0.3.0, see [https://github.com/suyuan32/simple-admin-tools/releases]
-  -v, --verbose                  Enable log output
+选项：
+      --branch string            远程仓库的分支，需要与 --remote 一起使用
+  -d, --desc                     是否为拆分的 proto 文件创建 desc 文件夹
+  -e, --ent                      是否在项目中使用 Ent
+  -g, --gitlab                   是否使用 GitLab CI/CD
+  -z, --go_zero_version string   用于替换的 go zero 版本，例如 v1.5.0，参见 [https://github.com/zeromicro/go-zero/releases]
+  -h, --help                     显示帮助信息
+      --home string              模板的 goctl home 路径，不能与 --remote 同时设置，如果同时设置，则以 --remote 为准
+      --idea                     针对 idea 插件 [可选]
+  -m, --module_name string       在 go.mod 中的模块名称，例如 github.com/suyuan32/simple-admin-core
+  -p, --port int                 暴露的服务端口号 (默认为 9110)
+      --remote string            模板的远程 git 仓库，不能与 --home 同时设置，如果同时设置，则以 --remote 为准 git 仓库目录结构必须与 https://github.com/zeromicro/go-zero-template 一致
+  -s, --style string             文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (默认为 "go_zero")
+  -t, --tool_version string      用于迁移的 simple admin 工具版本，例如 v0.3.0，参见 [https://github.com/suyuan32/simple-admin-tools/releases]
+  -v, --verbose                  启用日志输出
 ```
 
 > 你可以看到如下项目结构
@@ -242,25 +241,25 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 ```shell
 $ goctls rpc ent --help
-Generate CRUD template codes by Ent
+通过 Ent 生成 CRUD 模板代码
 
-Usage:
-  goctl rpc ent [flags]
+用法：
+  goctl rpc ent [选项]
 
-Flags:
-  -g, --group string               The group name for logic. e.g. user
-  -h, --help                       help for ent
-  -m, --model string               The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
-      --multiple                   Generated in multiple rpc service mode
-  -o, --output string              The output path
-  -w, --overwrite                  Whether to overwrite the files, it will overwrite all generated files
-  -p, --project_name string        The project name
-  -f, --proto_field_style string   The proto field style (default "go_zero")
-  -t, --proto_out string           The output proto file path
-  -c, --schema string              The schema path of the Ent
-  -k, --search_key_num int         The max number of search keys (default 3)
-  -r, --service_name string        The service name
-  -s, --style string               The file name format style (default "go_zero")
+选项：
+  -g, --group string               逻辑文件的组名称，例如 user
+  -h, --help                       显示帮助信息
+  -m, --model string               要生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
+      --multiple                   以多个 RPC 服务模式生成
+  -o, --output string              输出路径
+  -w, --overwrite                  是否覆盖已生成的文件，它将覆盖所有已生成的文件
+  -p, --project_name string        项目名称
+  -f, --proto_field_style string   proto 字段样式 (默认为 "go_zero")
+  -t, --proto_out string           输出 proto 文件的路径
+  -c, --schema string              Ent 的 schema 路径
+  -k, --search_key_num int         搜索键的最大数量 (默认为 3)
+  -r, --service_name string        服务名称
+  -s, --style string               文件名格式样式 (默认为 "go_zero")
 ```
 
 ::: warning

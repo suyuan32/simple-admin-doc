@@ -8,7 +8,7 @@ title: "RPC Service"
 ::: warning
 Make sure that you have been installed follow software:
 
-- simple-admin-tool (goctls) v1.5.2 +
+- simple-admin-tool (goctls) v1.5.5 +
 
 \
 Must know go-zero's RPC command. [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
@@ -31,7 +31,7 @@ Multiple different APIs can access the same RPC to call its functions.
 > Create example project
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.1 --tool_version=v1.5.2 --port=8080  --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.2 --tool_version=v1.5.5 --port=8080  --gitlab=true --desc=true
 ```
 
 > Simpler Command
@@ -50,8 +50,8 @@ Create a project name that only supports lowercase and camelcase
 | --------------- | ---- | ------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ent             | No   | false   | Whether to use Ent                                   | true means use                                                                                                                                                    |
 | module_name     | No   |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
-| go_zero_version | No   | v1.5.1  | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release                                                                          |
-| tool_version    | No   | v1.5.2  | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
+| go_zero_version | No   | v1.5.2  | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release                                                                          |
+| tool_version    | No   | v1.5.5  | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
 | gitlab          | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                                                                                             |
 | port            | No   | 9100    | Port number                                          | The service port                                                                                                                                                  |
 | desc            | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                                                                                |

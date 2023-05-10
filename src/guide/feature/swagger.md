@@ -226,7 +226,7 @@ If handler and logic and so on need to regenerate, you must delete them by yours
 )
 ```
 
-Starting from `goctls v1.5.2`, it supports setting a prefix for the route by setting the `prefix` parameter and regenerating the `handler`.
+Supports setting a prefix for the route by setting the `prefix` parameter and regenerating the `handler`.
 
 ## Go swagger report error
 

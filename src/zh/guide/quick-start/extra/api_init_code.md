@@ -24,16 +24,16 @@ goctls extra init_code --model_name=StudentInfo --target=core --output=D:\projec
 > 运行 `goctls extra init_code -h` 查看更多
 
 ```shell
-Generating initialize code
+生成初始化代码
 
-Usage:
-  goctl extra init_code [flags]
+用法：
+  goctl extra init_code [选项]
 
-Flags:
-  -h, --help                help for init_code
-  -m, --model_name string   The model name, it should be camelcase, such as StudentInfo
-  -o, --output string       The output path, only support core generating, such as ./rpc/internal/logic/base/init_database_api_data.go
-  -t, --target string       The target type, now only support core
+选项：
+  -h, --help                显示帮助信息
+  -m, --model_name string   模型名称，应该采用驼峰命名法，例如 StudentInfo
+  -o, --output string       输出路径，仅支持 core 生成，例如 ./rpc/internal/logic/base/init_database_api_data.go
+  -t, --target string       目标类型，现在仅支持 core
 ```
 
 ### console 生成效果

@@ -221,7 +221,7 @@ func CreateOrUpdateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 )
 ```
 
-在 `goctls v1.5.2` 已支持 prefix 设置路由前缀，只需设置 `prefix` ，并重新生成 `handler` 即可
+支持 prefix 设置路由前缀，只需设置 `prefix` ，并重新生成 `handler` 即可
 
 ## go swagger 报错
 

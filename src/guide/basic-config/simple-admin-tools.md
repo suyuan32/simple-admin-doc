@@ -21,6 +21,10 @@ Due to the rapid iteration of the current version, if there is a problem with co
 If there are still problems, please submit an issue.
 :::
 
+::: info
+[Video Tutorial](https://youtu.be/9AtGgMjBlWU)
+:::
+
 It is a little complex to install the `goctls` due to forking project.
 Let me show you how to build the code by yourself.
 

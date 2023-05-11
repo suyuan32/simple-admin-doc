@@ -1,15 +1,19 @@
 ---
 order: 5
-title: '错误处理'
+title: "错误处理"
 ---
 
 # 错误处理
+
+::: info
+[视频教程](https://www.bilibili.com/video/BV14V4y1r7RQ/)
+:::
 
 ### 错误类型
 
 simple admin 有三种错误类型
 
-- ApiError : Api 错误，用于返回带http状态码的错误返回信息
+- ApiError : Api 错误，用于返回带 http 状态码的错误返回信息
 - CodeError : 业务代码类型错误, 错误状态码统一为 200, 详细状态码在返回体中
 - Status Error: RPC 错误
 
@@ -82,7 +86,7 @@ func NewDefaultError(msg string) error {
 
 > 错误码
 
-所有的错误码都放在 `github.com/suyuan32/simple-admin-common/enum/errorcode` 中， 默认前 17 个错误码与 grpc保持一致， 你也可以自己添加错误码
+所有的错误码都放在 `github.com/suyuan32/simple-admin-common/enum/errorcode` 中， 默认前 17 个错误码与 grpc 保持一致， 你也可以自己添加错误码
 
 ```go
 package enum
@@ -295,10 +299,10 @@ func NewApiBadGatewayError(msg string) error {
 ```
 
 ::: warning
-所有错误都会被自动翻译， 不为0的错误会在前端产生弹窗， 通过 api ErrorMessageMode 控制
-> 在生成 Api 的时候使用 --trans_err=true 会在 handler 使用翻译
-:::
+所有错误都会被自动翻译， 不为 0 的错误会在前端产生弹窗， 通过 api ErrorMessageMode 控制
 
+> 在生成 Api 的时候使用 --trans_err=true 会在 handler 使用翻译
+> :::
 
 ```shell
 goctls api go --api ./api/desc/core.api --dir ./api --trans_err=true
@@ -356,5 +360,5 @@ func CreateApiHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 err = svcCtx.Trans.TransError(r.Context(), err)
 
 ::: warning
-CodeError 是将错误码写在返回体中，返回的状态全部为 200 StatusOK, 若需要返回带http请求状态码的错误信息，请使用 errorx.ApiError.
+CodeError 是将错误码写在返回体中，返回的状态全部为 200 StatusOK, 若需要返回带 http 请求状态码的错误信息，请使用 errorx.ApiError.
 :::

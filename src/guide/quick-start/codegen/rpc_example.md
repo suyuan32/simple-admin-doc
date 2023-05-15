@@ -49,6 +49,7 @@ Create a project name that only supports lowercase and camelcase
 | Parameter       | Must | Default | Introduction                                         | Usage                                                                                                                                                             |
 | --------------- | ---- | ------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ent             | No   | false   | Whether to use Ent                                   | true means use                                                                                                                                                    |
+| i18n            | No   | false   | Whether to use i18n                                  | true means use                                                                                                                                                    |
 | module_name     | No   |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
 | go_zero_version | No   | v1.5.2  | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release                                                                          |
 | tool_version    | No   | v1.5.5  | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
@@ -71,16 +72,17 @@ Flags:
   -d, --desc                     Whether to create desc folder for splitting proto files
   -e, --ent                      Whether use Ent in project
   -g, --gitlab                   Whether to use gitlab-ci
-  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.0, see [https://github.com/zeromicro/go-zero/releases]
+  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.2, see [https://github.com/zeromicro/go-zero/releases] (default "v1.5.2")
   -h, --help                     help for new
       --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+  -i, --i18n                     Whether to use i18n
       --idea                     For idea plugin [optional]
   -m, --module_name string       The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
   -p, --port int                 The service port exposed (default 9110)
       --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
                                  The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
   -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
-  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v0.3.0, see [https://github.com/suyuan32/simple-admin-tools/releases]
+  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v1.5.5, see [https://github.com/suyuan32/simple-admin-tools/releases] (default "v1.5.6")
   -v, --verbose                  Enable log output
 ```
 
@@ -222,6 +224,7 @@ make gen-rpc
 | multiple          | No   | false   | Multiple Service                     | If your proto file contains multiple service, you should set true                                                                                                                                                                                                                     |
 | proto_out         | No   |         | Proto file output directory          | If it is empty, the data will be generated to the proto file in the root directory of the project, otherwise it will be generated in the specified path desc, such as ./desc/student.proto, note that the folder storing proto must be desc, and there can be sub-files inside folder |
 | proto_field_style | no   | go_zero | proto field naming format            | default is underscore                                                                                                                                                                                                                                                                 |
+| i18n              | No   | false   | Whether to use i18n                  | true means use                                                                                                                                                                                                                                                                        |
 | overwrite         | No   | false   | Whether it covers the generated file | `true` will cover all generated files                                                                                                                                                                                                                                                 |
 
 ::: info
@@ -246,6 +249,7 @@ Usage:
 Flags:
   -g, --group string               The group name for logic. e.g. user
   -h, --help                       help for ent
+  -i, --i18n                       Whether to use i18n
   -m, --model string               The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
       --multiple                   Generated in multiple rpc service mode
   -o, --output string              The output path

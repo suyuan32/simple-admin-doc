@@ -202,6 +202,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | ---------------- | ---- | ------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | proto            | Yes  |         | Proto file path                                 | Input the absolute path of proto file. **It should be the proto in `root` directory, not in desc. Because it needs package data and `Base` data.** |
 | style            | No   | go_zero | File name format                                | The go_zero means snack format                                                                                                                     |
+| i18n             | No   | false   | Whether to use i18n                             | true means use                                                                                                                                     |
 | api_service_name | Yes  |         | API Service name                                | The API service name set in `.api` file                                                                                                            |
 | rpc_service_name | Yes  |         | RPC Service name                                | The RPC service name set in `.proto` file                                                                                                          |
 | output           | Yes  |         | Output path                                     | The output path，it can be relative path. It should target to the root path of project.                                                            |
@@ -225,6 +226,7 @@ Flags:
   -a, --api_service_name string   The API service name
   -g, --grpc_package string       The rpc package which stores pb file. e.g. github.com/suyuan32/simple-admin-job/types/job
   -h, --help                      help for proto
+  -i, --i18n                      Whether to use i18n
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
   -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
       --multiple                  Whether the proto contains multiple services
@@ -235,6 +237,7 @@ Flags:
   -r, --rpc_service_name string   The RPC service name
   -k, --search_key_num int        The max number of search keys (default 3)
   -s, --style string              The file name format style (default "go_zero")
+
 ```
 
 ::: info
@@ -276,6 +279,7 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 | ---------------- | -------- | ------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------- |
 | schema           | Yes      |         | The address of the Ent schema file.                                            | Enter the relative path of the Ent schema folder.                   |
 | style            | No       | go_zero | The format of the file name.                                                   | snake case format for go_zero.                                      |
+| i18n             | No       | false   | Whether to use i18n                                                            | true means use                                                      |
 | api_service_name | Yes      |         | The service name of the API, used in the API declaration file.                 | In the API declaration file.                                        |
 | output           | Yes      |         | The output location of the file, relative path is accepted.                    | Points to the main file directory.                                  |
 | model            | Yes      |         | The name of the model in the schema.                                           | The internal struct name in the schema, such as Student in example. |
@@ -301,6 +305,7 @@ Flags:
   -a, --api_service_name string   The API service name
   -g, --group string              The group name for logic. e.g. user
   -h, --help                      help for ent
+  -i, --i18n                      Whether to use i18n
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
   -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
   -o, --output string             The output path

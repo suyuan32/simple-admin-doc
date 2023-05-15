@@ -203,6 +203,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                                                                                                          |
 | ---------------- | ---- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | proto            | 是   |         | proto 文件地址                | 输入 proto 文件的绝对路径。 **注意要为合并后的 proto 即根目录下的 proto ，不是 desc 文件夹中的，因为要获取 package 和 Base 结构** |
+| i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                                                                                                       |
 | style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                                                                                                |
 | api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中                                                                                        |
 | rpc_service_name | 是   |         | 服务名称                      | rpc 服务的名称, 与 proto 文件中的 service 名称一致                                                                                |
@@ -220,23 +221,24 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 $ goctls api proto --help
 从 proto 文件生成 CRUD 模板
 
-用法：
-  goctl api proto [选项]
+Usage:
+  goctl api proto [flags]
 
-选项：
+Flags:
   -a, --api_service_name string   API 服务名称
-  -g, --grpc_package string       存储 pb 文件的 RPC 包。例如 github.com/suyuan32/simple-admin-job/types/job
-  -h, --help                      显示帮助信息
-  -j, --json_style string         JSON 标签格式，默认为驼峰式 (默认为 "goZero")
-  -m, --model string              要生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
-      --multiple                  proto 文件是否包含多个服务
+  -g, --grpc_package string       存储 pb 文件的 rpc 包，例如 github.com/suyuan32/simple-admin-job/types/job
+  -h, --help                      help for proto
+  -i, --i18n                      是否启用 i18n 国际化
+  -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
+  -m, --model string              用于生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
+      --multiple                  proto 是否包含多个服务
   -o, --output string             输出路径
-  -w, --overwrite                 是否覆盖已生成的文件，它将覆盖所有已生成的文件
+  -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
   -p, --proto string              proto 文件路径
-  -n, --rpc_name string           服务上下文中的 RPC 名称。例如 CoreRpc
+  -n, --rpc_name string           RPC 服务名称，用于调用，例如 CoreRpc
   -r, --rpc_service_name string   RPC 服务名称
-  -k, --search_key_num int        搜索键的最大数量 (默认为 3)
-  -s, --style string              文件名格式样式 (默认为 "go_zero")
+  -k, --search_key_num int        搜索条件的最大数量，只支持 String 类型 (default 3)
+  -s, --style string              文件名格式样式 (default "go_zero")
 ```
 
 ::: info
@@ -288,6 +290,7 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 | search_key_num   | 否   | 3       | 搜索字段数量（默认为 3）      | 列表搜索字段数量，只能自动生成 string 的字段       |
 | group            | 是   |         | 分组名称                      | 分组名称用于将不同 logic 文件放到不同文件夹        |
 | json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                 |
+| i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                        |
 | overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                        |
 
 ::: info
@@ -298,22 +301,23 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 
 ```shell
 $ goctls api ent --help
-从 ent 文件生成 CRUD 逻辑文件
+从 ent 文件生成 CRUD 业务逻辑文件
 
-用法：
-  goctl api ent [选项]
+Usage:
+  goctl api ent [flags]
 
-选项：
+Flags:
   -a, --api_service_name string   API 服务名称
-  -g, --group string              逻辑文件的组名称，例如 user
-  -h, --help                      显示帮助信息
-  -j, --json_style string         JSON 标签格式，默认为驼峰格式 (默认为 "goZero")
-  -m, --model string              要生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
+  -g, --group string              业务逻辑代码的分组名称，例如 user
+  -h, --help                      help for ent
+  -i, --i18n                      是否启用 i18n 国际化
+  -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
+  -m, --model string              用于生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
   -o, --output string             输出路径
-  -w, --overwrite                 是否覆盖已生成的文件，它将覆盖所有已生成的文件
-  -c, --schema string             Ent 的 schema 路径
-  -k, --search_key_num int        搜索键的最大数量 (默认为 3)
-  -s, --style string              文件名格式样式 (默认为 "go_zero")
+  -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
+  -c, --schema string             Ent 的 schema 文件夹路径
+  -k, --search_key_num int        搜索条件的最大数量，只支持 String 类型 (default 3)
+  -s, --style string              文件名格式样式 (default "go_zero")
 ```
 
 **goctls api ent 会同时生成 .api 文件**

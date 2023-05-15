@@ -59,30 +59,33 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 | gitlab          | 否   | false   | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
 | port            | 否   | 9100    | 端口号                            | 服务暴露的端口号                                                                                           |
 | desc            | 否   | false   | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
+| i18n            | 否   | false   | 是否启用 i18n                     | true 为启用                                                                                                |
 
 ** 详细参数请在命令行查看 `goctls rpc new --help` **
 
 ```shell
 $ goctls rpc new --help
-生成 RPC 示例服务
+生成 rpc 演示服务
 
-用法：
-  goctl rpc new [选项]
+Usage:
+  goctl rpc new [flags]
 
-选项：
-      --branch string            远程仓库的分支，需要与 --remote 一起使用
-  -d, --desc                     是否为拆分的 proto 文件创建 desc 文件夹
+Flags:
+      --branch string            远程 repo 的分支，与 --remote 一起使用
+  -d, --desc                     是否为拆分 proto 文件创建 desc 文件夹
   -e, --ent                      是否在项目中使用 Ent
-  -g, --gitlab                   是否使用 GitLab CI/CD
-  -z, --go_zero_version string   用于替换的 go zero 版本，例如 v1.5.0，参见 [https://github.com/zeromicro/go-zero/releases]
-  -h, --help                     显示帮助信息
-      --home string              模板的 goctl home 路径，不能与 --remote 同时设置，如果同时设置，则以 --remote 为准
-      --idea                     针对 idea 插件 [可选]
-  -m, --module_name string       在 go.mod 中的模块名称，例如 github.com/suyuan32/simple-admin-core
-  -p, --port int                 暴露的服务端口号 (默认为 9110)
-      --remote string            模板的远程 git 仓库，不能与 --home 同时设置，如果同时设置，则以 --remote 为准 git 仓库目录结构必须与 https://github.com/zeromicro/go-zero-template 一致
-  -s, --style string             文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (默认为 "go_zero")
-  -t, --tool_version string      用于迁移的 simple admin 工具版本，例如 v0.3.0，参见 [https://github.com/suyuan32/simple-admin-tools/releases]
+  -g, --gitlab                   是否使用 gitlab-ci
+  -z, --go_zero_version string   用于替换的 go zero 版本，例如：v1.5.2，请参见 [https://github.com/zeromicro/go-zero/releases] (default "v1.5.2")
+  -h, --help                     help for new
+      --home string              模板的 goctl 路径，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
+  -i, --i18n                     是否启用 i18n 国际化
+      --idea                     对于 idea 插件 [可选]
+  -m, --module_name string       go.mod 中的模块名称，例如：github.com/suyuan32/simple-admin-core
+  -p, --port int                 服务公开的端口 (default 9110)
+      --remote string            模板的远程 git repo，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
+                                 Git repo 的目录结构必须与 https://github.com/zeromicro/go-zero-template 相一致
+  -s, --style string             文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -t, --tool_version string      用于迁移的 simple admin 工具版本，例如：v1.5.5，请参见 [https://github.com/suyuan32/simple-admin-tools/releases] (default "v1.5.6")
   -v, --verbose                  启用日志输出
 ```
 
@@ -216,6 +219,7 @@ make gen-rpc
 | ----------------- | ---- | ------- | ------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | schema            | 是   |         | schema 文件地址          | 输入 Ent schema 文件夹相对路径                                                                                                                                 |
 | style             | 否   | go_zero | 文件名格式               | go_zero 为蛇形格式                                                                                                                                             |
+| i18n              | 否   | false   | 是否启用 i18n            | true 为启用                                                                                                                                                    |
 | service_name      | 是   |         | 服务名称                 | 和 proto 文件中的 service 名称相同                                                                                                                             |
 | project_name      | 是   |         | 项目名称                 | 和 new 时的名称相同，和 main 文件名一致, 在 multiple 模式下需要设置，单 service 默认和 service name 相同                                                       |
 | output            | 是   |         | 输出位置                 | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                                               |
@@ -243,23 +247,24 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 $ goctls rpc ent --help
 通过 Ent 生成 CRUD 模板代码
 
-用法：
-  goctl rpc ent [选项]
+Usage:
+  goctl rpc ent [flags]
 
-选项：
-  -g, --group string               逻辑文件的组名称，例如 user
-  -h, --help                       显示帮助信息
-  -m, --model string               要生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
-      --multiple                   以多个 RPC 服务模式生成
+Flags:
+  -g, --group string               逻辑的组名称，例如：user
+  -h, --help                       help for ent
+  -i, --i18n                       是否启用 i18n 国际化
+  -m, --model string               生成的模型名称，例如：user，如果为空，则为 schema 目录中所有模型生成代码
+      --multiple                   在多个 rpc 服务模式下生成
   -o, --output string              输出路径
-  -w, --overwrite                  是否覆盖已生成的文件，它将覆盖所有已生成的文件
+  -w, --overwrite                  是否覆盖文件，它将覆盖所有生成的文件
   -p, --project_name string        项目名称
-  -f, --proto_field_style string   proto 字段样式 (默认为 "go_zero")
-  -t, --proto_out string           输出 proto 文件的路径
+  -f, --proto_field_style string   proto 字段样式 (default "go_zero")
+  -t, --proto_out string           输出 proto 文件路径
   -c, --schema string              Ent 的 schema 路径
-  -k, --search_key_num int         搜索键的最大数量 (默认为 3)
+  -k, --search_key_num int         搜索键的最大数量 (default 3)
   -r, --service_name string        服务名称
-  -s, --style string               文件名格式样式 (默认为 "go_zero")
+  -s, --style string               文件名格式样式 (default "go_zero")
 ```
 
 ::: warning

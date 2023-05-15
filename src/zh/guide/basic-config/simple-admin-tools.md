@@ -19,6 +19,13 @@ Simple admin tools 是一个基于 go-zero 的 fork 项目。
 
 ::: warning
 由于目前版本迭代较快，如果代码生成出现问题，请先 `git pull` 下载最新代码重新编译，如果还有问题，欢迎提交 issue
+
+现已支持中文，只需要设置环境变量 SIMPLE_ADMIN_TOOLS_LANG=zh 即可
+
+```shell
+SIMPLE_ADMIN_TOOLS_LANG=zh goctls -h
+```
+
 :::
 
 ::: info

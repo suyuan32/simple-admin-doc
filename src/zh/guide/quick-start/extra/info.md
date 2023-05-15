@@ -6,6 +6,12 @@ title: "查看信息命令"
 ## 查看信息命令
 
 ```shell
+goctls info env
+```
+
+> 帮助信息
+
+```shell
 查看额外信息，如环境变量和项目端口使用情况
 
 Usage:

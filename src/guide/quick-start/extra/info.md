@@ -6,6 +6,12 @@ title: "Show Info Command"
 ## Show Info Command
 
 ```shell
+goctls info env
+```
+
+> Help
+
+```shell
 View additional information, such as environment variables and project port usage.
 
 Usage:

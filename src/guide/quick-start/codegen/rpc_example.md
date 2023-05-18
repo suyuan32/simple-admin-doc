@@ -225,6 +225,7 @@ make gen-rpc
 | proto_out         | No   |         | Proto file output directory          | If it is empty, the data will be generated to the proto file in the root directory of the project, otherwise it will be generated in the specified path desc, such as ./desc/student.proto, note that the folder storing proto must be desc, and there can be sub-files inside folder |
 | proto_field_style | no   | go_zero | proto field naming format            | default is underscore                                                                                                                                                                                                                                                                 |
 | i18n              | No   | false   | Whether to use i18n                  | true means use                                                                                                                                                                                                                                                                        |
+| import_prefix     | No   |         | The path prefix of import            | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc                                                                                                                                                                                  |
 | overwrite         | No   | false   | Whether it covers the generated file | `true` will cover all generated files                                                                                                                                                                                                                                                 |
 
 ::: info
@@ -250,6 +251,7 @@ Flags:
   -g, --group string               The group name for logic. e.g. user
   -h, --help                       help for ent
   -i, --i18n                       Whether to use i18n
+  -x, --import_prefix string       Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
   -m, --model string               The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
       --multiple                   Generated in multiple rpc service mode
   -o, --output string              The output path

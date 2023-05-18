@@ -213,6 +213,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 | grpc_package     | 是   |         | RPC \*\_grpc.go 包路径        | 在 example 中是 github.com/suyuan32/simple-admin-example-rpc/example                                                              |
 | multiple         | 否   | false   | 多服务                        | 若 proto 文件中有多个 service, 需要设置为 true                                                                                    |
 | json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                                                                                |
+| import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                                                                 |
 | overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                                                                       |
 
 **详细参数请在命令行查看 `goctls api proto --help`**
@@ -229,6 +230,7 @@ Flags:
   -g, --grpc_package string       存储 pb 文件的 rpc 包，例如 github.com/suyuan32/simple-admin-job/types/job
   -h, --help                      help for proto
   -i, --i18n                      是否启用 i18n 国际化
+  -x, --import_prefix string      导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
   -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
   -m, --model string              用于生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
       --multiple                  proto 是否包含多个服务
@@ -280,18 +282,19 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
 ```
 
-| 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                           |
-| ---------------- | ---- | ------- | ----------------------------- | -------------------------------------------------- |
-| schema           | 是   |         | schema 文件地址               | 输入 Ent schema 文件夹相对路径                     |
-| style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                 |
-| api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中         |
-| output           | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录   |
-| model            | 是   |         | 模型名称                      | schema 中内部 struct 名称，如 example 中的 Student |
-| search_key_num   | 否   | 3       | 搜索字段数量（默认为 3）      | 列表搜索字段数量，只能自动生成 string 的字段       |
-| group            | 是   |         | 分组名称                      | 分组名称用于将不同 logic 文件放到不同文件夹        |
-| json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                 |
-| i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                        |
-| overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                        |
+| 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                                          |
+| ---------------- | ---- | ------- | ----------------------------- | ----------------------------------------------------------------- |
+| schema           | 是   |         | schema 文件地址               | 输入 Ent schema 文件夹相对路径                                    |
+| style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                                |
+| api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中                        |
+| output           | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录                  |
+| model            | 是   |         | 模型名称                      | schema 中内部 struct 名称，如 example 中的 Student                |
+| search_key_num   | 否   | 3       | 搜索字段数量（默认为 3）      | 列表搜索字段数量，只能自动生成 string 的字段                      |
+| group            | 是   |         | 分组名称                      | 分组名称用于将不同 logic 文件放到不同文件夹                       |
+| json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                |
+| i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                                       |
+| import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api |
+| overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                       |
 
 ::: info
 快捷命令 `make gen-api-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致
@@ -311,6 +314,7 @@ Flags:
   -g, --group string              业务逻辑代码的分组名称，例如 user
   -h, --help                      help for ent
   -i, --i18n                      是否启用 i18n 国际化
+  -x, --import_prefix string      导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
   -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
   -m, --model string              用于生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
   -o, --output string             输出路径

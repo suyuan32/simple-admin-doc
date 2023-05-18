@@ -229,6 +229,7 @@ make gen-rpc
 | multiple          | 否   | false   | 多服务                   | 若 proto 文件中有多个 service, 需要设置为 true                                                                                                                 |
 | proto_out         | 否   |         | 是否拆分 proto 文件      | 若为空则会将数据生成到项目根目录的 proto 文件，否则将会生成到指定路径 desc 中，如 ./desc/student.proto, 注意存放 proto 的文件夹必须为 desc, 内部可以有子文件夹 |
 | proto_field_style | 否   | go_zero | proto 字段命名格式       | 默认为下划线                                                                                                                                                   |
+| import_prefix     | 否   |         | 导入路径前缀             | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                                                                                              |
 | overwrite         | 否   | false   | 是否覆盖生成文件         | true 则会覆盖所有生成的文件                                                                                                                                    |
 
 ::: info
@@ -254,6 +255,7 @@ Flags:
   -g, --group string               逻辑的组名称，例如：user
   -h, --help                       help for ent
   -i, --i18n                       是否启用 i18n 国际化
+  -x, --import_prefix string       导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
   -m, --model string               生成的模型名称，例如：user，如果为空，则为 schema 目录中所有模型生成代码
       --multiple                   在多个 rpc 服务模式下生成
   -o, --output string              输出路径

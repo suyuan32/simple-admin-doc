@@ -41,7 +41,7 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 ```
 
 ::: warning
-Create a project name that only supports lowercase and camelcase
+The project name only supports lowercase and camelcase and must be not contains `rpc` words.
 :::
 
 ### `rpc new` parameters
@@ -205,7 +205,7 @@ make gen-ent
 ### Generate Student CRUD logic codes
 
 ```shell
-goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --output=./ --model=Student --group=student --proto_out=./desc/student.proto
+goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=Example --output=./ --model=Student --group=student --proto_out=./desc/student.proto
 
 make gen-rpc
 ```

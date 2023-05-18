@@ -44,7 +44,7 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 ```
 
 ::: warning
-创建项目名称仅支持小写和驼峰命名
+创建项目名称仅支持小写和驼峰命名, 项目名称不能包含 rpc 字符
 :::
 
 ### `rpc new`参数介绍
@@ -208,7 +208,7 @@ make gen-ent
 ### 生成 Student 逻辑代码
 
 ```shell
-goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=example --output=./ --model=Student --group=student --proto_out=./desc/student.proto
+goctls rpc ent --schema=./ent/schema  --style=go_zero --multiple=false --service_name=Example --output=./ --model=Student --group=student --proto_out=./desc/student.proto
 
 make gen-rpc
 ```

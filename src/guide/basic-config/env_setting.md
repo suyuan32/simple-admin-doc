@@ -119,6 +119,9 @@ CasbinConf:
     e = some(where (p.eft == allow))
     [matchers]
     m = r.sub == p.sub && keyMatch2(r.obj,p.obj) && r.act == p.act
+
+I18nConf:
+  Dir: # The external path of the I18n file, if it is not empty, it will read the external, if it is empty, it will read the i18n file inside the binary file
 ```
 
 ::: warning

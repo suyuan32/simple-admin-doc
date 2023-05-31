@@ -118,6 +118,9 @@ CasbinConf:
     e = some(where (p.eft == allow))
     [matchers]
     m = r.sub == p.sub && keyMatch2(r.obj,p.obj) && r.act == p.act
+
+I18nConf:
+  Dir: # I18n 文件的外部路径，若不为空则会读取外部，若为空则读取二进制文件内部的i18n文件
 ```
 
 ::: warning

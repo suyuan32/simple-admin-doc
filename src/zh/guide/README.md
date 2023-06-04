@@ -4,10 +4,37 @@ icon: book
 author: Ryan SU
 ---
 
-<div align="center">
-<img src="https://i.postimg.cc/nh8mVKkf/logo.png" width="300px" height="300px"/>
-<h1>Simple Admin</h1>
-</div>
+::: info Simple Admin 星球免费加入！
+
+> 项目地址：https://doc.ryansu.pro/zh/ \
+> 待添加的功能： https://github.com/users/suyuan32/projects/1/views/1 \
+> 推荐开发模块方向：https://github.com/users/suyuan32/projects/5/views/1
+
+现招募第一批体验用户，由于星球刚成立，内容还不太多，我们将提供一批免费用户名额(约 30-50 人)。
+如何获得资格？
+
+- 1. **使用 Simple Admin 开发的模块且 star 大于 20 的开源项目的所有者**
+- 2. **使用 Simple Admin 开发的模块， 文档详细且内容丰富的开源项目所有者**
+- 3. **为 Simple Admin 任意项目贡献代码行数大于 100 的开发者**
+- 4. **在各个渠道推荐 Simple Admin 的积极用户，邀请进微信群 5 人以上即可**
+
+为什么要创建知识星球？
+
+1. 新用户重复提问，重复问题没有时间回答
+2. 知识星球提供一个大家分享自己开发的模块的平台，可以帮助大家快速获得 star
+3. 管理员时间也很宝贵，项目的文档和视频已经很详细了，没有太多时间为新手提供回答，特别是重复的回答
+4. 提供额外的学习文档和视频，方便新手快速学会微服务架构
+5. 免费的项目是不可持续的，我们提供了免费的项目，但是没有精力作为免费的客服回答 golang 初学者问题，而且群聊无法查看历史信息，导致大量重复问答
+
+**注意： Simple Admin Core 和 Backend UI 等基础项目是永久免费的，星球只是提供一个提供额外交流的平台**
+
+知识星球内的提问管理员会尽量回答，有需求的可以加入，qq 群和微信群仍会正常运行，但是重复的或者文档有的问题不再回复, 大家也可以在 github 上提 issue ，有时间会回答的， 不过回复会慢些。
+
+项目文档和视频都很详细，不一定要加入星球，不过接下来会在星球中持续更新基于 **Simple Admin 的商城系统**，欢迎感兴趣的朋友加入，跟着官方学习 go 语言的分布式商城系统开发。
+
+![加入链接](https://github.com/suyuan32/simple-admin-core/assets/21239039/9bc9c771-8101-45fc-b94a-ad22dde5724f)
+
+:::
 
 ## **中文** | [English](./README.En.md)
 

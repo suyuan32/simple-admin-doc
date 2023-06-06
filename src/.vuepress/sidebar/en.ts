@@ -48,6 +48,10 @@ export const enSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "Version Upgrade",
+          link: "upgrade",
+        },
+        {
           text: "FAQ",
           link: "FAQ",
         },

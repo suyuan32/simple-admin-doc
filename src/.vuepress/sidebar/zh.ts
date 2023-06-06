@@ -48,6 +48,10 @@ export const zhSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "版本升级",
+          link: "upgrade",
+        },
+        {
           text: "常见问题",
           link: "FAQ",
         },

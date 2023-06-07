@@ -71,6 +71,10 @@ type Config struct {
 
 ## How to configure the Windows environment?
 
+::: info
+Please install golang in windows firstly.
+:::
+
 > **First install `git`, we need `git bash` command line to execute linux commands** \
 > **Secondly, you need to install the `make` command, we install it through [Chocolatey](https://chocolatey.org/install#individual)**
 

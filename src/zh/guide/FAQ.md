@@ -71,6 +71,10 @@ type Config struct {
 
 ## 如何配置 Windows 环境？
 
+::: info
+先自行下载 windows 下的 golang exe 安装包安装
+:::
+
 > **首先安装 `git` , 我们需要 `git bash` 命令行执行 linux 命令** \
 > **其次需要安装 `make` 命令， 我们通过 [Chocolatey](https://chocolatey.org/install#individual) 进行安装**
 

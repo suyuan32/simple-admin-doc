@@ -11,8 +11,4 @@ title: "项目规范"
 ## RPC 规范
 
 - proto 文件拆分定义在 desc 文件夹中
-- `SetNotEmpty` 只支持 string 和 int - float 类型，对于 bool 只能使用 `Set`
-
-::: info
-如果你想判断 `string,bool` 是否为空，需要在 `proto` 文件设置字段为 `optinal`, 在 `api` 层设置字段为指针，在 `set` 时判断下 `if in.val != nil`
-:::
+- 可选字段使用 optional

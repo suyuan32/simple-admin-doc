@@ -122,6 +122,11 @@ CasbinConf:
 
 I18nConf:
   Dir: # The external path of the I18n file, if it is not empty, it will read the external, if it is empty, it will read the i18n file inside the binary file
+
+ProjectConf:
+  DefaultRole: 1 # default role id when register
+  DefaultDepartment: 1 # default department id when register
+  DefaultPosition: 1 # default position id when register
 ```
 
 ::: warning

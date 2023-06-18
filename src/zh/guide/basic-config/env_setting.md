@@ -121,6 +121,11 @@ CasbinConf:
 
 I18nConf:
   Dir: # I18n 文件的外部路径，若不为空则会读取外部，若为空则读取二进制文件内部的i18n文件
+
+ProjectConf:
+  DefaultRole: 1 # 注册用户默认的角色ID
+  DefaultDepartment: 1 # 注册用户默认的部门 ID
+  DefaultPosition: 1 # 注册用户默认的职位 ID
 ```
 
 ::: warning

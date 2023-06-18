@@ -350,22 +350,24 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
 })
 ```
 
-> Not Empty Update 模板
+默认使用 ID 排序，可以不用设置
+
+> Set Not Nil 模板
 
 用于部分更新数据，例如：
 
 ```go
 func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core.BaseResp, error) {
 	err := l.svcCtx.DB.Department.UpdateOneID(in.Id).
-		SetNotEmptyStatus(uint8(in.Status)).
-		SetNotEmptySort(in.Sort).
-		SetNotEmptyName(in.Name).
-		SetNotEmptyAncestors(in.Ancestors).
-		SetNotEmptyLeader(in.Leader).
-		SetNotEmptyPhone(in.Phone).
-		SetNotEmptyEmail(in.Email).
-		SetNotEmptyRemark(in.Remark).
-		SetNotEmptyParentID(in.ParentId).
+		SetNotNilStatus(uint8(in.Status)).
+		SetNotNilSort(in.Sort).
+		SetNotNilName(in.Name).
+		SetNotNilAncestors(in.Ancestors).
+		SetNotNilLeader(in.Leader).
+		SetNotNilPhone(in.Phone).
+		SetNotNilEmail(in.Email).
+		SetNotNilRemark(in.Remark).
+		SetNotNilParentID(in.ParentId).
 		Exec(l.ctx)
 	if err != nil {
 		switch {
@@ -386,10 +388,8 @@ func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core
 ```
 
 ::: warning
-not empty update 只支持字符和数字类型，不支持布尔和 UUID,需要自行判断
+SetNotNil 用于更新数据，若指针为 nil 则不更新
 :::
-
-默认使用 ID 排序，可以不用设置
 
 > 常见结果返回函数，用于 query 末尾
 
@@ -424,17 +424,17 @@ SaveX(context.Background())
 func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) {
 	err := entx.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
 		updateQuery := tx.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).
-			SetNotEmptyUsername(in.Username).
-			SetNotEmptyNickname(in.Nickname).
-			SetNotEmptyEmail(in.Email).
-			SetNotEmptyMobile(in.Mobile).
-			SetNotEmptyAvatar(in.Avatar).
-			SetNotEmptyHomePath(in.HomePath).
-			SetNotEmptyDescription(in.Description).
-			SetNotEmptyDepartmentID(in.DepartmentId)
+			SetNotNilUsername(in.Username).
+			SetNotNilNickname(in.Nickname).
+			SetNotNilEmail(in.Email).
+			SetNotNilMobile(in.Mobile).
+			SetNotNilAvatar(in.Avatar).
+			SetNotNilHomePath(in.HomePath).
+			SetNotNilDescription(in.Description).
+			SetNotNilDepartmentID(in.DepartmentId)
 
-		if in.Password != "" {
-			updateQuery = updateQuery.SetNotEmptyPassword(utils.BcryptEncrypt(in.Password))
+		if in.Password != nil {
+			updateQuery = updateQuery.SetNotNilPassword(utils.BcryptEncrypt(in.Password))
 		}
 
 		if in.RoleIds != nil {

@@ -349,22 +349,24 @@ apis, err := l.svcCtx.DB.API.Query().Where(predicates...).Page(l.ctx, in.Page, i
 })
 ```
 
-> Not Empty Update template
+By default, we order by ID, you do not need to set it.
+
+> Set Not Nil template
 
 Used to partially update data, for example:
 
 ```go
 func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core.BaseResp, error) {
 	err := l.svcCtx.DB.Department.UpdateOneID(in.Id).
-		SetNotEmptyStatus(uint8(in.Status)).
-		SetNotEmptySort(in.Sort).
-		SetNotEmptyName(in.Name).
-		SetNotEmptyAncestors(in.Ancestors).
-		SetNotEmptyLeader(in.Leader).
-		SetNotEmptyPhone(in.Phone).
-		SetNotEmptyEmail(in.Email).
-		SetNotEmptyRemark(in.Remark).
-		SetNotEmptyParentID(in.ParentId).
+		SetNotNilStatus(uint8(in.Status)).
+		SetNotNilSort(in.Sort).
+		SetNotNilName(in.Name).
+		SetNotNilAncestors(in.Ancestors).
+		SetNotNilLeader(in.Leader).
+		SetNotNilPhone(in.Phone).
+		SetNotNilEmail(in.Email).
+		SetNotNilRemark(in.Remark).
+		SetNotNilParentID(in.ParentId).
 		Exec(l.ctx)
 	if err != nil {
 		switch {
@@ -385,10 +387,8 @@ func (l *UpdateDepartmentLogic) UpdateDepartment(in *core.DepartmentInfo) (*core
 ```
 
 ::: warning
-not empty update only supports string and number types such as float, int, does not support Boolean and UUID, you need to judge them by yourself
+SetNotNil function is used to update data only when pointer is not nil.
 :::
-
-By default, we order by ID, you do not need to set it.
 
 ### Common functions used in query
 
@@ -423,17 +423,17 @@ The project provides the WithTx method to use database transactions locally, tak
 func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) {
 	err := entx.WithTx(l.ctx, l.svcCtx.DB, func(tx *ent.Tx) error {
 		updateQuery := tx.User.UpdateOneID(uuidx.ParseUUIDString(in.Id)).
-			SetNotEmptyUsername(in.Username).
-			SetNotEmptyNickname(in.Nickname).
-			SetNotEmptyEmail(in.Email).
-			SetNotEmptyMobile(in.Mobile).
-			SetNotEmptyAvatar(in.Avatar).
-			SetNotEmptyHomePath(in.HomePath).
-			SetNotEmptyDescription(in.Description).
-			SetNotEmptyDepartmentID(in.DepartmentId)
+			SetNotNilUsername(in.Username).
+			SetNotNilNickname(in.Nickname).
+			SetNotNilEmail(in.Email).
+			SetNotNilMobile(in.Mobile).
+			SetNotNilAvatar(in.Avatar).
+			SetNotNilHomePath(in.HomePath).
+			SetNotNilDescription(in.Description).
+			SetNotNilDepartmentID(in.DepartmentId)
 
-		if in.Password != "" {
-			updateQuery = updateQuery.SetNotEmptyPassword(utils.BcryptEncrypt(in.Password))
+		if in.Password != nil {
+			updateQuery = updateQuery.SetNotNilPassword(utils.BcryptEncrypt(in.Password))
 		}
 
 		if in.RoleIds != nil {

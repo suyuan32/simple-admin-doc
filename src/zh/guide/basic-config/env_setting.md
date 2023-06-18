@@ -25,6 +25,10 @@ title: "本地开发环境配置"
 
 ## 后端部署
 
+::: warning
+除非要二次开发 core 服务， 否则建议直接接入官方镜像， 参考教程 [直接接入 Core 服务](https://www.bilibili.com/video/BV1do4y1g7VL)
+:::
+
 ### simple admin core
 
 simple admin core 是核心代码，主要负责用户注册鉴权和充当网关的角色以及后台的各类配置。

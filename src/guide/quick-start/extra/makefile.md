@@ -26,3 +26,7 @@ Flags:
   -t, --service_type string   Service type: api, single, or rpc.
   -s, --style string          The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md]
 ```
+
+::: warning
+If run `goctls extra makefile` without any params，goctls will try to load configuration from original makefile.
+:::

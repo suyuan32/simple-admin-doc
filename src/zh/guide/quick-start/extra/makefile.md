@@ -26,3 +26,7 @@ Flags:
   -t, --service_type string   服务类型，api, single 或者 rpc
   -s, --style string          文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md]
 ```
+
+::: warning
+如果执行 `goctls extra makefile` 不加任何参数，goctls 将会尝试自动读取原 makefile 内的配置
+:::

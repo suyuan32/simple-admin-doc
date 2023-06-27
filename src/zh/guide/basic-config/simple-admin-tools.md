@@ -39,7 +39,7 @@ SIMPLE_ADMIN_TOOLS_LANG=zh goctls -h
 > 构建 goctls
 
 ::: warning
-**`Windows` 用户建议在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发, 你也可以自行配置环境， 参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
+**`Windows` 用户建议参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境) 环境配置, 你也可以使用 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)**
 :::
 
 ```shell

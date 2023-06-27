@@ -31,7 +31,7 @@ Let me show you how to build the code by yourself.
 > Build goctls
 
 ::: warning
-**`Windows` users are recommended to develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment, you can also cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment).**
+**`Windows` users are recommended to cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment), you can also develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment.**
 :::
 
 ```shell

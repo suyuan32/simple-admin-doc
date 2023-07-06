@@ -13,6 +13,18 @@ A: Account: `admin` Password: `simple-admin`
 
 A: The default role after successful registration is a staff, without the permission to log in. You need to modify the role permissions or set the user's role to administrator.
 
+::: info
+The new version now supports configuring the default role, department, and position of registered users through ProjectConf:
+
+```yaml
+ProjectConf:
+  DefaultRoleId: 2
+  DefaultDepartmentId: 1
+  DefaultPositionId: 1
+```
+
+:::
+
 ## How many ways does go-zero have for service registration and discovery?
 
 A: 3 kinds [go-zero](https://mp.weixin.qq.com/s/-WaWJaM_ePEQOf7ExNJe7w)

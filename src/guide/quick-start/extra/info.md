@@ -108,6 +108,57 @@ CAPTCHA
 +--------------------+------------------------------------------------------+
 ```
 
+> Show the supported services
+
+```shell
+goctls info env -l
+```
+
+```shell
+Service
++--------------+-------------------------+
+| SERVICE NAME | INTRODUCTION            |
++--------------+-------------------------+
+| core         | Core Service            |
+| fms          | File Management Service |
+| mcms         | Message Center Service  |
++--------------+-------------------------+
+```
+
+> Show the target service's environment variables
+
+```shell
+goctls info env -s mcms
+```
+
+```shell
+Simple Admin's environment variables
+Notice: Environment variables have priority over configuration files
+MCMS
+EMAIL
++-----------------+---------------------------------------------------------------+
+| KEY             | INTRODUCTION                                                  |
++-----------------+---------------------------------------------------------------+
+| EMAIL_AUTH_TYPE | Authentication type for the email, supports plain and CRAMMD5 |
+| EMAIL_ADDR      | Email address                                                 |
+| EMAIL_PASSWORD  | Email password                                                |
+| EMAIL_HOST_NAME | Server address for the email                                  |
+| EMAIL_PORT      | Server port for the email                                     |
+| EMAIL_IDENTIFY  | Identity information for the email, used for CRAMMD5          |
+| EMAIL_SECRET    | Secret information for the email, used for CRAMMD5            |
+| EMAIL_TLS       | Whether to enable TLS                                         |
++-----------------+---------------------------------------------------------------+
+SMS
++----------------+--------------------------------+
+| KEY            | INTRODUCTION                   |
++----------------+--------------------------------+
+| SMS_SECRET_ID  | Secret ID for the SMS service  |
+| SMS_SECRET_KEY | Secret key for the SMS service |
+| SMS_PROVIDER   | Provider for the SMS service   |
+| SMS_REGION     | Region for the SMS service     |
++----------------+--------------------------------+
+```
+
 ## Port Usage
 
 ```shell

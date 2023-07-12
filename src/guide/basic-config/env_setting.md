@@ -86,6 +86,12 @@ JobRpc:
     - 127.0.0.1:9105 # The same as Job RPC's address.
   Enabled: false # Whether to enable the service
 
+McmsRpc:
+  Endpoints:
+    - 127.0.0.1:9106
+  Enabled: true
+  Timeout: 5000
+
 Captcha:
   KeyLong: 5 # captcha key length
   ImgWidth: 240 # captcha image width

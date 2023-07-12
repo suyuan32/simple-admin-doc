@@ -89,6 +89,12 @@ JobRpc:
     - 127.0.0.1:9105 # 与 Job RPC 地址相同
   Enabled: false # 是否启用
 
+McmsRpc:
+  Endpoints:
+    - 127.0.0.1:9106 # 与 Mcms RPC 地址相同
+  Enabled: true # 是否启用
+  Timeout: 5000
+
 Captcha:
   KeyLong: 5 # 验证码长度
   ImgWidth: 240 # 验证码图片宽度

@@ -89,6 +89,7 @@ JobRpc:
     - 127.0.0.1:9105 # 与 Job RPC 地址相同
   Enabled: false # 是否启用
 
+# 消息中心模块
 McmsRpc:
   Endpoints:
     - 127.0.0.1:9106 # 与 Mcms RPC 地址相同

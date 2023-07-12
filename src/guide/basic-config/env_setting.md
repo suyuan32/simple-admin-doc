@@ -86,6 +86,7 @@ JobRpc:
     - 127.0.0.1:9105 # The same as Job RPC's address.
   Enabled: false # Whether to enable the service
 
+# Message Center Module
 McmsRpc:
   Endpoints:
     - 127.0.0.1:9106

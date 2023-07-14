@@ -22,7 +22,7 @@ docker-compose up -d
 ### 3. 重启 API
 
 ::: warning
-初始化完成后需要重启 core-api 容器，强制刷新 casbin 缓存
+初始化完成后需要重启 core-api 容器，强制刷新 casbin 缓存, v1.0.14 开始不需要重启服务
 :::
 
 ::: info

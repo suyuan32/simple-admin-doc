@@ -22,7 +22,7 @@ docker-compose up -d
 ### 3. Restart API container
 
 ::: warning
-You should restart core-api container after initalization in order to refresh casbin cache
+You should restart core-api container after initalization in order to refresh casbin cache. You do not need to restart service after v1.0.14.
 :::
 
 ::: info

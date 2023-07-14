@@ -19,6 +19,7 @@ jobs:
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v2
+        version: 8
         with:
           run_install: true
 

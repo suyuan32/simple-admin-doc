@@ -302,7 +302,7 @@ VITE_GLOB_API_URL_PREFIX=
 ::: warning
 **_Important:_** You should create the database before initialization, the database name should be the same as core_dev.yaml.
 
-**After initialization, you should restart api service. It can force refreshing casbin cache.**
+**After initialization, you should restart api service. It can force refreshing casbin cache. You do not need to restart service after v1.0.14.**
 :::
 
 ```shell

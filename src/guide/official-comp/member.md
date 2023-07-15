@@ -28,7 +28,7 @@ You should check the CoreRpc config in rpc service and the MmsConf in api servic
 - The configuration is similar as core
 - Run code the same as core
 - Init database in <http://localhost:3100/init>
-- Add API interface permissions on the role page, then restart the API service of file manager
+- Add API interface permissions on the role page, then restart the API service of member. You do not need to restart service after v1.0.14.
   :::
 
 ### K8s Deployment

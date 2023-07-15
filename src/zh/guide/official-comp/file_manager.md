@@ -83,7 +83,7 @@ CoreRpc:
 - 配置方式参考 core
 - 运行方式同理
 - 初始化数据库 <http://localhost:3100/init>
-- 在角色页面添加 API 接口权限，然后重启 file 的 API
+- 在角色页面添加 API 接口权限，然后重启 file 的 API，v1.0.14 之后无需重启
   :::
 
 ### K8s 部署

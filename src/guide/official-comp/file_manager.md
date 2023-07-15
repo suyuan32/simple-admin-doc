@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 'File Manager'
+title: "File Manager"
 ---
 
 ## File manager service
@@ -22,7 +22,7 @@ Timeout: 30000 # bigger max bytes need longer timeout
 
 Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2
-  AccessExpire: 259200  # Seconds
+  AccessExpire: 259200 # Seconds
 
 Log:
   ServiceName: fileManagerLogger
@@ -62,25 +62,26 @@ CasbinDatabaseConf:
   CacheTime: 5
 
 UploadConf:
-  MaxImageSize: 33554432  # 32 mb the maximum size of image
+  MaxImageSize: 33554432 # 32 mb the maximum size of image
   MaxVideoSize: 1073741824 # 1gb the maximum size of video
-  MaxAudioSize: 33554432  # 32mb the maximum size of audio
-  MaxOtherSize: 10485760  # 10 mb the maximum size of other type
-  PrivateStorePath: /home/ryan/www/private  # private path 
-  PublicStorePath: /home/ryan/www/public  # public path for every one access e.g. nginx path
+  MaxAudioSize: 33554432 # 32mb the maximum size of audio
+  MaxOtherSize: 10485760 # 10 mb the maximum size of other type
+  PrivateStorePath: /home/ryan/www/private # private path
+  PublicStorePath: /home/ryan/www/public # public path for every one access e.g. nginx path
 
 CoreRpc:
   Target: k8s://default/core-rpc-svc:9101 # core rpc address, use endpoint in local | core 服务RPC地址，本地测试使用直连
 ```
 
 ::: info
+
 - You should use nginx to set PublicStorePath as static path for front end.
 - Make sure AccessSecret is the same as simple-admin-core's api set
 - The configuration is similar as core
 - Run code the same as core
 - Init database in <http://localhost:3100/init>
-- Add API interface permissions on the role page, then restart the API service of file manager
-:::
+- Add API interface permissions on the role page, then restart the API service of file manager. You do not need to restart service after v1.0.14.
+  :::
 
 ### K8s Deployment
 

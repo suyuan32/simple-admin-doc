@@ -11,6 +11,16 @@ title: "Docker一键部署"
 
 ### 1. 启动 docker-compose
 
+::: info
+由于国内获取镜像较慢，现已提供阿里云镜像服务，需要手动获取镜像
+
+```shell
+docker pull registry.cn-hangzhou.aliyuncs.com/simple_admin/core-api-docker:[镜像版本号]
+```
+
+同理只需要将 core-api-docker 替换为其他镜像即可获取其他镜像
+:::
+
 ```shell
 docker-compose up -d
 ```

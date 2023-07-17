@@ -98,12 +98,21 @@ CasbinConf:
 ProjectConf:
   UseCaptcha: false # 是否启用验证码，若为false, 则登录请求不需要 captcha, captchaId
   DefaultRankID: 1 # 默认会员注册后的等级 ID
+  EmailCaptchaExpiredTime: 600 # 电子邮件验证码有效期（秒）
+  SmsTemplateId: xxx # 短信服务模板ID
+  SmsAppId: xxx # 短信服务 appId
+  SmsSignName: xxx # 短信服务签名
 
 MmsRpc:
-  Target: 10.5.0.10:9103
+  Target: k8s://default/mms-rpc-svc:9103
   Enabled: true
 
 CoreRpc:
-  Target: 10.5.0.4:9101
+  Target: k8s://default/core-rpc-svc:9101
   Enabled: true
+
+McmsRpc:
+  Target: k8s://default/mcms-rpc-svc:9106
+  Enabled: false
+  Timeout: 5000
 ```

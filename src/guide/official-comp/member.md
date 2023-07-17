@@ -98,12 +98,21 @@ CasbinConf:
 ProjectConf:
   UseCaptcha: false # Whether to use captcha，if false, you do not need to add  `captcha, captchaId` in request
   DefaultRankID: 1 # The default rank ID when register
+  EmailCaptchaExpiredTime: 600 # The expired time for email captcha
+  SmsTemplateId: xxx # The template id for sms
+  SmsAppId: xxx # The app id for sms
+  SmsSignName: xxx # The signature name of sms
 
 MmsRpc:
-  Target: 10.5.0.10:9103
+  Target: k8s://default/mms-rpc-svc:9103
   Enabled: true
 
 CoreRpc:
-  Target: 10.5.0.4:9101
+  Target: k8s://default/core-rpc-svc:9101
   Enabled: true
+
+McmsRpc:
+  Target: k8s://default/mcms-rpc-svc:9106
+  Enabled: false
+  Timeout: 5000
 ```

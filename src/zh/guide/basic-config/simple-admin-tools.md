@@ -18,7 +18,6 @@ Simple admin tools 是一个基于 go-zero 的 fork 项目。
 由于本工具是 fork 项目，因此使用 goctls 会有些麻烦. 使用 fork 主要是为了同步官方最新代码。
 
 ::: warning
-由于目前版本迭代较快，如果代码生成出现问题，请先 `git pull` 下载最新代码重新编译，如果还有问题，欢迎提交 issue
 
 现已支持中文，只需要设置环境变量 SIMPLE_ADMIN_TOOLS_LANG=zh 即可
 
@@ -28,35 +27,12 @@ SIMPLE_ADMIN_TOOLS_LANG=zh goctls -h
 
 :::
 
-::: info
-[教学视频](https://www.bilibili.com/video/BV1Lc411n7Wf/)
-:::
+## 工具安装
 
-我们不能直接使用 go get and go install 命令安装 goctl 因为他会安装官方的文件，我们需要自行编译。
-
-下面是构建 goctls 的过程.
-
-> 构建 goctls
-
-::: warning
-**`Windows` 用户建议参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境) 环境配置, 你也可以使用 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)**
-:::
+从 v1.5.14 开始，工具已移至新的仓库，便于快速迭代更新 [仓库地址](https://github.com/suyuan32/goctls), 目前已支持直接命令安装，不再需要 clone 代码
 
 ```shell
-git clone https://github.com/suyuan32/simple-admin-tools.git
-
-cd tools/goctl
-
-go mod tidy
-
-# windows
-make win
-
-# linux
-make linux
-
-# mac
-make mac
+go install github.com/suyuan32/goctls@latest
 ```
 
 ## 自动下载依赖

@@ -29,3 +29,26 @@ goctls extra ent template -u
   -l, --list         列出所有支持的模板
   -u, --update       更新所有模板
 ```
+
+### `extra ent mixin` 模板生成
+
+> goctls >= 1.5.14
+
+```shell
+goctls extra ent mixin -a soft_delete
+```
+
+```shell
+$ goctls extra ent mixin -h
+Usage:
+  goctls extra ent mixin [flags]
+
+Flags:
+  -a, --add string   为 ent 添加 Mixin 模板
+  -d, --dir string   ent 目录。如果为空，goctls 将自动查找它
+  -h, --help         help for mixin
+  -l, --list         列出所有支持的模板
+  -u, --update       更新所有模板
+```
+
+目前已支持软删除模板

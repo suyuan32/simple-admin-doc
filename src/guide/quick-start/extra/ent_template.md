@@ -29,3 +29,26 @@ Flags:
   -l, --list         List all support templates
   -u, --update       Update all templates
 ```
+
+### `extra ent mixin` Template Generation
+
+> goctls >= 1.5.14
+
+```shell
+goctls extra ent mixin -a soft_delete
+```
+
+```shell
+$ goctls extra ent mixin -h
+Usage:
+  goctls extra ent mixin [flags]
+
+Flags:
+  -a, --add string   Add Mixin template for ent
+  -d, --dir string   Directory of ent. If empty, goctls will find it automatically
+  -h, --help         help for mixin
+  -l, --list         List all supported templates
+  -u, --update       Update all templates
+```
+
+Soft delete templates are currently supported.

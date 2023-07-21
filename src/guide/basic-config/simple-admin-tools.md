@@ -16,39 +16,12 @@ It provides more addition features than origin project such as:
 - error handling which support multi-languages
 - so on
 
-::: warning
-Due to the rapid iteration of the current version, if there is a problem with code generation, please run `git pull` to download the latest code and recompile.
-If there are still problems, please submit an issue.
-:::
+## Tool Installation
 
-::: info
-[Video Tutorial](https://youtu.be/9AtGgMjBlWU)
-:::
-
-It is a little complex to install the `goctls` due to forking project.
-Let me show you how to build the code by yourself.
-
-> Build goctls
-
-::: warning
-**`Windows` users are recommended to cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment), you can also develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment.**
-:::
+Starting from v1.5.14, the tool has been moved to a new repository for faster iteration and updates [repository address ↗](https://github.com/suyuan32/goctls), and now supports direct command installation, no longer requiring code cloning.
 
 ```shell
-git clone https://github.com/suyuan32/simple-admin-tools.git
-
-cd tools/goctl
-
-go mod tidy
-
-# windows
-make win
-
-# linux
-make linux
-
-# mac
-make mac
+go install github.com/suyuan32/goctls@latest
 ```
 
 ## Auto fix all dependencies command

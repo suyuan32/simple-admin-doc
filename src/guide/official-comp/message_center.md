@@ -48,42 +48,4 @@ Prometheus:
   Host: 0.0.0.0
   Port: 4006
   Path: /metrics
-
-EmailConf:
-  AuthType: plain # support plain, CRAMMD5
-  EmailAddr: xxx@xxx.com # the email address to send from
-  Password: xxx # password
-  Port: 25 # port, default is 25
-  HostName: smtp.xxxx.com # server address
-  TLS: true # whether to enable TLS
-
-SmsConf:
-  SecretId: xxxx
-  SecretKey: xxx
-  Provider: tencent # provider, currently supports Tencent
-  Region: ap-nanjing # server region to send the message from
-```
-
-### Examples
-
-> QQ Email
-
-```yaml
-EmailConf:
-  AuthType: plain
-  EmailAddr: xx@qq.com
-  Password: xxx # note it's the authorization code
-  Port: 465
-  HostName: smtp.qq.com
-  TLS: true
-```
-
-> Tencent Cloud SMS
-
-```yaml
-SmsConf:
-  SecretId: xxx
-  SecretKey: xxx
-  Provider: tencent
-  Region: ap-nanjing
 ```

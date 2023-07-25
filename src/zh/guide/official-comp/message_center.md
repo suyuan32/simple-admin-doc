@@ -48,42 +48,4 @@ Prometheus:
   Host: 0.0.0.0
   Port: 4006
   Path: /metrics
-
-EmailConf:
-  AuthType: plain # 支持 plain, CRAMMD5
-  EmailAddr: xxx@xxx.com # 发送的邮箱地址
-  Password: xxx # 密码
-  Port: 25 # 端口， 默认是 25
-  HostName: smtp.xxxx.com # 服务器地址
-  TLS: true # 是否启用 tls
-
-SmsConf:
-  SecretId: xxxx
-  SecretKey: xxx
-  Provider: tencent # 提供商，目前支持tencent
-  Region: ap-nanjing # 发消息的服务器区域
-```
-
-### 例子
-
-> QQ 邮箱
-
-```yaml
-EmailConf:
-  AuthType: plain
-  EmailAddr: xx@qq.com
-  Password: xxx # 注意是授权码
-  Port: 465
-  HostName: smtp.qq.com
-  TLS: true
-```
-
-> 腾讯云短信
-
-```yaml
-SmsConf:
-  SecretId: xxx
-  SecretKey: xxx
-  Provider: tencent
-  Region: ap-nanjing
 ```

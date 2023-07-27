@@ -27,6 +27,11 @@ Flags:
 
 ```
 
+::: warning
+The proto file must contain the corresponding `group` annotations.
+The api file must already have `type` and `service` defined, otherwise it is recommended to copy from the console.
+:::
+
 ## Example
 
 ```shell

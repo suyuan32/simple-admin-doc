@@ -27,6 +27,11 @@ Flags:
 
 ```
 
+::: warning
+proto 文件中必须含有对应的 group 注释
+api 文件中必须已有 type 和 service, 否则建议从控制台复制
+:::
+
 ## 例子
 
 ```shell

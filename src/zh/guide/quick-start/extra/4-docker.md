@@ -1,6 +1,6 @@
 ---
 order: 4
-title: "Dockerfile生成"
+title: "Dockerfile"
 ---
 
 ## Dockerfile 生成

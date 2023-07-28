@@ -24,6 +24,10 @@ Starting from v1.5.14, the tool has been moved to a new repository for faster it
 go install github.com/suyuan32/goctls@latest
 ```
 
+::: warning
+Starting from version v1.5.16, you can use `goctls upgrade` command is to upgrade the goctls.
+:::
+
 ## Auto fix all dependencies command
 
 ```shell

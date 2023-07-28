@@ -35,6 +35,10 @@ SIMPLE_ADMIN_TOOLS_LANG=zh goctls -h
 go install github.com/suyuan32/goctls@latest
 ```
 
+::: warning
+从 v1.5.16 版本开始支持使用 `goctls upgrade` 命令升级 goctls
+:::
+
 ## 自动下载依赖
 
 ```shell

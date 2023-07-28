@@ -1,6 +1,6 @@
 ---
 order: 2
-title: "API初始化"
+title: "API 初始化代码"
 ---
 
 ## API 初始化代码生成

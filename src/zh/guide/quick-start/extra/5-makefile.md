@@ -1,6 +1,6 @@
 ---
 order: 5
-title: "Makefile生成"
+title: "Makefile"
 ---
 
 ## Makefile 生成

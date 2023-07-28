@@ -276,10 +276,6 @@ VITE_USE_MOCK = false
 # public path
 VITE_PUBLIC_PATH = /
 
-# Cross-domain proxy, you can configure multiple
-# Please note that no line breaks
-VITE_PROXY = [["/sys-api","http://localhost:9100"],["/file-manager","http://localhost:9102"]]
-
 VITE_BUILD_COMPRESS = 'none'
 
 # Delete console
@@ -289,16 +285,60 @@ VITE_DROP_CONSOLE = false
 VITE_GLOB_API_URL=
 
 # File upload address， optional
-VITE_GLOB_UPLOAD_URL=/upload
-
-# File store address
-VITE_FILE_STORE_URL=http://localhost:8080
+VITE_GLOB_UPLOAD_URL=/fms-api/upload
 
 # Interface prefix
 VITE_GLOB_API_URL_PREFIX=
 ```
 
-> 主要修改 VITE_PROXY 中的 sys-api 配置， 使用 localhost 或 127.0.0.1 调试本地，也可设置成其他远程 ip, filemanager 访问的是文件服务
+> 从 1..0.0 开始 backend UI 的代理配置放在 `vite.config.ts` 文件中
+
+```ts
+import { defineApplicationConfig } from "@vben/vite-config";
+
+export default defineApplicationConfig({
+  overrides: {
+    optimizeDeps: {
+      include: [
+        "echarts/core",
+        "echarts/charts",
+        "echarts/components",
+        "echarts/renderers",
+        "qrcode",
+        "@iconify/iconify",
+        "ant-design-vue/es/locale/zh_CN",
+        "ant-design-vue/es/locale/en_US",
+      ],
+    },
+    server: {
+      proxy: {
+        "/sys-api": {
+          target: "http://192.168.50.204:9100",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/sys-api`), ""),
+          // only https
+          // secure: false
+        },
+        "/fms-api": {
+          target: "http://192.168.50.204:9102",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/fms-api`), ""),
+        },
+        "/mms-api": {
+          target: "http://192.168.50.204:9104",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/mms-api`), ""),
+        },
+      },
+    },
+  },
+});
+```
+
+本地调试需要自行配置 target 地址以及 rewrite
 
 ## 初始化数据库
 

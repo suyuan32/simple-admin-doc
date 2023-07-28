@@ -272,10 +272,6 @@ VITE_USE_MOCK = false
 # public path
 VITE_PUBLIC_PATH = /
 
-# Cross-domain proxy, you can configure multiple
-# Please note that no line breaks
-VITE_PROXY = [["/sys-api","http://localhost:9100"],["/file-manager","http://localhost:9102"]]
-
 VITE_BUILD_COMPRESS = 'none'
 
 # Delete console
@@ -285,17 +281,60 @@ VITE_DROP_CONSOLE = false
 VITE_GLOB_API_URL=
 
 # File upload address， optional
-VITE_GLOB_UPLOAD_URL=/upload
-
-# File store address
-VITE_FILE_STORE_URL=http://localhost:8080
+VITE_GLOB_UPLOAD_URL=/fms-api/upload
 
 # Interface prefix
 VITE_GLOB_API_URL_PREFIX=
 ```
 
-> Mainly modify sys-api in VITE_PROXY， use localhost or 127.0.0.1 to connect local service，\
-> you can also set your own address, file-manager is the API for upload it is optional
+> Since v1.0.0, you should configure the proxy in `vite.config.ts`.
+
+```ts
+import { defineApplicationConfig } from "@vben/vite-config";
+
+export default defineApplicationConfig({
+  overrides: {
+    optimizeDeps: {
+      include: [
+        "echarts/core",
+        "echarts/charts",
+        "echarts/components",
+        "echarts/renderers",
+        "qrcode",
+        "@iconify/iconify",
+        "ant-design-vue/es/locale/zh_CN",
+        "ant-design-vue/es/locale/en_US",
+      ],
+    },
+    server: {
+      proxy: {
+        "/sys-api": {
+          target: "http://192.168.50.204:9100",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/sys-api`), ""),
+          // only https
+          // secure: false
+        },
+        "/fms-api": {
+          target: "http://192.168.50.204:9102",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/fms-api`), ""),
+        },
+        "/mms-api": {
+          target: "http://192.168.50.204:9104",
+          changeOrigin: true,
+          ws: true,
+          rewrite: (path) => path.replace(new RegExp(`^/mms-api`), ""),
+        },
+      },
+    },
+  },
+});
+```
+
+You should set your target `ip` and rewrite the prefix.
 
 ## Initialize database
 

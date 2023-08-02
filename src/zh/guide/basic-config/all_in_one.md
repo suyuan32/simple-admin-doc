@@ -5,7 +5,7 @@ title: "Docker一键部署"
 
 # 一键体验 docker-compose
 
-在 deploy/docker-compose/all_in_one 文件夹下, [Github](https://github.com/suyuan32/simple-admin-core/blob/master/deploy/docker-compose/all_in_one/docker-compose.yaml)
+在 deploy/docker-compose/all_in_one 文件夹下, [Github](https://github.com/suyuan32/simple-admin-core/tree/master/deploy/docker-compose/all_in_one)
 
 ## 只需三步
 

@@ -5,7 +5,7 @@ title: "Docker Deploy"
 
 # Quick start with docker-compose
 
-In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suyuan32/simple-admin-core/blob/master/deploy/docker-compose/all_in_one/docker-compose.yaml)
+In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suyuan32/simple-admin-core/tree/master/deploy/docker-compose/all_in_one)
 
 ## 3 Steps
 

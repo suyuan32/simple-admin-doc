@@ -64,3 +64,10 @@ $ goctls extra view_log -w core -t error -s 2
     "level": "error"
 }
 ```
+
+> Before Formatting
+
+```text
+{"@timestamp":"2023-07-06T11:11:07.036+08:00","caller":"base/init_database_logic.go:33","content":"database error","detail":"sql/schema: modify \"mcms_email_log\" table: pq: column \"subject\" of relation \"mcms_email_log\" contains null values","level":"error"}
+{"@timestamp":"2023-07-06T11:20:06.191+08:00","caller":"dberrorhandler/error_handler.go:24","content":"ent: missing required field \"EmailLog.subject\"","detail":"target:\"1693196733@qq.com\"  subject:\"测试一下\"  content:\"这个是测试邮件\"","level":"error","span":"653212ac1b76e41f","trace":"26c5ce4b81ae408595a77175dee10783"}
+```

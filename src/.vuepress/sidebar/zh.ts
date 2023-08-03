@@ -43,6 +43,11 @@ export const zhSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "持续集成 CI/CD",
+          prefix: "cicd/",
+          children: "structure",
+        },
+        {
           text: "官方模块",
           prefix: "official-comp/",
           children: "structure",

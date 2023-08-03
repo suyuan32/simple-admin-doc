@@ -43,6 +43,11 @@ export const enSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "CI/CD",
+          prefix: "cicd/",
+          children: "structure",
+        },
+        {
           text: "Official Modules",
           prefix: "official-comp/",
           children: "structure",

@@ -1,11 +1,11 @@
 ---
 order: 2
-title: "Simple Admin Tools"
+title: "Goctls"
 ---
 
-# Simple admin tools
+# Goctls
 
-Simple admin tools is a tool fork from go-zero.
+Goctls is a powerful tools for simple admin to gen codes, based on goctl.
 It provides more addition features than origin project such as:
 
 - go-swagger : it is different with origin which uses @doc comments

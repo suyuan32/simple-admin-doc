@@ -1,11 +1,11 @@
 ---
 order: 2
-title: "Simple Admin Tools"
+title: "Goctls"
 ---
 
-# Simple admin tools
+# Goctls
 
-Simple admin tools 是一个基于 go-zero 的 fork 项目。
+Goctls 是一个为 simple admin 设计的代码生成工具, 基于 go zero 官方工具 goctl 开发而成。
 它提供了许多额外的功能，例如:
 
 - go-swagger : 基于 go-swagger 而不是官方的@doc 注解
@@ -14,8 +14,6 @@ Simple admin tools 是一个基于 go-zero 的 fork 项目。
 - 简单易用的校验器
 - 支持代码生成，生成 API,RPC 和 web 端的 CRUD 代码
 - 对 Simple Admin 的针对性优化
-
-由于本工具是 fork 项目，因此使用 goctls 会有些麻烦. 使用 fork 主要是为了同步官方最新代码。
 
 ::: warning
 

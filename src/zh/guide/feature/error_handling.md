@@ -302,7 +302,8 @@ func NewApiBadGatewayError(msg string) error {
 所有错误都会被自动翻译， 不为 0 的错误会在前端产生弹窗， 通过 api ErrorMessageMode 控制
 
 > 在生成 Api 的时候使用 --trans_err=true 会在 handler 使用翻译
-> :::
+
+:::
 
 ```shell
 goctls api go --api ./api/desc/core.api --dir ./api --trans_err=true

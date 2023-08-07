@@ -5,6 +5,10 @@ title: "定时任务模块"
 
 ## 定时任务模块
 
+::: info
+[官方教程](https://www.bilibili.com/video/BV1Ac411F7yx/)
+:::
+
 ### 下载代码
 
 ```shell

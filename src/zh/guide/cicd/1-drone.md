@@ -7,8 +7,11 @@ title: "Drone CI 文件生成"
 
 > goctls > 1.5.17
 
-## 创建 Drone CI 文件
+::: info
+[视频教程](https://www.bilibili.com/video/BV1ZN411b7sp)
+:::
 
+## 创建 Drone CI 文件
 
 > 创建 .drone.yaml 与 Dockerfile 文件
 
@@ -17,24 +20,23 @@ goctls cicd drone -d="core" -g="gitee.com" -s="core" -x="rpc" -b="master" -r="re
 ```
 
 ::: warning
-repo参数
-latest则为：-o="registry.cn-hangzhou.aliyuncs.com/simple_admin/core-api-docker"
-非latest则为：-o="registry.cn-hangzhou.aliyuncs.com/simple_admin/core-api-docker:v1.1.0"
+repo 参数
+latest 则为：-o="registry.cn-hangzhou.aliyuncs.com/simple_admin/core-api-docker"
+非 latest 则为：-o="registry.cn-hangzhou.aliyuncs.com/simple_admin/core-api-docker:v1.1.0"
 :::
 
 ### `cicd drone` 参数介绍
 
-| 参数            | 必须 | 默认值 | 介绍                                     | 使用方法                                                                                                   |
-| --------------- | ---- | ------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| drone_name            | 否   | drone\-greet  | Drone 名称                         | 为drone自定义一个名称                                                                                                |
-| go_private          | 是   |  gitee.com  | go私有仓库设置 | 例如： gitee.com \| github.com                                                                                               |
-| service_name     | 是   |   无     | go-zero服务主程序入口文件                 | 例如: core.go, 必须省略后缀 .go  |
-| service_type | 否   | happy | go-zero服务类型                            | 例如： rpc \| api                             |
-| git_branch    | 否   | main | git仓库分支                | 需要到根据自己的git分支决定  |
-| registry       | 是   | 无  | 远程镜像仓库地址                       | 例如阿里云镜像地址: registry.cn-beijing.aliyuncs.com   |
-| repo          | 是   | 无  | 远程镜像仓库地址                   | 如果tag不是 'latest' 需要指定，例如: git-repo:v0.0.1, 如果是 'latest' 则需要忽略                                                                                                |
-| etc_yaml            | 是   | 无   | drone在CI过程中使用的Dockerfile配置                                   | go-zero项目中etc文件夹下的yaml配置文件名                                                                                           |
-
+| 参数         | 必须 | 默认值       | 介绍                                     | 使用方法                                                                           |
+| ------------ | ---- | ------------ | ---------------------------------------- | ---------------------------------------------------------------------------------- |
+| drone_name   | 否   | drone\-greet | Drone 名称                               | 为 drone 自定义一个名称                                                            |
+| go_private   | 是   | gitee.com    | go 私有仓库设置                          | 例如： gitee.com \| github.com                                                     |
+| service_name | 是   | 无           | go-zero 服务主程序入口文件               | 例如: core.go, 必须省略后缀 .go                                                    |
+| service_type | 否   | happy        | go-zero 服务类型                         | 例如： rpc \| api                                                                  |
+| git_branch   | 否   | main         | git 仓库分支                             | 需要到根据自己的 git 分支决定                                                      |
+| registry     | 是   | 无           | 远程镜像仓库地址                         | 例如阿里云镜像地址: registry.cn-beijing.aliyuncs.com                               |
+| repo         | 是   | 无           | 远程镜像仓库地址                         | 如果 tag 不是 'latest' 需要指定，例如: git-repo:v0.0.1, 如果是 'latest' 则需要忽略 |
+| etc_yaml     | 是   | 无           | drone 在 CI 过程中使用的 Dockerfile 配置 | go-zero 项目中 etc 文件夹下的 yaml 配置文件名                                      |
 
 **详细参数请在命令行查看 `goctls cicd drone -h`**
 
@@ -58,10 +60,9 @@ Flags:
 ```
 
 > 你可以看到以下结构 <br>
-> 注意：mac环境下生成的.drone.yml默认为隐藏文件，需要指令`Command + Shift + . `才可见
+> 注意：mac 环境下生成的.drone.yml 默认为隐藏文件，需要指令`Command + Shift + . `才可见
 
 <img width="298" alt="image" src="https://github.com/suyuan32/simple-admin-doc/assets/5540291/ff0ee451-bccd-4783-a92c-2a59f1a834a7">
-
 
 ### 文件结构
 
@@ -72,7 +73,7 @@ Flags:
 ```
 
 > .drone.yml <br>
-> yml文件中 docker_username 和 docker_password 是drone中配置的拉取私有镜像的仓库的账户和密码
+> yml 文件中 docker_username 和 docker_password 是 drone 中配置的拉取私有镜像的仓库的账户和密码
 
 ```yaml
 kind: pipeline
@@ -116,7 +117,6 @@ volumes:
     host:
       path: /root/.go/cache
 ```
-
 
 > Dockerfile
 

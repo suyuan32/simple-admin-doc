@@ -3,6 +3,10 @@ order: 4
 title: "开发流程"
 ---
 
+::: info
+从 goctls v1.5.18 开始支持从数据库导入表， 使用命令 `goctls extra ent import -h` .
+:::
+
 ## 整体开发流程
 
 整个项目从前端到后端开发的基本流程及使用的命令。

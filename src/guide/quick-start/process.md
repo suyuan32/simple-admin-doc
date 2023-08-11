@@ -3,6 +3,10 @@ order: 4
 title: "Development Process"
 ---
 
+::: info
+Since goctls v1.5.18, goctls support import schema by `goctls extra ent import -h` commmand.
+:::
+
 ## Overall development process
 
 The basic process and commands used for the entire project from front-end to back-end development.

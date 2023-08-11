@@ -52,3 +52,26 @@ Flags:
 ```
 
 Soft delete templates are currently supported.
+
+### `extra ent import` 数据库结构导出到 schema
+
+> goctls >= 1.5.18
+
+```shell
+$ SIMPLE_ADMIN_TOOLS_LANG=en goctls extra ent import -h
+Generate Ent Schema from database
+
+Usage:
+  goctls extra ent import [flags]
+
+Flags:
+  -d, --dsn string      Database DSN address, supports mysql and postgres. e.g. "mysql://user:pass@tcp(localhost:3306)/dbname"
+                        "postgres://user:pass@host:port/dbname"
+  -h, --help            help for import
+  -o, --output string   Output path, the project's root directory
+  -t, --tables string   Specify data tables. e.g. sys_users,sys_tokens
+```
+
+::: info
+goctls supports generating index indexes, but the suffix of the index name must be the field name, and only supports generating single indexes, not composite indexes
+:::

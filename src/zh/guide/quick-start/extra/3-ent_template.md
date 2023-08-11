@@ -52,3 +52,27 @@ Flags:
 ```
 
 目前已支持软删除模板
+
+### `extra ent import` 数据库结构导出到 schema
+
+> goctls >= 1.5.18
+
+```shell
+$ goctls extra ent import -h
+从数据库生成 Ent Schema
+
+Usage:
+  goctls extra ent import [flags]
+
+Flags:
+  -d, --dsn string      数据库的 DSN 地址，支持 mysql 和 postgres。 例子："mysql://user:pass@tcp(localhost:3306)/dbname"
+                        "postgres://user:pass@host:port/dbname"
+  -h, --help            help for import
+  -o, --output string   输出路径，为项目根目录
+  -t, --tables string   指定数据表，例子： sys_users,sys_tokens
+
+```
+
+::: info
+goctls 支持生成 index 索引，但是索引的名称的后缀必须为字段名称，且只支持生成单索引，不支持复合索引
+:::

@@ -16,6 +16,10 @@ It provides more addition features than origin project such as:
 - error handling which support multi-languages
 - so on
 
+::: info
+[Official Tutorial](https://youtu.be/20XifykiXZc)
+:::
+
 ## Tool Installation
 
 Starting from v1.5.14, the tool has been moved to a new repository for faster iteration and updates [repository address ↗](https://github.com/suyuan32/goctls), and now supports direct command installation, no longer requiring code cloning.

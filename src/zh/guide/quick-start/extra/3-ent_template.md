@@ -57,6 +57,15 @@ Flags:
 
 > goctls >= 1.5.18
 
+::: warning
+建议直接在项目**根目录**执行命令，可以不用配置 `-o` 参数, 例如
+
+```shell
+goctls extra ent import -d "mysql://root:simple-admin.@tcp(localhost:3306)/simple_admin?charset=utf8mb4&parseTime=True&loc=Local" -t "sys_tokens"
+```
+
+:::
+
 ```shell
 $ goctls extra ent import -h
 从数据库生成 Ent Schema

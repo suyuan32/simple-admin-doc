@@ -7,6 +7,8 @@ title: "Docker Deploy"
 
 In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suyuan32/simple-admin-core/tree/master/deploy/docker-compose/all_in_one)
 
+There are mysql and postgres folders, choose a folder to open according to your needs.
+
 ## 3 Steps
 
 ### 1. Run docker-compose

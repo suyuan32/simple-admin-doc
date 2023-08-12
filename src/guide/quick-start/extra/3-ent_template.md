@@ -57,6 +57,15 @@ Soft delete templates are currently supported.
 
 > goctls >= 1.5.18
 
+::: warning
+It is recommended to execute the command directly in the project's **root directory**, and the `-o` parameter does not need to be configured, for example:
+
+```shell
+goctls extra ent import -d "mysql://root:simple-admin.@tcp(localhost:3306)/simple_admin?charset=utf8mb4&parseTime=True&loc=Local" -t "sys_tokens"
+```
+
+:::
+
 ```shell
 $ SIMPLE_ADMIN_TOOLS_LANG=en goctls extra ent import -h
 Generate Ent Schema from database

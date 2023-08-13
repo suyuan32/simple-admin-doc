@@ -1,6 +1,6 @@
 ---
 order: 3
-title: "Ent Template Generation"
+title: "Ent Template"
 ---
 
 ## Ent Template Generation

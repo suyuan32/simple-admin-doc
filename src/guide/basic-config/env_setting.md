@@ -12,7 +12,7 @@ title: "Local Development Setting"
 - **mysql 8.0.21 +** | MariaDB 10.7 + | Postgres 13 + (**Postgres 14 recommended**)
 - redis 7.0 +
 - [go-swagger](https://goswagger.io/install.html)
-- [Simple Admin Tool](/guide/basic-config/simple-admin-tools.md)
+- [Goctls](/guide/basic-config/simple-admin-tools.md)
 
 ::: info
 It is recommended to develop under linux, because the make command is required. We develop in Ubuntu 22.10. \
@@ -25,14 +25,18 @@ It is recommended to develop under linux, because the make command is required. 
 
 ## Backend Setting
 
-### simple admin core
+### Simple Admin Core
 
-simple admin core is the core service for simple admin. It offers user management, authorization,
+Simple Admin Core is the core service for Simple Admin. It offers user management, authorization,
 menu management and API management and so on. It must be running.
 
 ::: info Default Account
 username: **admin**  
 password: **simple-admin**
+:::
+
+::: warning
+Since v1.1.1, we recommend you to use docker to deploy local environment. [Tutorial](https://youtu.be/gpXOoJEeOHg)
 :::
 
 > Clone the core code

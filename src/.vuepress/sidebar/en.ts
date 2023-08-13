@@ -17,7 +17,7 @@ export const enSidebar = sidebar({
           prefix: "quick-start/",
           children: [
             {
-              text: "Develop Process",
+              text: "Development Process",
               link: "process",
             },
             {

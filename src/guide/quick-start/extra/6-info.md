@@ -1,6 +1,6 @@
 ---
 order: 6
-title: "Show Info Command"
+title: "Show Info"
 ---
 
 ## Show Info Command

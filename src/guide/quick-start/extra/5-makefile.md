@@ -1,6 +1,6 @@
 ---
 order: 5
-title: "Makefile Generation"
+title: "Makefile"
 ---
 
 ## Makefile Generation

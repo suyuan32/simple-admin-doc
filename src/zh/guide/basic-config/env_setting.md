@@ -12,7 +12,7 @@ title: "本地开发环境配置"
 - **mysql 8.0.21 +** | MariaDB 10.7 + | Postgres 13 + (**Postgres 14 推荐**)
 - redis 7.0 +
 - [go-swagger](https://goswagger.io/install.html)
-- [Simple Admin Tool](/zh/guide/basic-config/simple-admin-tools.md)
+- [Goctls](/zh/guide/basic-config/simple-admin-tools.md)
 
 ::: info
 推荐在 linux 下开发，因为需要用到 make 命令，官方在 `Ubuntu 22.10` 环境下开发. \

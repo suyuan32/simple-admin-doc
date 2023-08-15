@@ -26,6 +26,10 @@ In Simple Admin, RPC is mainly used to obtain data and provide extended function
 
 Multiple different APIs can access the same RPC to call its functions.
 
+::: info
+[Tutorial](https://youtu.be/Yv7d2EKy9ZE)
+:::
+
 ## Create RPC project
 
 > Create example project

@@ -26,6 +26,10 @@ In simple admin, the API service acts as a gateway, mainly providing the followi
 
 An API can access multiple RPCs, providing a unified request entry。
 
+::: info
+[Tutorial](https://youtu.be/duSIv0qcCV8)
+:::
+
 ## Create API project
 
 > Create example project

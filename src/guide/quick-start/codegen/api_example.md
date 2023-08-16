@@ -268,6 +268,10 @@ You need to add `ExampleRpc` manually into `service_context`, `config`, `etc`.
 ## Code generation (Ent-based single service)
 
 ::: info
+[Tutorial Video](https://youtu.be/h3wybuEdg4s)
+:::
+
+::: info
 If your project is small, single API service is a good choise. It doesn't need RPC services.
 :::
 

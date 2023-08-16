@@ -9,6 +9,10 @@ title: "Web Pages"
 
 - simple-admin-tool (goctls) v1.5.2 +
 
+::: info
+[Video Tutorial](https://youtu.be/j7wEcaWVEKw)
+:::
+
 ## Create example codes
 
 ```shell

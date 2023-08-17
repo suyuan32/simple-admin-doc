@@ -17,7 +17,7 @@ It provides more addition features than origin project such as:
 - so on
 
 ::: info
-[Official Tutorial](https://youtu.be/20XifykiXZc)
+[Official Video Tutorial](https://youtu.be/20XifykiXZc)
 :::
 
 ## Tool Installation

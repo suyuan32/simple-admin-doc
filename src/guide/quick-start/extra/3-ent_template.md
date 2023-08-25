@@ -53,7 +53,7 @@ Flags:
 
 Soft delete templates are currently supported.
 
-### `extra ent import` 数据库结构导出到 schema
+### `extra ent import` generates schema from database
 
 > goctls >= 1.5.18
 
@@ -84,3 +84,19 @@ Flags:
 ::: info
 goctls supports generating index indexes, but the suffix of the index name must be the field name, and only supports generating single indexes, not composite indexes
 :::
+
+### `extra ent schema` command generates an empty schema file.
+
+> goctls >= 1.5.20
+
+```shell
+$ goctls extra ent schema -h
+
+Generate an empty schema file
+
+Usage:
+  goctls extra ent schema [flags]
+Flags:
+  -h, --help                help for schema
+  -m, --model_name string   Model name
+```

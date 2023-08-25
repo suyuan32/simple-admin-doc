@@ -85,3 +85,19 @@ Flags:
 ::: info
 goctls 支持生成 index 索引，但是索引的名称的后缀必须为字段名称，且只支持生成单索引，不支持复合索引
 :::
+
+### `extra ent schema` 命令生成空的 schema 文件
+
+> goctls >= 1.5.20
+
+```shell
+$ goctls extra ent schema -h
+生成 schema 空白文件
+
+Usage:
+  goctls extra ent schema [flags]
+
+Flags:
+  -h, --help                help for schema
+  -m, --model_name string   Model 名称
+```

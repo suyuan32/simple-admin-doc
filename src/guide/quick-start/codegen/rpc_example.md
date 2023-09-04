@@ -35,7 +35,7 @@ Multiple different APIs can access the same RPC to call its functions.
 > Create example project
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.2 --tool_version=v1.5.5 --port=8080  --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --port=8080  --gitlab=true --desc=true
 ```
 
 > Simpler Command
@@ -50,17 +50,15 @@ The project name only supports lowercase and camelcase and must be not contains 
 
 ### `rpc new` parameters
 
-| Parameter       | Must | Default | Introduction                                         | Usage                                                                                                                                                             |
-| --------------- | ---- | ------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ent             | No   | false   | Whether to use Ent                                   | true means use                                                                                                                                                    |
-| i18n            | No   | false   | Whether to use i18n                                  | true means use                                                                                                                                                    |
-| module_name     | No   |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
-| go_zero_version | No   | v1.5.2  | Go zero version                                      | Go to [go-zero](https://github.com/zeromicro/go-zero/releases) to get the latest release                                                                          |
-| tool_version    | No   | v1.5.5  | Simple admin tools version                           | Go to [tool](https://github.com/suyuan32/simple-admin-tools/releases) to get the latest release                                                                   |
-| gitlab          | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                                                                                             |
-| port            | No   | 9100    | Port number                                          | The service port                                                                                                                                                  |
-| desc            | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                                                                                |
-| style           | No   | go_zero | The format of the file name.                         | snake case format is go_zero.                                                                                                                                     |
+| Parameter   | Must | Default | Introduction                                         | Usage                                                                                                                                                             |
+| ----------- | ---- | ------- | ---------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ent         | No   | false   | Whether to use Ent                                   | true means use                                                                                                                                                    |
+| i18n        | No   | false   | Whether to use i18n                                  | true means use                                                                                                                                                    |
+| module_name | No   |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
+| gitlab      | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                                                                                             |
+| port        | No   | 9100    | Port number                                          | The service port                                                                                                                                                  |
+| desc        | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                                                                                |
+| style       | No   | go_zero | The format of the file name.                         | snake case format is go_zero.                                                                                                                                     |
 
 ** More parameters please check `goctls rpc new --help` **
 
@@ -76,7 +74,6 @@ Flags:
   -d, --desc                     Whether to create desc folder for splitting proto files
   -e, --ent                      Whether use Ent in project
   -g, --gitlab                   Whether to use gitlab-ci
-  -z, --go_zero_version string   The go zero version used for replacement. e.g. v1.5.2, see [https://github.com/zeromicro/go-zero/releases] (default "v1.5.2")
   -h, --help                     help for new
       --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
   -i, --i18n                     Whether to use i18n
@@ -86,7 +83,6 @@ Flags:
       --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
                                  The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
   -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
-  -t, --tool_version string      The simple admin tool version version used for migration. e.g. v1.5.5, see [https://github.com/suyuan32/simple-admin-tools/releases] (default "v1.5.6")
   -v, --verbose                  Enable log output
 ```
 

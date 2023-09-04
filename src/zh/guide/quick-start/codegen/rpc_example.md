@@ -34,7 +34,7 @@ title: "RPC 微服务"
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --go_zero_version=v1.5.2 --tool_version=v1.5.5 --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc  --port=8080 --gitlab=true --desc=true
 ```
 
 > 简单命令
@@ -49,17 +49,15 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 
 ### `rpc new`参数介绍
 
-| 参数            | 必须 | 默认值  | 介绍                              | 使用方法                                                                                                   |
-| --------------- | ---- | ------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| ent             | 否   | false   | 是否启用 ent                      | true 为启用                                                                                                |
-| module_name     | 否   |         | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
-| style           | 否   | go_zero | 文件名格式                        | go_zero 为蛇形格式                                                                                         |
-| go_zero_version | 否   | v1.5.2  | go zero 版本                      | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v1.5.5  | simple admin tools 版本号         | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
-| gitlab          | 否   | false   | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
-| port            | 否   | 9100    | 端口号                            | 服务暴露的端口号                                                                                           |
-| desc            | 否   | false   | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
-| i18n            | 否   | false   | 是否启用 i18n                     | true 为启用                                                                                                |
+| 参数        | 必须 | 默认值  | 介绍                              | 使用方法                                                                                                   |
+| ----------- | ---- | ------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ent         | 否   | false   | 是否启用 ent                      | true 为启用                                                                                                |
+| module_name | 否   |         | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
+| style       | 否   | go_zero | 文件名格式                        | go_zero 为蛇形格式                                                                                         |
+| gitlab      | 否   | false   | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
+| port        | 否   | 9100    | 端口号                            | 服务暴露的端口号                                                                                           |
+| desc        | 否   | false   | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
+| i18n        | 否   | false   | 是否启用 i18n                     | true 为启用                                                                                                |
 
 ** 详细参数请在命令行查看 `goctls rpc new --help` **
 
@@ -75,7 +73,6 @@ Flags:
   -d, --desc                     是否为拆分 proto 文件创建 desc 文件夹
   -e, --ent                      是否在项目中使用 Ent
   -g, --gitlab                   是否使用 gitlab-ci
-  -z, --go_zero_version string   用于替换的 go zero 版本，例如：v1.5.2，请参见 [https://github.com/zeromicro/go-zero/releases] (default "v1.5.2")
   -h, --help                     help for new
       --home string              模板的 goctl 路径，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
   -i, --i18n                     是否启用 i18n 国际化
@@ -85,7 +82,6 @@ Flags:
       --remote string            模板的远程 git repo，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
                                  Git repo 的目录结构必须与 https://github.com/zeromicro/go-zero-template 相一致
   -s, --style string             文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
-  -t, --tool_version string      用于迁移的 simple admin 工具版本，例如：v1.5.5，请参见 [https://github.com/suyuan32/simple-admin-tools/releases] (default "v1.5.6")
   -v, --verbose                  启用日志输出
 ```
 

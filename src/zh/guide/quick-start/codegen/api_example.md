@@ -34,7 +34,7 @@ title: "API 微服务"
 > 创建 example
 
 ```shell
-goctls api new example --i18n=true --casbin=true --go_zero_version=v1.5.2 --tool_version=v1.5.5 --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
 ```
 
 > 简单命令
@@ -49,17 +49,15 @@ goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api 
 
 ### `api new` 参数介绍
 
-| 参数            | 必须 | 默认值 | 介绍                                     | 使用方法                                                                                                   |
-| --------------- | ---- | ------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| i18n            | 否   | false  | 是否启用 i18n                            | true 为启用                                                                                                |
-| casbin          | 否   | false  | 是否启用 casbin 进行鉴权并自动添加中间件 | true 为启用                                                                                                |
-| module_name     | 否   |        | go.mod 中的 module 名称                  | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
-| go_zero_version | 否   | v1.5.2 | go zero 版本                             | 需要到[go-zero](https://github.com/zeromicro/go-zero/releases)查看最新 release                             |
-| tool_version    | 否   | v1.5.5 | simple admin tools 版本号                | 需要到[tool](https://github.com/suyuan32/simple-admin-tools/releases)查看 simple admin tools 最新 release  |
-| trans_err       | 否   | false  | 国际化翻译错误信息                       | true 为启用                                                                                                |
-| gitlab          | 否   | false  | 是否生成 gitlab-ci.yml                   | true 为生成                                                                                                |
-| port            | 否   | 9100   | 端口号                                   | 服务暴露的端口号                                                                                           |
-| ent             | 否   | false  | 是否启用 Ent                             | true 为启用，启用 Ent 可用于单体 API 服务                                                                  |
+| 参数        | 必须 | 默认值 | 介绍                                     | 使用方法                                                                                                   |
+| ----------- | ---- | ------ | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| i18n        | 否   | false  | 是否启用 i18n                            | true 为启用                                                                                                |
+| casbin      | 否   | false  | 是否启用 casbin 进行鉴权并自动添加中间件 | true 为启用                                                                                                |
+| module_name | 否   |        | go.mod 中的 module 名称                  | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
+| trans_err   | 否   | false  | 国际化翻译错误信息                       | true 为启用                                                                                                |
+| gitlab      | 否   | false  | 是否生成 gitlab-ci.yml                   | true 为生成                                                                                                |
+| port        | 否   | 9100   | 端口号                                   | 服务暴露的端口号                                                                                           |
+| ent         | 否   | false  | 是否启用 Ent                             | true 为启用，启用 Ent 可用于单体 API 服务                                                                  |
 
 **详细参数请在命令行查看 `goctls api new --help`**
 
@@ -75,7 +73,6 @@ $ goctls api new --help
   -c, --casbin                   是否使用 Casbin
   -e, --ent                      是否在 API 服务中使用 Ent
   -g, --gitlab                   是否使用 GitLab CI/CD
-  -z, --go_zero_version string   用于替换的 go zero 版本，例如 v1.5.0，参见 [https://github.com/zeromicro/go-zero/releases]
   -h, --help                     显示帮助信息
       --home string              模板的 goctl home 路径，不能与 --remote 同时设置，如果同时设置，则以 --remote 为准
   -i, --i18n                     是否使用 i18n
@@ -83,7 +80,6 @@ $ goctls api new --help
   -p, --port int                 暴露的服务端口号 (默认为 9100)
       --remote string            模板的远程 git 仓库，不能与 --home 同时设置，如果同时设置，则以 --remote 为准 git 仓库目录结构必须与 https://github.com/zeromicro/go-zero-template 一致
   -s, --style string             文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (默认为 "go_zero")
-  -t, --tool_version string      用于迁移的 simple admin 工具版本，例如 v0.3.0，参见 [https://github.com/suyuan32/simple-admin-tools/releases]
   -a, --trans_err                是否翻译错误信息
 ```
 

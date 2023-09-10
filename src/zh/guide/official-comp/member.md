@@ -102,6 +102,9 @@ ProjectConf:
   SmsTemplateId: xxx # 短信服务模板ID
   SmsAppId: xxx # 短信服务 appId
   SmsSignName: xxx # 短信服务签名
+  RegisterVerify: captcha # 注册验证方式，支持 captcha, email, sms, sms_or_email
+  LoginVerify: captcha #  登录验证方式，支持 captcha, email, sms, sms_or_email, all
+  ResetVerify: email # 重置验证方式，支持  email, sms, sms_or_email
 
 MmsRpc:
   Target: k8s://default/mms-rpc-svc:9103

@@ -102,6 +102,9 @@ ProjectConf:
   SmsTemplateId: xxx # The template id for sms
   SmsAppId: xxx # The app id for sms
   SmsSignName: xxx # The signature name of sms
+  RegisterVerify: captcha # register captcha type, support captcha, email, sms, sms_or_email
+  LoginVerify: captcha # login captcha type, support captcha, email, sms, sms_or_email, all
+  ResetVerify: email # reset captcha type, support email, sms, sms_or_email
 
 MmsRpc:
   Target: k8s://default/mms-rpc-svc:9103

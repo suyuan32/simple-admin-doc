@@ -68,6 +68,8 @@ UploadConf:
   MaxOtherSize: 10485760 # 10 mb the maximum size of other type
   PrivateStorePath: /home/ryan/www/private # private path
   PublicStorePath: /home/ryan/www/public # public path for every one access e.g. nginx path
+  ServerURL: "http://192.168.50.204:81" # the local url to access the files
+  DeleteFileWithCloud: true # whether to delete cloud file when delete the data in database
 
 CoreRpc:
   Target: k8s://default/core-rpc-svc:9101 # core rpc address, use endpoint in local | core 服务RPC地址，本地测试使用直连

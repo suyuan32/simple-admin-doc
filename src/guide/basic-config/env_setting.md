@@ -138,6 +138,13 @@ ProjectConf:
   DefaultRole: 1 # default role id when register
   DefaultDepartment: 1 # default department id when register
   DefaultPosition: 1 # default position id when register
+  EmailCaptchaExpiredTime: 600 # the expired time for email captcha
+  SmsTemplateId: xxx # The template id for sms
+  SmsAppId: xxx # the app id for sms
+  SmsSignName: xxx # the signature name of sms
+  RegisterVerify: captcha # register captcha type, support captcha, email, sms, sms_or_email
+  LoginVerify: captcha # login captcha type, support captcha, email, sms, sms_or_email, all
+  ResetVerify: email # reset captcha type, support email, sms, sms_or_email
 ```
 
 ::: warning

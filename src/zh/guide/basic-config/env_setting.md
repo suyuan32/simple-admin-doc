@@ -137,6 +137,13 @@ ProjectConf:
   DefaultRole: 1 # 注册用户默认的角色ID
   DefaultDepartment: 1 # 注册用户默认的部门 ID
   DefaultPosition: 1 # 注册用户默认的职位 ID
+  EmailCaptchaExpiredTime: 600 # 默认电子邮件超时时间
+  SmsTemplateId: xxx # 默认短信模板ID
+  SmsAppId: xxx # 默认短信 APP ID
+  SmsSignName: xxx # 默认短信签名
+  RegisterVerify: captcha # 注册验证方式，支持 captcha, email, sms, sms_or_email
+  LoginVerify: captcha #  登录验证方式，支持 captcha, email, sms, sms_or_email, all
+  ResetVerify: email # 重置验证方式，支持  email, sms, sms_or_email
 ```
 
 ::: warning

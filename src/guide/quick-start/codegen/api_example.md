@@ -67,7 +67,7 @@ $ goctls api new --help
 Fast create api service
 
 Usage:
-  goctl api new [flags]
+  goctls api new [flags]
 
 Flags:
       --branch string            The branch of the remote repo, it does work with --remote

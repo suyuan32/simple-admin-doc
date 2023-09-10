@@ -66,7 +66,7 @@ $ goctls api new --help
 快速创建 API 服务
 
 用法：
-  goctl api new [选项]
+  goctls api new [选项]
 
 选项：
       --branch string            远程仓库的分支，需要与 --remote 一起使用

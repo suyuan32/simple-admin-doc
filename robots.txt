@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://doc.ryansu.pro/sitemap.xml
+Sitemap: https://doc.ryansu.tech/sitemap.xml

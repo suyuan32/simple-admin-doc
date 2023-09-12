@@ -76,7 +76,7 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 
 ## 文档
 
-[Simple Admin 文档](https://doc.ryansu.tech)
+[Simple Admin 文档](https://doc.ryansu.pro)
 
 - go-zero
   [Document](https://go-zero.dev/)
@@ -93,7 +93,7 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 
 ## 快速开始
 
-[快速开始文档](https://doc.ryansu.tech/zh/guide/basic-config/env_setting.html)
+[快速开始文档](https://doc.ryansu.pro/zh/guide/basic-config/env_setting.html)
 
 ## 更新日志
 

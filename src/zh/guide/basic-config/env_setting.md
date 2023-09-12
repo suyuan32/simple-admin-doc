@@ -20,7 +20,7 @@ title: "本地开发环境配置"
 :::
 
 ::: info
-[视频教程](https://www.bilibili.com/video/BV1Hg4y1M7T5) [Backend UI 文档](https://vben.ryansu.pro/zh/)
+[视频教程](https://www.bilibili.com/video/BV1Hg4y1M7T5) [Backend UI 文档](https://vben.ryansu.tech/zh/)
 :::
 
 ## 后端部署

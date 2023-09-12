@@ -244,7 +244,7 @@ func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
 
 ### Query data
 
-See [Predicates](http://ent.ryansu.pro/#/zh-cn/predicates)
+See [Predicates](http://ent.ryansu.tech/#/zh-cn/predicates)
 
 ```go
 package api

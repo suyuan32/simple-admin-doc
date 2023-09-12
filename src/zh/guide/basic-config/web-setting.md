@@ -4,7 +4,7 @@ title: "前端设置"
 ---
 
 ::: info
-[Backend UI 文档](https://vben.ryansu.pro/zh/)
+[Backend UI 文档](https://vben.ryansu.tech/zh/)
 :::
 
 ## 前端设置

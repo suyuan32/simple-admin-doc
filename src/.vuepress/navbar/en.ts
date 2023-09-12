@@ -29,7 +29,7 @@ export const enNavbar = navbar([
       {
         text: "Vben Admin Document",
         icon: "fa-solid fa-book",
-        link: "https://vben.ryansu.pro/",
+        link: "https://vben.ryansu.tech/",
       },
       {
         text: "Go Swagger Document",

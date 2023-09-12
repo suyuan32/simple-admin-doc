@@ -20,7 +20,7 @@ It is recommended to develop under linux, because the make command is required. 
 :::
 
 ::: info
-[Backend UI Doc](https://vben.ryansu.pro/) [Video Tutorial](https://youtu.be/_RDvlaKRRTY)
+[Backend UI Doc](https://vben.ryansu.tech/) [Video Tutorial](https://youtu.be/_RDvlaKRRTY)
 :::
 
 ## Backend Setting

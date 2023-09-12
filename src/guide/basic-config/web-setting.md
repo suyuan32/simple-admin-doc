@@ -6,7 +6,7 @@ title: "Web Setting"
 ## Web UI setting
 
 ::: info
-[Backend UI Doc](https://vben.ryansu.pro/)
+[Backend UI Doc](https://vben.ryansu.tech/)
 :::
 
 > Mainly modify env file

@@ -245,7 +245,7 @@ func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
 
 ### 查询数据
 
-查看文档 [断言](http://ent.ryansu.pro/#/zh-cn/predicates)
+查看文档 [断言](http://ent.ryansu.tech/#/zh-cn/predicates)
 
 ```go
 package api

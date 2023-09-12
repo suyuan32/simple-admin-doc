@@ -3,7 +3,7 @@ import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
 
 export default hopeTheme({
-  hostname: "https://doc.ryansu.pro",
+  hostname: "https://doc.ryansu.tech",
 
   author: {
     name: "Ryan SU",

@@ -10,7 +10,7 @@ export const zhNavbar = navbar([
   {
     text: "在线预览",
     icon: "fa-solid fa-laptop",
-    link: "http://101.132.124.135/login",
+    link: "http://101.132.124.135:8080/login",
   },
   {
     text: "其他文档",

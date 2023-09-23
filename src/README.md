@@ -26,7 +26,7 @@ features:
 - title: Fully Support Various Managements
   icon: fa-solid fa-wrench
   details: Provide rich background management functions
-  link: http://101.132.124.135/
+  link: http://101.132.124.135:8080/
 
 - title: Powerful Generation Tools
   icon: fa-solid fa-screwdriver-wrench

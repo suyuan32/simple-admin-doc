@@ -10,7 +10,7 @@ export const enNavbar = navbar([
   {
     text: "Online Preview",
     icon: "fa-solid fa-laptop",
-    link: "http://101.132.124.135/login",
+    link: "http://101.132.124.135:8080/login",
   },
   {
     text: "Other Documents",

@@ -58,7 +58,7 @@ The official comes with a variety of extensions to help small and medium-sized e
 
 ### Online preview
 
-[Online Preview](http://101.132.124.135/#/dashboard)
+[Online Preview](http://101.132.124.135:8080/#/dashboard)
 Account: admin
 Password: simple-admin
 

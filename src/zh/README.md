@@ -26,7 +26,7 @@ features:
 - title: 完善的后台管理功能
   icon: fa-solid fa-wrench
   details: 提供丰富的后台管理功能
-  link: http://101.132.124.135/
+  link: http://101.132.124.135:8080/
 
 - title: 强大的生成工具
   icon: fa-solid fa-screwdriver-wrench

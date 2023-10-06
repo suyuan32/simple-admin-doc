@@ -24,6 +24,7 @@ goctls docker -s core -t rpc -c
 | port         | No       |                            | The port to expose, default none                                                                                                                                                                                                                                           |
 | remote       | No       |                            | The remote git repository of the template, `--home` and `--remote` cannot be set at the same time, if they are, `--remote` has higher priority. The git repository directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure |
 | tz           | No       |                            | The timezone of the container, such as `Asia/Shanghai`                                                                                                                                                                                                                     |
+| local_build | No | false | Whether to build the project locally, without using an intermediate image |
 
 > Run `goctls docker -h` to see more:
 
@@ -31,7 +32,7 @@ goctls docker -s core -t rpc -c
 Generate Dockerfile
 
 Usage:
-  goctl docker [flags]
+  goctls docker [flags]
 
 Flags:
   -u, --author string         The author information (default "example@example.com")
@@ -40,7 +41,8 @@ Flags:
   -c, --china                 If your server in China, set true
   -h, --help                  help for docker
   -m, --home string           The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-  -i, --image string          The image for building project (default "golang:1.20.3-alpine3.17")
+  -i, --image string          The image for building project (default "golang:1.20.5-alpine3.17")
+  -l, --local_build           Whether to build the project locally without using intermediate images
   -p, --port int              The port to expose, default none
   -r, --remote string         The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
                               The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure

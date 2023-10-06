@@ -46,31 +46,32 @@ Run this command can auto install protoc, swagger and so on.
 
 ```shell
 $ goctls api -h
-NAME:
-   goctl api - generate api related files
+Generate api related files
 
-USAGE:
-   goctl api command [command options] [arguments...]
+Usage:
+  goctls api [flags]
+  goctls api [command]
 
-COMMANDS:
-   new       fast create api service
-   format    format api files
-   validate  validate api file
-   doc       generate doc files
-   go        generate go files for provided api in yaml file
-   java      generate java files for provided api in api file
-   ts        generate ts files for provided api in api file
-   dart      generate dart files for provided api in api file
-   kt        generate kotlin code for provided api file
-   plugin    custom file generator
+Available Commands:
+  doc         Generate doc files
+  ent         Generate CRUD logic files from ent file
+  format      Format api files
+  go          Generate go files for provided api in api file
+  new         Fast create api service
+  plugin      Custom file generator
+  proto       Generate CRUD template from proto file
+  validate    Validate api file
 
-OPTIONS:
-   -o value        output a sample api file
-   --home value    the goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-   --remote value  the remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                   The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-   --branch value  the branch of the remote repo, it does work with --remote
-   --help, -h      show help
+Flags:
+      --branch string   The branch of the remote repo, it does work with --remote
+  -h, --help            help for api
+      --home string     The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+      --o string        Output a sample api file
+      --remote string   The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+                        The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
+
+
+Use "goctls api [command] --help" for more information about a command.
 ```
 
 > Example:
@@ -84,31 +85,34 @@ This means generating go files by core.api's declaration in current directory. -
 ## Rpc command
 
 ```shell
-$ goctl rpc protoc -h
-NAME:
-   goctl rpc protoc - generate grpc code
+$ goctls rpc protoc -h
+Generate grpc code
 
-USAGE:
-   example: goctl rpc protoc xx.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
+Usage:
+  goctls rpc protoc [flags]
 
-DESCRIPTION:
-   for details, see https://go-zero.dev/cn/goctl-rpc.html
+Examples:
+goctls rpc protoc xx.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
 
-OPTIONS:
-   --zrpc_out value  the zrpc output directory
-   --style value     the file naming format, see [https://github.com/zeromicro/go-zero/tree/master/tools/goctl/config/readme.md]
-   --home value      the goctl home path of the template
-   --remote value    the remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                     The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-   --branch value    the branch of the remote repo, it does work with --remote
-   --verbose, -v     enable log output
+Flags:
+      --branch string     The branch of the remote repo, it does work with --remote
+  -c, --client            Whether to generate client (default true)
+  -h, --help              help for protoc
+      --home string       The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+  -m, --multiple          Generated in multiple rpc service mode
+      --remote string     The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+                          The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
+  -s, --style string      The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -v, --verbose           Enable log output
+      --zrpc_out string   The zrpc output directory
+
 ```
 
 > Example: \
 > Generate proto template
 
 ```shell
-goctl rpc template -o=user.proto
+goctls rpc template -o=user.proto
 ```
 
 ```shell
@@ -133,7 +137,7 @@ service User {
 > Generate go files
 
 ```shell
-goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
+goctls rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
 ::: info

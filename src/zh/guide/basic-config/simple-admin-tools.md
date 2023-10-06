@@ -55,31 +55,33 @@ goctls env check -i -f --verbose
 
 ```shell
 $ goctls api -h
-NAME:
-   goctl api - generate api related files
+生成与 api 相关的文件
 
-USAGE:
-   goctl api command [command options] [arguments...]
+Usage:
+  goctls api [flags]
+  goctls api [command]
 
-COMMANDS:
-   new       fast create api service
-   format    format api files
-   validate  validate api file
-   doc       generate doc files
-   go        generate go files for provided api in yaml file
-   java      generate java files for provided api in api file
-   ts        generate ts files for provided api in api file
-   dart      generate dart files for provided api in api file
-   kt        generate kotlin code for provided api file
-   plugin    custom file generator
+Available Commands:
+  doc         生成文档文件
+  ent         从 ent 文件生成 CRUD 业务逻辑文件
+  format      格式化 api 文件
+  go          为提供的 api 文件生成 go 文件
+  new         快速创建 api 服务
+  plugin      自定义文件生成器
+  proto       从 proto 文件生成 CRUD 模板
+  validate    验证 api 文件
 
-OPTIONS:
-   -o value        output a sample api file
-   --home value    the goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-   --remote value  the remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                   The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-   --branch value  the branch of the remote repo, it does work with --remote
-   --help, -h      show help
+Flags:
+      --branch string   远程 repo 的分支，与 --remote 一起使用
+  -h, --help            help for api
+      --home string     模板的 goctl 路径，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
+      --o string        输出 api 示例文件
+      --remote string   模板的远程 git repo，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
+                        Git repo 的目录结构必须与 https://github.com/zeromicro/go-zero-template 相一致
+
+
+Use "goctls api [command] --help" for more information about a command.
+
 ```
 
 > 例子:
@@ -93,30 +95,31 @@ goctls api go -api core.api -dir .
 ### Rpc 命令
 
 ```shell
-$ goctl rpc protoc -h
-NAME:
-   goctl rpc protoc - generate grpc code
+$ goctls rpc protoc -h
+生成 grpc 代码
 
-USAGE:
-   example: goctl rpc protoc xx.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
+Usage:
+  goctls rpc protoc [flags]
 
-DESCRIPTION:
-   for details, see https://go-zero.dev/cn/goctl-rpc.html
+Examples:
+goctl rpc protoc xx.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
 
-OPTIONS:
-   --zrpc_out value  the zrpc output directory
-   --style value     the file naming format, see [https://github.com/zeromicro/go-zero/tree/master/tools/goctl/config/readme.md]
-   --home value      the goctl home path of the template
-   --remote value    the remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                     The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-   --branch value    the branch of the remote repo, it does work with --remote
-   --verbose, -v     enable log output
-```
+Flags:
+      --branch string     远程 repo 的分支，与 --remote 一起使用
+  -c, --client            是否生成 client (default true)
+  -h, --help              help for protoc
+      --home string       模板的 goctl 路径，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
+  -m, --multiple          在多个 rpc 服务模式下生成
+      --remote string     模板的远程 git repo，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
+                          Git repo 的目录结构必须与 https://github.com/zeromicro/go-zero-template 相一致
+  -s, --style string      文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -v, --verbose           启用日志输出
+      --zrpc_out string   zrpc 输出目录
 
 > 例子: 生成 proto 的模板
 
 ```shell
-goctl rpc template -o=user.proto
+goctls rpc template -o=user.proto
 ```
 
 > 生成的文件
@@ -144,7 +147,7 @@ service User {
 > 生成 go 文件
 
 ```shell
-goctl rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
+goctls rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
 ::: info

@@ -101,7 +101,7 @@ Captcha:
   KeyLong: 5 # captcha key length
   ImgWidth: 240 # captcha image width
   ImgHeight: 80 # captcha image height
-  Driver: digit # support three drivers: digit, string, math, default is digit
+  Driver: digit # support four drivers: digit, string, math and chinese, default is digit
 
 DatabaseConf:
   Type: mysql # support mysql, postgres, sqlite3

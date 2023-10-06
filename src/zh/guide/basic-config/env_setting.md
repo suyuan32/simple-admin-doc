@@ -100,7 +100,7 @@ Captcha:
   KeyLong: 5 # 验证码长度
   ImgWidth: 240 # 验证码图片宽度
   ImgHeight: 80 # 验证码图片高度
-  Driver: digit # 支持三种驱动 digit, string, math, 默认为 digit
+  Driver: digit # 支持四种驱动 digit, string, math, chinese 默认为 digit
 
 DatabaseConf:
   Type: mysql # 支持 mysql, postgres, sqlite3

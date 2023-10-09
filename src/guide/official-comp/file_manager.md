@@ -3,7 +3,9 @@ order: 1
 title: "File Manager"
 ---
 
-## File manager service
+### Introduction
+
+Simple Admin's file upload management service supports local uploading and uploading to any cloud storage service that follows the S3 protocol, including Alibaba Cloud, Tencent Cloud, Qiniu Cloud, Tianyi Cloud, AWS, and others.
 
 ### Get code
 

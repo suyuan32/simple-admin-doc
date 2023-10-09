@@ -55,7 +55,6 @@ goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api 
 | casbin      | 否   | false  | 是否启用 casbin 进行鉴权并自动添加中间件 | true 为启用                                                                                                |
 | module_name | 否   |        | go.mod 中的 module 名称                  | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
 | trans_err   | 否   | false  | 国际化翻译错误信息                       | true 为启用                                                                                                |
-| gitlab      | 否   | false  | 是否生成 gitlab-ci.yml                   | true 为生成                                                                                                |
 | port        | 否   | 9100   | 端口号                                   | 服务暴露的端口号                                                                                           |
 | ent         | 否   | false  | 是否启用 Ent                             | true 为启用，启用 Ent 可用于单体 API 服务                                                                  |
 
@@ -72,7 +71,6 @@ $ goctls api new --help
       --branch string            远程仓库的分支，需要与 --remote 一起使用
   -c, --casbin                   是否使用 Casbin
   -e, --ent                      是否在 API 服务中使用 Ent
-  -g, --gitlab                   是否使用 GitLab CI/CD
   -h, --help                     显示帮助信息
       --home string              模板的 goctl home 路径，不能与 --remote 同时设置，如果同时设置，则以 --remote 为准
   -i, --i18n                     是否使用 i18n
@@ -191,7 +189,7 @@ proto 必须为 `goctls rpc ent` 生成的 proto
 :::
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --output=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --output=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/types/example
 ```
 
 ### `api proto` 参数介绍

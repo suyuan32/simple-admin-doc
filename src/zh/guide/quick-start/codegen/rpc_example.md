@@ -54,7 +54,6 @@ goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 80
 | ent         | 否   | false   | 是否启用 ent                      | true 为启用                                                                                                |
 | module_name | 否   |         | go.mod 中的 module 名称           | 如果项目需要被在外部 import，需要像上面例子设置为 github 或者其他地方的仓库网址， 为空则 module 为项目名称 |
 | style       | 否   | go_zero | 文件名格式                        | go_zero 为蛇形格式                                                                                         |
-| gitlab      | 否   | false   | 是否生成 gitlab-ci.yml            | true 为生成                                                                                                |
 | port        | 否   | 9100    | 端口号                            | 服务暴露的端口号                                                                                           |
 | desc        | 否   | false   | 是否拆分 proto 文件到 desc 文件夹 | true 会生成 desc 文件夹                                                                                    |
 | i18n        | 否   | false   | 是否启用 i18n                     | true 为启用                                                                                                |
@@ -72,7 +71,6 @@ Flags:
       --branch string            远程 repo 的分支，与 --remote 一起使用
   -d, --desc                     是否为拆分 proto 文件创建 desc 文件夹
   -e, --ent                      是否在项目中使用 Ent
-  -g, --gitlab                   是否使用 gitlab-ci
   -h, --help                     help for new
       --home string              模板的 goctl 路径，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
   -i, --i18n                     是否启用 i18n 国际化

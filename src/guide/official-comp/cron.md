@@ -3,8 +3,9 @@ order: 3
 title: "Timed Task Module"
 ---
 
-## Timing task module
+### Introduction
 
+Simple Admin Job is the scheduled task module of Simple Admin. It currently provides dynamic and static scheduled tasks based on asynq and implemented using Redis. In the future, it will integrate with RocketMQ to implement additional scheduled tasks.
 ### Download Code
 
 ```shell

@@ -3,7 +3,9 @@ order: 2
 title: "Member Service"
 ---
 
-## Member Service
+### Introduction
+
+Simple Admin's API service for membership service implements features such as membership management, member login, third-party login, and login via phone number or email registration. It also supports login via WeChat Mini Program.
 
 ### Get code
 

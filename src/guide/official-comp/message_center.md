@@ -3,9 +3,9 @@ order: 4
 title: "Message Center Module"
 ---
 
-## Message Center
+### Introduction
 
-Responsible for email sending, SMS sending, announcements, and internal IM.
+Simple Admin's message center module (MCMS) is primarily responsible for email sending, SMS message sending, announcements, and internal instant messaging (IM). It supports any SMTP email service and integrates with Alibaba Cloud, Tencent Cloud, and Heyun for SMS messaging services.
 
 ### Download Code
 

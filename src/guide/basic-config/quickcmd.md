@@ -12,32 +12,19 @@ title: "Quick Commands"
 We offer several commands in makefile ， you can just run in bash:
 
 ```shell
-# build docker image, require environment variables DOCKER_USERNAME
-make docker
-
-# publish docker, require environment variables DOCKER_USERNAME DOCKER_PASSWORD
-make publish-docker
-
-# generate api code with files in api/desc, and generate swagger file
-make gen-api
-
-# generate code by rpc/core.proto
-make gen-rpc
-
-# generate ent code
-make gen-ent
-
-# generate swagger
-make gen-swagger
-
-# run swagger service
-make serve-swagger
-
-# visit doc locally
-make doc
-
-# generate CRUD code ( You need to set model name and group name)
-make gen-rpc-ent-logic model={modelName} group={groupName}
+build-linux: Build project for Linux | 构建Linux下的可执行文件
+build-mac: Build project for MacOS | 构建MacOS下的可执行文件
+build-win: Build project for Windows | 构建Windows下的可执行文件
+docker: Build the docker image | 构建 docker 镜像
+fmt: Format the codes | 格式化代码
+gen-api: Generate API files | 生成 API 的代码
+gen-swagger: Generate swagger file | 生成 swagger 文件
+help: Show help | 显示帮助
+lint: Run go linter | 运行代码错误分析
+publish-docker: Publish docker image | 发布 docker 镜像
+serve-swagger: Run the swagger server | 运行 swagger 服务
+test: Run test for the project | 运行项目测试
+tools: Install the necessary tools | 安装必要的工具
 ```
 
 ::: info

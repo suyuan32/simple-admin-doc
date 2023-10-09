@@ -11,38 +11,27 @@ title: "快捷命令"
 **注意：需要系统支持 make 命令，建议 linux, Windows 用户请先配置环境 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)**
 :::
 
+::: info
+**在项目根目录执行 `make help` 获取所有命令**
+:::
+
 ```shell
-# 编译 docker image, 需要设置环境变量 DOCKER_USERNAME VERSION
-make docker
-
-# 发布 docker 需要设置环境变量 DOCKER_USERNAME VERSION DOCKER_PASSWORD
-make publish-docker
-
-# 根据 api/desc 生成 api代码并更新 swagger
-make gen-api
-
-# 根据 rpc/core.proto 生成代码
-make gen-rpc
-
-# 生成 ent 代码
-make gen-ent
-
-# 生成 swagger
-make gen-swagger
-
-# 启动 swagger 服务
-make serve-swagger
-
-# 本地查看 doc
-make doc
-
-# 生成 CRUD 代码 ( 你需要设置model name 和 group name)
-make gen-rpc-ent-logic model={modelName} group={groupName}
+build-linux: Build project for Linux | 构建Linux下的可执行文件
+build-mac: Build project for MacOS | 构建MacOS下的可执行文件
+build-win: Build project for Windows | 构建Windows下的可执行文件
+docker: Build the docker image | 构建 docker 镜像
+fmt: Format the codes | 格式化代码
+gen-api: Generate API files | 生成 API 的代码
+gen-swagger: Generate swagger file | 生成 swagger 文件
+help: Show help | 显示帮助
+lint: Run go linter | 运行代码错误分析
+publish-docker: Publish docker image | 发布 docker 镜像
+serve-swagger: Run the swagger server | 运行 swagger 服务
+test: Run test for the project | 运行项目测试
+tools: Install the necessary tools | 安装必要的工具
 ```
 
-::: info
-**你也可以通过执行 `make help` 获取所有命令**
-:::
+
 
 ## 环境变量
 

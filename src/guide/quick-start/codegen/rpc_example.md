@@ -55,7 +55,6 @@ The project name only supports lowercase and camelcase and must be not contains 
 | ent         | No   | false   | Whether to use Ent                                   | true means use                                                                                                                                                    |
 | i18n        | No   | false   | Whether to use i18n                                  | true means use                                                                                                                                                    |
 | module_name | No   |         | Module name in go.mod                                | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
-| gitlab      | No   | false   | Whether to generating gitlab-ci.yml                  | true means generating                                                                                                                                             |
 | port        | No   | 9100    | Port number                                          | The service port                                                                                                                                                  |
 | desc        | No   | false   | Whether to split the proto file into the desc folder | true will generate the desc folder                                                                                                                                |
 | style       | No   | go_zero | The format of the file name.                         | snake case format is go_zero.                                                                                                                                     |
@@ -73,7 +72,6 @@ Flags:
       --branch string            The branch of the remote repo, it does work with --remote
   -d, --desc                     Whether to create desc folder for splitting proto files
   -e, --ent                      Whether use Ent in project
-  -g, --gitlab                   Whether to use gitlab-ci
   -h, --help                     help for new
       --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
   -i, --i18n                     Whether to use i18n

@@ -3,11 +3,12 @@ order: 3
 title: "定时任务模块"
 ---
 
-## 定时任务模块
-
+### 介绍
 ::: info
 [官方教程](https://www.bilibili.com/video/BV1Ac411F7yx/)
 :::
+
+Simple Admin Job 是 Simple Admin 的定时任务模块，目前已提供了基于 asynq 的动态定时任务及静态定时任务，基于 redis 实现，未来会接入 RocketMQ 实现额外的定时任务。
 
 ### 下载代码
 

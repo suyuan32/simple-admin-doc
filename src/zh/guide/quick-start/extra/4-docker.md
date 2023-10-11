@@ -6,7 +6,7 @@ title: "Dockerfile"
 ## Dockerfile 生成
 
 ```shell
-goctls docker -s core -t rpc -c
+goctls docker -l -u yuansu.china.work@gmail.com -c -p 9104 -s mms -t rpc -z Asia/Shanghai
 ```
 
 ### `docker` 参数介绍

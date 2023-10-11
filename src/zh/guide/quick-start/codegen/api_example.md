@@ -189,7 +189,13 @@ proto 必须为 `goctls rpc ent` 生成的 proto
 :::
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --output=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/types/example
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=Example --output=./ --model=Student --rpc_name=Example --grpc_package=github.com/suyuan32/simple-admin-example-rpc/types/example --i18n=true
+```
+
+> 简单参数
+
+```shell
+goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example --o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i
 ```
 
 ### `api proto` 参数介绍

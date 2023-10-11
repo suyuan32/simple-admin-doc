@@ -50,3 +50,11 @@ Flags:
   -t, --service_type string   The service type, such as rpc, api (default "rpc")
   -z, --tz string             The timezone of the container, such as Asia/Shanghai
 ```
+
+## Environment variables
+
+| Environment Variables | Introduction                                        |
+| --------------------- | --------------------------------------------------- |
+| DOCKER_USERNAME       | docker repository username                          |
+| DOCKER_PASSWORD       | docker repository password                          |
+| REPO                  | docker repository address， official hub: docker.io |

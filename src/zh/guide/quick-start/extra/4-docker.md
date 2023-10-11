@@ -51,3 +51,11 @@ Flags:
   -t, --service_type string   服务类型，例如 rpc、api (default "rpc")
   -z, --tz string             容器的时区，例如 Asia/Shanghai
 ```
+
+## 环境变量
+
+| 环境变量        | 介绍                               |
+| --------------- | ---------------------------------- |
+| DOCKER_USERNAME | docker 仓库用户名                  |
+| DOCKER_PASSWORD | docker 仓库密码                    |
+| REPO            | docker 仓库地址， 官网为 docker.io |

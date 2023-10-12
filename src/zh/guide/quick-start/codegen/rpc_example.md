@@ -34,13 +34,13 @@ title: "RPC 微服务"
 > 创建 example 服务
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc  --port=8080 --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc  --port=8080 --desc=true
 ```
 
 > 简单命令
 
 ```shell
-goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -g -d
+goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -d
 ```
 
 ::: warning

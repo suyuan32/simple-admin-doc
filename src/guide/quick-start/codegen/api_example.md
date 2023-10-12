@@ -35,13 +35,13 @@ An API can access multiple RPCs, providing a unified request entry。
 > Create example project
 
 ```shell
-goctls api new example --i18n=true --casbin=true --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081 --gitlab=true
+goctls api new example --i18n=true --casbin=true --trans_err=true --module_name=github.com/suyuan32/simple-admin-example-api --port=8081
 ```
 
 > Simpler Command
 
 ```shell
-goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081 -g
+goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081
 ```
 
 ::: warning

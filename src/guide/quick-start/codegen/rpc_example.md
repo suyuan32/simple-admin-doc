@@ -35,13 +35,13 @@ Multiple different APIs can access the same RPC to call its functions.
 > Create example project
 
 ```shell
-goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --port=8080  --gitlab=true --desc=true
+goctls rpc new example --ent=true --module_name=github.com/suyuan32/simple-admin-example-rpc --port=8080 --desc=true
 ```
 
 > Simpler Command
 
 ```shell
-goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -g -d
+goctls rpc new example -e -m github.com/suyuan32/simple-admin-example-rpc  -p 8080 -d
 ```
 
 ::: warning

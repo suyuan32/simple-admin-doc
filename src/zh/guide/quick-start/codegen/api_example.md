@@ -215,15 +215,16 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 | json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                                                                                |
 | import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                                                                 |
 | overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                                                                       |
+| optional_service        | 否   | false   | 是否为可选服务              | 是否为可选服务，若为 true，会自动生成服务启动判断逻辑                                                                                                        |
 
 **详细参数请在命令行查看 `goctls api proto --help`**
 
 ```shell
-$ goctls api proto --help
+$ goctls api proto -h
 从 proto 文件生成 CRUD 模板
 
 Usage:
-  goctl api proto [flags]
+  goctls api proto [flags]
 
 Flags:
   -a, --api_service_name string   API 服务名称
@@ -234,6 +235,7 @@ Flags:
   -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
   -m, --model string              用于生成的模型名称，例如 user，如果为空，则为 schema 目录中的所有模型生成代码
       --multiple                  proto 是否包含多个服务
+  -t, --optional_service          是否为可选服务，如果为 true，则会生成判断代码
   -o, --output string             输出路径
   -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
   -p, --proto string              proto 文件路径

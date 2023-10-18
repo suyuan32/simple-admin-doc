@@ -3,7 +3,7 @@ order: 2
 title: "Gitlab CI 文件生成"
 ---
 
-## Drone CI 文件生成
+## Gitlab CI 文件生成
 
 > goctls >= 1.6.6
 

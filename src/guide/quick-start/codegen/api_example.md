@@ -217,15 +217,16 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 | json_style       | No   | goZero  | JSON tag format, the default is small camelCase | go_zero is underscore, GoZero is large camelCase                                                                                                   |
 | import_prefix    | No   |         | The path prefix of import                       | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc                                               |
 | overwrite        | No   | false   | Whether it covers the generated file            | `true` will cover all generated files                                                                                                              |
+| optional_service        | No   | false   | Whether the service is optional            | `true` will generate logic code to judge the service status                                                                                                              |
 
 ** Run `goctls api proto --help` see more details. **
 
 ```shell
-$ goctls api proto --help
+$ goctls api proto -h
 Generate CRUD template from proto file
 
 Usage:
-  goctl api proto [flags]
+  goctls api proto [flags]
 
 Flags:
   -a, --api_service_name string   The API service name
@@ -236,6 +237,7 @@ Flags:
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
   -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
       --multiple                  Whether the proto contains multiple services
+  -t, --optional_service          Whether it is an optional service, if true, judgment code will be generated
   -o, --output string             The output path
   -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
   -p, --proto string              The proto path

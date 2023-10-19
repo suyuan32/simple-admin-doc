@@ -7,10 +7,10 @@ title: '链路追踪'
 
 ```yaml
 Telemetry:
-  Name: core-api  # service name 
-  Endpoint: http://127.0.0.1:14268/api/traces  # jaeger url
+  Name: core-api # 服务名称
+  Endpoint: localhost:4317
   Sampler: 1.0
-  Batcher: jaeger
+  Batcher: otlpgrpc # 使用 grpc
 ```
 
 ## Jaeger 本地环境部署

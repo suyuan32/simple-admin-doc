@@ -23,7 +23,6 @@ actions:
 
 highlights:
   - header: Features
-    description: We provide plenty of useful features
     features:
 
     - title: Fully Support Various Managements
@@ -68,15 +67,15 @@ highlights:
 
   - header: Achivement
     features:
-      - title: Github star 
+      - title: Github Star 
         icon: star
         details: 1.1 k
       
-      - title: Company usage
+      - title: Company Usage
         icon: house
         details: 50 +
 
-      - title: Private project usage in production
+      - title: Private Project Usage In Production
         icon: folder
         details: 500 +
       

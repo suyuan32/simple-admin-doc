@@ -100,7 +100,7 @@ func (Role) Annotations() []schema.Annotation {
 - uuidx.ParseUUIDSlice 用于将 uuid 的 string 数组转化为 ent 的 uuid 数组类型
 - uuidx.ParseUUIDString 用于将 uuid 的 string 转化为 uuid 类型
 
-### 软删除可查看 [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete)
+### 软删除可查看 [Soft Delete](https://entgo.io/docs/interceptors/#soft-delete) [公众号](https://mp.weixin.qq.com/s/MxHfmuWv-_epkQXEZrnLsg)
 
 ### 初始化并添加全局引用
 

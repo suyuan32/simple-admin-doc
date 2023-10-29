@@ -6,7 +6,7 @@ title: "Ent"
 ## Ent 快速入门
 
 ::: info
-[官方文档](https://entgo.io/zh/docs/getting-started/) [官方例子](https://github.com/ent/ent/blob/master/examples/README.md) [schema 中文文档(推荐)](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started) \
+[官方文档](https://entgo.io/zh/docs/getting-started/) [官方例子](https://github.com/ent/ent/blob/master/examples/README.md) [schema 中文文档(推荐)](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started) 
 
 [教学项目](https://github.com/suyuan32/simple-admin-example-ent) 帮助你快速提升
 :::

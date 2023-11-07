@@ -7,12 +7,12 @@ title: "Simple Admin 配置合集"
 
 | 参数名称     | 必须 | 默认值       | 参数介绍                                                                       |
 | ------------ | ---- | ------------ | ------------------------------------------------------------------------------ |
-| Type         | 否   | mysql        | 支持 `mysql, postgres, sqlite3 `                                               |
+| Type         | 是   | mysql        | 支持 `mysql, postgres, sqlite3 `                                               |
 | Host         | 是   |              | 数据库地址， 如  `localhost`, `127.0.0.1 `                                     |
 | Port         | 是   |              | 数据库端口，如 `3306`                                                          |
-| Username     | 否   | root         | 数据库用户名                                                                   |
+| Username     | 是   | root         | 数据库用户名                                                                   |
 | Password     | 否   |              | 数据库密码                                                                     |
-| DBName       | 否   | simple_admin | 数据库名称                                                                     |
+| DBName       | 是   | simple_admin | 数据库名称                                                                     |
 | SSLMode      | 否   |              | 是否在 `postgresql` 中使用 `SSL`, `disable` 或 `require`                       |
 | DBPath       | 否   |              | Sqlite 数据库文件存放位置，使用 sqlite3时必须设置, 例如 `/home/data/sqlite.db` |
 | MysqlConfig  | 否   |              | Mysql的额外配置, 如 `&charset=utf8&loc=Asia%2fShanghai`                        |
@@ -101,6 +101,38 @@ Auth:
   AccessExpire: 259200 # 秒，过期时间
 ```
 
+## Core Project 配置
+
+| 参数名称                | 必须 | 默认值 | 参数介绍                                                  |
+| ----------------------- | ---- | ------ | --------------------------------------------------------- |
+| DefaultRole             | 是   | 1      | 注册用户默认的角色ID                                      |
+| DefaultDepartment       | 是   | 1      | 注册用户默认的部门 ID                                     |
+| DefaultPosition         | 是   | 1      | 注册用户默认的职位 ID                                     |
+| EmailCaptchaExpiredTime | 否   | 600    | 默认电子邮件验证码超时时间                                |
+| SmsTemplateId           | 否   |        | 默认短信模板ID                                            |
+| SmsAppId                | 否   |        | 默认短信 APP ID                                           |
+| SmsSignName             | 否   |        | 默认短信签名                                              |
+| RegisterVerify          | 是   |        | 注册验证方式，支持 captcha, email, sms, sms_or_email      |
+| LoginVerify             | 是   |        | 登录验证方式，支持 captcha, email, sms, sms_or_email, all |
+| ResetVerify             | 是   |        | 重置验证方式，支持  email, sms, sms_or_email              |
+| AllowInit               | 是   | true   | 是否允许初始化数据库                                      |
+
+> 例子
+
+```yaml 
+ProjectConf:
+  DefaultRoleId: 2
+  DefaultDepartmentId: 3
+  DefaultPositionId: 1
+  EmailCaptchaExpiredTime: 600
+  SmsTemplateId: 'xxx'
+  SmsAppId: 'xxx'
+  SmsSignName: 'xxx'
+  RegisterVerify: sms
+  LoginVerify: captcha
+  ResetVerify: email
+  AllowInit: true
+```
 
 ::: info 
 Go Zero 配置合集可以关注公众号查看文章

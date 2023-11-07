@@ -7,12 +7,12 @@ title: "Simple Admin Configurations"
 
 | Parameter Name | Required | Default Value | Parameter Description                                                                                    |
 | -------------- | -------- | ------------- | -------------------------------------------------------------------------------------------------------- |
-| Type           | No       | mysql         | Supported types: `mysql, postgres, sqlite3`                                                              |
+| Type           | Yes      | mysql         | Supported types: `mysql, postgres, sqlite3`                                                              |
 | Host           | Yes      |               | Database address, such as `localhost`, `127.0.0.1`                                                       |
 | Port           | Yes      |               | Database port, such as `3306`                                                                            |
-| Username       | No       | root          | Database username                                                                                        |
+| Username       | Yes      | root          | Database username                                                                                        |
 | Password       | No       |               | Database password                                                                                        |
-| DBName         | No       | simple_admin  | Database name                                                                                            |
+| DBName         | Yes      | simple_admin  | Database name                                                                                            |
 | SSLMode        | No       |               | Whether to use SSL in `postgresql`, options: `disable` or `require`                                      |
 | DBPath         | No       |               | Location to store the Sqlite database file, must be set when using sqlite3, e.g., `/home/data/sqlite.db` |
 | MysqlConfig    | No       |               | Additional configuration for MySQL, such as `&charset=utf8&loc=Asia%2fShanghai`                          |
@@ -100,4 +100,37 @@ I18nConf:
 Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2 # Consistent encryption key for JWT across all APIs for successful decoding
   AccessExpire: 259200 # Seconds, expiration time
+```
+
+## Core Project Configuration
+
+| Parameter Name          | Required | Default Value | Parameter Description                                                        |
+| ----------------------- | -------- | ------------- | ---------------------------------------------------------------------------- |
+| DefaultRole             | Yes      | 1             | Default role ID for registered users                                         |
+| DefaultDepartment       | Yes      | 1             | Default department ID for registered users                                   |
+| DefaultPosition         | Yes      | 1             | Default position ID for registered users                                     |
+| EmailCaptchaExpiredTime | No       | 600           | Default expiration time for email verification code                          |
+| SmsTemplateId           | No       |               | Default SMS template ID                                                      |
+| SmsAppId                | No       |               | Default SMS app ID                                                           |
+| SmsSignName             | No       |               | Default SMS signature                                                        |
+| RegisterVerify          | Yes      |               | Registration verification method, supports captcha, email, sms, sms_or_email |
+| LoginVerify             | Yes      |               | Login verification method, supports captcha, email, sms, sms_or_email, all   |
+| ResetVerify             | Yes      |               | Reset verification method, supports email, sms, sms_or_email                 |
+| AllowInit               | Yes      | true          | Whether to allow database initialization                                     |
+
+> Example
+
+```yaml 
+ProjectConf:
+  DefaultRoleId: 2
+  DefaultDepartmentId: 3
+  DefaultPositionId: 1
+  EmailCaptchaExpiredTime: 600
+  SmsTemplateId: 'xxx'
+  SmsAppId: 'xxx'
+  SmsSignName: 'xxx'
+  RegisterVerify: sms
+  LoginVerify: captcha
+  ResetVerify: email
+  AllowInit: true
 ```

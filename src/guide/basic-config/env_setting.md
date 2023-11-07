@@ -149,6 +149,7 @@ ProjectConf:
   RegisterVerify: captcha # register captcha type, support captcha, email, sms, sms_or_email
   LoginVerify: captcha # login captcha type, support captcha, email, sms, sms_or_email, all
   ResetVerify: email # reset captcha type, support email, sms, sms_or_email
+  AllowInit: true # if false, ban initialization
 ```
 
 ::: warning

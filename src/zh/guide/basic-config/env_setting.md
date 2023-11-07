@@ -148,6 +148,7 @@ ProjectConf:
   RegisterVerify: captcha # 注册验证方式，支持 captcha, email, sms, sms_or_email
   LoginVerify: captcha #  登录验证方式，支持 captcha, email, sms, sms_or_email, all
   ResetVerify: email # 重置验证方式，支持  email, sms, sms_or_email
+  AllowInit: true # 若为 false ，禁止初始化数据库
 ```
 
 ::: warning

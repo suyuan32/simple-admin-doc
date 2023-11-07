@@ -1,6 +1,6 @@
 ---
 order: 7
-title: "Simple Admin 配置合集"
+title: "Simple Admin Configurations"
 ---
 
 ## Database Configuration
@@ -101,7 +101,3 @@ Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2 # Consistent encryption key for JWT across all APIs for successful decoding
   AccessExpire: 259200 # Seconds, expiration time
 ```
-
-::: info 
-Go Zero 配置合集可以关注公众号查看文章
-:::

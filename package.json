@@ -12,10 +12,10 @@
   },
   "devDependencies": {
     "@vuepress/client": "2.0.0-beta.67",
-    "vue": "^3.3.5",
+    "vue": "^3.3.8",
     "vuepress": "2.0.0-beta.67",
-    "vuepress-plugin-search-pro": "2.0.0-beta.238",
-    "vuepress-theme-hope": "2.0.0-beta.238"
+    "vuepress-plugin-search-pro": "2.0.0-beta.246",
+    "vuepress-theme-hope": "2.0.0-beta.246"
   },
   "dependencies": {
     "@node-rs/jieba": "^1.7.2"

@@ -63,6 +63,10 @@ Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2 # JWT encrypt code
   AccessExpire: 259200 # seconds, expire duration
 
+# Cross domain config
+CROSConf:
+  Address: '*'
+
 Log:
   ServiceName: coreApiLogger
   Mode: file

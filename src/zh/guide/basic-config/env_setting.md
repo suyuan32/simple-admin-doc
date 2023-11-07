@@ -62,6 +62,10 @@ Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2 # JWT的加密密钥，各个API应保持一致才能解析
   AccessExpire: 259200 # 秒，过期时间
 
+# 跨域配置
+CROSConf:
+  Address: '*'
+
 Log:
   ServiceName: coreApiLogger
   Mode: file

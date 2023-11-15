@@ -163,7 +163,7 @@ package schema
 import (
  "entgo.io/ent"
  "entgo.io/ent/schema/field"
- "github.com/suyuan32/simple-admin-core/rpc/ent/schema/mixins"
+ "github.com/suyuan32/simple-admin-common/orm/ent/mixins"
 )
 
 // Student holds the schema definition for the Student entity.
@@ -181,7 +181,7 @@ func (Student) Fields() []ent.Field {
 
 func (Student) Mixin() []ent.Mixin {
  return []ent.Mixin{
-  mixins.BaseMixin{},
+  mixins.IDMixin{},
  }
 }
 

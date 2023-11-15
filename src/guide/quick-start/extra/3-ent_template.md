@@ -55,7 +55,7 @@ Soft delete templates are currently supported.
 
 ### `extra ent import` generates schema from database
 
-> goctls >= 1.5.18
+> goctls >= 1.6.12
 
 ::: warning
 It is recommended to execute the command directly in the project's **root directory**, and the `-o` parameter does not need to be configured, for example:
@@ -67,18 +67,19 @@ goctls extra ent import -d "mysql://root:simple-admin.@tcp(localhost:3306)/simpl
 :::
 
 ```shell
-$ SIMPLE_ADMIN_TOOLS_LANG=en goctls extra ent import -h
+$ goctls extra ent import -h
 Generate Ent Schema from database
 
 Usage:
   goctls extra ent import [flags]
 
 Flags:
-  -d, --dsn string      Database DSN address, supports mysql and postgres. e.g. "mysql://user:pass@tcp(localhost:3306)/dbname"
-                        "postgres://user:pass@host:port/dbname"
-  -h, --help            help for import
-  -o, --output string   Output path, the project's root directory
-  -t, --tables string   Specify data tables. e.g. sys_users,sys_tokens
+  -d, --dsn string              Database DSN address, supports mysql and postgres. e.g. "mysql://user:pass@tcp(localhost:3306)/dbname"
+                                "postgres://user:pass@host:port/dbname?sslmode=disable"
+  -e, --exclude_tables string   When excluding tables for exporting all tables, you need to specify all intermediate tables and tables without a primary key. For example: role_menu, user_roles
+  -h, --help                    help for import
+  -o, --output string           Output path, the project's root directory
+  -t, --tables string           Specify data tables. e.g. sys_users,sys_tokens
 ```
 
 ::: info

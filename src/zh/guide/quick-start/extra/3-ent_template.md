@@ -74,12 +74,12 @@ Usage:
   goctls extra ent import [flags]
 
 Flags:
-  -d, --dsn string      数据库的 DSN 地址，支持 mysql 和 postgres。 例子："mysql://user:pass@tcp(localhost:3306)/dbname"
-                        "postgres://user:pass@host:port/dbname"
-  -h, --help            help for import
-  -o, --output string   输出路径，为项目根目录
-  -t, --tables string   指定数据表，例子： sys_users,sys_tokens
-
+  -d, --dsn string              数据库的 DSN 地址，支持 mysql 和 postgres。 例子："mysql://user:pass@tcp(localhost:3306)/dbname"
+                                "postgres://user:pass@host:port/dbname?sslmode=disable"
+  -e, --exclude_tables string   排除的数据表，用于导出所有表时，需指定所有中间表及没有 primary key 的表，例子： role_menu,user_roles
+  -h, --help                    help for import
+  -o, --output string           输出路径，为项目根目录
+  -t, --tables string           指定数据表，例子： sys_users,sys_tokens
 ```
 
 ::: info

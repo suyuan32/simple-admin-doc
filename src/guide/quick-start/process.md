@@ -29,4 +29,4 @@ The basic process and commands used for the entire project from front-end to bac
 
 ![Single API service dev process](/assets/single-api-dev-process.png)
 
-![Single API logic dev process](/assets/single_api_develop_process_en.png)
+![Single API logic dev process](/assets/single_api_develop_process_en_1.png)

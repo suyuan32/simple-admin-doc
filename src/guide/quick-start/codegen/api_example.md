@@ -217,7 +217,7 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 | json_style       | No   | goZero  | JSON tag format, the default is small camelCase | go_zero is underscore, GoZero is large camelCase                                                                                                   |
 | import_prefix    | No   |         | The path prefix of import                       | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc                                               |
 | overwrite        | No   | false   | Whether it covers the generated file            | `true` will cover all generated files                                                                                                              |
-| optional_service        | No   | false   | Whether the service is optional            | `true` will generate logic code to judge the service status                                                                                                              |
+| optional_service | No   | false   | Whether the service is optional                 | `true` will generate logic code to judge the service status                                                                                        |
 
 ** Run `goctls api proto --help` see more details. **
 
@@ -286,19 +286,19 @@ Learn from [Single Example](https://github.com/suyuan32/simple-admin-example-api
 goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
 ```
 
-| Parameter        | Required | Default | Description                                                                    | Usage                                                                                                |
-| ---------------- | -------- | ------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------- |
-| schema           | Yes      |         | The address of the Ent schema file.                                            | Enter the relative path of the Ent schema folder.                                                    |
-| style            | No       | go_zero | The format of the file name.                                                   | snake case format for go_zero.                                                                       |
-| i18n             | No       | false   | Whether to use i18n                                                            | true means use                                                                                       |
-| api_service_name | Yes      |         | The service name of the API, used in the API declaration file.                 | In the API declaration file.                                                                         |
-| output           | Yes      |         | The output location of the file, relative path is accepted.                    | Points to the main file directory.                                                                   |
-| model            | Yes      |         | The name of the model in the schema.                                           | The internal struct name in the schema, such as Student in example.                                  |
-| search_key_num   | No       | 3       | The number of search fields in the list (default is 3).                        | Only string type fields can be automatically generated.                                              |
-| group            | Yes      |         | The name of the group, used to put different logic files in different folders. | Put different logic files in different folders.                                                      |
-| json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero.                 | Underline for go_zero, upper camel case for GoZero.                                                  |
-| import_prefix    | No       |         | The path prefix of import                                                      | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc |
-| overwrite        | No       | false   | Whether to overwrite the generated files.                                      | Overwrite all generated files when true.                                                             |
+| Parameter        | Required | Default | Description                                                                    | Usage                                                                                                       |
+| ---------------- | -------- | ------- | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| schema           | Yes      |         | The address of the Ent schema file.                                            | Enter the relative path of the Ent schema folder.                                                           |
+| style            | No       | go_zero | The format of the file name.                                                   | snake case format for go_zero.                                                                              |
+| i18n             | No       | false   | Whether to use i18n                                                            | true means use                                                                                              |
+| api_service_name | Yes      |         | The service name of the API, used in the API declaration file.                 | In the API declaration file.                                                                                |
+| output           | Yes      |         | The output location of the file, relative path is accepted.                    | Points to the main file directory.                                                                          |
+| model            | Yes      |         | The name of the model in the schema.                                           | The model name for generating e.g. User, if it is  "all", generate codes for all models in schema directory |
+| search_key_num   | No       | 3       | The number of search fields in the list (default is 3).                        | Only string type fields can be automatically generated.                                                     |
+| group            | Yes      |         | The name of the group, used to put different logic files in different folders. | Put different logic files in different folders.                                                             |
+| json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero.                 | Underline for go_zero, upper camel case for GoZero.                                                         |
+| import_prefix    | No       |         | The path prefix of import                                                      | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc        |
+| overwrite        | No       | false   | Whether to overwrite the generated files.                                      | Overwrite all generated files when true.                                                                    |
 
 ::: info
 The shortcut command `make gen-api-ent-logic model={modelName} group={groupName}` means to generate the code whose schema is `{modelName}`, and `{groupName}` is the group name. Note that the first letter of modelName needs to be capitalized. Be consistent with the struct name in the schema
@@ -311,7 +311,7 @@ $ goctls api ent --help
 Generate CRUD logic files from ent file
 
 Usage:
-  goctl api ent [flags]
+  goctls api ent [flags]
 
 Flags:
   -a, --api_service_name string   The API service name
@@ -320,7 +320,7 @@ Flags:
   -i, --i18n                      Whether to use i18n
   -x, --import_prefix string      Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
-  -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
+  -m, --model string              The model name for generating e.g. user, if it is  "all", generate codes for all models in schema directory
   -o, --output string             The output path
   -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
   -c, --schema string             The schema path of the Ent

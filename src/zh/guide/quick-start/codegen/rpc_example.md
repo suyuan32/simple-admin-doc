@@ -217,7 +217,7 @@ make gen-rpc
 | service_name      | 是   |         | 服务名称                 | 和 proto 文件中的 service 名称相同                                                                                                                             |
 | project_name      | 是   |         | 项目名称                 | 和 new 时的名称相同，和 main 文件名一致, 在 multiple 模式下需要设置，单 service 默认和 service name 相同                                                       |
 | output            | 是   |         | 输出位置                 | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                                               |
-| model             | 是   |         | 模型名称                 | schema 中内部 struct 名称，如 example 中的 Student                                                                                                             |
+| model             | 是   |         | 模型名称                 | 生成的模型名称，例如：User，如果为 "all"，则为 schema 目录中所有模型生成代码                                                                                   |
 | search_key_num    | 否   | 3       | 搜索字段数量（默认为 3） | 列表搜索字段数量，只能自动生成 string 的字段                                                                                                                   |
 | group             | 是   |         | 分组名称                 | 分组名称用于将不同 logic 文件放到不同文件夹                                                                                                                    |
 | multiple          | 否   | false   | 多服务                   | 若 proto 文件中有多个 service, 需要设置为 true                                                                                                                 |
@@ -243,14 +243,14 @@ $ goctls rpc ent --help
 通过 Ent 生成 CRUD 模板代码
 
 Usage:
-  goctl rpc ent [flags]
+  goctls rpc ent [flags]
 
 Flags:
   -g, --group string               逻辑的组名称，例如：user
   -h, --help                       help for ent
   -i, --i18n                       是否启用 i18n 国际化
   -x, --import_prefix string       导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
-  -m, --model string               生成的模型名称，例如：user，如果为空，则为 schema 目录中所有模型生成代码
+  -m, --model string               生成的模型名称，例如：User，如果为 "all"，则为 schema 目录中所有模型生成代码
       --multiple                   在多个 rpc 服务模式下生成
   -o, --output string              输出路径
   -w, --overwrite                  是否覆盖文件，它将覆盖所有生成的文件

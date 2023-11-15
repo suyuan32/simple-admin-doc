@@ -217,7 +217,7 @@ make gen-rpc
 | service_name      | Yes  |         | service name                         | The same as the service name in the proto file                                                                                                                                                                                                                                        |
 | project_name      | Yes  |         | project name                         | Same as the name you create project, same as main file name, needs to be set in multiple mode, single service is same as service name by default                                                                                                                                      |
 | output            | Yes  |         | Output path                          | The output path，it can be relative path. It should target to the root path of project.                                                                                                                                                                                               |
-| model             | Yes  |         | Model name                           | The structure name in schema，e.g. the Student in example project                                                                                                                                                                                                                     |
+| model             | Yes  |         | Model name                           | The model name for generating e.g. User, if it is  "all", generate codes for all models in schema directory                                                                                                                                                                           |
 | group             | Yes  |         | Group Name                           | The group name is used to separate logic code                                                                                                                                                                                                                                         |
 | multiple          | No   | false   | Multiple Service                     | If your proto file contains multiple service, you should set true                                                                                                                                                                                                                     |
 | proto_out         | No   |         | Proto file output directory          | If it is empty, the data will be generated to the proto file in the root directory of the project, otherwise it will be generated in the specified path desc, such as ./desc/student.proto, note that the folder storing proto must be desc, and there can be sub-files inside folder |
@@ -243,14 +243,14 @@ $ goctls rpc ent --help
 Generate CRUD template codes by Ent
 
 Usage:
-  goctl rpc ent [flags]
+  goctls rpc ent [flags]
 
 Flags:
   -g, --group string               The group name for logic. e.g. user
   -h, --help                       help for ent
   -i, --i18n                       Whether to use i18n
   -x, --import_prefix string       Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
-  -m, --model string               The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
+  -m, --model string               The model name for generating e.g. User, if it is  "all", generate codes for all models in schema directory
       --multiple                   Generated in multiple rpc service mode
   -o, --output string              The output path
   -w, --overwrite                  Whether to overwrite the files, it will overwrite all generated files

@@ -55,7 +55,7 @@ Flags:
 
 ### `extra ent import` 数据库结构导出到 schema
 
-> goctls >= 1.5.18
+> goctls >= 1.6.12
 
 ::: warning
 建议直接在项目**根目录**执行命令，可以不用配置 `-o` 参数, 例如

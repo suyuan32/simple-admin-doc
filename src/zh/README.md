@@ -21,6 +21,9 @@ actions:
 - text: Gitee
   link: https://gitee.com/hopefire/simple-admin-core
 
+- text: 社区模块
+  link: https://github.com/suyuan32/awesome-simple-admin-module
+  type: primary
 
 highlights:
   - header: 丰富的功能

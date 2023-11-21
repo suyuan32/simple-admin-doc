@@ -67,4 +67,29 @@ $ goctls frontend vben --help
 - 添加 api 到数据库以及数据库初始化代码
 - 添加菜单到数据库以及初始化代码
 
+### 常见问题
+
+- 出现 “failed to get the fields of the model, please check the api file and your model name” 错误，这个是因为api文件里面没提供生成模型所需要的数据类型配置
+
+比如说你想要生成个User的模型数据
+```
+// 你的api文件里面提供的可能是这样
+type User {
+  Name string `json:"name"`
+  Age int `json:"age"`
+  Email string `json:"email"`
+}
+
+// 但是生成前端数据模型需要的是这样
+type UserInfo {
+  Name string `json:"name"`
+  Age int `json:"age"`
+  Email string `json:"email"`
+}
+// 你需要在生成的数据模型名称后面加个“Info”，goctls 才能识别
+// 这是模型名称的格式“<ModelName>Info”
+```
+
+- 出现 “open <文件路径>.ts: The system cannot find the path specified.” 错误，出现这个问题是因为你在 “simple-admin-backend-ui” 这个后台前端项目目录以外的目录执行了生成指令，goctls backend 没办法解析项目结构，你必须在“simple-admin-backend-ui”项目目录下执行生成指令才能通过
+
 > 示例地址 <https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen>

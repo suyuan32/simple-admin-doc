@@ -87,6 +87,6 @@ type UserInfo {
 // This is the format of the model name "<ModelName>Info"
 ```
 
-- "open <file path>.ts: The system cannot find the path specified." error occurs. This problem occurs because you executed the generation command in a directory other than the "simple-admin-backend-ui" backend web project directory. goctls backend cannot parse the project structure. You must execute the generation command in the "simple-admin-backend-ui" project directory to pass
+- "open `<file path>.ts`: The system cannot find the path specified." error occurs. This problem occurs because you executed the generation command in a directory other than the "simple-admin-backend-ui" backend web project directory. goctls backend cannot parse the project structure. You must execute the generation command in the "simple-admin-backend-ui" project directory to pass
 
 > Example Project: <https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen>

@@ -90,6 +90,6 @@ type UserInfo {
 // 这是模型名称的格式“<ModelName>Info”
 ```
 
-- 出现 “open <文件路径>.ts: The system cannot find the path specified.” 错误，出现这个问题是因为你在 “simple-admin-backend-ui” 这个后台前端项目目录以外的目录执行了生成指令，goctls backend 没办法解析项目结构，你必须在“simple-admin-backend-ui”项目目录下执行生成指令才能通过
+- 出现 “open `<文件路径>.ts`: The system cannot find the path specified.” 错误，出现这个问题是因为你在 “simple-admin-backend-ui” 这个后台前端项目目录以外的目录执行了生成指令，goctls backend 没办法解析项目结构，你必须在“simple-admin-backend-ui”项目目录下执行生成指令才能通过
 
 > 示例地址 <https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen>

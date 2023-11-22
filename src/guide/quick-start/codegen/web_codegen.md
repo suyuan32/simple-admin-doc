@@ -64,4 +64,29 @@ Flags:
 - Add api to database and database initialization code
 - Add menu to database and initialization code
 
+### Common mistakes
+
+- The error "failed to get the fields of the model, please check the api file and your model name" appears. This is because the api file does not provide the data type configuration required to generate the model.
+
+For example, you want to generate model data for a User
+```
+// What is provided in your api file may be like this
+type User {
+  Name string `json:"name"`
+  Age int `json:"age"`
+  Email string `json:"email"`
+}
+
+// But what is needed to generate the front-end data model is this
+type UserInfo {
+  Name string `json:"name"`
+  Age int `json:"age"`
+  Email string `json:"email"`
+}
+// You need to add "Info" after the name of the generated data model so that goctls can recognize it.
+// This is the format of the model name "<ModelName>Info"
+```
+
+- "open <file path>.ts: The system cannot find the path specified." error occurs. This problem occurs because you executed the generation command in a directory other than the "simple-admin-backend-ui" backend web project directory. goctls backend cannot parse the project structure. You must execute the generation command in the "simple-admin-backend-ui" project directory to pass
+
 > Example Project: <https://github.com/suyuan32/simple-admin-backend-ui/tree/example-code-gen>

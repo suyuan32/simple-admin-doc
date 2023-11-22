@@ -202,22 +202,23 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 
 ### `api proto` parameters
 
-| Parameters       | Must | Default | Introduction                                    | Usage                                                                                                                                              |
-| ---------------- | ---- | ------- | ----------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| proto            | Yes  |         | Proto file path                                 | Input the absolute path of proto file. **It should be the proto in `root` directory, not in desc. Because it needs package data and `Base` data.** |
-| style            | No   | go_zero | File name format                                | The go_zero means snack format                                                                                                                     |
-| i18n             | No   | false   | Whether to use i18n                             | true means use                                                                                                                                     |
-| api_service_name | Yes  |         | API Service name                                | The API service name set in `.api` file                                                                                                            |
-| rpc_service_name | Yes  |         | RPC Service name                                | The RPC service name set in `.proto` file                                                                                                          |
-| output           | Yes  |         | Output path                                     | The output path，it can be relative path. It should target to the root path of project.                                                            |
-| model            | Yes  |         | Model name                                      | The structure name in schema，e.g. the Student in example project                                                                                  |
-| rpc_name         | Yes  |         | RPC name                                        | Input Example will generate l.svcCtx.ExampleRpc                                                                                                    |
-| grpc_package     | Yes  |         | RPC \*\_grpc.go package path                    | In example project is github.com/suyuan32/simple-admin-example-rpc/example                                                                         |
-| multiple         | No   | false   | Multiple Service                                | If your proto file contains multiple service, you should set true                                                                                  |
-| json_style       | No   | goZero  | JSON tag format, the default is small camelCase | go_zero is underscore, GoZero is large camelCase                                                                                                   |
-| import_prefix    | No   |         | The path prefix of import                       | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc                                               |
-| overwrite        | No   | false   | Whether it covers the generated file            | `true` will cover all generated files                                                                                                              |
-| optional_service | No   | false   | Whether the service is optional                 | `true` will generate logic code to judge the service status                                                                                        |
+| Parameters       | Must | Default | Introduction                                                                   | Usage                                                                                                                                              |
+| ---------------- | ---- | ------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| proto            | Yes  |         | Proto file path                                                                | Input the absolute path of proto file. **It should be the proto in `root` directory, not in desc. Because it needs package data and `Base` data.** |
+| style            | No   | go_zero | File name format                                                               | The go_zero means snack format                                                                                                                     |
+| i18n             | No   | false   | Whether to use i18n                                                            | true means use                                                                                                                                     |
+| api_service_name | Yes  |         | API Service name                                                               | The API service name set in `.api` file                                                                                                            |
+| rpc_service_name | Yes  |         | RPC Service name                                                               | The RPC service name set in `.proto` file                                                                                                          |
+| output           | Yes  |         | Output path                                                                    | The output path，it can be relative path. It should target to the root path of project.                                                            |
+| model            | Yes  |         | Model name                                                                     | Model name used for generation, such as User, supports generating multiple models at the same time, separated by commas, such as User, Member      |
+| rpc_name         | Yes  |         | RPC name                                                                       | Input Example will generate l.svcCtx.ExampleRpc                                                                                                    |
+| grpc_package     | Yes  |         | RPC \*\_grpc.go package path                                                   | In example project is github.com/suyuan32/simple-admin-example-rpc/example                                                                         |
+| multiple         | No   | false   | Multiple Service                                                               | If your proto file contains multiple service, you should set true                                                                                  |
+| json_style       | No   | goZero  | JSON tag format, the default is small camelCase                                | go_zero is underscore, GoZero is large camelCase                                                                                                   |
+| import_prefix    | No   |         | The path prefix of import                                                      | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc                                               |
+| overwrite        | No   | false   | Whether it covers the generated file                                           | `true` will cover all generated files                                                                                                              |
+| api_data         | No   | false   | Whether to automatically generate API initialization code, CoreRpc is required | If true, initialize API data will be auto generated.                                                                                               |
+| optional_service | No   | false   | Whether the service is optional                                                | `true` will generate logic code to judge the service status                                                                                        |
 
 ** Run `goctls api proto --help` see more details. **
 
@@ -229,21 +230,21 @@ Usage:
   goctls api proto [flags]
 
 Flags:
+  -d, --api_data                  Whether to automatically generate API initialization code, CoreRpc is required
   -a, --api_service_name string   The API service name
   -g, --grpc_package string       The rpc package which stores pb file. e.g. github.com/suyuan32/simple-admin-job/types/job
   -h, --help                      help for proto
   -i, --i18n                      Whether to use i18n
   -x, --import_prefix string      Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
-  -m, --model string              The model name for generating e.g. user, if it is empty, generate codes for all models in schema directory
+  -m, --model string              Model name used for generation, such as User, supports generating multiple models at the same time, separated by commas, such as User, Member
       --multiple                  Whether the proto contains multiple services
   -t, --optional_service          Whether it is an optional service, if true, judgment code will be generated
   -o, --output string             The output path
   -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
   -p, --proto string              The proto path
-  -n, --rpc_name string           The rpc name in service context. e.g. CoreRpc
+  -n, --rpc_name string           The rpc name in service context. e.g. Core means CoreRpc
   -r, --rpc_service_name string   The RPC service name
-  -k, --search_key_num int        The max number of search keys (default 3)
   -s, --style string              The file name format style (default "go_zero")
 ```
 
@@ -280,6 +281,10 @@ If your project is small, single API service is a good choise. It doesn't need R
 ::: warning
 Single services need to set `--ent=true` when using the `api new` command. \
 Learn from [Single Example](https://github.com/suyuan32/simple-admin-example-api-single)
+
+```shell
+goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example --o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i -e
+```
 :::
 
 ```shell
@@ -298,10 +303,11 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 | group            | Yes      |         | The name of the group, used to put different logic files in different folders. | Put different logic files in different folders.                                                             |
 | json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero.                 | Underline for go_zero, upper camel case for GoZero.                                                         |
 | import_prefix    | No       |         | The path prefix of import                                                      | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc        |
+| api_data         | No       | false   | Whether to automatically generate API initialization code, CoreRpc is required | If true, initialize API data will be auto generated.                                                        |
 | overwrite        | No       | false   | Whether to overwrite the generated files.                                      | Overwrite all generated files when true.                                                                    |
 
 ::: info
-The shortcut command `make gen-api-ent-logic model={modelName} group={groupName}` means to generate the code whose schema is `{modelName}`, and `{groupName}` is the group name. Note that the first letter of modelName needs to be capitalized. Be consistent with the struct name in the schema
+The shortcut command `make gen-api-ent-logic model={modelName} group={groupName}` means to generate the code whose schema is `{modelName}`, and `{groupName}` is the group name. Note that the first letter of modelName needs to be capitalized. Be consistent with the struct name in the schema, use `make gen-api-ent-logic model=all group=all` to generate all CRUD codes.
 :::
 
 > ** Run `goctls api ent --help` see more details **
@@ -314,6 +320,7 @@ Usage:
   goctls api ent [flags]
 
 Flags:
+  -p, --api_data                  Whether to automatically generate API initialization code, CoreRpc is required
   -a, --api_service_name string   The API service name
   -g, --group string              The group name for logic. e.g. user
   -h, --help                      help for ent

@@ -50,14 +50,15 @@ Create a project name that only supports lowercase and camelcase
 
 ### `api new` parameters
 
-| Parameter   | Must | Default | Introduction                                                                 | Usage                                                                                                                                                             |
-| ----------- | ---- | ------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| i18n        | No   | false   | Whether to use i18n                                                          | true means use                                                                                                                                                    |
-| casbin      | No   | false   | Whether to enable casbin for authentication and automatically add middleware | true means use                                                                                                                                                    |
-| module_name | No   |         | Module name in go.mod                                                        | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
-| trans_err   | No   | false   | Whether to use i18n in error                                                 | true means use                                                                                                                                                    |
-| port        | No   | 9100    | port number                                                                  | The service port                                                                                                                                                  |
-| style       | No   | go_zero | The format of the file name.                                                 | snake case format is go_zero.                                                                                                                                     |
+| Parameter    | Must | Default | Introduction                                                                 | Usage                                                                                                                                                             |
+| ------------ | ---- | ------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| i18n         | No   | false   | Whether to use i18n                                                          | true means use                                                                                                                                                    |
+| casbin       | No   | false   | Whether to enable casbin for authentication and automatically add middleware | true means use                                                                                                                                                    |
+| module_name  | No   |         | Module name in go.mod                                                        | If your project will be used by other project, you should set as above which is a github repository. If it is empty, the module will be the same as project name. |
+| trans_err    | No   | false   | Whether to use i18n in error                                                 | true means use                                                                                                                                                    |
+| port         | No   | 9100    | port number                                                                  | The service port                                                                                                                                                  |
+| style        | No   | go_zero | The format of the file name.                                                 | snake case format is go_zero.                                                                                                                                     |
+| use_core_rpc | No   | false   | Generate CoreRpc config                                                      | Whether to use "CoreRpc", if true will generate "CoreRpc" configuration                                                                                           |
 
 **More parameters please check `goctls api new --help`**
 
@@ -66,21 +67,22 @@ $ goctls api new --help
 Fast create api service
 
 Usage:
-  goctl api new [flags]
+  goctls api new [flags]
 
 Flags:
-      --branch string            The branch of the remote repo, it does work with --remote
-  -c, --casbin                   Whether to use the Casbin
-  -e, --ent                      Whether to use Ent in API service
-  -h, --help                     help for new
-      --home string              The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-  -i, --i18n                     Whether to use i18n
-  -m, --module_name string       The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
-  -p, --port int                 The service port exposed (default 9100)
-      --remote string            The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-                                 The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
-  -s, --style string             The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
-  -a, --trans_err                Whether to translate the error
+      --branch string        The branch of the remote repo, it does work with --remote
+  -c, --casbin               Whether to use the Casbin
+  -e, --ent                  Whether to use Ent in API service
+  -h, --help                 help for new
+      --home string          The goctls home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+  -i, --i18n                 Whether to use i18n
+  -m, --module_name string   The module name in go.mod. e.g. github.com/suyuan32/simple-admin-core
+  -p, --port int             The service port exposed (default 9100)
+      --remote string        The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
+                             The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
+  -s, --style string         The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -a, --trans_err            Whether to translate the error
+  -r, --use_core_rpc         Whether to use "CoreRpc", if true will generate "CoreRpc" configuration
 ```
 
 > You can see the project structure:

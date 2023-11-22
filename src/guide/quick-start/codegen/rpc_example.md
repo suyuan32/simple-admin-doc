@@ -250,7 +250,7 @@ Flags:
   -h, --help                       help for ent
   -i, --i18n                       Whether to use i18n
   -x, --import_prefix string       Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
-  -m, --model string               The model name for generating e.g. User, if it is  "all", generate codes for all models in schema directory
+  -m, --model string               The model name for generating e.g. user, if it is  "all", generate codes for all models in schema directory
       --multiple                   Generated in multiple rpc service mode
   -o, --output string              The output path
   -w, --overwrite                  Whether to overwrite the files, it will overwrite all generated files
@@ -269,7 +269,7 @@ The tool will automatically merge all proto files into the proto file in the pro
 :::
 
 ::: info
-Quick command: `make gen-rpc-ent-logic model={modelName} group={groupName}` indicates that only the code whose schema is `{modelName}` is generated, and `{groupName}` is the group name. Note that modelName needs an initial Uppercase, consistent with the struct name in the schema。
+The shortcut command `make gen-rpc-ent-logic model={modelName} group={groupName}` means to generate the code whose schema is `{modelName}`, and `{groupName}` is the group name. Note that the first letter of modelName needs to be capitalized. Be consistent with the struct name in the schema, use `make gen-rpc-ent-logic model=all group=all` to generate all CRUD codes.
 
 ```shell
 # Generate the Student structure in the schema

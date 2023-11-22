@@ -269,7 +269,7 @@ Flags:
 :::
 
 ::: info
-快捷命令：`make gen-rpc-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致
+快捷命令 `make gen-rpc-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致。使用 `make gen-rpc-ent-logic model=all group=all` 生成所有 schema 的 CRUD 代码。
 :::
 
 ```shell

@@ -15,25 +15,33 @@ goctls v1.5.2 +
 goctls extra init_code --model_name=StudentInfo --target=core --output=D:\projects\simple-workspace\simple-admin-core\rpc\internal\logic\base\init_database_api_data.go
 ```
 
-| 参数名称   | 必须 | 默认值 | 介绍                                                                                |
-| ---------- | ---- | ------ | ----------------------------------------------------------------------------------- |
-| model_name | 是   |        | 模型名称，schema 中内部 struct 名称，如 example 中的 Student                        |
-| target     | 是   |        | 目前支持 core, 意思是生成 core 项目中的 api 初始化信息                              |
-| output     | 否   |        | 若为空则会输出至命令行，自行复制，或者设置为 `init_database_api_data.go` 的绝对路径 |
+> 在根目录执行 
+
+```shell
+goctls extra init_code -m StudentInfo -t other
+```
+
+| 参数名称   | 必须 | 默认值  | 介绍                                                         |
+| ---------- | ---- | ------- | ------------------------------------------------------------ |
+| model_name | 是   |         | 模型名称，schema 中内部 struct 名称，如 example 中的 Student |
+| target     | 是   |         | 目标类型，现在支持 core , other                              |
+| output     | 否   |         | 输出路径, 项目根目录 (default ".")                           |
+| style      | 是   | go_zero | init api data 文件名格式                                     |
 
 > 运行 `goctls extra init_code -h` 查看更多
 
 ```shell
 生成初始化代码
 
-用法：
-  goctl extra init_code [选项]
+Usage:
+  goctls extra init_code [flags]
 
-选项：
-  -h, --help                显示帮助信息
-  -m, --model_name string   模型名称，应该采用驼峰命名法，例如 StudentInfo
-  -o, --output string       输出路径，仅支持 core 生成，例如 ./rpc/internal/logic/base/init_database_api_data.go
-  -t, --target string       目标类型，现在仅支持 core
+Flags:
+  -h, --help                help for init_code
+  -m, --model_name string   模型名称，应该是驼峰式的，例如：StudentInfo
+  -o, --output string       输出路径, 项目根目录 (default ".")
+  -s, --style string        文件命名格式，参见 [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
+  -t, --target string       目标类型，现在支持 core , other
 ```
 
 ### console 生成效果

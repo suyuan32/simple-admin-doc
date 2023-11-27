@@ -230,7 +230,7 @@ make gen-rpc
 Multiple Example, multiple is used to generate separate RPC client when there are several RPC service in one proto file.
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --output=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
 ```
 
 [Example Code](https://github.com/suyuan32/simple-admin-example-rpc/tree/multiple-example)

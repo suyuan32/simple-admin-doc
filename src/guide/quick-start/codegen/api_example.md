@@ -199,7 +199,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 > Simpler
 
 ```shell
-goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example --o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i
+goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example -o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i
 ```
 
 ### `api proto` parameters
@@ -254,7 +254,7 @@ Flags:
 Multiple Service Example, multiple is used to generate separate RPC client when there are several RPC service in one proto file.
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --output=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
 ```
 
 [Example Code](https://github.com/suyuan32/simple-admin-example-api/tree/multiple)
@@ -285,7 +285,7 @@ Single services need to set `--ent=true` when using the `api new` command. \
 Learn from [Single Example](https://github.com/suyuan32/simple-admin-example-api-single)
 
 ```shell
-goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example --o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i -e
+goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081 -e
 ```
 :::
 

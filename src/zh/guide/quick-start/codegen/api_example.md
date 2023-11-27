@@ -253,7 +253,7 @@ Flags:
 multiple 例子, multiple 用于根据不同服务生成多个 rpcclient
 
 ```shell
-goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --o=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
+goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/example.proto --style=go_zero --api_service_name=example --rpc_service_name=school --output=./ --model=Teacher --rpc_name=School --grpc_package=github.com/suyuan32/simple-admin-example-rpc/example --multiple=true
 ```
 
 [代码](https://github.com/suyuan32/simple-admin-example-api/tree/multiple)
@@ -284,7 +284,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 示例项目 [Single Example](https://github.com/suyuan32/simple-admin-example-api-single)
 
 ```shell
-goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example --o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i -e
+goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api -p 8081 -e
 ```
 :::
 

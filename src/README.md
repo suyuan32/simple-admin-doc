@@ -73,15 +73,15 @@ highlights:
     features:
       - title: Github Star 
         icon: star
-        details: 1.1 k
+        details: 1.2 k
       
       - title: Company Usage
         icon: house
-        details: 50 +
+        details: 60 +
 
       - title: Private Project Usage In Production
         icon: folder
-        details: 500 +
+        details: 600 +
       
       - title: Offical Module 
         icon: box

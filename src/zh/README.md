@@ -72,15 +72,15 @@ highlights:
     features:
       - title: Github star 
         icon: star
-        details: 1.1 k
+        details: 1.2 k
       
       - title: 公司应用
         icon: house
-        details: 50 +
+        details: 60 +
 
       - title: 私人生产项目
         icon: folder
-        details: 300 +
+        details: 600 +
       
       - title: 官方模块
         icon: box

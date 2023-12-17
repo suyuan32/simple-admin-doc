@@ -113,6 +113,7 @@ Auth:
 | SmsTemplateId           | No       |               | Default SMS template ID                                                      |
 | SmsAppId                | No       |               | Default SMS app ID                                                           |
 | SmsSignName             | No       |               | Default SMS signature                                                        |
+| SmsParamsType           | No       |               | Default SMS parameters type, supports json and array                         |
 | RegisterVerify          | Yes      |               | Registration verification method, supports captcha, email, sms, sms_or_email |
 | LoginVerify             | Yes      |               | Login verification method, supports captcha, email, sms, sms_or_email, all   |
 | ResetVerify             | Yes      |               | Reset verification method, supports email, sms, sms_or_email                 |
@@ -129,6 +130,7 @@ ProjectConf:
   SmsTemplateId: 'xxx'
   SmsAppId: 'xxx'
   SmsSignName: 'xxx'
+  SmsParamsType: json
   RegisterVerify: sms
   LoginVerify: captcha
   ResetVerify: email

@@ -112,6 +112,7 @@ Auth:
 | SmsTemplateId           | 否   |        | 默认短信模板ID                                            |
 | SmsAppId                | 否   |        | 默认短信 APP ID                                           |
 | SmsSignName             | 否   |        | 默认短信签名                                              |
+| SmsParamsType           | 否   |        | 默认短信参数类型，支持 json 和 array                      |
 | RegisterVerify          | 是   |        | 注册验证方式，支持 captcha, email, sms, sms_or_email      |
 | LoginVerify             | 是   |        | 登录验证方式，支持 captcha, email, sms, sms_or_email, all |
 | ResetVerify             | 是   |        | 重置验证方式，支持  email, sms, sms_or_email              |
@@ -128,6 +129,7 @@ ProjectConf:
   SmsTemplateId: 'xxx'
   SmsAppId: 'xxx'
   SmsSignName: 'xxx'
+  SmsParamsType: json
   RegisterVerify: sms
   LoginVerify: captcha
   ResetVerify: email

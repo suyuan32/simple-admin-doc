@@ -35,7 +35,7 @@ Simple Admin Tool 目前已提供多种环境变量方便在本地调试时快�
 :::
 
 ```shell
-SIMPLE_ADMIN_TOOLS_LANG=zh goctls info env
+SIMPLE_LANG=zh goctls info env
 ```
 
 ```shell
@@ -45,7 +45,7 @@ TOOLS
 +-------------------------+--------------------------------------------------------+
 | 环境变量名称            | 环境变量介绍                                           |
 +-------------------------+--------------------------------------------------------+
-| SIMPLE_ADMIN_TOOLS_LANG | 控制台中goctls的帮助信息语言类型，支持zh和en，默认为en |
+| SIMPLE_LANG | 控制台中goctls的帮助信息语言类型，支持zh和en，默认为en |
 +-------------------------+--------------------------------------------------------+
 JWT
 +--------------+--------------+
@@ -148,7 +148,7 @@ FMS
 ## 端口占用
 
 ```shell
-SIMPLE_ADMIN_TOOLS_LANG=zh goctls info port
+SIMPLE_LANG=zh goctls info port
 ```
 
 ```shell

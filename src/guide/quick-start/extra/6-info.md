@@ -45,7 +45,7 @@ TOOLS
 +-------------------------+-------------------------------------------------------------------------------------+
 | KEY                     | INTRODUCTION                                                                        |
 +-------------------------+-------------------------------------------------------------------------------------+
-| SIMPLE_ADMIN_TOOLS_LANG | The goctls' help message language type in console, support zh and en, default is en |
+| SIMPLE_LANG | The goctls' help message language type in console, support zh and en, default is en |
 +-------------------------+-------------------------------------------------------------------------------------+
 JWT
 +-------------+-------------------+

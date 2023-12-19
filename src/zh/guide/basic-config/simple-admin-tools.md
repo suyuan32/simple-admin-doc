@@ -17,10 +17,10 @@ Goctls 是一个为 simple admin 设计的代码生成工具, 基于 go zero 官
 
 ::: warning
 
-现已支持中文，只需要设置环境变量 SIMPLE_ADMIN_TOOLS_LANG=zh 即可
+现已支持中文，只需要设置环境变量 SIMPLE_LANG=zh 即可
 
 ```shell
-SIMPLE_ADMIN_TOOLS_LANG=zh goctls -h
+SIMPLE_LANG=zh goctls -h
 ```
 
 :::

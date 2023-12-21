@@ -102,6 +102,21 @@ Auth:
   AccessExpire: 259200 # Seconds, expiration time
 ```
 
+
+## Native Redis Configuration
+
+```go
+  config.RedisConf
+```
+
+| Parameter Name | Required | Default Value | Parameter Description                                            |
+| -------------- | -------- | ------------- | ---------------------------------------------------------------- |
+| Host           | Yes      |               | Redis server address, supports comma-separated if it's a cluster |
+| Db             | Yes      | 0             | Redis database ID                                                |
+| Username       | No       |               | Redis username                                                   |
+| Pass           | No       |               | Redis password                                                   |
+| Tls            | No       |               | Whether to enable TLS encryption                                 |
+
 ## Core Project Configuration
 
 | Parameter Name          | Required | Default Value | Parameter Description                                                        |

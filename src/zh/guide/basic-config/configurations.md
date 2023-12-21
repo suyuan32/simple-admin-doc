@@ -77,7 +77,7 @@ CasbinConf:
 
 | 参数名称 | 必须 | 默认值 | 参数介绍           |
 | -------- | ---- | ------ | ------------------ |
-| Dir      | 否   | ...    | 外部 i18n 文件目录 |
+| Dir      | 否   |        | 外部 i18n 文件目录 |
 
 > 例子
 
@@ -100,6 +100,20 @@ Auth:
   AccessSecret: jS6VKDtsJf3z1n2VKDtsJf3z1n2 # JWT的加密密钥，各个API应保持一致才能解析
   AccessExpire: 259200 # 秒，过期时间
 ```
+
+## 原生 Redis 配置
+
+```go
+  config.RedisConf
+```
+
+| 参数名称 | 必须 | 默认值 | 参数介绍                               |
+| -------- | ---- | ------ | -------------------------------------- |
+| Host     | 是   |        | Redis 服务器地址，若是集群支持逗号分隔 |
+| Db       | 是   | 0      | Redis 数据库 ID                        |
+| Username | 否   |        | Redis 用户名                           |
+| Pass     | 否   |        | Redis 密码                             |
+| Tls      | 否   |        | 是否启用  tls 加密                     |
 
 ## Core Project 配置
 
@@ -139,3 +153,4 @@ ProjectConf:
 ::: info 
 Go Zero 配置合集可以关注公众号查看文章
 :::
+

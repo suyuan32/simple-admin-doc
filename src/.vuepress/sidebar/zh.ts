@@ -53,6 +53,11 @@ export const zhSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "社区模块",
+          prefix: "community-comp/",
+          children: "structure",
+        },
+        {
           text: "版本升级",
           link: "upgrade",
         },

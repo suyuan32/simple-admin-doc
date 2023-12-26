@@ -53,6 +53,11 @@ export const enSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "Community Module",
+          prefix: "community-comp/",
+          children: "structure",
+        },
+        {
           text: "Version Upgrade",
           link: "upgrade",
         },

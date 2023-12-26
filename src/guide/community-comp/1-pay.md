@@ -18,9 +18,9 @@ Simple Admin Pay is the payment module of Simple Admin. It provides mobile and w
 
 ## Project Address
 
-- **API Service**: <https://github.com/agui-coder/simple-admin-pay-rpc>
+- **API Service**: <https://github.com/agui-coder/simple-admin-pay-api>
 
-- **RPC Service**: <https://github.com/agui-coder/simple-admin-pay-api>
+- **RPC Service**: <https://github.com/agui-coder/simple-admin-pay-rpc>
 
 ## Configuration Instructions
 

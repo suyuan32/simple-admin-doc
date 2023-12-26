@@ -19,9 +19,9 @@ Simple Admin Pay 是Simple Admin 的支付模块，它提供了微信和支付�
 
 ## 项目地址
 
-- **API服务**：<https://github.com/agui-coder/simple-admin-pay-rpc>
+- **API服务**：<https://github.com/agui-coder/simple-admin-pay-api>
 
-- **RPC服务**：<https://github.com/agui-coder/simple-admin-pay-api>
+- **RPC服务**：<https://github.com/agui-coder/simple-admin-pay-rpc>
 
 ## 配置说明
 

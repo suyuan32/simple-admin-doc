@@ -523,3 +523,5 @@ func (API) Annotations() []schema.Annotation {
 }
 
 ```
+
+> Do not use `Nillable()` in the `Time` type field.

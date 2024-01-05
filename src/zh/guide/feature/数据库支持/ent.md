@@ -524,3 +524,5 @@ func (API) Annotations() []schema.Annotation {
 }
 
 ```
+
+> 不要在 Time 类型使用 `Nillable()`

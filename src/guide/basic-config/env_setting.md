@@ -372,4 +372,4 @@ https://localhost:3100/init
 
 ![pic](/assets/init_zh_cn.png)
 
-> File manager service is optional [File Manager](/simple-admin/en/docs/file_manager.md)
+> File manager service is optional [File Manager](/guide/official-comp/file_manager)

@@ -4,8 +4,6 @@ icon: book
 author: Ryan SU
 ---
 
-## **中文** | [English](./README.En.md)
-
 [![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.5.3-brightgreen.svg)](https://go-zero.dev/)
 [![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.10.0-yellow.svg)](https://vvbin.cn/doc-next/)
 [![Ent](https://img.shields.io/badge/Ent-v0.12.3-blue.svg)](https://entgo.io/)
@@ -94,10 +92,6 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 ## 快速开始
 
 [快速开始文档](https://doc.ryansu.tech/zh/guide/basic-config/env_setting.html)
-
-## 更新日志
-
-[CHANGELOG](./CHANGELOG.md)
 
 ## 相关项目
 

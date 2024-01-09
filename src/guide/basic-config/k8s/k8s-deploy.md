@@ -14,7 +14,7 @@ title: 'K8s Deployment'
 
 ## Minikube Setting
 
-[Minikube](simple-admin/en/docs/minikube.md)
+[Minikube](/guide/basic-config/k8s/minikube)
 
 ### K8s Setting
 

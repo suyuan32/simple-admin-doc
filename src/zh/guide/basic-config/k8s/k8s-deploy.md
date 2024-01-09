@@ -15,7 +15,7 @@ title: 'K8s 部署'
 
 ## Minikube 配置
 
-[Minikube](simple-admin/zh-cn/docs/minikube.md)
+[Minikube](/guide/basic-config/k8s/minikube)
 
 ### K8s配置
 

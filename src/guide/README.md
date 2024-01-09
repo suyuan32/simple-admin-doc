@@ -88,9 +88,6 @@ Password: simple-admin
 
 [Quick Start Document](https://doc.ryansu.tech/en/guide/basic-config/env_setting.html)
 
-## Change Log
-
-[CHANGELOG](./CHANGELOG.zh_CN.md)
 
 ## Relative Project
 

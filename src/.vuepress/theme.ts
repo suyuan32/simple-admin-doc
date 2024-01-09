@@ -1,6 +1,7 @@
 import { hopeTheme } from "vuepress-theme-hope";
 import { enNavbar, zhNavbar } from "./navbar/index.js";
 import { enSidebar, zhSidebar } from "./sidebar/index.js";
+import { cut } from "@node-rs/jieba";
 
 export default hopeTheme({
   hostname: "https://doc.ryansu.tech",
@@ -10,7 +11,7 @@ export default hopeTheme({
     url: "https://github.com/suyuan32",
   },
 
-  iconAssets: "fontawesome",
+  iconAssets: "iconify",
 
   logo: "/logo.svg",
 
@@ -160,6 +161,22 @@ export default hopeTheme({
       // vuePlayground: true,
     },
 
+    searchPro: {
+      // 索引全部内容
+      indexContent: true,
+      indexLocaleOptions: {
+        "/zh/": {
+          // 使用 nodejs-jieba 进行分词
+          tokenize: (text, fieldName) =>
+            fieldName === "id" ? [text] : cut(text, true),
+        },
+      },
+      locales: {
+        "/zh/": {
+          placeholder: " 开始搜索",
+        },
+      },
+    },
     // uncomment these if you want a pwa
     // pwa: {
     //   favicon: "/favicon.ico",

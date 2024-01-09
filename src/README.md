@@ -14,77 +14,111 @@ actions:
 
 - text: Document
   link: /guide/
+  icon: f7:doc-fill
 
 - text: GitHub
   link: https://github.com/suyuan32/simple-admin-core
+  icon: mdi:github
 
 - text: Gitee
   link: https://gitee.com/hopefire/simple-admin-core
 
 - text: Community Modules
   link: https://github.com/suyuan32/awesome-simple-admin-module
+  icon: streamline:module-puzzle-3-solid
   type: primary
 
 highlights:
-  - header: Features
+  - header: 
     features:
 
     - title: Fully Support Various Managements
-      icon: fa-solid fa-wrench
+      icon: fluent:card-ui-20-filled
       details: Provide rich background management functions
       link: http://101.132.124.135:8080/
 
     - title: Powerful Generation Tools
-      icon: fa-solid fa-screwdriver-wrench
+      icon: fa-solid:tools
       details: Simple Admin Tool provides powerful code generation function to quickly generate three-terminal CRUD codes
       link: /guide/basic-config/simple-admin-tools
 
+    - title: Powerful Deployment Tools
+      icon: material-symbols-light:deployed-code-sharp
+      details: Doge provides a powerful one-command deployment function that can quickly deploy modules in the module store
+      link: /guide/basic-config/doge
+
+    - title: Powerful Ent support
+      icon: material-symbols-light:database
+      details: Goctls provides powerful Ent code generation support, including template management and extended functions
+      link: /guide/quick-start/extra/3-ent_template
+
     - title: Built-in Validator
-      icon: fa-solid fa-eye
+      icon: mdi:eye
       details: Built-in validator for fast data verification
       link: /guide/feature/validator
 
     - title: Unified Error Handling
-      icon: fa-solid fa-circle-exclamation
+      icon: clarity:error-solid
       details: Provide a variety of error message processing, and support international translation of error messages
       link: /guide/feature/error_handling
 
     - title: Internationalization Support
-      icon: fa-solid fa-earth-americas
+      icon: ion:earth-sharp
       details: The generation tool supports generating i18n code and quickly provides internationalization support
       link: /guide/feature/i18n
 
     - title: K8s Support
-      icon: fa-solid fa-cloud
+      icon: material-symbols:cloud
       details: The project provides K8s rapid deployment scripts to realize rapid project migration to the cloud
       link: /guide/basic-config/k8s/k8s-deploy
 
     - title: Service Registry Discovery
-      icon: fa-solid fa-magnifying-glass
+      icon: ph:magnifying-glass-bold
       details: Service registration discovery based on K8s Endpoints
       link: /guide/basic-config/k8s/k8s-deploy
 
     - title: Third-party Login Management
-      icon: fa-solid fa-building-lock
+      icon: clarity:building-solid
       details: Support Third-party Login Management
       link: /guide/feature/oauth
 
-  - header: Achivement
+  - header: 
     features:
       - title: Github Star 
-        icon: star
+        icon: mdi:github
         details: 1.2 k
       
       - title: Company Usage
-        icon: house
-        details: 60 +
+        icon: fluent:building-32-filled
+        details: 80 +
 
       - title: Private Project Usage In Production
-        icon: folder
-        details: 600 +
+        icon: mdi:people
+        details: 700 +
       
       - title: Offical Module 
-        icon: box
+        icon: streamline:module-puzzle-3-solid
         details: 10 +
 
 footer: MIT License Copyright © 2022-present Ryan SU
+
+---
+
+## 🛠 Goctls Development Tools Install
+
+```bash
+go install github.com/suyuan32/goctls@latest
+```
+
+## 🚀 Goctls Usage
+![Goctls](/assets/indeximg/goctls_en.png)
+
+
+## 🚀 Doge Auto Deployment Tools
+![Goctls](/assets/indeximg/doge_en.png)
+
+## Official Channel
+
+- [![](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
+
+<!-- markdownlint-disable -->

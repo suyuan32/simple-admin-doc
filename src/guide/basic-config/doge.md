@@ -23,7 +23,7 @@ doge docker deploy -a "moduleId"
 ## Module List
 
 
-| **id**       | **name**                          | **description**                                                            |
+| **ID**       | **Name**                          | **Description**                                                            |
 | ------------ | --------------------------------- | -------------------------------------------------------------------------- |
 | core         | Core - Core Module                | Core module, responsible for user authentication, backend management, etc. |
 | cms          | Cms - Article Module              | Article management module                                                  |

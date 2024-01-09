@@ -111,11 +111,11 @@ go install github.com/suyuan32/goctls@latest
 ```
 
 ## 🚀 Goctls Usage
-![Goctls](/assets/indeximg/goctls_en.png)
+![](/assets/indeximg/goctls_en.png)
 
 
 ## 🚀 Doge Auto Deployment Tools
-![Goctls](/assets/indeximg/doge_en.png)
+![](/assets/indeximg/doge_en.png)
 
 ## Official Channel
 

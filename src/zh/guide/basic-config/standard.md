@@ -12,3 +12,7 @@ title: "项目规范"
 
 - proto 文件拆分定义在 desc 文件夹中
 - 可选字段使用 optional
+
+## Ent 规范
+
+- 所有字段都应该填写注释（Comment）, 用于全局注释生成

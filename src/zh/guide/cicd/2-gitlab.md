@@ -1,6 +1,6 @@
 ---
 order: 2
-title: "Gitlab CI 文件生成"
+title: "Gitlab CI"
 ---
 
 ## Gitlab CI 文件生成

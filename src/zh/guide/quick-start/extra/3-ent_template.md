@@ -1,6 +1,6 @@
 ---
 order: 3
-title: "Ent 模板管理"
+title: "Ent 管理"
 ---
 
 ## Ent 文件生成

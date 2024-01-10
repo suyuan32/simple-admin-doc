@@ -12,6 +12,8 @@ Doge is a command-line tool for downloading and deploying modules for Simple Adm
 Doge is an exclusive tool for members. Since this tool needs to connect to the server to download files and paid modules, only members can use it.
 :::
 
+### [Video Tutorial](https://www.bilibili.com/video/BV1vg4y1Z7hK/?share_source=copy_web&vd_source=f045c6cd68640dbfa7188638af9c7b03)
+
 ## Deploying Modules
 
 Use the `deploy` command to deploy modules.

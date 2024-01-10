@@ -12,3 +12,7 @@ title: "Project Specification"
 
 - The proto file split is defined in the desc folder
 - Optional fields use `optional`
+
+## Ent specification
+
+- All fields should be filled with comments (Comment) for global comment generation

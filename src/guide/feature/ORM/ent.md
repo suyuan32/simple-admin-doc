@@ -154,6 +154,10 @@ There are two drivers for ent，cache and no cache.
 
 > Cache （Use Context control the cache）
 
+::: warning
+Due to a bug in entcache, we temporarily deleted the cache driver and used cache templates instead.
+:::
+
 ```go
 db := ent.NewClient(
     ent.Log(logx.Info), // logger

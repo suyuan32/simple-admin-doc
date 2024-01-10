@@ -11,6 +11,8 @@ Doge 是 Simple Admin 的模块下载部署的命令行工具，提供模块源�
 Doge 是一个会员专属工具，由于该工具需要连接服务器下载文件和付费模块，所以只能会员使用
 :::
 
+### [视频教程](https://www.bilibili.com/video/BV1vg4y1Z7hK/?share_source=copy_web&vd_source=f045c6cd68640dbfa7188638af9c7b03)
+
 ## 部署模块
 
 使用 depoy 命令部署模块

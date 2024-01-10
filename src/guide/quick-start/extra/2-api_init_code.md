@@ -1,6 +1,6 @@
 ---
 order: 2
-title: "API Initialization Codes"
+title: "API Initialization"
 ---
 
 ## API Initialize Code Generation

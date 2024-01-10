@@ -155,6 +155,10 @@ ent driver 有两种驱动，带缓存和不带缓存
 
 > 带缓存 （使用 context 控制缓存）
 
+::: warning
+由于 entcache 有 bug, 我们暂时将缓存驱动删除了，改为使用缓存模板
+:::
+
 ```go
 db := ent.NewClient(
     ent.Log(logx.Info), // logger
@@ -467,7 +471,7 @@ func (l *UpdateUserLogic) UpdateUser(in *core.UserInfo) (*core.BaseResp, error) 
 }
 ```
 
-### Ent schema 生成工具 [ent import](https://github.com/ariga/entimport)
+### [Ent schema 导入工具](/zh/guide/quick-start/extra/3-ent_template.html#extra-ent-import-数据库结构导出到-schema)
 
 ### 常见问题
 

@@ -1,6 +1,6 @@
 ---
 order: 2
-title: "Gitea Workflow 文件生成"
+title: "Gitea Workflow"
 ---
 
 ## Gitea 文件生成

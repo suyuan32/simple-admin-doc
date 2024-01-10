@@ -1,6 +1,6 @@
 ---
 order: 1
-title: "Drone CI Files Generating"
+title: "Drone CI"
 ---
 
 ## Drone CI Files Generating

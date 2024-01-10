@@ -1,6 +1,6 @@
 ---
-order: 6
-title: "Show Info"
+order: 9
+title: "Show Configuration Info"
 ---
 
 ## Show Info Command

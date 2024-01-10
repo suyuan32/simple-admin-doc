@@ -1,6 +1,6 @@
 ---
 order: 2
-title: "Gitlab CI File Generating"
+title: "Gitlab CI"
 ---
 
 ## Gitlab CI Files Generating

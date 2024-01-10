@@ -22,6 +22,7 @@ actions:
 
 - text: Gitee
   link: https://gitee.com/hopefire/simple-admin-core
+  icon: simple-icons:gitee
 
 - text: Community Modules
   link: https://github.com/suyuan32/awesome-simple-admin-module

@@ -220,6 +220,7 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 | import_prefix    | No   |         | The path prefix of import                                                      | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc                                               |
 | overwrite        | No   | false   | Whether it covers the generated file                                           | `true` will cover all generated files                                                                                                              |
 | api_data         | No   | false   | Whether to automatically generate API initialization code, CoreRpc is required | If true, initialize API data will be auto generated.                                                                                               |
+| route_prefix     | No   | false   | Whether to generate route prefix.                                              | must begin with "/"                                                                                                                                |
 | optional_service | No   | false   | Whether the service is optional                                                | `true` will generate logic code to judge the service status                                                                                        |
 
 ** Run `goctls api proto --help` see more details. **
@@ -239,12 +240,13 @@ Flags:
   -i, --i18n                      Whether to use i18n
   -x, --import_prefix string      Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
-  -m, --model string              Model name used for generation, such as User, supports generating multiple models at the same time, separated by commas, such as User, Member
+  -m, --model string              Model name used for generation, the same as the struct name in schema. such as User, supports generating multiple models at the same time, separated by commas, such as User, Member
       --multiple                  Whether the proto contains multiple services
   -t, --optional_service          Whether it is an optional service, if true, judgment code will be generated
   -o, --output string             The output path
   -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
   -p, --proto string              The proto path
+  -f, --route_prefix string       Route prefix,  must begin with "/"
   -n, --rpc_name string           The rpc name in service context. e.g. Core means CoreRpc
   -r, --rpc_service_name string   The RPC service name
   -s, --style string              The file name format style (default "go_zero")
@@ -306,6 +308,7 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 | json_style       | No       | goZero  | The format of the JSON tag, default is camel case for go_zero.                 | Underline for go_zero, upper camel case for GoZero.                                                         |
 | import_prefix    | No       |         | The path prefix of import                                                      | Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc        |
 | api_data         | No       | false   | Whether to automatically generate API initialization code, CoreRpc is required | If true, initialize API data will be auto generated.                                                        |
+| route_prefix     | No       | false   | Whether to generate route prefix.                                              | must begin with "/"                                                                                         |
 | overwrite        | No       | false   | Whether to overwrite the generated files.                                      | Overwrite all generated files when true.                                                                    |
 
 ::: info
@@ -315,7 +318,7 @@ The shortcut command `make gen-api-ent-logic model={modelName} group={groupName}
 > ** Run `goctls api ent --help` see more details **
 
 ```shell
-$ goctls api ent --help
+$ goctls api ent -h
 Generate CRUD logic files from ent file
 
 Usage:
@@ -329,9 +332,10 @@ Flags:
   -i, --i18n                      Whether to use i18n
   -x, --import_prefix string      Import paths' prefix is only used when the service in sub folder, such as core service's api and rpc
   -j, --json_style string         The JSON tag format, default is camelcase (default "goZero")
-  -m, --model string              The model name for generating e.g. user, if it is  "all", generate codes for all models in schema directory
+  -m, --model string              The model name for generating, the same as the struct name in schema. e.g. User. If it is  "all", generate codes for all models in schema directory
   -o, --output string             The output path
   -w, --overwrite                 Whether to overwrite the files, it will overwrite all generated files
+  -f, --route_prefix string       Route prefix,  must begin with "/"
   -c, --schema string             The schema path of the Ent
   -k, --search_key_num int        The max number of search keys (default 3)
   -s, --style string              The file name format style (default "go_zero")

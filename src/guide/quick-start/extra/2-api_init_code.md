@@ -23,11 +23,13 @@ goctls extra init_code -m StudentInfo -t other -n Core
 | target       | Yes      |               | The target type, now support core and other                                            |
 | output       | No       |               | The output path, the project's root directory                                          |
 | service_name | Yes      | Other         | The service name                                                                       |
+| route_prefix | No       | false         | Whether to generate route prefix, it must begin with "/"                               |
 | style        | Yes      | go_zero       | The file naming style                                                                  |
 
 > Run `goctls extra init_code -h` see more details
 
 ```shell
+$ goctls extra init_code -h
 Generating initialize code
 
 Usage:
@@ -37,50 +39,8 @@ Flags:
   -h, --help                  help for init_code
   -m, --model_name string     The model name, it should be camelcase, such as StudentInfo
   -o, --output string         The output path, the project's root directory  (default ".")
+  -p, --route_prefix string   The prefix of the route path
   -n, --service_name string   Service name，such as "Core" (default "Other")
   -s, --style string          The file naming format, see [https://github.com/zeromicro/go-zero/blob/master/tools/goctl/config/readme.md] (default "go_zero")
   -t, --target string         The target type, now support core and other
-```
-
-### Console generation preview
-
-```text
-$ goctls extra init_code --model_name=StudentInfo --target=core
-// STUDENTINFO
-
-    apis = append(apis, l.svcCtx.DB.API.Create().
-        SetPath("/student_info/create").
-        SetDescription("apiDesc.createStudentInfo").
-        SetAPIGroup("student_info").
-        SetMethod("POST"),
-    )
-
-    apis = append(apis, l.svcCtx.DB.API.Create().
-        SetPath("/student_info/update").
-        SetDescription("apiDesc.updateStudentInfo").
-        SetAPIGroup("student_info").
-        SetMethod("POST"),
-    )
-
-    apis = append(apis, l.svcCtx.DB.API.Create().
-        SetPath("/student_info/delete").
-        SetDescription("apiDesc.deleteStudentInfo").
-        SetAPIGroup("student_info").
-        SetMethod("POST"),
-    )
-
-    apis = append(apis, l.svcCtx.DB.API.Create().
-        SetPath("/student_info/list").
-        SetDescription("apiDesc.getStudentInfoList").
-        SetAPIGroup("student_info").
-        SetMethod("POST"),
-    )
-
-    apis = append(apis, l.svcCtx.DB.API.Create().
-        SetPath("/student_info").
-        SetDescription("apiDesc.getStudentInfoById").
-        SetAPIGroup("student_info").
-        SetMethod("POST"),
-    )
-
 ```

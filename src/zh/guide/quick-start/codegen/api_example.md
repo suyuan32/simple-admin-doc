@@ -219,12 +219,12 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 | import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                                                                 |
 | overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                                                                       |
 | api_data         | 否   |         | 是否自动生成 API 初始化代码   | 若为 true 会自动生成API初始化代码                                                                                                 |
+| route_prefix     | 否   |         | 是否使用路由前缀              | 前缀必须以 "/" 开头                                                                                                               |
 | optional_service | 否   | false   | 是否为可选服务                | 是否为可选服务，若为 true，会自动生成服务启动判断逻辑                                                                             |
 
 **详细参数请在命令行查看 `goctls api proto --help`**
 
 ```shell
-$ goctls api proto -h
 从 proto 文件生成 CRUD 模板
 
 Usage:
@@ -238,12 +238,13 @@ Flags:
   -i, --i18n                      是否启用 i18n 国际化
   -x, --import_prefix string      导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
   -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
-  -m, --model string              用于生成的模型名称，例如 User, 支持同时生成多个模型, 使用逗号分隔，如 User,Member
+  -m, --model string              用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User, 支持同时生成多个模型, 使用逗号分隔，如 User,Member
       --multiple                  proto 是否包含多个服务
   -t, --optional_service          是否为可选服务，如果为 true，则会生成判断代码
   -o, --output string             输出路径
   -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
   -p, --proto string              proto 文件路径
+  -f, --route_prefix string       路由前缀，需要以 "/" 开头
   -n, --rpc_name string           RPC 服务名称，用于调用，例如 CoreRpc 需要配置为 Core
   -r, --rpc_service_name string   RPC 服务名称
   -s, --style string              文件名格式样式 (default "go_zero")
@@ -305,6 +306,7 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 | i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                                                       |
 | import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                 |
 | api_data         | 否   |         | 是否自动生成 API 初始化代码   | 若为 true 会自动生成API初始化代码                                                 |
+| route_prefix     | 否   |         | 是否使用路由前缀              | 前缀必须以 "/" 开头                                                               |
 | overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                       |
 
 ::: info
@@ -328,9 +330,10 @@ Flags:
   -i, --i18n                      是否启用 i18n 国际化
   -x, --import_prefix string      导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
   -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
-  -m, --model string              用于生成的模型名称，例如 user，如果为 "all"，则为 schema 目录中的所有模型生成代码
+  -m, --model string              用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User，如果为 "all"，则为 schema 目录中的所有模型生成代 码
   -o, --output string             输出路径
   -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
+  -f, --route_prefix string       路由前缀，需要以 "/" 开头
   -c, --schema string             Ent 的 schema 文件夹路径
   -k, --search_key_num int        搜索条件的最大数量，只支持 String 类型 (default 3)
   -s, --style string              文件名格式样式 (default "go_zero")

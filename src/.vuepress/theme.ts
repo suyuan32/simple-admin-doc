@@ -19,6 +19,8 @@ export default hopeTheme({
 
   docsDir: "src",
 
+  breadcrumb: false,
+
   pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
 
   locales: {

@@ -30,7 +30,7 @@ export default defineUserConfig({
         src: "//sdk.51.la/js-sdk-pro.min.js",
       },
     ],
-    ["script", {}, `LA.init({id:"KBjgl9RpsY5j39sG",ck:"KBjgl9RpsY5j39sG"})`],
+    ["script", {}, `LA.init({id:"KJnPRPv6MxlnxsRB",ck:"KJnPRPv6MxlnxsRB"})`],
   ],
 
   plugins: [],

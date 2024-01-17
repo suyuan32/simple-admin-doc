@@ -3,8 +3,6 @@ order: 1
 title: 'K8s Deployment'
 ---
 
-# Deploy service into  K8s
-
 ## Environment Requirement
 
 - minikube v1.23.0 +

@@ -3,8 +3,6 @@ order: 4
 title: "Global Variables"
 ---
 
-# Global Variables
-
 > **We define the global variables in `internal/svc/servicecontext.go`, and initialize them.**
 
 For example:

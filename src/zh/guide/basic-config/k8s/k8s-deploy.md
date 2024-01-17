@@ -3,9 +3,6 @@ order: 1
 title: 'K8s 部署'
 ---
 
-
-# 部署K8s
-
 ## 环境需求
 
 - minikube v1.23.0 +

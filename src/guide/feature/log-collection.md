@@ -2,7 +2,6 @@
 order: 8
 title: 'Log Collecting'
 ---
-# Log Collecting
 
 > We use EFK to do the log collecting.
 

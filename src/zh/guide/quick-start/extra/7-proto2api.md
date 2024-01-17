@@ -3,8 +3,6 @@ order: 7
 title: "Proto转Api"
 ---
 
-# Proto 转 Api 命令
-
 > goctls >= 1.5.14
 
 该命令用于通过 proto 生成 api 中的字段内容，使得 proto 接入 api 更便捷

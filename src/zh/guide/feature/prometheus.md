@@ -3,8 +3,6 @@ order: 7
 title: '服务监控'
 ---
 
-# 服务监控
-
 ## 我们使用 Prometheus 进行服务监控
 
 ### 安装 Prometheus

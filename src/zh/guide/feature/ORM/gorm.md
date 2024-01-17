@@ -3,8 +3,6 @@ order: 1
 title: "GORM"
 ---
 
-# GORM 使用方法
-
 #### [官方文档](https://gorm.io/)
 
 ## 导入包

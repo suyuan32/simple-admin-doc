@@ -3,8 +3,6 @@ order: 1
 title: "Docker一键部署"
 ---
 
-# 一键体验 docker-compose
-
 在 deploy/docker-compose/all_in_one 文件夹下, [Github](https://github.com/suyuan32/simple-admin-core/tree/master/deploy/docker-compose/all_in_one)
 
 有 mysql 和 postgres 文件夹，根据需求选择一个文件夹打开。

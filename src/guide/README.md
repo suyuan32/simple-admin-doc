@@ -86,7 +86,7 @@ Password: simple-admin
 
 ## Quick Start
 
-[Quick Start Document](https://doc.ryansu.tech/en/guide/basic-config/env_setting.html)
+[Quick Start Document](https://doc.ryansu.tech/guide/basic-config/env_setting.html)
 
 
 ## Relative Project
@@ -130,7 +130,7 @@ You are very welcome to join！[Raise an issue](https://github.com/suyuan32/simp
   - `types` Type definition file changes
   - `wip` In development
 
-# Community
+## Community
 
 > [Discard](https://discord.gg/NDED5p2hJk)
 
@@ -146,4 +146,4 @@ You are very welcome to join！[Raise an issue](https://github.com/suyuan32/simp
 
 ## License
 
-[MIT © Ryan-2022](./LICENSE)
+[MIT © Ryan-2022](https://github.com/suyuan32/simple-admin-core/blob/master/LICENSE)

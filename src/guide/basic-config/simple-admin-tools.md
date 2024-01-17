@@ -3,8 +3,6 @@ order: 2
 title: "Goctls"
 ---
 
-# Goctls
-
 Goctls is a powerful tools for simple admin to gen codes, based on goctl.
 It provides more addition features than origin project such as:
 

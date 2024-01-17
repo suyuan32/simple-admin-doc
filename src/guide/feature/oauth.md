@@ -2,7 +2,6 @@
 order: 6
 title: 'Oauth'
 ---
-# Oauth
 
 > The system offer google and github Oauth log in by default
 

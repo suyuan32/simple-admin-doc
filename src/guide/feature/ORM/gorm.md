@@ -3,8 +3,6 @@ order: 1
 title: "GORM"
 ---
 
-# GORM Usage
-
 #### [Gorm Version Here](https://github.com/suyuan32/simple-admin-core/tree/gorm)
 
 #### [Official Doc](https://gorm.io/)

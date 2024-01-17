@@ -3,7 +3,7 @@ order: 2
 title: 'Minikube Configuration'
 ---
 
-# Minikube initialization
+## Minikube initialization
 
 ### Install
 

@@ -3,8 +3,6 @@ order: 5
 title: "Quick Commands"
 ---
 
-# Quick Commands
-
 ::: warning
 **Note: The system needs to support the make command, linux is recommended. `Windows` users need to set up environment [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment).**
 :::

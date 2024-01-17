@@ -3,8 +3,6 @@ order: 2
 title: "Goctls"
 ---
 
-# Goctls
-
 Goctls 是一个为 simple admin 设计的代码生成工具, 基于 go zero 官方工具 goctl 开发而成。
 它提供了许多额外的功能，例如:
 

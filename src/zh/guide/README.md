@@ -152,4 +152,4 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 
 ## License
 
-[MIT © Ryan-2022](./LICENSE)
+[MIT © Ryan-2022](https://github.com/suyuan32/simple-admin-core/blob/master/LICENSE)

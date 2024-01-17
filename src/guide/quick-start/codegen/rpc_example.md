@@ -3,8 +3,6 @@ order: 2
 title: "RPC Service"
 ---
 
-# 3 minutes developing RPC service
-
 ::: warning
 Make sure that you have been installed follow software:
 

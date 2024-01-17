@@ -3,8 +3,6 @@ order: 7
 title: "Proto To Api"
 ---
 
-# Proto To Api Command
-
 > goctls >= 1.5.14
 
 This command is used to generate the field content in the api through proto, making it more convenient for generating codes from RPC to API.

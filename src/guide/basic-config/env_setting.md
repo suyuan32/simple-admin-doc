@@ -3,8 +3,6 @@ order: 1
 title: "Local Development Setting"
 ---
 
-# Local Development Setting
-
 > Environment Requirement
 
 - golang 1.20 +

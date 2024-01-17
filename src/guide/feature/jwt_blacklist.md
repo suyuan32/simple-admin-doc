@@ -3,8 +3,6 @@ order: 9
 title: 'JWT Black List'
 ---
 
-# JWT black list
-
 > System will insert token into tokens table automatically， admin can block token or force logging out
 
 ## Block token

@@ -3,8 +3,6 @@ order: 6
 title: "第三方登陆"
 ---
 
-# Oauth
-
 > 目前系统已默认提供 google 和 github Oauth 登录功能
 
 > 如何获取 clientID 和 client secret?

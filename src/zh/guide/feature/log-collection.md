@@ -3,8 +3,6 @@ order: 8
 title: '日志收集'
 ---
 
-# 日志收集
-
 > 本项目主要使用 EFK 进行日志收集
 
 - Elasticsearch

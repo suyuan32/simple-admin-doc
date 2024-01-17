@@ -3,8 +3,6 @@ order: 1
 title: "API 微服务"
 ---
 
-# 3 分钟开发 API 服务
-
 ::: warning
 首先确认你安装了以下软件:
 

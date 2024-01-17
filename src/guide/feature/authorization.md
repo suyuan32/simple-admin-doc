@@ -2,7 +2,6 @@
 order: 12
 title: 'Authorization'
 ---
-# Authorization
 
 We use Casbin to do authorization validating.
 

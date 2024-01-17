@@ -2,7 +2,6 @@
 order: 7
 title: 'Service Monitoring'
 ---
-# Service Monitoring
 
 ## We use Prometheus to do the service monitoring
 

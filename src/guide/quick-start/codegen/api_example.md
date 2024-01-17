@@ -3,8 +3,6 @@ order: 1
 title: "API Service"
 ---
 
-# 3 minutes developing API service
-
 ::: warning
 Make sure that you have been installed follow software:
 

@@ -3,8 +3,6 @@ order: 6
 title: "常见问题"
 ---
 
-# FAQ
-
 ## 默认账号是什么？
 
 A: 账号: admin 密码: simple-admin

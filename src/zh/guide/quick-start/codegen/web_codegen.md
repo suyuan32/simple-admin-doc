@@ -3,8 +3,6 @@ order: 3
 title: "Web 端"
 ---
 
-# Vben Web 端代码生成
-
 ::: warning
 
 > 首先确认你安装了以下软件:

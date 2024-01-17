@@ -3,8 +3,6 @@ order: 5
 title: "错误处理"
 ---
 
-# 错误处理
-
 ::: info
 [视频教程](https://www.bilibili.com/video/BV14V4y1r7RQ/)
 :::

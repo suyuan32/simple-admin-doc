@@ -3,9 +3,6 @@ order: 2
 title: 'Minikube配置'
 ---
 
-
-# Minikube 初始化环境配置
-
 ## Minikube 初始化
 
 > 安装

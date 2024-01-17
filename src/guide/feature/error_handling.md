@@ -2,7 +2,6 @@
 order: 5
 title: 'Error Handling'
 ---
-# Error Handling
 
 ### Error Type
 

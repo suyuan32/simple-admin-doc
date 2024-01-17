@@ -39,6 +39,8 @@ DatabaseConf:
 
 ## 初始化
 
+在 `service_context` 添加
+
 ```go
     db, err := c.DatabaseConf.NewGORM()
  if err != nil {
@@ -47,9 +49,9 @@ DatabaseConf:
  }
 ```
 
-[Init](https://github.com/suyuan32/simple-admin-core/blob/master/rpc/internal/svc/service_context.go)
-
 ## 定义 Model
+
+`goctls` 不支持 `gorm` 的 `model` 生成及 `crud` 代码生成，需要手动创建 `model` 文件夹，手动添加 `model`
 
 ```go
 package model
@@ -65,8 +67,6 @@ type Api struct {
 }
 
 ```
-
-[Model](https://github.com/suyuan32/simple-admin-core/tree/master/rpc/internal/model)
 
 ## 获取数据
 
@@ -145,7 +145,3 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, er
 ```
 
 > 使用 l.svc.DB.Model().Where().Find() 即可
-
-[GetApiList](https://github.com/suyuan32/simple-admin-core/blob/master/rpc/internal/logic/getapilistlogic.go)
-
-[GORM](https://gorm.io/)

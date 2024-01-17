@@ -3,8 +3,6 @@ order: 1
 title: "GORM"
 ---
 
-#### [Gorm Version Here](https://github.com/suyuan32/simple-admin-core/tree/gorm)
-
 #### [Official Doc](https://gorm.io/)
 
 ## Import
@@ -42,6 +40,8 @@ DatabaseConf:
 
 ## Initialize GORM
 
+Add initialization code into `service_context`
+
 ```go
     db, err := c.DB.NewGORM()
  if err != nil {
@@ -50,9 +50,9 @@ DatabaseConf:
  }
 ```
 
-[Init](https://github.com/suyuan32/simple-admin-core/blob/master/rpc/internal/svc/service_context.go)
-
 ## Define Model
+
+`goctls` does not support `gorm`’s `model` generation and `crud` code generation. You need to manually create the `model` folder and add `model` manually.
 
 ```go
 package model
@@ -68,8 +68,6 @@ type Api struct {
 }
 
 ```
-
-[Model](https://github.com/suyuan32/simple-admin-core/tree/master/rpc/internal/model)
 
 ## Get Data
 
@@ -148,7 +146,3 @@ func (l *GetApiListLogic) GetApiList(in *core.ApiPageReq) (*core.ApiListResp, er
 ```
 
 > Use l.svc.DB.Model().Where().Find() to do that.
-
-[GetApiList](https://github.com/suyuan32/simple-admin-core/blob/master/rpc/internal/logic/getapilistlogic.go)
-
-[GORM](https://gorm.io/)

@@ -87,15 +87,15 @@ highlights:
     features:
       - title: Github Star 
         icon: mdi:github
-        details: 1.2 k
+        details: 1.3 k
       
       - title: Company Usage
         icon: fluent:building-32-filled
-        details: 90 +
+        details: 100 +
 
       - title: Private Project Usage In Production
         icon: mdi:people
-        details: 750 +
+        details: 800 +
       
       - title: Offical Module 
         icon: streamline:module-puzzle-3-solid

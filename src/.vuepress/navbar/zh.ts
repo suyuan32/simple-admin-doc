@@ -83,5 +83,10 @@ export const zhNavbar = navbar([
     text: "视频教程",
     icon: "ph:video-bold",
     link: "https://space.bilibili.com/9872669/channel/series"
-  }
+  },
+  {
+    text: "面试宝典",
+    icon: "ion:book-outline",
+    link: "https://goguide.ryansu.tech/"
+  },
 ]);

@@ -83,5 +83,10 @@ export const enNavbar = navbar([
     text: "Video Tutorial",
     icon: "ph:video-bold",
     link: "https://www.youtube.com/channel/UCBisP_LYu9ietKS3FtCnmcA"
-  }
+  },
+  {
+    text: "Interview Guide",
+    icon: "ion:book-outline",
+    link: "https://goguide.ryansu.tech/en/"
+  },
 ]);

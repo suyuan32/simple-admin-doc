@@ -4,25 +4,38 @@ icon: book
 author: Ryan SU
 ---
 
-<div align="center">
-<img src="https://i.postimg.cc/nh8mVKkf/logo.png" width="300px" height="300px"/>
-<h1>Simple Admin</h1>
-</div>
-
-## **English** | [中文](./README.md)
-
-[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.5.3-brightgreen.svg)](https://go-zero.dev/)
-[![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.10.0-yellow.svg)](https://vvbin.cn/doc-next/)
-[![Ent](https://img.shields.io/badge/Ent-v0.12.3-blue.svg)](https://entgo.io/)
-[![Casbin](https://img.shields.io/badge/Casbin-v2.56.1-orange.svg)](https://github.com/casbin/casbin)
-[![Release](https://img.shields.io/badge/Release-v1.0.13-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
+[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.6.1-brightgreen.svg)](https://go-zero.dev/)
+[![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.10.1-yellow.svg)](https://vvbin.cn/doc-next/)
+[![Ent](https://img.shields.io/badge/Ent-v0.12.5-blue.svg)](https://entgo.io/)
+[![Casbin](https://img.shields.io/badge/Casbin-v2.81.0-orange.svg)](https://github.com/casbin/casbin)
+[![Release](https://img.shields.io/badge/Release-v1.3.1-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![SimpleAdmin](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
+![公众号](https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-%E5%87%A0%E9%A2%97%E9%85%A5-blue)
+![注意](https://img.shields.io/badge/%E6%B3%A8%E6%84%8F-%E5%85%B3%E6%B3%A8%E5%85%AC%E4%BC%97%E5%8F%B7%E5%8A%A0%E5%85%A5%E5%BE%AE%E4%BF%A1%E7%BE%A4-blue)
 
 ## Introduction
 
-Simple Admin is an out-of-the-box distributed microservice back-end management system developed based on go-zero, which provides rich functions for the development of medium and large back-ends, supports three-terminal code generation.
-The official comes with a variety of extensions to help small and medium-sized enterprises quickly go to the cloud and iterate quickly. Suitable for microservice learning and commercial use, open source and free.
+Simple Admin is an out-of-the-box distributed microservice back-end management system developed based on go-zero, which
+provides rich functions for the development of medium and large back-ends, supports three-terminal code generation.
+The official comes with a variety of extensions to help small and medium-sized enterprises quickly go to the cloud and
+iterate quickly. Suitable for microservice learning and commercial use, open source and free.
+
+## Official Tutorial
+
+### [Simple Admin](https://www.youtube.com/@yuansu5197)
+
+## [Goctls](https://github.com/suyuan32/goctls)
+
+Based on the enhanced version of go zero, it provides a lot of optimizations for simple admin, has a lot of additional
+code generation functions,
+fully supports ent, and easily realizes three-terminal code generation, making development easier.
+
+## [Doge](https://github.com/suyuan32/doge)
+
+Doge is Simple Admin's command line tool for module download and deployment. It provides module source code download,
+module docker, k8s deployment, server maintenance and other functions. Users can upload their own paid modules to earn
+revenue, and now 10+ modules are included.
 
 ## Feature
 
@@ -36,19 +49,17 @@ The official comes with a variety of extensions to help small and medium-sized e
 - **Multiple extensions**: Provides a variety of extensions and has a very simple access function
 - **Other** builtin concurrency control, adaptive circuit breaker, adaptive load shedding, auto-trigger, auto recover
 
-## Support functions
+## Supported functions
 
-- User management: The user is the system operator, and this function mainly completes the system user configuration.
-- Department management: Configure the system organization (company, department, group), and the tree structure shows the support data permissions.
-- Position management: configure the positions that system users belong to.
-- Menu management: configure system menu, operation authority, button authority identification, interface authority, etc.
-- Role management: role menu permission assignment, role setting, data range permission division by organization.
-- Dictionary management: maintain some relatively fixed data frequently used in the system.
-- Operation log: system normal operation log record and query; system abnormal information log record and query.
-- Member management: manage registered member information
-- Interface documents: Automatically generate relevant API interface documents based on business codes.
-- Code generation: Generate corresponding additions, deletions, modifications, and queries based on the data table structure
-- Service monitoring: View some basic information about servers
+- User management: manage system user data
+- Department management: manage the department to which you belong
+- Post management: configure the positions held by system users
+- Menu management: configure system menus, tree display
+- Role management: manage role permissions, support multiple roles
+- Dictionary management: maintain data dictionary, convenient for front-end use
+- Interface document: automatically generate related api interface documents according to business code
+- Code generation: automatically generate CRUD code, quickly generate custom logic
+- Token management: manage token status, support blacklisting token
 
 ## Project Planning Progress
 

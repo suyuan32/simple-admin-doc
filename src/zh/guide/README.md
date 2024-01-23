@@ -4,11 +4,11 @@ icon: book
 author: Ryan SU
 ---
 
-[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.5.3-brightgreen.svg)](https://go-zero.dev/)
-[![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.10.0-yellow.svg)](https://vvbin.cn/doc-next/)
-[![Ent](https://img.shields.io/badge/Ent-v0.12.3-blue.svg)](https://entgo.io/)
-[![Casbin](https://img.shields.io/badge/Casbin-v2.56.1-orange.svg)](https://github.com/casbin/casbin)
-[![Release](https://img.shields.io/badge/Release-v1.0.13-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
+[![Go-Zero](https://img.shields.io/badge/Go--Zero-v1.6.1-brightgreen.svg)](https://go-zero.dev/)
+[![Vben Admin](https://img.shields.io/badge/Vben%20Admin-v2.10.1-yellow.svg)](https://vvbin.cn/doc-next/)
+[![Ent](https://img.shields.io/badge/Ent-v0.12.5-blue.svg)](https://entgo.io/)
+[![Casbin](https://img.shields.io/badge/Casbin-v2.81.0-orange.svg)](https://github.com/casbin/casbin)
+[![Release](https://img.shields.io/badge/Release-v1.3.1-green.svg)](https://github.com/suyuan32/simple-admin-core/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![SimpleAdmin](https://dcbadge.vercel.app/api/server/NDED5p2hJk)](https://discord.gg/NDED5p2hJk)
 ![公众号](https://img.shields.io/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-%E5%87%A0%E9%A2%97%E9%85%A5-blue)
@@ -16,11 +16,17 @@ author: Ryan SU
 
 ## 简介
 
-Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基于 go-zero 开发，为开发中大型后台提供了丰富的功能，支持三端代码生成。官方自带多种扩展，助力中小企业快速上云，快速迭代。适合用于微服务学习和商用，开源免费。
+Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基于go-zero开发，为开发中大型后台提供了丰富的功能，支持三端代码生成。
+官方自带多种扩展，助力中小企业快速上云，快速迭代。适合用于微服务学习和商用，开源免费。
 
 ## [Goctls](https://github.com/suyuan32/goctls)
 
-基于 go zero 的加强版工具，针对 simple admin 提供了大量优化，具有大量额外的代码生成功能，全面支持 ent，轻松实现三端代码生成，使开发变得简单。
+基于 go zero 的加强版工具，针对 simple admin 提供了大量优化，具有大量额外的代码生成功能，全面支持ent，轻松实现三端代码生成，使开发变得简单。
+
+## [Doge](https://github.com/suyuan32/doge)
+
+Doge 是 Simple Admin 的模块下载部署的命令行工具，提供模块源码下载，模块 docker , k8s 部署，服务器维护等功能。用户可以上传自己的付费模块获取收益，现已收录
+10 + 模块。
 
 ## 相关教程
 
@@ -32,28 +38,26 @@ Simple Admin 是一个开箱即用的分布式微服务后端管理系统，基�
 ## 特性
 
 - **最新技术栈**：使用 ent, casbin, kafka 等前沿技术开发
-- **完全支持 go-swagger**: 直接在 api 文件内编写注释即可直接生成 swagger 文档
+- **完全支持go-swagger**: 直接在api文件内编写注释即可直接生成swagger文档
 - **统一的错误处理**: 整个系统拥有国际化的统一错误处理
 - **国际化**：内置完善的国际化方案
-- **服务注册发现**: 完善的服务注册发现机制，原生支持 K8s
-- **权限**: 内置完善的动态路由权限生成方案, 集成 RBAC 权限控制
+- **服务注册发现**: 完善的服务注册发现机制，原生支持K8s
+- **权限**: 内置完善的动态路由权限生成方案, 集成RBAC权限控制
 - **代码生成**: 内置三端 Web, API, RPC 代码生成
 - **多种扩展**: 提供多种扩展，同时具有非常简单的接入功能
-- **其他**: 流量控制， ES 服务
+- **其他**: 流量控制， ES服务
 
 ## 支持功能
 
-- 用户管理：用户是系统操作者，该功能主要完成系统用户配置。
-- 部门管理：配置系统组织机构（公司、部门、小组），树结构展现支持数据权限。
-- 岗位管理：配置系统用户所属担任职务。
-- 菜单管理：配置系统菜单，操作权限，按钮权限标识，接口权限等。
-- 角色管理：角色菜单权限分配、设置角色按机构进行数据范围权限划分。
-- 字典管理：对系统中经常使用的一些较为固定的数据进行维护。
-- 操作日志：系统正常操作日志记录和查询；系统异常信息日志记录和查询。
-- 会员管理：管理注册会员信息
-- 接口文档：根据业务代码自动生成相关的 api 接口文档。
-- 代码生成：根据数据表结构生成对应的增删改查相对应业务
-- 服务监控：查看一些服务器的基本信息
+- 用户管理：管理系统用户数据
+- 部门管理：管理所属部门
+- 岗位管理：配置系统用户所属担任职务
+- 菜单管理：配置系统菜单，树形展示
+- 角色管理：管理角色权限，支持多角色
+- 字典管理：维护数据字典，方便前端使用
+- 接口文档：根据业务代码自动生成相关的api接口文档
+- 代码生成：自动生成 CRUD 代码，快捷生成自定义逻辑
+- 令牌管理：管理 token 状态，支持拉黑 token
 
 ## 项目规划进度
 

@@ -10,11 +10,13 @@ export const enSidebar = sidebar({
         {
           text: "Basic Configuration",
           prefix: "basic-config/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "Quick Start",
           prefix: "quick-start/",
+          collapsible: true,
           children: [
             {
               text: "Development Process",
@@ -40,21 +42,25 @@ export const enSidebar = sidebar({
         {
           text: "Features",
           prefix: "feature/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "CI/CD",
           prefix: "cicd/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "Official Modules",
           prefix: "official-comp/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "Community Module",
           prefix: "community-comp/",
+          collapsible: true,
           children: "structure",
         },
         {

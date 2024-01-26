@@ -10,11 +10,13 @@ export const zhSidebar = sidebar({
         {
           text: "基本配置",
           prefix: "basic-config/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "快速开始",
           prefix: "quick-start/",
+          collapsible: true,
           children: [
             {
               text: "开发流程",
@@ -40,21 +42,25 @@ export const zhSidebar = sidebar({
         {
           text: "功能列表",
           prefix: "feature/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "持续集成 CI/CD",
           prefix: "cicd/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "官方模块",
           prefix: "official-comp/",
+          collapsible: true,
           children: "structure",
         },
         {
           text: "社区模块",
           prefix: "community-comp/",
+          collapsible: true,
           children: "structure",
         },
         {

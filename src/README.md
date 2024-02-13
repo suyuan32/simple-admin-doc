@@ -91,11 +91,11 @@ highlights:
       
       - title: Company Usage
         icon: fluent:building-32-filled
-        details: 100 +
+        details: 150 +
 
       - title: Private Project Usage In Production
         icon: mdi:people
-        details: 800 +
+        details: 850 +
       
       - title: Offical Module 
         icon: streamline:module-puzzle-3-solid

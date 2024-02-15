@@ -5,7 +5,7 @@ export const zhNavbar = navbar([
   {
     text: "文档",
     icon: "mingcute:book-line",
-    link: "/zh/guide/",
+    link: "/zh/guide/README.md",
   },
   {
     text: "在线预览",

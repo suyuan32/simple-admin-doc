@@ -5,7 +5,7 @@ export const enNavbar = navbar([
   {
     text: "Document",
     icon: "mingcute:book-line",
-    link: "/guide/",
+    link: "/guide/README.md",
   },
   {
     text: "Online Preview",

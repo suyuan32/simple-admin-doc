@@ -9,7 +9,7 @@ tagline: Simple Admin是一个基于Go Zero开发面向中大型项目的分布�
 actions:
 
 - text: 快速开始 💡
-  link: /zh/guide/basic-config/env_setting
+  link: /zh/guide/basic-config/all_in_one
   type: primary
 
 - text: 文档

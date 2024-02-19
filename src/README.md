@@ -9,7 +9,7 @@ tagline: Simple Admin is a powerful microservice framework for large management 
 actions:
 
 - text: Quick Start 💡
-  link: /guide/basic-config/env_setting
+  link: /guide/basic-config/all_in_one
   type: primary
 
 - text: Document

@@ -5,7 +5,7 @@ title: "Proto转Api"
 
 > goctls >= 1.5.14
 
-该命令用于通过 proto 生成 api 中的字段内容，使得 proto 接入 api 更便捷
+该命令用于通过 proto 生成 api 中的字段内容, 主要用于生成除了 CRUD 代码生成之外的结构体，即将 rpc 中额外的 message 转换为 api 的 type，使得 proto 接入 api 更便捷.
 
 ```shell
 $ goctls extra proto2api -h

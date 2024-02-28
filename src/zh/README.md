@@ -90,11 +90,11 @@ highlights:
       
       - title: 公司应用
         icon: fluent:building-32-filled
-        details: 150 +
+        details: 200 +
 
       - title: 私人生产项目
         icon: mdi:people
-        details: 850 +
+        details: 900 +
       
       - title: 官方模块
         icon: streamline:module-puzzle-3-solid

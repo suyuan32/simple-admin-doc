@@ -12,9 +12,10 @@ actions:
   link: /guide/basic-config/all_in_one
   type: primary
 
-- text: Document
-  link: /guide/
-  icon: f7:doc-fill
+- text: Module Store
+  link: https://doge.ryansu.tech/store/index
+  icon: oui:token-module
+  type: primary
 
 - text: GitHub
   link: https://github.com/suyuan32/simple-admin-core

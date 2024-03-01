@@ -12,9 +12,10 @@ actions:
   link: /zh/guide/basic-config/all_in_one
   type: primary
 
-- text: 文档
-  link: /zh/guide/
-  icon: f7:doc-fill
+- text: 模块商店
+  link: https://doge.ryansu.tech/store/index
+  icon: oui:token-module
+  type: primary
 
 - text: GitHub
   link: https://github.com/suyuan32/simple-admin-core

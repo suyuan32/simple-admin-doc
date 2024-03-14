@@ -6,6 +6,10 @@ title: "Doge Deployment Tools"
 
 ## Introduction
 
+::: info
+Non-members please refer to Docker one-click deployment to deploy yourself
+:::
+
 Doge is a command-line tool for downloading and deploying modules for Simple Admin. It provides functions such as module source code download, module docker, k8s deployment, server maintenance, etc. Users can upload their own paid modules to earn revenue. More than 10 modules have been collected.
 
 ::: warning

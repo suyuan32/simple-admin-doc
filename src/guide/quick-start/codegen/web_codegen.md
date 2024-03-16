@@ -26,20 +26,22 @@ goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-a
 | folder_name | Yes  |         | Folder name                          | Core service is sys, in example project is example                                                                              |
 | prefix      | Yes  |         | Request prefix                       | Used for request redirect，such as sys-api in core, example project is example-api, you need to edit env.development, add proxy |
 | sub_folder  | No   |         | Sub directory                        | Used for generating sub-dir in views，such as user,token in sys directory                                                       |
+| form_type   | Yes  | drawer  | Form container type                  | Support "drawer"， "modal"                                                                                                      |
 | overwrite   | No   | false   | Whether it covers the generated file | `true` will cover all generated files                                                                                           |
 
 > ** Run `goctls frontend vben --help` see more details **
 
 ```shell
-$ goctls frontend vben --help
+$ goctls frontend vben -h
 Generate frontend related files
 
 Usage:
-  goctl frontend vben [flags]
+  goctls frontend vben [flags]
 
 Flags:
   -a, --api_file string      The absolute path of api file
   -f, --folder_name string   The folder name to generate file in different directory. e.g. file folder in simple admin backend ui which is to store file manager service files (default "sys")
+  -t, --form_type string     Form container type, default is "drawer", optional values are "drawer", "modal" (default "drawer")
   -h, --help                 help for vben
   -m, --model_name string    The model name. e.g. Example
   -o, --output string        The output directory, it should be the root directory of simple admin backend ui (default "./")

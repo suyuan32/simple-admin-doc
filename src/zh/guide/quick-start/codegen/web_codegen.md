@@ -29,26 +29,28 @@ goctls frontend vben --api_file=/home/ryan/GolandProjects/simple-admin-example-a
 | folder_name | 是   |        | 文件夹名称         | core 服务是 sys, 示例项目是 example                                                           |
 | prefix      | 是   |        | 请求前缀           | 请求前缀用于请求转发，如 sys-api, 示例项目为 example-api, 需要修改 env.development,添加 proxy |
 | sub_folder  | 否   |        | 子目录             | 用于在 views 下创建子目录，如 sys 有 user,token 等子目录                                      |
+| form_type   | 是   | drawer | 表格容器           | 支持 drawer 抽屉容器， modal 弹窗容器                                                         |
 | overwrite   | 否   | false  | 是否覆盖生成文件   | true 则会覆盖所有生成的文件                                                                   |
 
 > 运行 `goctls frontend vben --help` 查看详细命令
 
 ```shell
-$ goctls frontend vben --help
+$ goctls frontend vben -h
 生成与前端相关的文件
 
-用法：
-  goctl frontend vben [选项]
+Usage:
+  goctls frontend vben [flags]
 
-选项：
+Flags:
   -a, --api_file string      API 文件的绝对路径
-  -f, --folder_name string   用于在不同目录中生成文件的文件夹名称。例如 simple admin 后端 UI 中用于存储文件管理器服务文件的文件夹 (默认为 "sys")
-  -h, --help                 显示帮助信息
-  -m, --model_name string    模型名称。例如 Example
-  -o, --output string        输出目录，它应该是 simple admin 后端 UI 的根目录 (默认为 "./")
-  -w, --overwrite            是否覆盖已生成的文件，它将覆盖所有已生成的文件
-  -p, --prefix string        代理请求的前缀。例如 sys-api (默认为 "sys-api")
-  -s, --sub_folder string    子文件夹名称。例如 src/views/sys 子文件夹 user，其路径为 src/views/sys/user
+  -f, --folder_name string   在不同目录中生成文件的文件夹名称。例如，存储文件管理器服务文件的简单管理后台 UI 中的文件夹名称 (default "sys")
+  -t, --form_type string     表单容器类型, 默认为 drawer, 可选值为 drawer, modal (default "drawer")
+  -h, --help                 help for vben
+  -m, --model_name string    模型名称。例如，Example
+  -o, --output string        输出目录，应该是Simple Admin Backend UI 的根目录 (default "./")
+  -w, --overwrite            是否覆盖文件，它将覆盖所有生成的文件
+  -p, --prefix string        代理请求的前缀。例如，sys-api (default "sys-api")
+  -s, --sub_folder string    子目录名称。例如，src/views/sys 子目录用户，路径为 src/views/sys/user
 ```
 
 > 执行命令后会生成下面的代码

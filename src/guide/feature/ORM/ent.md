@@ -418,6 +418,12 @@ SetAge(10).
 SaveX(context.Background())
 ```
 
+> cache template
+
+```go
+l.svcCtx.DB.User.Query().GetCache(l.ctx, l.svcCtx.Redis, user.IDEQ(*req.Id), *req.Id string, 3 * time.Second)
+```
+
 ### Transaction
 
 The project provides the WithTx method to use database transactions locally, taking updating user information as an example：

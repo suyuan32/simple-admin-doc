@@ -419,6 +419,12 @@ SetAge(10).
 SaveX(context.Background())
 ```
 
+> cache 缓存模板
+
+```go
+l.svcCtx.DB.User.Query().GetCache(l.ctx, l.svcCtx.Redis, user.IDEQ(*req.Id), *req.Id string, 3 * time.Second)
+```
+
 ### 事务
 
 项目提供 WithTx 方法可以在本地使用数据库事务, 以更新用户信息为例:

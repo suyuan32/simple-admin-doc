@@ -7,7 +7,7 @@ title: "Docker一键部署"
 
 有 mysql 和 postgres 文件夹，根据需求选择一个文件夹打开。
 
-## 只需三步
+## 只需两步
 
 ### 1. 启动 docker-compose
 
@@ -27,17 +27,11 @@ docker-compose up -d
 
 ### 2. 初始化数据库
 
-<http://localhost/init>
-
-### 3. 重启 API
-
 ::: warning
-初始化完成后需要重启 core-api 容器，强制刷新 casbin 缓存, v1.0.14 开始不需要重启服务
+如果出现 503 错误，请单独重启 backend ui 容器
 :::
 
-::: info
-`deploy/docker-compose/all_in_one`文件夹下有 api 和 rpc 的 etc 配置文件参考
-:::
+<http://localhost/init>
 
 ::: warning
 部署自己的服务到 docker 只需修改为自己的镜像即可

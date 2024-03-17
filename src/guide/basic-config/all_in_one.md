@@ -9,7 +9,7 @@ In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suy
 
 There are mysql and postgres folders, choose a folder to open according to your needs.
 
-## 3 Steps
+## 2 Steps
 
 ### 1. Run docker-compose
 
@@ -19,7 +19,11 @@ docker-compose up -d
 
 ### 2. Initialize database
 
-> <http://localhost/init>
+::: warning
+If a 503 error occurs, please restart the backend UI container separately.
+:::
+
+<http://localhost/init>
 
 ### 3. Restart API container
 

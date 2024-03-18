@@ -20,7 +20,7 @@ goctls extra ent template -u
 
 ```shell
 Usage:
-  goctl extra ent template [flags]
+  goctls extra ent template [flags]
 
 Flags:
   -a, --add string   Add template for ent

@@ -20,7 +20,7 @@ goctls extra ent template -u
 
 ```shell
 用法：
-  goctl extra ent template [选项]
+  goctls extra ent template [选项]
 
 选项：
   -a, --add string   添加 ent 模板

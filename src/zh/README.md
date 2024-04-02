@@ -17,6 +17,11 @@ actions:
   icon: oui:token-module
   type: primary
 
+- text: API 文档网站
+  link: https://api-doc.ryansu.tech/?urls.primaryName=core-v1.3.11
+  icon: streamline:module-puzzle-3-solid
+  type: primary
+
 - text: GitHub
   link: https://github.com/suyuan32/simple-admin-core
   icon: mdi:github

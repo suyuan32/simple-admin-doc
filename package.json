@@ -11,11 +11,11 @@
     "docs:update-package": "pnpm dlx vp-update"
   },
   "devDependencies": {
-    "@vuepress/bundler-vite": "2.0.0-rc.8",
+    "@vuepress/bundler-vite": "2.0.0-rc.9",
     "vue": "^3.4.21",
-    "vuepress": "2.0.0-rc.8",
-    "vuepress-plugin-search-pro": "2.0.0-rc.28",
-    "vuepress-theme-hope": "2.0.0-rc.28"
+    "vuepress": "2.0.0-rc.9",
+    "vuepress-plugin-search-pro": "2.0.0-rc.32",
+    "vuepress-theme-hope": "2.0.0-rc.32"
   },
   "dependencies": {
     "@node-rs/jieba": "^1.10.0",

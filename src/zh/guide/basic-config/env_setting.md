@@ -13,7 +13,9 @@ title: "本地开发环境配置"
 - [Goctls](/zh/guide/basic-config/simple-admin-tools.md)
 
 ::: info
-推荐在 linux 下开发，因为需要用到 make 命令，官方在 `Ubuntu 22.10` 环境下开发. \
+**建议使用 PostgreSQL 数据库**
+
+推荐在 linux 下开发，因为需要用到 make 命令 \
 **`Windows` 用户建议自行配置环境， 参考 [Windows](/zh/guide/FAQ.html#如何配置-windows-环境)， 或者在 [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) 环境下开发**
 :::
 
@@ -354,8 +356,6 @@ export default defineApplicationConfig({
 
 ::: warning
 **_重要:_** 在初始化数据库前必须先创建数据库, 数据库名称和配置文件中的名称相同.
-
-**初始化完成后需要重启 API, 用于刷新 casbin 缓存, v1.0.14 版本之后无需重启服务**
 :::
 
 ```shell

@@ -13,7 +13,9 @@ title: "Local Development Setting"
 - [Goctls](/guide/basic-config/simple-admin-tools.md)
 
 ::: info
-It is recommended to develop under linux, because the make command is required. We develop in Ubuntu 22.10. \
+**It is recommended to use PostgreSQL Database.**
+
+It is recommended to develop under linux, because the make command is required. \
 **`Windows` users are recommended to cofigure the environment via [Windows](/guide/FAQ.html#how-to-configure-the-windows-environment), you can also develop in the [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) environment.**
 :::
 
@@ -354,8 +356,6 @@ You should set your target `ip` and rewrite the prefix.
 
 ::: warning
 **_Important:_** You should create the database before initialization, the database name should be the same as core_dev.yaml.
-
-**After initialization, you should restart api service. It can force refreshing casbin cache. You do not need to restart service after v1.0.14.**
 :::
 
 ```shell

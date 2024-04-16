@@ -97,11 +97,11 @@ highlights:
       
       - title: Company Usage
         icon: fluent:building-32-filled
-        details: 450 +
+        details: 500 +
 
       - title: Private Project Usage In Production
         icon: mdi:people
-        details: 1400 +
+        details: 1600 +
       
       - title: Offical Module 
         icon: streamline:module-puzzle-3-solid

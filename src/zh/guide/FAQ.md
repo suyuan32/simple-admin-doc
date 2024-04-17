@@ -27,6 +27,10 @@ ProjectConf:
 
 A： 3 种 [go-zero](https://mp.weixin.qq.com/s/-WaWJaM_ePEQOf7ExNJe7w)
 
+## `empty etcd hosts` 错误如何处理？
+
+A: `empty etcd hosts` 错误是由于配置文件 中的 `RPC` 配置错误时才会出现，出现该错误请检查 `yaml` 文件中的所有 `RPC` 配置如 `CoreRpc`。
+
 ## 如何处理跨域问题？
 
 A: 修改 api/core.go

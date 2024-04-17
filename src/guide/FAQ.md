@@ -27,6 +27,10 @@ ProjectConf:
 
 A: 3 kinds [go-zero](https://mp.weixin.qq.com/s/-WaWJaM_ePEQOf7ExNJe7w)
 
+## How to deal with `empty etcd hosts` errors?
+
+A: The `empty etcd hosts` error occurs when the `RPC` configuration in the configuration file is incorrect. If this error occurs, please check all `RPC` configurations in the `yaml` file such as `CoreRpc`.
+
 ## How to deal with cross domain issues?
 
 A: Modify api/core.go

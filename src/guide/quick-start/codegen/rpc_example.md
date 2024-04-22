@@ -9,7 +9,7 @@ Make sure that you have been installed follow software:
 - simple-admin-tool (goctls) v1.5.5 +
 
 \
-Must know go-zero's RPC command. [RPC Command](https://go-zero.dev/docs/goctl/zrpc/#%E6%96%B9%E5%BC%8F%E4%BA%8C%E9%80%9A%E8%BF%87%E6%8C%87%E5%AE%9Aproto%E7%94%9F%E6%88%90rpc%E6%9C%8D%E5%8A%A1) [RPC Service](https://go-zero.dev/docs/advance/rpc-call) \
+Must know go-zero's RPC command. [RPC Command](https://go-zero.dev/en/docs/tutorials/cli/rpc) [RPC Service](https://go-zero.dev/en/docs/tutorials/grpc/server/configuration) \
  \
 Refer to the [Example](https://github.com/suyuan32/simple-admin-example-rpc) project to generate it again, confirm that the generated file is consistent with the Example project, and the Example project has complete commands.
 :::

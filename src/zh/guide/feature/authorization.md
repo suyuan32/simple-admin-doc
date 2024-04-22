@@ -122,7 +122,7 @@ func batchCheck(cbn *casbin.Enforcer, roleIds, act, obj string) bool {
 )
 ```
 
-[如何使用中间件](https://go-zero.dev/cn/docs/advance/middleware)
+[如何使用中间件](https://go-zero.dev/docs/tutorials/api/middleware)
 
 ::: info
 目前API生成已支持自动生成鉴权中间件

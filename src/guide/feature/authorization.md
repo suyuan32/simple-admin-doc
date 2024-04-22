@@ -122,7 +122,7 @@ func batchCheck(cbn *casbin.Enforcer, roleIds, act, obj string) bool {
 )
 ```
 
-[How to use middleware](https://go-zero.dev/docs/advance/middleware)
+[How to use middleware](https://go-zero.dev/en/docs/tutorials/api/middleware)
 
 ::: info
 At present, API generation already supports automatic generation of authentication middleware

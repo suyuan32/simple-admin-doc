@@ -8,7 +8,7 @@ title: "API 微服务"
 
 - simple-admin-tool (goctls) v1.5.5 +
 
-必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/cn/docs/goctl/api) [api 文件编写](https://go-zero.dev/cn/docs/advance/api-coding) \
+必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/docs/tutorials/cli/api) [api 文件编写](https://go-zero.dev/docs/tutorials) \
 \
 参考 [Example](https://github.com/suyuan32/simple-admin-example-api) 项目生成一遍，确认生成文件与 Example 项目一致，Example 项目有完整的命令
 :::

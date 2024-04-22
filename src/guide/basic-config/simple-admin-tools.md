@@ -139,7 +139,7 @@ goctls rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
 ::: info
-You can get [More Document](https://go-zero.dev/docs/goctl/zrpc) on go zero official website.
+You can get [More Document](https://go-zero.dev/en/docs/tutorials/cli/rpc) on go zero official website.
 :::
 
 ::: warning

@@ -149,7 +149,7 @@ goctls rpc protoc user.proto --go_out=. --go-grpc_out=. --zrpc_out=.
 ```
 
 ::: info
-可以访问官网查看更多 [RPC command](https://go-zero.dev/docs/goctl/zrpc)
+可以访问官网查看更多 [RPC command](https://go-zero.dev/docs/tutorials/cli/rpc)
 :::
 
 ::: warning

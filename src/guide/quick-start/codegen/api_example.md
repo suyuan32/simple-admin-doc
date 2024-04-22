@@ -9,7 +9,7 @@ Make sure that you have been installed follow software:
 - simple-admin-tool (goctls) v1.5.5 +
 
 \
-Must know go-zero's API command. [API Command](https://go-zero.dev/docs/goctl/api) [Api Service](https://go-zero.dev/docs/advance/api-coding) \
+Must know go-zero's API command. [API Command](https://go-zero.dev/en/docs/tutorials) [Api Service](https://go-zero.dev/en/docs/tutorials/http/server/configuration) \
  \
 Refer to the [Example](https://github.com/suyuan32/simple-admin-example-api) project to generate it again, confirm that the generated file is consistent with the Example project, and the Example project has complete commands.
 :::

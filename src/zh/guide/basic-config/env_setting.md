@@ -159,6 +159,7 @@ ProjectConf:
 CoreRpc:
   Endpoints:
     - 127.0.0.1:9101 # the same as rpc address
+  Enabled: true
 ```
 
 > 的方式直连，不需要服务发现，本地调试也是使用直连的方式， Endpoints 可以有多个

@@ -160,6 +160,7 @@ ProjectConf:
 CoreRpc:
   Endpoints:
     - 127.0.0.1:9101 # the same as rpc address
+  Enabled: true
 ```
 
 > It does not need service discovery，when you develop locally, you should also use this mode. There can be several endpoints.

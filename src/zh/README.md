@@ -94,13 +94,13 @@ highlights:
         icon: mdi:github
         details: 1.4 k
       
-      - title: 公司应用
+      - title: 公司开发的应用
         icon: fluent:building-32-filled
-        details: 700 +
+        details: 800 +
 
-      - title: 私人生产项目
+      - title: 个人生产项目
         icon: mdi:people
-        details: 2000 +
+        details: 2200 +
       
       - title: 官方模块
         icon: streamline:module-puzzle-3-solid

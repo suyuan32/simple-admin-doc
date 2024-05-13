@@ -95,13 +95,13 @@ highlights:
         icon: mdi:github
         details: 1.4 k
       
-      - title: Company Usage
+      - title: Company Applications In Production
         icon: fluent:building-32-filled
-        details: 700 +
+        details: 800 +
 
-      - title: Private Project Usage In Production
+      - title: Personal Applications In Production
         icon: mdi:people
-        details: 2000 +
+        details: 2200 +
       
       - title: Offical Module 
         icon: streamline:module-puzzle-3-solid

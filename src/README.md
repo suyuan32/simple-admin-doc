@@ -54,7 +54,7 @@ highlights:
       details: Doge provides a powerful one-command deployment function that can quickly deploy modules in the module store
       link: /guide/basic-config/doge
 
-    - title: Powerful Ent support
+    - title: Powerful Ent Support
       icon: material-symbols-light:database
       details: Goctls provides powerful Ent code generation support, including template management and extended functions
       link: /guide/quick-start/extra/3-ent_template

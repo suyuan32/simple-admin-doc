@@ -5,6 +5,10 @@ title: "Validator"
 
 ## Validator Tutorial
 
+::: info Video tutorial
+<BiliBili bvid="BV19s4y1c7Br" />
+:::
+
 Simple Admin Tools integration [validator](https://github.com/go-playground/validator) library
 
 > You can just edit api file and add validate tag for the struct.

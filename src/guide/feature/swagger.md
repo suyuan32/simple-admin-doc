@@ -17,6 +17,10 @@ title: "Swagger API Document"
 `goctls` already supports to directly generate `swagger` validation rules based on `validate`, `goctls` requires `v0.3.1+`
 :::
 
+::: info Video Tutorial
+<BiliBili bvid="BV1sg4y1L7ju" />
+:::
+
 > In the root of project run simple-admin-core/
 
 ```shell

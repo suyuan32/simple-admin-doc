@@ -9,6 +9,10 @@ title: "前端设置"
 
 ## 前端设置
 
+::: info 菜单配置教程
+<BiliBili bvid="BV1J84y1f778" />
+:::
+
 ### 主要修改 env 文件
 
 > .env

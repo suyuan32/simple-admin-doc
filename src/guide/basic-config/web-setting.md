@@ -9,6 +9,10 @@ title: "Web Setting"
 [Backend UI Doc](https://vben.ryansu.tech/)
 :::
 
+::: info Menu setting tutorial
+<BiliBili bvid="BV1J84y1f778" />
+:::
+
 > Mainly modify env file
 
 > .env

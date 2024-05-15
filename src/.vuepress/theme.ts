@@ -163,6 +163,10 @@ export default hopeTheme({
       // vuePlayground: true,
     },
 
+    components: {
+      components: ["BiliBili"],
+    },
+
     searchPro: {
       // 索引全部内容
       indexContent: true,

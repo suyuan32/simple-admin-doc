@@ -9,7 +9,14 @@ title: "Doge 部署工具"
 非会员请参考 Docker 一键部署自行部署
 :::
 
+
 Doge 是 Simple Admin 的模块下载部署的命令行工具，提供模块源码下载，模块 docker , k8s 部署，服务器维护等功能。用户可以上传自己的付费模块获取收益，现已收录 10 + 模块。
+
+::: info 视频教程
+
+<BiliBili bvid="BV1vg4y1Z7hK" />
+
+:::
 
 
 ::: warning

@@ -5,6 +5,10 @@ title: "Dockerfile"
 
 ## Dockerfile 生成
 
+::: info 视频教程
+<BiliBili bvid="BV1h34y137gL" />
+:::
+
 ```shell
 goctls docker -l -u yuansu.china.work@gmail.com -c -p 9104 -s mms -t rpc -z Asia/Shanghai
 ```
@@ -24,7 +28,7 @@ goctls docker -l -u yuansu.china.work@gmail.com -c -p 9104 -s mms -t rpc -z Asia
 | port         | 否   |                          | 暴露的端口号，默认为不暴露                                                                                                                              |
 | remote       | 否   |                          | 模板的远程 git 仓库，不能与 --home 同时设置，如果同时设置，则以 --remote 为准 git 仓库目录结构必须与 https://github.com/zeromicro/go-zero-template 一致 |
 | tz           | 否   |                          | 容器的时区，如 Asia/Shanghai                                                                                                                            |
-| local_build | 否 | false | 是否在本地构建项目，不使用中间镜像 |
+| local_build  | 否   | false                    | 是否在本地构建项目，不使用中间镜像                                                                                                                      |
 
 > 运行 `goctls docker -h` 查看更多
 

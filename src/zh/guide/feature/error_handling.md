@@ -5,6 +5,8 @@ title: "错误处理"
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV14V4y1r7RQ/)
+
+<BiliBili bvid="BV14V4y1r7RQ" />
 :::
 
 ### 错误类型

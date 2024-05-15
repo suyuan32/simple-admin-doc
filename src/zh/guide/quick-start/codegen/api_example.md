@@ -4,9 +4,6 @@ title: "API 微服务"
 ---
 
 ::: warning
-首先确认你安装了以下软件:
-
-- simple-admin-tool (goctls) v1.5.5 +
 
 必须了解 go zero 的 API 命令 [API 命令](https://go-zero.dev/docs/tutorials/cli/api) [api 文件编写](https://go-zero.dev/docs/tutorials) \
 \
@@ -15,6 +12,8 @@ title: "API 微服务"
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV1Lh411E7Xv)
+
+<BiliBili bvid="BV1Lh411E7Xv" />
 :::
 
 ## API 服务的职责
@@ -272,6 +271,8 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV1oa4y1A7rT/)
+
+<BiliBili bvid="BV1oa4y1A7rT" />
 :::
 
 ::: info

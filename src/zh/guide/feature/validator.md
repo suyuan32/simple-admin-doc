@@ -7,6 +7,8 @@ title: "验证器"
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV19s4y1c7Br)
+
+<BiliBili bvid="BV19s4y1c7Br" />
 :::
 
 Simple Admin Tools 集成 [validator](https://github.com/go-playground/validator) 库

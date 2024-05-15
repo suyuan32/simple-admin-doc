@@ -5,8 +5,9 @@ title: "API Initialization"
 
 ## API Initialize Code Generation
 
-::: warning
-goctls v1.5.2 +
+
+::: info Video tutorial
+<BiliBili bvid="BV1pj411878n" />
 :::
 
 ### `goctls extra init_code`

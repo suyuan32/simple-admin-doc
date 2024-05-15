@@ -3,12 +3,11 @@ order: 3
 title: "Web Pages"
 ---
 
-> Make sure that you have been installed follow software:
-
-- simple-admin-tool (goctls) v1.5.2 +
 
 ::: info
 [Video Tutorial](https://youtu.be/j7wEcaWVEKw)
+
+<BiliBili bvid="BV1DL411a7wo" />
 :::
 
 ## Create example codes

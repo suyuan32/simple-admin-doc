@@ -9,6 +9,8 @@ title: "Ent"
 [官方文档](https://entgo.io/zh/docs/getting-started/) [官方例子](https://github.com/ent/ent/blob/master/examples/README.md) [schema 中文文档(推荐)](https://suyuan32.github.io/ent-chinese-doc/#/zh-cn/getting-started) 
 
 [教学项目](https://github.com/suyuan32/simple-admin-example-ent) 帮助你快速提升
+
+<BiliBili bvid="BV17C4y157WL" />
 :::
 
 ## 实战

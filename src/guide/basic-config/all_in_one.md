@@ -3,6 +3,10 @@ order: 1
 title: "Docker Deploy"
 ---
 
+::: info Video tutorial
+<BiliBili bvid="BV1do4y1g7VL" />
+:::
+
 ## Quick start with docker-compose
 
 In `deploy/docker-compose/all_in_one` directory, [Github](https://github.com/suyuan32/simple-admin-core/tree/master/deploy/docker-compose/all_in_one)

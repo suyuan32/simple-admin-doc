@@ -4,9 +4,6 @@ title: "RPC 微服务"
 ---
 
 ::: warning
-首先确认你安装了以下软件:
-
-- simple-admin-tool (goctls) v1.5.5 +
 
 必须了解 go zero 的 RPC 命令 [RPC 命令](https://go-zero.dev/docs/tutorials/cli/rpc) [RPC 服务](https://go-zero.dev/docs/tutorials/grpc/server/configuration)
 \
@@ -15,6 +12,8 @@ title: "RPC 微服务"
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV12s4y1R755)
+
+<BiliBili bvid="BV12s4y1R755" />
 :::
 
 ## RPC 职责

@@ -5,6 +5,11 @@ title: "配置信息查看"
 
 ## 查看信息命令
 
+::: info 视频教程
+<BiliBili bvid="BV158411f7Vg" />
+:::
+
+
 ```shell
 goctls info env
 ```

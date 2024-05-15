@@ -17,6 +17,12 @@ Doge is an exclusive tool for members. Since this tool needs to connect to the s
 ![qrcode](/assets/planet.png)
 :::
 
+::: info Video tutorial
+
+<BiliBili bvid="BV1vg4y1Z7hK" />
+
+:::
+
 ### [Video Tutorial](https://www.bilibili.com/video/BV1vg4y1Z7hK/?share_source=copy_web&vd_source=f045c6cd68640dbfa7188638af9c7b03) [Blog Tutorial](https://space.bilibili.com/9872669/channel/collectiondetail?sid=2007668)
 
 ## Deploying Modules

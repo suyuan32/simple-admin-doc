@@ -8,6 +8,8 @@ title: "Ent"
 ::: info
 [Official Doc](https://entgo.io/docs/getting-started) [Official Example](https://github.com/ent/ent/blob/master/examples/README.md)
 [Tutorial Project](https://github.com/suyuan32/simple-admin-example-ent) helps you to imporve the skills
+
+<BiliBili bvid="BV17C4y157WL" />
 :::
 
 ## Quick Start

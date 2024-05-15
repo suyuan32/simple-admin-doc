@@ -5,8 +5,6 @@ title: "Gitea Workflow"
 
 ## Gitea 文件生成
 
-> goctls >= 1.6.7
-
 ## 创建 Gitea Workflow 文件
 
 > 创建 .gitea/workflow/docker.yaml

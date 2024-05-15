@@ -5,10 +5,10 @@ title: "Drone CI"
 
 ## Drone CI 文件生成
 
-> goctls > 1.5.17
-
 ::: info
 [视频教程](https://www.bilibili.com/video/BV1ZN411b7sp)
+
+<BiliBili bvid="BV1ZN411b7sp" />
 :::
 
 ## 创建 Drone CI 文件

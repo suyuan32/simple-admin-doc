@@ -5,6 +5,10 @@ title: "Dockerfile"
 
 ## Generating Dockerfile
 
+::: info Video tutorial
+<BiliBili bvid="BV1h34y137gL" />
+:::
+
 ```shell
 goctls docker -l -u yuansu.china.work@gmail.com -c -p 9104 -s mms -t rpc -z Asia/Shanghai
 ```
@@ -24,7 +28,7 @@ goctls docker -l -u yuansu.china.work@gmail.com -c -p 9104 -s mms -t rpc -z Asia
 | port         | No       |                            | The port to expose, default none                                                                                                                                                                                                                                           |
 | remote       | No       |                            | The remote git repository of the template, `--home` and `--remote` cannot be set at the same time, if they are, `--remote` has higher priority. The git repository directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure |
 | tz           | No       |                            | The timezone of the container, such as `Asia/Shanghai`                                                                                                                                                                                                                     |
-| local_build | No | false | Whether to build the project locally, without using an intermediate image |
+| local_build  | No       | false                      | Whether to build the project locally, without using an intermediate image                                                                                                                                                                                                  |
 
 > Run `goctls docker -h` to see more:
 

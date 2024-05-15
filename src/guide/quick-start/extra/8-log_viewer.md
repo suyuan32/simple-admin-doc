@@ -5,6 +5,10 @@ title: "Local Log Viewer"
 
 ## The command for viewing local log with formatting
 
+::: info Video tutorial
+<BiliBili bvid="BV1Hu4y1w7pp" />
+:::
+
 The local log view command is used to format and view local logs, making the logs easier to view.
 
 ```shell

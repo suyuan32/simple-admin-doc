@@ -21,6 +21,7 @@ It is recommended to develop under linux, because the make command is required. 
 
 ::: info
 [Backend UI Doc](https://vben.ryansu.tech/) [Video Tutorial](https://youtu.be/_RDvlaKRRTY)
+<BiliBili bvid="BV1Hg4y1M7T5" />
 :::
 
 ## Backend Setting
@@ -37,6 +38,7 @@ password: **simple-admin**
 
 ::: warning
 Since v1.1.1, we recommend you to use docker to deploy local environment. [Tutorial](https://youtu.be/gpXOoJEeOHg)
+<BiliBili bvid="BV1do4y1g7VL" />
 :::
 
 > Clone the core code

@@ -5,6 +5,10 @@ title: 'Error Handling'
 
 ### Error Type
 
+::: info Video tutorial
+<BiliBili bvid="BV14V4y1r7RQ" />
+:::
+
 Simple Admin has three error types
 
 - ApiError : Api error, used to return error return information with http status code

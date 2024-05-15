@@ -5,8 +5,6 @@ title: "Gitlab CI"
 
 ## Gitlab CI 文件生成
 
-> goctls >= 1.6.6
-
 ## 创建 Gitlab CI 文件
 
 > 创建 .gitlab-ci.yaml

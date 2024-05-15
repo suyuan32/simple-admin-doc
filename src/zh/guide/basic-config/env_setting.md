@@ -21,12 +21,17 @@ title: "本地开发环境配置"
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV1Hg4y1M7T5) [Backend UI 文档](https://vben.ryansu.tech/zh/)
+
+<BiliBili bvid="BV1Hg4y1M7T5" />
+
 :::
 
 ## 后端部署
 
 ::: warning
 除非要二次开发 core 服务， 否则建议直接接入官方镜像， 参考教程 [直接接入 Core 服务](https://www.bilibili.com/video/BV1do4y1g7VL)
+
+<BiliBili bvid="BV1do4y1g7VL" />
 :::
 
 ### simple admin core

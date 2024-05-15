@@ -5,8 +5,9 @@ title: "API 初始化"
 
 ## API 初始化代码生成
 
-::: warning
-goctls v1.5.2 +
+
+::: info 视频教程
+<BiliBili bvid="BV1pj411878n" />
 :::
 
 ### `goctls extra init_code`

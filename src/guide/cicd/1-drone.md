@@ -5,7 +5,9 @@ title: "Drone CI"
 
 ## Drone CI Files Generating
 
-> goctls > 1.5.17
+::: info Video tutorial
+<BiliBili bvid="BV1ZN411b7sp" />
+:::
 
 ## Create Drone CI file
 

@@ -5,6 +5,10 @@ title: "Ent 管理"
 
 ## Ent 文件生成
 
+::: info 视频教程
+<BiliBili bvid="BV1Zz4y1V7HR" />
+:::
+
 ### `extra ent template` 模板生成
 
 ```shell

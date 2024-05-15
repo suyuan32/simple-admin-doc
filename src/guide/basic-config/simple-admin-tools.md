@@ -16,6 +16,8 @@ It provides more addition features than origin project such as:
 
 ::: info
 [Official Video Tutorial](https://youtu.be/20XifykiXZc)
+
+<BiliBili bvid="BV1Lc411n7Wf" />
 :::
 
 ## Tool Installation

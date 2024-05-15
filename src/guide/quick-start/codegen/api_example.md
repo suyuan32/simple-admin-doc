@@ -4,11 +4,6 @@ title: "API Service"
 ---
 
 ::: warning
-Make sure that you have been installed follow software:
-
-- simple-admin-tool (goctls) v1.5.5 +
-
-\
 Must know go-zero's API command. [API Command](https://go-zero.dev/en/docs/tutorials) [Api Service](https://go-zero.dev/en/docs/tutorials/http/server/configuration) \
  \
 Refer to the [Example](https://github.com/suyuan32/simple-admin-example-api) project to generate it again, confirm that the generated file is consistent with the Example project, and the Example project has complete commands.
@@ -26,6 +21,7 @@ An API can access multiple RPCs, providing a unified request entry。
 
 ::: info
 [Tutorial](https://youtu.be/duSIv0qcCV8)
+<BiliBili bvid="BV1Lh411E7Xv" />
 :::
 
 ## Create API project
@@ -274,6 +270,8 @@ You need to add `ExampleRpc` manually into `service_context`, `config`, `etc`.
 
 ::: info
 [Tutorial Video](https://youtu.be/h3wybuEdg4s)
+
+<BiliBili bvid="BV1oa4y1A7rT" />
 :::
 
 ::: info

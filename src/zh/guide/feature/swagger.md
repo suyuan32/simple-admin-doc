@@ -14,6 +14,8 @@ title: "Swagger"
 
 ::: info
 [视频教程](https://www.bilibili.com/video/BV1sg4y1L7ju)
+
+<BiliBili bvid="BV1sg4y1L7ju" />
 :::
 
 ::: warning

@@ -27,6 +27,8 @@ SIMPLE_LANG=zh goctls -h
 
 ::: info
 [教学视频](https://www.bilibili.com/video/BV1Lc411n7Wf)
+
+<BiliBili bvid="BV1Lc411n7Wf" />
 :::
 
 从 v1.5.14 开始，工具已移至新的仓库，便于快速迭代更新 [仓库地址](https://github.com/suyuan32/goctls), 目前已支持直接命令安装，不再需要 clone 代码

@@ -5,6 +5,10 @@ title: "Ent Management"
 
 ## Ent Template Generation
 
+::: info Video tutorial
+<BiliBili bvid="BV1Zz4y1V7HR" />
+:::
+
 ### `extra ent template` Template Generation
 
 ```shell

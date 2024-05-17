@@ -97,11 +97,11 @@ highlights:
       
       - title: Company Applications In Production
         icon: fluent:building-32-filled
-        details: 850 +
+        details: 900 +
 
       - title: Personal Applications In Production
         icon: mdi:people
-        details: 2300 +
+        details: 2400 +
       
       - title: Offical Module 
         icon: streamline:module-puzzle-3-solid

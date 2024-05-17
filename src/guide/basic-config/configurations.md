@@ -76,15 +76,21 @@ CasbinConf:
 
 > Only used when i18n needs to read from an external directory.
 
-| Parameter Name | Required | Default Value | Parameter Description        |
-| -------------- | -------- | ------------- | ---------------------------- |
-| Dir            | No       | ...           | External i18n file directory |
+| Parameter Name   | Required | Default Value | Parameter Description        |
+| ---------------- | -------- | ------------- | ---------------------------- |
+| Dir              | No       | ...           | External i18n file directory |
+| BundleFilePaths  | No       |               | External i18n files paths    |
+| SupportLanguages | No       |               | Support language list        |
 
 > Example
 
 ```yaml
 I18nConf:
-  Dir: '/home/data/i18n/locale'
+  Dir: "D:/projects/simpleadmin/feature-workspace/simple-admin-core/api/internal/i18n/"
+  BundleFilePaths:
+    - "locale/ja.json"
+  SupportLanguages:
+    - "ja"
 ```
 
 ## Auth Authentication Configuration

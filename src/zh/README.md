@@ -96,11 +96,11 @@ highlights:
       
       - title: 公司开发的应用
         icon: fluent:building-32-filled
-        details: 850 +
+        details: 900 +
 
       - title: 个人生产项目
         icon: mdi:people
-        details: 2300 +
+        details: 2400 +
       
       - title: 官方模块
         icon: streamline:module-puzzle-3-solid
@@ -125,6 +125,6 @@ go install github.com/suyuan32/goctls@latest
 
 ## 官方交流群
 
-- 关注公众号 - **几颗酥** ， 可以免费加入交流群
+- 关注公众号 - **几颗酥** ，备注 **simple admin** 可以免费加入交流群
 
 <!-- markdownlint-disable -->

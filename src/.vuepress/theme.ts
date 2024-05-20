@@ -100,7 +100,7 @@ export default hopeTheme({
         path: "/",
         title: "Welcome",
         content:
-          "Welcome to the Interview Guide website. We have a golang learning group. Follow the public account - 《几颗酥》. Give this project a star and contact the administrator to join for free.",
+          "Welcome to the Simple Admin website. We have a Simple Admin learning group. Follow the public account - 《几颗酥》. Give this project a star and contact the administrator to join for free.",
         actions: [
           {
             text: "Join us!",
@@ -113,7 +113,7 @@ export default hopeTheme({
         path: "/zh/",
         title: "欢迎",
         content:
-          "欢迎访问面试宝典网站，我们有 golang 学习群，关注公众号 - 《几颗酥》， 给本项目点个 Star 联系管理员即可免费加入",
+          "欢迎访问Simple Admin网站，我们有 Simple Admin 学习群，关注公众号 - 《几颗酥》， 给本项目点个 Star 联系管理员即可免费加入",
         actions: [
           {
             text: "立即加入",

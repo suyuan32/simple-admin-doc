@@ -1,6 +1,10 @@
 ---
 order: 7
 title: "Simple Admin Configurations"
+head:
+  - - meta
+    - name: keywords
+      content: simple admin, configurations collections
 ---
 
 ## Database Configuration

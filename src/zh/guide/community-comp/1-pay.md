@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "支付模块"
+head:
+  - - meta
+    - name: keywords
+      content: simple admin module, payment module, 支付模块, community, 微信支付, 支付宝支付
 ---
 
 ## 介绍

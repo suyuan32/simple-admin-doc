@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Project Specification"
+head:
+  - - meta
+    - name: keywords
+      content: specification, simple admin, standard
 ---
 
 ## API specification

@@ -1,6 +1,10 @@
 ---
 order: 7
 title: '服务监控'
+head:
+  - - meta
+    - name: keywords
+      content: prometheus, service monitoring, healthy, simple admin
 ---
 
 ## 我们使用 Prometheus 进行服务监控

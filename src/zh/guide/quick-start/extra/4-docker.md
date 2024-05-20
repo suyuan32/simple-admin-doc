@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Dockerfile"
+head:
+  - - meta
+    - name: keywords
+      content: docker, dockerfile, 代码生成, code generation, simple admin
 ---
 
 ## Dockerfile 生成

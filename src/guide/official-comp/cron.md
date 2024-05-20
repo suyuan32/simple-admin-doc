@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Timed Task Module"
+head:
+  - - meta
+    - name: keywords
+      content: cron, job, task, simple admin scheduler, time task, golang
 ---
 
 ### Introduction

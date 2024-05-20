@@ -1,6 +1,10 @@
 ---
 order: 9
 title: 'JWT Black List'
+head:
+  - - meta
+    - name: keywords
+      content: jwt, json web tokon, blacklist, force log out
 ---
 
 > System will insert token into tokens table automatically， admin can block token or force logging out

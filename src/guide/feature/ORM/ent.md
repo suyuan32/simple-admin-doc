@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "Ent"
+head:
+  - - meta
+    - name: keywords
+      content: ent, entgo, orm, golang orm, simple admin orm
 ---
 
 ## Ent

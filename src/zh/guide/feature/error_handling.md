@@ -1,6 +1,10 @@
 ---
 order: 5
 title: "错误处理"
+head:
+  - - meta
+    - name: keywords
+      content: error handling, simple admin errors, 错误处理
 ---
 
 ::: info

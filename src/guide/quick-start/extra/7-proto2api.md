@@ -1,9 +1,11 @@
 ---
 order: 7
 title: "Proto To Api"
+head:
+  - - meta
+    - name: keywords
+      content: proto, convert to api, protobuf, file convert, goctls
 ---
-
-> goctls >= 1.5.14
 
 This command is used to generate field content in the api through proto. It is mainly used to generate structures other than CRUD code generation, that is, convert extra messages in rpc into the type of the api, making it more convenient for proto to access the api.
 

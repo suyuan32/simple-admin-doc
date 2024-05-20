@@ -1,6 +1,10 @@
 ---
 order: 7
 title: "Version Upgrade"
+head:
+  - - meta
+    - name: keywords
+      content: project upgrade
 ---
 
 ## How to upgrade your project to the latest version?

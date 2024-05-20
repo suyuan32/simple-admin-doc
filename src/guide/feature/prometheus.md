@@ -1,6 +1,10 @@
 ---
 order: 7
 title: 'Service Monitoring'
+head:
+  - - meta
+    - name: keywords
+      content: prometheus, service monitoring, healthy, simple admin
 ---
 
 ## We use Prometheus to do the service monitoring

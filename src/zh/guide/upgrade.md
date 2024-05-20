@@ -1,6 +1,10 @@
 ---
 order: 7
 title: "版本更新"
+head:
+  - - meta
+    - name: keywords
+      content: 项目升级, 版本升级
 ---
 
 ## 如何更新自己的项目到最新版本？

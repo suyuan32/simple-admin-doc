@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Ent 管理"
+head:
+  - - meta
+    - name: keywords
+      content: Ent code generations, 模板生成, mixin 生成, schema
 ---
 
 ## Ent 文件生成

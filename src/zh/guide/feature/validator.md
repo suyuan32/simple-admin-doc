@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "验证器"
+head:
+  - - meta
+    - name: keywords
+      content: validator, golang, simple admin validation, 校验器
 ---
 
 ## Validator 使用

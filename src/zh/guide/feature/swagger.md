@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Swagger"
+head:
+  - - meta
+    - name: keywords
+      content: swagger, simple admin, api doc, auto gen, API 文档
 ---
 
 ## 使用 swagger 生成 API 文档

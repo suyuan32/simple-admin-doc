@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "API Initialization"
+head:
+  - - meta
+    - name: keywords
+      content: api initialization code generation, api codes
 ---
 
 ## API Initialize Code Generation

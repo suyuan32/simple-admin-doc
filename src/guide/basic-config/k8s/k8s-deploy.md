@@ -1,6 +1,10 @@
 ---
 order: 1
 title: 'K8s Deployment'
+head:
+  - - meta
+    - name: keywords
+      content: k8s, minikube, docker, deployment, requirements
 ---
 
 ## Environment Requirement

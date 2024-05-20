@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "本地开发环境配置"
+head:
+  - - meta
+    - name: keywords
+      content: 本地环境配置, Core 服务, 环境需求, 本地开发
 ---
 
 ## 环境需求

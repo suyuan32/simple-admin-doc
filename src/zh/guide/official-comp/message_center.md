@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "消息中心模块"
+head:
+  - - meta
+    - name: keywords
+      content: mcms, message center management service, simple admin module, 消息中心模块
 ---
 
 ### 介绍

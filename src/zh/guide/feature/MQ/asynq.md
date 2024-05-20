@@ -1,6 +1,10 @@
 ---
 order: 1
 title: 'Asynq 消息队列'
+head:
+  - - meta
+    - name: keywords
+      content: asynq, message queue, 消息队列, 轻量, simple admin job
 ---
 
 ## 如何在 RPC 使用 Asynq 作为消息队列？

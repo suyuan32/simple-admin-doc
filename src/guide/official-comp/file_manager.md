@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "File Manager"
+head:
+  - - meta
+    - name: keywords
+      content: fms, upload, file manager service, simple admin, s3, configuration
 ---
 
 ### Introduction

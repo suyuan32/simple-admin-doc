@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "RPC Service"
+head:
+  - - meta
+    - name: keywords
+      content: goctls, rpc, rpc code generation, micro services
 ---
 
 ::: warning

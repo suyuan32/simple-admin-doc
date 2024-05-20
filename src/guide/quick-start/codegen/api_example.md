@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "API Service"
+head:
+  - - meta
+    - name: keywords
+      content: simple admin api, api code generation, goctls, single api service
 ---
 
 ::: warning

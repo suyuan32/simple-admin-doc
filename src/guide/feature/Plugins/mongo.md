@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "MongoDB"
+head:
+  - - meta
+    - name: keywords
+      content: mongodb, database, nosql, simple admin
 ---
 
 ::: info

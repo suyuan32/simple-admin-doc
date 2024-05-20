@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Message Center Module"
+head:
+  - - meta
+    - name: keywords
+      content: mcms, message center management service, simple admin module
 ---
 
 ### Introduction

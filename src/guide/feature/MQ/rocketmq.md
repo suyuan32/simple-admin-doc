@@ -1,6 +1,10 @@
 ---
 order: 2
 title: 'RocketMQ Message Queue'
+head:
+  - - meta
+    - name: keywords
+      content: rocketmq, message queue, mq
 ---
 ## How to add Producer to RPC?
 

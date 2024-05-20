@@ -1,6 +1,10 @@
 ---
 order: 5
 title: "快捷命令"
+head:
+  - - meta
+    - name: keywords
+      content: quick command, makefile, make help, simple admin, 快捷命令
 ---
 
 # 快捷命令

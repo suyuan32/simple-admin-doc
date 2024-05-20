@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Web Setting"
+head:
+  - - meta
+    - name: keywords
+      content: frontend, frontend configuraion, configuration, menu configuraion
 ---
 
 ## Web UI setting

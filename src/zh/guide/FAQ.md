@@ -1,6 +1,10 @@
 ---
 order: 6
 title: "常见问题"
+head:
+  - - meta
+    - name: keywords
+      content: faq, questions, 常见问题, common
 ---
 
 ## 默认账号是什么？

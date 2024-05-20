@@ -1,6 +1,10 @@
 ---
 order: 12
 title: '权限验证'
+head:
+  - - meta
+    - name: keywords
+      content: casbin, authorization, permission, 权限验证
 ---
 
 我们使用Casbin进行权限验证.

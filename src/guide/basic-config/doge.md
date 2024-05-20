@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Doge Deployment Tools"
+head:
+  - - meta
+    - name: keywords
+      content: doge, deployment tool, module shop, simple admin
 ---
 
 

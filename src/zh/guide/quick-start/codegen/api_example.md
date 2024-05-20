@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "API 微服务"
+head:
+  - - meta
+    - name: keywords
+      content: simple admin api, api code generation, API 代码生成, goctls, single api service, 单体 api 服务
 ---
 
 ::: warning

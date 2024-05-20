@@ -1,6 +1,10 @@
 ---
 order: 9
 title: "配置信息查看"
+head:
+  - - meta
+    - name: keywords
+      content: info, command, goctls, simple admin information, 配置信息查看
 ---
 
 ## 查看信息命令

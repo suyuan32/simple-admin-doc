@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "GORM"
+head:
+  - - meta
+    - name: keywords
+      content: gorm, orm, golang orm, simple admin orm
 ---
 
 #### [官方文档](https://gorm.io/)

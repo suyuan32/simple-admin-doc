@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "API 初始化"
+head:
+  - - meta
+    - name: keywords
+      content: api initialization code generation, API 初始化代码生成, api codes
 ---
 
 ## API 初始化代码生成

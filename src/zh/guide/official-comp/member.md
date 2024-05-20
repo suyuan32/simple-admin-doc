@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "会员服务模块"
+head:
+  - - meta
+    - name: keywords
+      content: mms, member service module, 会员模块, 配置
 ---
 
 ### 介绍

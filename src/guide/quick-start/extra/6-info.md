@@ -1,6 +1,10 @@
 ---
 order: 9
 title: "Show Configuration Info"
+head:
+  - - meta
+    - name: keywords
+      content: info, command, goctls, simple admin information, show info
 ---
 
 ## Show Info Command

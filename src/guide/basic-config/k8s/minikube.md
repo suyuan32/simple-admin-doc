@@ -1,6 +1,10 @@
 ---
 order: 2
 title: 'Minikube Configuration'
+head:
+  - - meta
+    - name: keywords
+      content: minikube, configurations, deploy
 ---
 
 ## Minikube initialization

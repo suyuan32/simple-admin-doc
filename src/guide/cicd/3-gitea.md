@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "Gitea Workflow"
+head:
+  - - meta
+    - name: keywords
+      content: gitea ci/cd, simple admin ci/cd, continuous
 ---
 
 ## Gitea Workflow Generating

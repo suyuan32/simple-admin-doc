@@ -1,6 +1,10 @@
 ---
 order: 14
 title: '链路追踪'
+head:
+  - - meta
+    - name: keywords
+      content: tracing, go zero, jaeger, debug, 链路追踪, 本地部署
 ---
 
 ## Go Zero 默认支持 Jaeger 进行链路追踪， 只需在 etc 的配置文件中声明即可

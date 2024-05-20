@@ -1,6 +1,10 @@
 ---
 order: 6
 title: "FAQ"
+head:
+  - - meta
+    - name: keywords
+      content: faq, questions, common
 ---
 
 ## What is the default account?

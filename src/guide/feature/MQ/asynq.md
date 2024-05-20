@@ -1,6 +1,10 @@
 ---
 order: 1
 title: 'Asynq Message Queue'
+head:
+  - - meta
+    - name: keywords
+      content: asynq, message queue, light weight, simple admin job, scheduler
 ---
 
 ## How to use Asynq as a message queue in RPC?

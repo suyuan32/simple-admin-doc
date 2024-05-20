@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Ent Management"
+head:
+  - - meta
+    - name: keywords
+      content: Ent code generations, template generation, mixin generation, schema
 ---
 
 ## Ent Template Generation

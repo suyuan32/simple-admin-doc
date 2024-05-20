@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Doge 部署工具"
+head:
+  - - meta
+    - name: keywords
+      content: doge, 部署工具, 插件商店, simple admin
 ---
 
 ## 介绍

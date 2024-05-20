@@ -1,6 +1,10 @@
 ---
 order: 8
 title: '日志收集'
+head:
+  - - meta
+    - name: keywords
+      content: 日志收集, log collecting, efk, elasticsearch
 ---
 
 > 本项目主要使用 EFK 进行日志收集

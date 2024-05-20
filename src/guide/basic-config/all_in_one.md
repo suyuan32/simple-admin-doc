@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "Docker Deploy"
+head:
+  - - meta
+    - name: keywords
+      content: docker, all in one, one click, docker-compose
 ---
 
 ::: info Video tutorial

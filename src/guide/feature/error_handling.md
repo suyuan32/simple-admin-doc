@@ -1,6 +1,10 @@
 ---
 order: 5
 title: 'Error Handling'
+head:
+  - - meta
+    - name: keywords
+      content: error handling, simple admin errors, golang
 ---
 
 ### Error Type

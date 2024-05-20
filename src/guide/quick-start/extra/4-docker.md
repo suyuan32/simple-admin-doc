@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Dockerfile"
+head:
+  - - meta
+    - name: keywords
+      content: docker, dockerfile, code generation, simple admin
 ---
 
 ## Generating Dockerfile

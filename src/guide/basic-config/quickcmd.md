@@ -1,6 +1,10 @@
 ---
 order: 5
 title: "Quick Commands"
+head:
+  - - meta
+    - name: keywords
+      content: quick command, makefile, make help, simple admin
 ---
 
 ::: warning

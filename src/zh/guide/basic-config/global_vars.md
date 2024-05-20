@@ -1,6 +1,10 @@
 ---
 order: 4
 title: '全局变量'
+head:
+  - - meta
+    - name: keywords
+      content: 全局变量, global variables, simple admin 全局变量
 ---
 
 > **我们将全局变量定义到 `internal/svc/servicecontext.go` 中，并初始化**

@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "Member Service"
+head:
+  - - meta
+    - name: keywords
+      content: mms, member service module, configuration, simple admin module
 ---
 
 ### Introduction

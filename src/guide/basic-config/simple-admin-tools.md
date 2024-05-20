@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "Goctls"
+head:
+  - - meta
+    - name: keywords
+      content: goctls, goctls -h, simple admin development tool, micro-services development tools
 ---
 
 Goctls is a powerful tools for simple admin to gen codes, based on goctl.

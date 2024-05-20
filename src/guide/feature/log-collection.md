@@ -1,6 +1,10 @@
 ---
 order: 8
 title: 'Log Collecting'
+head:
+  - - meta
+    - name: keywords
+      content: log collecting, efk, elasticsearch
 ---
 
 > We use EFK to do the log collecting.

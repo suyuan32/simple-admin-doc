@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "项目规范"
+head:
+  - - meta
+    - name: keywords
+      content: 项目规范, 开发规范, standard
 ---
 
 ## API 规范

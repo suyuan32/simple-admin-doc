@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Validator"
+head:
+  - - meta
+    - name: keywords
+      content: validator, golang, simple admin validation, go playground
 ---
 
 ## Validator Tutorial

@@ -1,6 +1,10 @@
 ---
 order: 7
 title: "Simple Admin 配置合集"
+head:
+  - - meta
+    - name: keywords
+      content: simple admin configurations, 配置大全, 合集
 ---
 
 ## 数据库配置 

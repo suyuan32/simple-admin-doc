@@ -1,6 +1,10 @@
 ---
 order: 1
 title: 'K8s 部署'
+head:
+  - - meta
+    - name: keywords
+      content: k8s, minikube, docker, deployment, 部署
 ---
 
 ## 环境需求

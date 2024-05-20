@@ -1,6 +1,10 @@
 ---
 order: 2
 title: 'Frontend Development'
+head:
+  - - meta
+    - name: keywords
+      content: core, frontend, web, vben, ui
 ---
 
 ## Web side, department as an example

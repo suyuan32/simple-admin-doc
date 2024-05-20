@@ -1,6 +1,10 @@
 ---
 order: 12
 title: 'Authorization'
+head:
+  - - meta
+    - name: keywords
+      content: casbin, authorization, permission, middleware
 ---
 
 We use Casbin to do authorization validating.

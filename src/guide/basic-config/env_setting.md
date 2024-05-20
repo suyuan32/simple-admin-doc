@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "Local Development Setting"
+head:
+  - - meta
+    - name: keywords
+      content: local environment configuraions, Core service, local development
 ---
 
 > Environment Requirement

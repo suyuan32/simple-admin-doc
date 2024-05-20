@@ -1,6 +1,10 @@
 ---
 order: 6
 title: "第三方登陆"
+head:
+  - - meta
+    - name: keywords
+      content: oauth2.0, third-party login, 第三方登录
 ---
 
 > 目前系统已默认提供 google 和 github Oauth 登录功能

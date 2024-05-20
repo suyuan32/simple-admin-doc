@@ -1,6 +1,10 @@
 ---
 order: 8
 title: "本地日志查看"
+head:
+  - - meta
+    - name: keywords
+      content: log viewer, 日志查看, goctls, simple admin
 ---
 
 ## 本地日志查看命令

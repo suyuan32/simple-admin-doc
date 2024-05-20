@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "Gitlab CI"
+head:
+  - - meta
+    - name: keywords
+      content: gitlab ci/cd, simple admin cd/cd, continuous, 持续集成, simple admin
 ---
 
 ## Gitlab CI 文件生成

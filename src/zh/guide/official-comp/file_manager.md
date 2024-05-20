@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "文件上传模块"
+head:
+  - - meta
+    - name: keywords
+      content: fms, upload, 文件上传, simple admin, s3, 配置
 ---
 
 ###  介绍

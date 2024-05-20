@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "RPC 微服务"
+head:
+  - - meta
+    - name: keywords
+      content: goctls, rpc, rpc code generation, micro services, 微服务, 代码生成
 ---
 
 ::: warning

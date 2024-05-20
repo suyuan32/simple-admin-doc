@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "Gitlab CI"
+head:
+  - - meta
+    - name: keywords
+      content: gitlab ci/cd, simple admin cd/cd, continuous, simple admin
 ---
 
 ## Gitlab CI Files Generating

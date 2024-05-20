@@ -1,6 +1,10 @@
 ---
 order: 1
 title: 'Backend Development'
+head:
+  - - meta
+    - name: keywords
+      content: core development, tutorial, configuration
 ---
 
 ## Rapid development demo

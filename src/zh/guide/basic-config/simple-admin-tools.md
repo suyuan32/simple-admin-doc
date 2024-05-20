@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "Goctls"
+head:
+  - - meta
+    - name: keywords
+      content: goctls, goctls -h, simple admin 开发工具, 微服务工具
 ---
 
 Goctls 是一个为 simple admin 设计的代码生成工具, 基于 go zero 官方工具 goctl 开发而成。

@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Global Variables"
+head:
+  - - meta
+    - name: keywords
+      content: global variables, simple admin global environment
 ---
 
 > **We define the global variables in `internal/svc/servicecontext.go`, and initialize them.**

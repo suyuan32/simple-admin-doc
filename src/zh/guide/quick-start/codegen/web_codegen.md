@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Web 端"
+head:
+  - - meta
+    - name: keywords
+      content: web code generation, web 代码生成, frontend, 前端, simple admin vben
 ---
 
 ::: info

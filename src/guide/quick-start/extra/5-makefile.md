@@ -1,6 +1,10 @@
 ---
 order: 5
 title: "Makefile"
+head:
+  - - meta
+    - name: keywords
+      content: makefile, code generation, make help
 ---
 
 ## Makefile Generation

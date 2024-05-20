@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "API 和 RPC"
+head:
+  - - meta
+    - name: keywords
+      content: core development, Core 开发教程, tutorial, 配置
 ---
 
 ## 快速开发 demo

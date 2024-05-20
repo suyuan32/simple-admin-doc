@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "Docker一键部署"
+head:
+  - - meta
+    - name: keywords
+      content: docker, all in one, 一键部署, docker-compose
 ---
 
 ::: info 视频教程

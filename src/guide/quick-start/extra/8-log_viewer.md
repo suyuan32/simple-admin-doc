@@ -1,6 +1,10 @@
 ---
 order: 8
 title: "Local Log Viewer"
+head:
+  - - meta
+    - name: keywords
+      content: log viewer, json, goctls, simple admin
 ---
 
 ## The command for viewing local log with formatting

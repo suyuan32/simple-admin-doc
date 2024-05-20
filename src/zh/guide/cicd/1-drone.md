@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "Drone CI"
+head:
+  - - meta
+    - name: keywords
+      content: drone ci, ci/cd, simple admin ci/cd, 持续集成
 ---
 
 ## Drone CI 文件生成

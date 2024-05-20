@@ -1,6 +1,10 @@
 ---
 order: 1
 title: "Payment Module"
+head:
+  - - meta
+    - name: keywords
+      content: simple admin module, payment module, community, wechat pay, alipay
 ---
 ## Introduction
 

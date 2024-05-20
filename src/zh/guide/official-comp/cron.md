@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "定时任务模块"
+head:
+  - - meta
+    - name: keywords
+      content: cron, job, task, simple admin scheduler, 定时任务, 配置
 ---
 
 ### 介绍

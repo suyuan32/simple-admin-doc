@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "前端设置"
+head:
+  - - meta
+    - name: keywords
+      content: frontend, 前端配置, configuration, 菜单配置
 ---
 
 ::: info

@@ -1,6 +1,10 @@
 ---
 order: 3
 title: "Web Pages"
+head:
+  - - meta
+    - name: keywords
+      content: web code generation, frontend, simple admin vben
 ---
 
 

@@ -1,6 +1,10 @@
 ---
 order: 6
 title: 'Oauth'
+head:
+  - - meta
+    - name: keywords
+      content: oauth2.0, third-party login
 ---
 
 > The system offer google and github Oauth log in by default

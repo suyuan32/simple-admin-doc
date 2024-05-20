@@ -1,6 +1,10 @@
 ---
 order: 2
 title: "后台页面"
+head:
+  - - meta
+    - name: keywords
+      content: core, frontend, web, 后台开发, vben, ui
 ---
 
 ## web 端, department 为例

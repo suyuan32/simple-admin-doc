@@ -1,6 +1,10 @@
 ---
 order: 2
 title: 'RocketMQ 消息队列'
+head:
+  - - meta
+    - name: keywords
+      content: rocketmq, message queue, 消息队列
 ---
 ## 如何添加 Producer 到 RPC 中？
 

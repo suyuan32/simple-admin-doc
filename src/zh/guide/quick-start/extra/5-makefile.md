@@ -1,6 +1,10 @@
 ---
 order: 5
 title: "Makefile"
+head:
+  - - meta
+    - name: keywords
+      content: makefile, code generation, 代码生成, makefile 生成
 ---
 
 ## Makefile 生成

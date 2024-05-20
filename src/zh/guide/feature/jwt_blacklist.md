@@ -1,6 +1,10 @@
 ---
 order: 9
 title: 'JWT 黑名单'
+head:
+  - - meta
+    - name: keywords
+      content: jwt, json web tokon, blacklist, 黑名单, 强制登出
 ---
 
 > 用户在登陆后会自动向token表写入token记录， 管理员可以从后台禁用token或者使用户强制登出

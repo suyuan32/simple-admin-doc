@@ -1,6 +1,10 @@
 ---
 order: 4
 title: "Swagger API Document"
+head:
+  - - meta
+    - name: keywords
+      content: swagger, simple admin, api doc, auto gen, API documents
 ---
 
 ## Use swagger

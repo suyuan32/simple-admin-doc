@@ -289,7 +289,7 @@ go mod tidy
 
 > proto 文件代码
 
-```protobuf
+```plain
 syntax = "proto3";
 
 package example;

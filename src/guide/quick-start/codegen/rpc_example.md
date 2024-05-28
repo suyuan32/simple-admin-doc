@@ -290,7 +290,7 @@ You can see CRUD code !
 
 > Proto File code
 
-```protobuf
+```plain
 syntax = "proto3";
 
 package example;

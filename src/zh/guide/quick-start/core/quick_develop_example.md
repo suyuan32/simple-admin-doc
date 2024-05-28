@@ -22,7 +22,7 @@ head:
 
 > 首先在 rpc/ent/schema 文件夹内添加 department.go
 
-```protobuf
+```plain
 package schema
 
 import (

@@ -122,7 +122,7 @@ volumes:
 
 > Dockerfile
 
-```Dockefile
+```plain
 FROM alpine
 
 RUN apk update && apk add tzdata

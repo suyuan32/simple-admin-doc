@@ -23,7 +23,7 @@ See [API Microservice](/guide/quick-start/codegen/api_example) to quickly create
 
 > First add department.go in rpc/ent/schema folder
 
-```protobuf
+```plain
 package schema
 
 import (

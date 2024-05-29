@@ -70,7 +70,7 @@ Flags:
       --branch string   The branch of the remote repo, it does work with --remote
   -h, --help            help for api
       --home string     The goctl home path of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
-      --o string        Output a sample api file
+      -o string        Output a sample api file
       --remote string   The remote git repo of the template, --home and --remote cannot be set at the same time, if they are, --remote has higher priority
                         The git repo directory must be consistent with the https://github.com/zeromicro/go-zero-template directory structure
 

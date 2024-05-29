@@ -199,7 +199,7 @@ goctls api proto --proto=/home/ryan/GolandProjects/simple-admin-example-rpc/exam
 > 简单参数
 
 ```shell
-goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example --o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i
+goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.proto -a example -r Example -o ./ -m Student -n Example -g github.com/suyuan32/simple-admin-example-rpc/types/example -i
 ```
 
 ### `api proto` 参数介绍

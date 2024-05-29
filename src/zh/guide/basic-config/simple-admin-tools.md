@@ -79,7 +79,7 @@ Flags:
       --branch string   远程 repo 的分支，与 --remote 一起使用
   -h, --help            help for api
       --home string     模板的 goctl 路径，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
-      --o string        输出 api 示例文件
+      -o string        输出 api 示例文件
       --remote string   模板的远程 git repo，--home 和 --remote 不能同时设置，如果设置了，--remote 优先级更高
                         Git repo 的目录结构必须与 https://github.com/zeromicro/go-zero-template 相一致
 

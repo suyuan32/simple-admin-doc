@@ -79,21 +79,15 @@ CasbinConf:
 
 > 仅用于 i18n 需要读取外部目录时 
 
-| 参数名称         | 必须 | 默认值 | 参数介绍           |
-| ---------------- | ---- | ------ | ------------------ |
-| Dir              | 否   |        | 外部 i18n 文件目录 |
-| BundleFilePaths  | 否   |        | 外部 i18n 文件路径 |
-| SupportLanguages | 否   |        | 支持的语言列表     |
+| 参数名称 | 必须 | 默认值 | 参数介绍                                                                          |
+| -------- | ---- | ------ | --------------------------------------------------------------------------------- |
+| Dir      | 否   |        | 外部 i18n 文件目录, 如果为空则读取 embeded 文件，如果不为空则读取指定路径下的文件 |
 
 > 例子
 
 ```yaml
 I18nConf:
   Dir: "D:/projects/simpleadmin/feature-workspace/simple-admin-core/api/internal/i18n/"
-  BundleFilePaths:
-    - "locale/ja.json"
-  SupportLanguages:
-    - "ja"
 ```
 
 ## Auth 鉴权配置

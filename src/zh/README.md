@@ -41,7 +41,7 @@ highlights:
       - title: 完善的后台管理功能
         icon: fluent:card-ui-20-filled
         details: 提供丰富的后台管理功能
-        link: http://101.132.124.135:8080/
+        link: https://preview.ryansu.tech/
 
       - title: 强大的生成工具
         icon: fa-solid:tools

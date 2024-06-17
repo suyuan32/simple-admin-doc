@@ -9,7 +9,27 @@ head:
 
 ## 默认账号是什么？
 
-A: 账号: admin 密码: simple-admin
+A: 
+::: info
+
+#### [免费版在线预览](https://preview.ryansu.tech/)
+
+- 账号 **admin**
+- 密码 **simple-admin**
+
+#### [多租户版在线预览](https://tenant-preview.ryansu.tech/)
+
+- 管理员租户账号
+  - 企业： **admin**
+  - 账号: **admin**
+  - 密码: **simple-admin**
+
+- 租户账号
+  - 企业: **测试企业**
+  - 账号: **admin**
+  - 密码: **simple-admin**
+
+:::
 
 ## 注册的账号不能登录?
 

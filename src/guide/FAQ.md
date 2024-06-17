@@ -9,7 +9,28 @@ head:
 
 ## What is the default account?
 
-A: Account: `admin` Password: `simple-admin`
+A: 
+
+::: info
+#### [Free Edition Online Preview](https://preview.ryansu.tech/)
+
+- Account **admin**
+- Password **simple-admin**
+
+#### [Multi-tenant Edition Online Preview](https://tenant-preview.ryansu.tech/)
+
+- Administrator Tenant Account
+  - Enterprise: **admin**
+  - Account: **admin**
+  - Password: **simple-admin**
+
+- Tenant Account
+  - Enterprise: **测试企业**
+  - Account: **admin**
+  - Password: **simple-admin**
+
+> Read-only, cannot be modified or registered
+:::
 
 ## Registered account can not log in?
 

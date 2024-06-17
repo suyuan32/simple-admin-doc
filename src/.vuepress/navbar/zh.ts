@@ -10,7 +10,18 @@ export const zhNavbar = navbar([
   {
     text: "在线预览",
     icon: "ic:baseline-laptop",
-    link: "http://101.132.124.135:8080/login",
+    children: [
+      {
+        text: "Simple Admin",
+        icon: "ic:baseline-laptop",
+        link: "https://preview.ryansu.tech/",
+      },
+      {
+        text: "Simple Admin 多租户版",
+        icon: "ic:baseline-laptop",
+        link: "https://tenant-preview.ryansu.tech/",
+      },
+    ],
   },
   {
     text: "其他文档",
@@ -82,11 +93,11 @@ export const zhNavbar = navbar([
   {
     text: "视频教程",
     icon: "ph:video-bold",
-    link: "https://space.bilibili.com/9872669/channel/series"
+    link: "https://space.bilibili.com/9872669/channel/series",
   },
   {
     text: "面试宝典",
     icon: "ion:book-outline",
-    link: "https://goguide.ryansu.tech/"
+    link: "https://goguide.ryansu.tech/",
   },
 ]);

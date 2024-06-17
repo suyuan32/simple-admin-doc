@@ -10,7 +10,18 @@ export const enNavbar = navbar([
   {
     text: "Online Preview",
     icon: "ic:baseline-laptop",
-    link: "http://101.132.124.135:8080/login",
+    children: [
+      {
+        text: "Simple Admin",
+        icon: "ic:baseline-laptop",
+        link: "https://preview.ryansu.tech/",
+      },
+      {
+        text: "Simple Admin Tenant Version",
+        icon: "ic:baseline-laptop",
+        link: "https://tenant-preview.ryansu.tech/",
+      },
+    ],
   },
   {
     text: "Other Documents",
@@ -82,11 +93,11 @@ export const enNavbar = navbar([
   {
     text: "Video Tutorial",
     icon: "ph:video-bold",
-    link: "https://www.youtube.com/channel/UCBisP_LYu9ietKS3FtCnmcA"
+    link: "https://www.youtube.com/channel/UCBisP_LYu9ietKS3FtCnmcA",
   },
   {
     text: "Interview Guide",
     icon: "ion:book-outline",
-    link: "https://goguide.ryansu.tech/en/"
+    link: "https://goguide.ryansu.tech/en/",
   },
 ]);

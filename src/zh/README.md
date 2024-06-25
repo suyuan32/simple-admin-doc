@@ -92,15 +92,15 @@ highlights:
     features:
       - title: Github star 
         icon: mdi:github
-        details: 1.4 k
+        details: 1.5 k
       
       - title: 公司开发的应用
         icon: fluent:building-32-filled
-        details: 1200 +
+        details: 1400 +
 
       - title: 个人生产项目
         icon: mdi:people
-        details: 3000 +
+        details: 3500 +
       
       - title: 官方模块
         icon: streamline:module-puzzle-3-solid

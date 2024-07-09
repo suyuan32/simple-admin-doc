@@ -96,11 +96,11 @@ highlights:
       
       - title: 公司开发的应用
         icon: fluent:building-32-filled
-        details: 1400 +
+        details: 1600 +
 
       - title: 个人生产项目
         icon: mdi:people
-        details: 3500 +
+        details: 4000 +
       
       - title: 官方模块
         icon: streamline:module-puzzle-3-solid

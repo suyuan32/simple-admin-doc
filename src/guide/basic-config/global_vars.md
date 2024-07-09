@@ -102,3 +102,28 @@ func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
 ```
 
 > **We can get the global variables via l.svcCtx.**
+
+
+## Global Variable Retrieval Methods
+
+> Version >= v1.4.10
+
+Starting from version v1.4.10, we offer methods to retrieve critical variables anywhere in the API and RPC layers:
+
+- Get User ID:
+
+```go
+userId, err := userctx.GetUserIDFromCtx(ctx)
+```
+
+- Get Department ID:
+
+```go
+deptId, err := deptctx.GetDepartmentIDFromCtx(ctx)
+```
+
+- Get Role Codes:
+
+```go
+roleCodes, err := rolectx.GetRoleIDFromCtx(ctx)
+```

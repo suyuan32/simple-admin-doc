@@ -103,3 +103,27 @@ func (l *CreateApiLogic) CreateApi(in *core.ApiInfo) (*core.BaseIDResp, error) {
 ```
 
 > **我们可以通过 l.svcCtx 访问全局变量**
+
+## 全局获取变量方法
+
+> 版本 >= v1.4.10
+
+在 v1.4.10 版本之后我们提供了方法可以在 API 和 RPC 层任意地方获取关键变量
+
+- 获取用户 ID
+
+```go
+userId, err := userctx.GetUserIDFromCtx(ctx)
+```
+
+- 获取部门 ID
+
+```go
+deptId, err := deptctx.GetDepartmentIDFromCtx(ctx)
+```
+
+- 获取角色代码
+
+```go
+roleCodes, err := rolectx.GetRoleIDFromCtx(ctx)
+```

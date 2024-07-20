@@ -18,3 +18,11 @@ head:
 3. Regenerate the dockerfile using the `goctls docker` command.
 4. Update the Ent template using the `goctls extra ent template` command.
 5. Regenerate project files using `make gen-api` and `make gen-rpc`.
+
+## Backend UI upgrade
+
+Vben backend UI update reference [Synchronization tutorial](FAQ.md#how-to-sync-a-fork-repository)
+
+::: warning
+The original git data cannot be deleted, otherwise the code will not be automatically merged.
+:::

@@ -64,6 +64,10 @@ export const zhSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "商业使用",
+          link: "member",
+        },
+        {
           text: "版本升级",
           link: "upgrade",
         },

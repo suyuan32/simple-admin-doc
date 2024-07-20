@@ -64,6 +64,10 @@ export const enSidebar = sidebar({
           children: "structure",
         },
         {
+          text: "Commercial authorization",
+          link: "member",
+        },
+        {
           text: "Version Upgrade",
           link: "upgrade",
         },

@@ -147,3 +147,13 @@ server {
     # }
 }
 ```
+
+## Parameter configuration （System Config）
+
+Currently supported page parameter configuration
+
+| Key                      | Introduction                                                                     |
+| ------------------------ | -------------------------------------------------------------------------------- |
+| sys.ui.name              | Configure the background system name                                             |
+| sys.ui.logo              | Configure the background logo                                                    |
+| sys.ui.showSettingButton | ("true" or "false") Configure whether the background setting button is displayed |

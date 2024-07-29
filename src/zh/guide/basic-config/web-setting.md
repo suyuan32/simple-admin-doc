@@ -146,8 +146,12 @@ server {
 
 目前支持的页面参数配置
 
-| 键(key)                  | 介绍                                           |
-| ------------------------ | ---------------------------------------------- |
-| sys.ui.name              | 配置后台系统名称                               |
-| sys.ui.logo              | 配置后台 logo                                  |
-| sys.ui.showSettingButton | ( "true" 或 "false" ) 配置后台是否显示设置按钮 |
+| 键(key)                  | 介绍                                                          |
+| ------------------------ | ------------------------------------------------------------- |
+| sys.ui.name              | 配置后台系统名称                                              |
+| sys.ui.logo              | 配置后台 logo                                                 |
+| sys.ui.showSettingButton | ( "true" 或 "false" ) 配置后台是否显示设置按钮                |
+| sys.ui.defaultLocale     | （ "zh_CN" 或 "en" ） 配置后台默认语言                        |
+| sys.ui.header.showNotice | ( "true" 或 "false" ) 是否显示消息按钮                        |
+| sys.ui.layoutType        | ( "sidebar" 或 "mix-sidebar" 或 "mix" 或 "top-menu") 默认布局 |
+| sys.ui.showBreadCrumb    | ( "true" 或 "false" ) 是否显示面包屑                          |

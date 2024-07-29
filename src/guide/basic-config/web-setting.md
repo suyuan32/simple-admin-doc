@@ -157,3 +157,7 @@ Currently supported page parameter configuration
 | sys.ui.name              | Configure the background system name                                             |
 | sys.ui.logo              | Configure the background logo                                                    |
 | sys.ui.showSettingButton | ("true" or "false") Configure whether the background setting button is displayed |
+| sys.ui.defaultLocale     | ("zh_CN" or "en") Configure the default language of the background               |
+| sys.ui.header.showNotice | ("true" or "false") Whether to display the message button                        |
+| sys.ui.layoutType        | ("sidebar" or "mix-sidebar" or "mix" or "top-menu") Default layout               |
+| sys.ui.showBreadCrumb    | ("true" or "false") Whether to display breadcrumbs                               |

@@ -87,11 +87,16 @@ Flags:
   -e, --exclude_tables string   When excluding tables for exporting all tables, you need to specify all intermediate tables and tables without a primary key. For example: role_menu, user_roles
   -h, --help                    help for import
   -o, --output string           Output path, the project's root directory
+  -p, --plural_table            Whether to automatically add plurals to the table, for example, importing the user table will automatically generate "users"  (default true)
   -t, --tables string           Specify data tables. e.g. sys_users,sys_tokens
 ```
 
+::: warning
+When the -p parameter is false, use `-p=false`
+:::
+
 ::: info
-goctls supports generating index indexes, but the suffix of the index name must be the field name, and only supports generating single indexes, not composite indexes
+goctls supports generating indexes, but the suffix of the index name must be the field name, and only supports generating single indexes, not composite indexes. Imported edge relationships need to be checked manually
 :::
 
 ### `extra ent schema` command generates an empty schema file.

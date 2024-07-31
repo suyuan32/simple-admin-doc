@@ -32,4 +32,4 @@ head:
 
 ## Commercial Usage Details
 
-Simple Admin offers 6 major free modules, including Core services, all of which are open-source on GitHub. They can be used for free without requiring authorization. The modules exclusive to members and the paid modules can be used for commercial purposes, but they cannot be resold and are only allowed for personal use.
+Simple Admin offers 6 major free modules, including Core services, all of which are open-source on GitHub. They can be used for free without requiring authorization. The modules exclusive to members and the paid modules can be used for commercial purposes, all modules cannot be resold and are only allowed for personal use.

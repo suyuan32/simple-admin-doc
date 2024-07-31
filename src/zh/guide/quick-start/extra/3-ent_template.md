@@ -87,11 +87,17 @@ Flags:
   -e, --exclude_tables string   排除的数据表，用于导出所有表时，需指定所有中间表及没有 primary key 的表，例子： role_menu,user_roles
   -h, --help                    help for import
   -o, --output string           输出路径，为项目根目录
+  -p, --plural_table            是否给表自动添加复数, 例如导入 user 表将自动生成 "users"  (default true)
   -t, --tables string           指定数据表，例子： sys_users,sys_tokens
+
 ```
 
+::: warning
+使用 -p 参数为 false 时需要, -p=false
+:::
+
 ::: info
-goctls 支持生成 index 索引，但是索引的名称的后缀必须为字段名称，且只支持生成单索引，不支持复合索引
+goctls 支持生成 index 索引，但是索引的名称的后缀必须为字段名称，且只支持生成单索引，不支持复合索引，导入的 edge 关系需手动检查
 :::
 
 ### `extra ent schema` 命令生成空的 schema 文件

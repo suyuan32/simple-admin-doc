@@ -101,6 +101,10 @@ func (Role) Annotations() []schema.Annotation {
 - status: 提供状态字段 status
 - sort: 提供排序字段
 
+::: warning
+目前只支持 uint64, int64, uint32, int32, string 类型的 id, 其他类型需手动修改代码
+:::
+
 #### uuidx 提供两个方法用于转换 uuid
 
 - uuidx.ParseUUIDSlice 用于将 uuid 的 string 数组转化为 ent 的 uuid 数组类型

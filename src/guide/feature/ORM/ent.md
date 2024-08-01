@@ -100,6 +100,10 @@ Currently, the project provides several Mixins located in `"github.com/suyuan32/
 - status: Provide `status` field
 - sort: Provide `sort` field
 
+::: warning
+Currently only supports ids of `uint64, int64, uint32, int32, and string` types, other types require manual code modification
+:::
+
 #### uuidx provides two methods for converting uuid
 
 - uuidx.ParseUUIDSlice is used to convert the string array of uuid into the uuid array type of ent

@@ -71,7 +71,7 @@ type ServiceContext struct {
 	DB               *ent.Client
 	Redis            *redis.Redis
 	MQProducer       *asynq.Client
-	RocketMQProducer *rocketmq.Producer
+	RocketMQProducer rocketmq.Producer
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {
@@ -176,8 +176,8 @@ type ServiceContext struct {
 	DB                   *ent.Client
 	Redis                *redis.Redis
 	MQProducer           *asynq.Client
-	RocketMQPushConsumer *rocketmq.PushConsumer
-	RocketMQPullConsumer *rocketmq.PullConsumer
+	RocketMQPushConsumer rocketmq.PushConsumer
+	RocketMQPullConsumer rocketmq.PullConsumer
 }
 
 func NewServiceContext(c config.Config) *ServiceContext {

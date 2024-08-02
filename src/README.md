@@ -18,7 +18,7 @@ actions:
   type: primary
 
 - text: API Doc
-  link: https://api-doc.ryansu.tech/?urls.primaryName=core-v1.3.11
+  link: http://api-doc.ryansu.tech/
   icon: streamline:module-puzzle-3-solid
   type: primary
 

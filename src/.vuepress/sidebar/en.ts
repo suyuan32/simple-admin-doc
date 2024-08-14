@@ -64,7 +64,7 @@ export const enSidebar = sidebar({
           children: "structure",
         },
         {
-          text: "Commercial authorization",
+          text: "Membership Benefits",
           link: "member",
         },
         {

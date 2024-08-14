@@ -21,6 +21,10 @@ head:
 | Additional Learning Content    | No                        | Yes                                                   |
 | Exclusive Group Chat           | No                        | Yes                                                   |
 
+::: info Become Member
+[Patreon](https://www.patreon.com/RyanSU)
+:::
+
 ## Core Version Comparison
 
 |                                | Core Community Edition | Core Data Permissions Edition                     | Core Multi-Tenant Edition                                                |
@@ -29,6 +33,12 @@ head:
 | Usable for Commercial Purposes | Yes                    | Yes                                               | Yes                                                                      |
 | Features                       | Basic Management       | Basic Management <br> Data Permissions Management | Basic Management <br> Data Permissions Management <br> Tenant Management |
 | Ongoing Maintenance            | Yes                    | Yes                                               | Yes                                                                      |
+
+## Member IDE Plugin
+
+[VsCode](https://marketplace.visualstudio.com/items?itemName=RyanSu.simpleadmin-extension)
+
+[Goland](https://plugins.jetbrains.com/plugin/25067-simple-admin)
 
 ## Commercial Usage Details
 

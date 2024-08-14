@@ -7,7 +7,6 @@ head:
       content: core版本差异, 会员权益
 ---
 
-
 ## 免费 VS 会员
 
 |                    | 免费用户                     | 会员                          |
@@ -20,6 +19,10 @@ head:
 | 额外学习内容       | 否                           | 是                            |
 | 专属群聊           | 否                           | 是                            |
 
+::: info 成为会员
+![qrcode](/assets/planet.png)
+:::
+
 ## Core 版本对比
 
 |              | Core 社区版 | Core 数据权限版            | Core 多租户版                            |
@@ -28,6 +31,12 @@ head:
 | 是否可商用   | 可商用      | 可商用                     | 可商用                                   |
 | 功能         | 基础管理    | 基础管理 <br> 数据权限管理 | 基础管理 <br> 数据权限管理 <br> 租户管理 |
 | 是否持续维护 | 是          | 是                         | 是                                       |
+
+## 会员插件
+
+[VsCode](https://marketplace.visualstudio.com/items?itemName=RyanSu.simpleadmin-extension)
+
+[Goland](https://plugins.jetbrains.com/plugin/25067-simple-admin)
 
 ## 商用说明
 

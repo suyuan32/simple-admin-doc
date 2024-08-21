@@ -12,9 +12,9 @@
   },
   "devDependencies": {
     "vuepress-plugin-search-pro": "2.0.0-rc.52",
-    "@vuepress/bundler-vite": "2.0.0-rc.14",
-    "vue": "^3.4.34",
-    "vuepress": "2.0.0-rc.14",
+    "@vuepress/bundler-vite": "2.0.0-rc.15",
+    "vue": "^3.4.38",
+    "vuepress": "2.0.0-rc.15",
     "vuepress-theme-hope": "2.0.0-rc.52"
   },
   "dependencies": {

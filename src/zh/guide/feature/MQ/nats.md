@@ -28,7 +28,7 @@ NATS 是一个开源的分布式消息队列系统，基于消息发布-订阅�
 ```yaml
 NatsConf:
   Hosts:
-    - "nats://localhost:42223"
+    - "nats://localhost:4222"
   ReconnectWait: 10
   MaxReconnect: 10
 ```

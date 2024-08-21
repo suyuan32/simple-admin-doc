@@ -27,7 +27,7 @@ NATS is an open-source, distributed messaging system based on the publish-subscr
 ```yaml
 NatsConf:
   Hosts:
-    - "nats://localhost:42223"
+    - "nats://localhost:4222"
   ReconnectWait: 10
   MaxReconnect: 10
 ```

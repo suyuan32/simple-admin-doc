@@ -93,15 +93,15 @@ highlights:
     features:
       - title: Github Star 
         icon: mdi:github
-        details: 1.5 k
+        details: 1.6 k
       
       - title: Company Applications In Production
         icon: fluent:building-32-filled
-        details: 2300 +
+        details: 2500 +
 
       - title: Personal Applications In Production
         icon: mdi:people
-        details: 7800 +
+        details: 8000 +
       
       - title: Offical Module 
         icon: streamline:module-puzzle-3-solid

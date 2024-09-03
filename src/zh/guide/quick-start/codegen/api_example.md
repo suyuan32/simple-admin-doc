@@ -204,24 +204,26 @@ goctls api proto -p /home/ryan/GolandProjects/simple-admin-example-rpc/example.p
 
 ### `api proto` 参数介绍
 
-| 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                                                                                                          |
-| ---------------- | ---- | ------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| proto            | 是   |         | proto 文件地址                | 输入 proto 文件的绝对路径。 **注意要为合并后的 proto 即根目录下的 proto ，不是 desc 文件夹中的，因为要获取 package 和 Base 结构** |
-| i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                                                                                                       |
-| style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                                                                                                |
-| api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中                                                                                        |
-| rpc_service_name | 是   |         | 服务名称                      | rpc 服务的名称, 与 proto 文件中的 service 名称一致                                                                                |
-| output           | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录                                                                                  |
-| model            | 是   |         | 模型名称                      | 用于生成的模型名称，例如 User, 支持同时生成多个模型, 使用逗号分隔，如 User,Member                                                 |
-| rpc_name         | 是   |         | RPC 名称                      | 输入 Example 则生成文件会生成 l.svcCtx.ExampleRpc                                                                                 |
-| grpc_package     | 是   |         | RPC \*\_grpc.go 包路径        | 在 example 中是 github.com/suyuan32/simple-admin-example-rpc/example                                                              |
-| multiple         | 否   | false   | 多服务                        | 若 proto 文件中有多个 service, 需要设置为 true                                                                                    |
-| json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                                                                                |
-| import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                                                                 |
-| overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                                                                       |
-| api_data         | 否   |         | 是否自动生成 API 初始化代码   | 若为 true 会自动生成API初始化代码                                                                                                 |
-| route_prefix     | 否   |         | 是否使用路由前缀              | 前缀必须以 "/" 开头                                                                                                               |
-| optional_service | 否   | false   | 是否为可选服务                | 是否为可选服务，若为 true，会自动生成服务启动判断逻辑                                                                             |
+| 参数                 | 必须 | 默认值     | 介绍                  | 使用方法                                                                                     |
+|--------------------|----|---------|---------------------|------------------------------------------------------------------------------------------|
+| proto              | 是  |         | proto 文件地址          | 输入 proto 文件的绝对路径。 **注意要为合并后的 proto 即根目录下的 proto ，不是 desc 文件夹中的，因为要获取 package 和 Base 结构** |
+| i18n               | 否  | false   | 是否启用 i18n           | true 为启用                                                                                 |
+| style              | 否  | go_zero | 文件名格式               | go_zero 为蛇形格式                                                                            |
+| api_service_name   | 是  |         | 服务名称                | api 服务的 service 名称, 在 api 声明文件中                                                          |
+| rpc_service_name   | 是  |         | 服务名称                | rpc 服务的名称, 与 proto 文件中的 service 名称一致                                                     |
+| output             | 是  |         | 输出位置                | 文件输出位置，可以为相对路径，指向 main 文件目录                                                              |
+| model              | 是  |         | 模型名称                | 用于生成的模型名称，例如 User, 支持同时生成多个模型, 使用逗号分隔，如 User,Member                                      |
+| rpc_name           | 是  |         | RPC 名称              | 输入 Example 则生成文件会生成 l.svcCtx.ExampleRpc                                                  |
+| grpc_package       | 是  |         | RPC \*\_grpc.go 包路径 | 在 example 中是 github.com/suyuan32/simple-admin-example-rpc/example                        |
+| multiple           | 否  | false   | 多服务                 | 若 proto 文件中有多个 service, 需要设置为 true                                                       |
+| json_style         | 否  | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                                                |
+| import_prefix      | 否  |         | 导入路径前缀              | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                                                 |
+| overwrite          | 否  | false   | 是否覆盖生成文件            | true 则会覆盖所有生成的文件                                                                         |
+| api_data           | 否  |         | 是否自动生成 API 初始化代码    | 若为 true 会自动生成API初始化代码                                                                    |
+| route_prefix       | 否  |         | 是否使用路由前缀            | 前缀必须以 "/" 开头                                                                             |
+| optional_service   | 否  | false   | 是否为可选服务             | 是否为可选服务，若为 true，会自动生成服务启动判断逻辑                                                            |
+| model_chinese_name | 否  |         | 模型名称中文名称            | api 文件注释中的模型中文名称                                                                         |
+| model_english_name | 否  |         | 模型英文名称              | api 文件注释中的模型英文名称                                                                         |
 
 **详细参数请在命令行查看 `goctls api proto --help`**
 
@@ -232,23 +234,25 @@ Usage:
   goctls api proto [flags]
 
 Flags:
-  -d, --api_data                  是否自动生成 API 初始化代码，需要 CoreRpc
-  -a, --api_service_name string   API 服务名称
-  -g, --grpc_package string       存储 pb 文件的 rpc 包，例如 github.com/suyuan32/simple-admin-job/types/job
-  -h, --help                      help for proto
-  -i, --i18n                      是否启用 i18n 国际化
-  -x, --import_prefix string      导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
-  -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
-  -m, --model string              用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User, 支持同时生成多个模型, 使用逗号分隔，如 User,Member
-      --multiple                  proto 是否包含多个服务
-  -t, --optional_service          是否为可选服务，如果为 true，则会生成判断代码
-  -o, --output string             输出路径
-  -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
-  -p, --proto string              proto 文件路径
-  -f, --route_prefix string       路由前缀，需要以 "/" 开头
-  -n, --rpc_name string           RPC 服务名称，用于调用，例如 CoreRpc 需要配置为 Core
-  -r, --rpc_service_name string   RPC 服务名称
-  -s, --style string              文件名格式样式 (default "go_zero")
+  -d, --api_data                    是否自动生成 API 初始化代码，需要 CoreRpc
+  -a, --api_service_name string     API 服务名称
+  -g, --grpc_package string         存储 pb 文件的 rpc 包，例如 github.com/suyuan32/simple-admin-job/types/job
+  -h, --help                        help for proto
+  -i, --i18n                        是否启用 i18n 国际化
+  -x, --import_prefix string        导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
+  -j, --json_style string           JSON 标记格式，默认为驼峰式 (default "goZero")
+  -m, --model string                用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User, 支持同时生 成多个模型, 使用逗号分隔，如 User,Member
+      --model_chinese_name string   模型的中文名称
+      --model_english_name string   模型的英文名称
+      --multiple                    proto 是否包含多个服务
+  -t, --optional_service            是否为可选服务，如果为 true，则会生成判断代码
+  -o, --output string               输出路径
+  -w, --overwrite                   是否覆盖文件，它将覆盖所有生成的文件
+  -p, --proto string                proto 文件路径
+  -f, --route_prefix string         路由前缀，需要以 "/" 开头
+  -n, --rpc_name string             RPC 服务名称，用于调用，例如 CoreRpc 需要配置为 Core
+  -r, --rpc_service_name string     RPC 服务名称
+  -s, --style string                文件名格式样式 (default "go_zero")
 ```
 
 ::: info
@@ -296,21 +300,23 @@ goctls api new example -i -c -a -m github.com/suyuan32/simple-admin-example-api 
 goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --model={modelName} --group={groupName} --search_key_num=3 --overwrite=true
 ```
 
-| 参数             | 必须 | 默认值  | 介绍                          | 使用方法                                                                          |
-| ---------------- | ---- | ------- | ----------------------------- | --------------------------------------------------------------------------------- |
-| schema           | 是   |         | schema 文件地址               | 输入 Ent schema 文件夹相对路径                                                    |
-| style            | 否   | go_zero | 文件名格式                    | go_zero 为蛇形格式                                                                |
-| api_service_name | 是   |         | 服务名称                      | api 服务的 service 名称, 在 api 声明文件中                                        |
-| output           | 是   |         | 输出位置                      | 文件输出位置，可以为相对路径，指向 main 文件目录                                  |
-| model            | 是   |         | 模型名称                      | 用于生成的模型名称，例如 User，如果为 "all"，则为 schema 目录中的所有模型生成代码 |
-| search_key_num   | 否   | 3       | 搜索字段数量（默认为 3）      | 列表搜索字段数量，只能自动生成 string 的字段                                      |
-| group            | 是   |         | 分组名称                      | 分组名称用于将不同 logic 文件放到不同文件夹                                       |
-| json_style       | 否   | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                                                |
-| i18n             | 否   | false   | 是否启用 i18n                 | true 为启用                                                                       |
-| import_prefix    | 否   |         | 导入路径前缀                  | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api                 |
-| api_data         | 否   |         | 是否自动生成 API 初始化代码   | 若为 true 会自动生成API初始化代码                                                 |
-| route_prefix     | 否   |         | 是否使用路由前缀              | 前缀必须以 "/" 开头                                                               |
-| overwrite        | 否   | false   | 是否覆盖生成文件              | true 则会覆盖所有生成的文件                                                       |
+| 参数                 | 必须 | 默认值     | 介绍                  | 使用方法                                               |
+|--------------------|----|---------|---------------------|----------------------------------------------------|
+| schema             | 是  |         | schema 文件地址         | 输入 Ent schema 文件夹相对路径                              |
+| style              | 否  | go_zero | 文件名格式               | go_zero 为蛇形格式                                      |
+| api_service_name   | 是  |         | 服务名称                | api 服务的 service 名称, 在 api 声明文件中                    |
+| output             | 是  |         | 输出位置                | 文件输出位置，可以为相对路径，指向 main 文件目录                        |
+| model              | 是  |         | 模型名称                | 用于生成的模型名称，例如 User，如果为 "all"，则为 schema 目录中的所有模型生成代码 |
+| search_key_num     | 否  | 3       | 搜索字段数量（默认为 3）       | 列表搜索字段数量，只能自动生成 string 的字段                         |
+| group              | 是  |         | 分组名称                | 分组名称用于将不同 logic 文件放到不同文件夹                          |
+| json_style         | 否  | goZero  | JSON tag 的格式，默认为小驼峰 | go_zero 为下划线， GoZero 为大驼峰                          |
+| i18n               | 否  | false   | 是否启用 i18n           | true 为启用                                           |
+| import_prefix      | 否  |         | 导入路径前缀              | 导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api           |
+| api_data           | 否  |         | 是否自动生成 API 初始化代码    | 若为 true 会自动生成API初始化代码                              |
+| route_prefix       | 否  |         | 是否使用路由前缀            | 前缀必须以 "/" 开头                                       |
+| overwrite          | 否  | false   | 是否覆盖生成文件            | true 则会覆盖所有生成的文件                                   |
+| model_chinese_name | 否  |         | 模型名称中文名称            | api 文件注释中的模型中文名称                                   |
+| model_english_name | 否  |         | 模型英文名称              | api 文件注释中的模型英文名称                                   |
 
 ::: info
 快捷命令 `make gen-api-ent-logic model={modelName} group={groupName}` 表示生成 schema 为 `{modelName}` 的代码，`{groupName}`为分组名称，注意 modelName 需要首字母大写，和 schema 中的 struct 名称保持一致。使用 `make gen-api-ent-logic model=all group=all` 生成所有 schema 的 CRUD 代码。
@@ -319,27 +325,28 @@ goctls api ent --schema=./ent/schema --api_service_name=example --output=./ --mo
 > ** 运行 `goctls api ent --help` 查看详细命令 **
 
 ```shell
-$ goctls api ent -h
 从 ent 文件生成 CRUD 业务逻辑文件
 
 Usage:
   goctls api ent [flags]
 
 Flags:
-  -p, --api_data                  是否自动生成 API 初始化代码，需要 CoreRpc
-  -a, --api_service_name string   API 服务名称
-  -g, --group string              业务逻辑代码的分组名称，例如 user
-  -h, --help                      help for ent
-  -i, --i18n                      是否启用 i18n 国际化
-  -x, --import_prefix string      导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
-  -j, --json_style string         JSON 标记格式，默认为驼峰式 (default "goZero")
-  -m, --model string              用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User，如果为 "all"，则为 schema 目录中的所有模型生成代 码
-  -o, --output string             输出路径
-  -w, --overwrite                 是否覆盖文件，它将覆盖所有生成的文件
-  -f, --route_prefix string       路由前缀，需要以 "/" 开头
-  -c, --schema string             Ent 的 schema 文件夹路径
-  -k, --search_key_num int        搜索条件的最大数量，只支持 String 类型 (default 3)
-  -s, --style string              文件名格式样式 (default "go_zero")
+  -p, --api_data                    是否自动生成 API 初始化代码，需要 CoreRpc
+  -a, --api_service_name string     API 服务名称
+  -g, --group string                业务逻辑代码的分组名称，例如 user
+  -h, --help                        help for ent
+  -i, --i18n                        是否启用 i18n 国际化
+  -x, --import_prefix string        导入路径的前缀，仅用于项目位于子目录的情况，如 core 的 rpc 和 api
+  -j, --json_style string           JSON 标记格式，默认为驼峰式 (default "goZero")
+  -m, --model string                用于生成的模型名称，和 schema 的 struct 名称一致，首字母大写，例如 User，如果为 "all"，则为 schema 目录中的所有模型生成代码
+      --model_chinese_name string   模型的中文名称
+      --model_english_name string   模型的英文名称
+  -o, --output string               输出路径
+  -w, --overwrite                   是否覆盖文件，它将覆盖所有生成的文件
+  -f, --route_prefix string         路由前缀，需要以 "/" 开头
+  -c, --schema string               Ent 的 schema 文件夹路径
+  -k, --search_key_num int          搜索条件的最大数量，只支持 String 类型 (default 3)
+  -s, --style string                文件名格式样式 (default "go_zero")
 ```
 
 **goctls api ent 会同时生成 .api 文件**

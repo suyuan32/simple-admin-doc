@@ -106,7 +106,7 @@ highlights:
         icon: streamline:module-puzzle-3-solid
         details: 10 +
 
-footer: MIT 协议 版权所有 © 2022-present Ryan SU
+footer: Apache2.0 协议 版权所有 © 2022-present Ryan SU
 
 ---
 

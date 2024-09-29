@@ -107,7 +107,7 @@ highlights:
         icon: streamline:module-puzzle-3-solid
         details: 10 +
 
-footer: MIT License Copyright © 2022-present Ryan SU
+footer: Apache2.0 License Copyright © 2022-present Ryan SU
 
 ---
 

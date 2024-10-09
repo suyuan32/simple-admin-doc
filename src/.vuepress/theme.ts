@@ -133,13 +133,10 @@ export default hopeTheme({
       // install chart.js before enabling it
       // chart: true,
 
-      codetabs: true,
       demo: true,
 
       // install echarts before enabling it
       // echarts: true,
-
-      figure: true,
 
       // install flowchart.ts before enabling it
       // flowchart: true,
@@ -147,8 +144,6 @@ export default hopeTheme({
       // gfm requires mathjax-full to provide tex support
       // gfm: true,
 
-      imgLazyload: true,
-      imgSize: true,
       include: true,
 
       // install katex before enabling it
@@ -186,7 +181,6 @@ export default hopeTheme({
       ],
       sub: true,
       sup: true,
-      tabs: true,
       vPre: true,
 
       // install @vue/repl before enabling it

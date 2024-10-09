@@ -35,6 +35,11 @@ actions:
   icon: streamline:module-puzzle-3-solid
   type: primary
 
+- text: 中国镜像站
+  link: https://doc-cn.ryansu.tech
+  icon: streamline:module-puzzle-3-solid
+  type: primary
+
 highlights:
   - header: 
     features:
